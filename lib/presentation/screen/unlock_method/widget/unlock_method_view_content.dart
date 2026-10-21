@@ -8,12 +8,14 @@ import 'package:applock/presentation/screen/unlock_method/view_model/unlock_meth
 import 'package:applock/presentation/screen/unlock_method/widget/unlock_method_item_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class UnlockMethodViewContent extends StatelessWidget {
   const UnlockMethodViewContent({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
       backgroundColor: AppColorsPalette.white,
       body: SafeArea(
@@ -28,7 +30,7 @@ class UnlockMethodViewContent extends StatelessWidget {
               const SizedBox(height: 32),
               // Heading
               Text(
-                'Set up your unlock method',
+                l10n.unlockMethodTitle,
                 style: AppTypography.bold.copyWith(
                   fontSize: 24,
                   color: AppColorsPalette.black,
@@ -37,7 +39,7 @@ class UnlockMethodViewContent extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                'Choose how you\'ll unlock your private content.',
+                l10n.unlockMethodSubtitle,
                 style: AppTypography.regular.copyWith(
                   fontSize: 15,
                   color: AppColorsPalette.gray600,
@@ -55,8 +57,8 @@ class UnlockMethodViewContent extends StatelessWidget {
                           size: 22,
                           color: AppColorsPalette.black,
                         ),
-                        title: 'Create PIN',
-                        subtitle: '4-8 digit numerical code',
+                        title: l10n.createPinTitle,
+                        subtitle: l10n.createPinSubtitle,
                         isSelected:
                             state.selectedMethod == UnlockMethodType.pin,
                         onTap: () {
@@ -72,8 +74,8 @@ class UnlockMethodViewContent extends StatelessWidget {
                           size: 22,
                           color: AppColorsPalette.black,
                         ),
-                        title: 'Draw pattern',
-                        subtitle: 'Connect at least 4 dots',
+                        title: l10n.drawPatternTitle,
+                        subtitle: l10n.drawPatternSubtitle,
                         isSelected:
                             state.selectedMethod == UnlockMethodType.pattern,
                         onTap: () {
@@ -109,7 +111,7 @@ class UnlockMethodViewContent extends StatelessWidget {
                     const SizedBox(width: 12),
                     Expanded(
                       child: Text(
-                        'Keep this safe. Vault data cannot be recovered if you forget it and biometric fallback is unavailable.',
+                        l10n.unlockMethodWarning,
                         style: AppTypography.regular.copyWith(
                           fontSize: 13.5,
                           color: AppColorsPalette.gray700,
@@ -125,7 +127,7 @@ class UnlockMethodViewContent extends StatelessWidget {
               BlocBuilder<UnlockMethodViewModel, UnlockMethodState>(
                 builder: (context, state) {
                   return CommonButton.filled(
-                    text: 'Continue',
+                    text: l10n.continueButton,
                     backgroundColor: state.canContinue
                         ? AppColorsPalette.black
                         : AppColorsPalette.gray500,

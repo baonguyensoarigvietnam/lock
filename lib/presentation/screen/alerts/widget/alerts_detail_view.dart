@@ -6,6 +6,7 @@ import 'package:applock/presentation/screen/alerts/widget/alerts_list_view.dart'
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/dialog_utility.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class AlertsDetailView extends StatefulWidget {
   final AlertEventItem item;
@@ -38,11 +39,12 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Column(
       children: [
         // Top Header Bar
         CommonAppBar.titledBack(
-          title: 'Alert detail',
+          title: l10n.alertDetailTitle,
           onBack: widget.onBack,
         ),
         const SizedBox(height: 8),
@@ -83,7 +85,7 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'EVENT SUMMARY',
+                      l10n.eventSummaryHeader,
                       style: AppTypography.semiBold.copyWith(
                         fontSize: 11.5,
                         letterSpacing: 0.8,
@@ -104,7 +106,7 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                         ),
                       ),
                       child: Text(
-                        'High Alert',
+                        l10n.highAlertBadge,
                         style: AppTypography.semiBold.copyWith(
                           fontSize: 11,
                           color: AppColorsPalette.red700,
@@ -134,7 +136,7 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Capture Analysis',
+                            l10n.captureAnalysisTitle,
                             style: AppTypography.bold.copyWith(
                               fontSize: 16,
                               color: AppColorsPalette.black,
@@ -149,12 +151,12 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                       ),
                       const SizedBox(height: 16),
                       _buildAnalysisRow(
-                        label: 'Attempted context',
+                        label: l10n.attemptedContextLabel,
                         value: widget.item.attemptedContext,
                       ),
                       _buildDivider(),
                       _buildAnalysisRow(
-                        label: 'Failed method',
+                        label: l10n.failedMethodRowLabel,
                         value: widget.item.detailedMethod,
                       ),
                       _buildDivider(),
@@ -162,7 +164,7 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Failed count',
+                            l10n.failedCountLabel,
                             style: AppTypography.regular.copyWith(
                               fontSize: 13.5,
                               color: AppColorsPalette.gray500,
@@ -189,17 +191,17 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                       ),
                       _buildDivider(),
                       _buildAnalysisRow(
-                        label: 'Date/time',
+                        label: l10n.dateTimeLabel,
                         value: widget.item.detailedDateTime,
                       ),
                       _buildDivider(),
                       _buildAnalysisRow(
-                        label: 'Platform',
+                        label: l10n.platformLabel,
                         value: 'Android 14',
                       ),
                       _buildDivider(),
                       _buildAnalysisRow(
-                        label: 'Device model',
+                        label: l10n.deviceModelLabel,
                         value: 'Pixel 8 Pro',
                       ),
                     ],
@@ -212,8 +214,8 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                 // - "Enable camera permission" when no photo was captured
                 CommonButton.filled(
                   text: _hasPhoto
-                      ? 'Save evidence'
-                      : 'Enable camera permission',
+                      ? l10n.saveEvidenceButton
+                      : l10n.enableCameraPermissionButton,
                   height: 48,
                   cornerRadius: 10,
                   backgroundColor: AppColorsPalette.black,
@@ -233,9 +235,9 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                   onPressed: () {
                     if (_hasPhoto) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Evidence saved to device'),
-                          duration: Duration(seconds: 2),
+                        SnackBar(
+                          content: Text(l10n.evidenceSavedSnackBar),
+                          duration: const Duration(seconds: 2),
                         ),
                       );
                     } else if (widget.onEnableCameraPermission != null) {
@@ -251,7 +253,7 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
 
                 // Delete alert Button
                 CommonButton.outline(
-                  text: 'Delete alert',
+                  text: l10n.deleteAlertButton,
                   height: 48,
                   cornerRadius: 10,
                   backgroundColor: AppColorsPalette.white,

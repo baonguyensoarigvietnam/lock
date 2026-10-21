@@ -3,6 +3,7 @@ import 'package:applock/domain/repository/app_lock_repository.dart';
 import 'package:applock/presentation/common/base/base_view_model.dart';
 import 'package:applock/presentation/screen/settings/view_model/settings_state.dart';
 import 'package:applock/service/app_lock/biometric_service.dart';
+import 'package:applock/utility/enumeration/app_language.dart';
 import 'package:applock/utility/enumeration/settings_tab_step.dart';
 import 'package:applock/utility/enumeration/view_status.dart';
 import 'package:applock/utility/helper/result.dart';
@@ -19,16 +20,26 @@ class SettingsViewModel extends BaseCubit<SettingsState> {
 
   Future<void> init() async {
     final configRes = await _repository.getLockConfig();
+    final langRes = await _repository.getLanguageCode();
     var isBio = false;
+    var selectedLang = state.selectedLanguage;
 
     if (configRes is Success) {
       final config = (configRes as Success).data;
       isBio = config.isBiometricEnabled;
     }
 
+    if (langRes is Success<String>) {
+      final code = langRes.data;
+      if (code.isNotEmpty) {
+        selectedLang = AppLanguage.fromCode(code).englishName;
+      }
+    }
+
     emit(state.copyWith(
       status: ViewStatus.success,
       isBiometricEnabled: isBio,
+      selectedLanguage: selectedLang,
     ));
   }
 
@@ -64,9 +75,11 @@ class SettingsViewModel extends BaseCubit<SettingsState> {
     ));
   }
 
-  void saveLanguage(String language) {
+  Future<void> saveLanguage(String language) async {
+    final langEnum = AppLanguage.fromNameOrCode(language);
+    await _repository.saveLanguageCode(langEnum.code);
     emit(state.copyWith(
-      selectedLanguage: language,
+      selectedLanguage: langEnum.englishName,
       currentStep: SettingsTabStep.overview,
     ));
   }
@@ -75,7 +88,7 @@ class SettingsViewModel extends BaseCubit<SettingsState> {
     if (active) {
       final canCheck = await _biometricService.canCheckBiometrics();
       if (!canCheck) {
-        emitError('Thiết bị không hỗ trợ hoặc chưa cài sinh trắc học');
+        emitError('Biometric unavailable');
         return;
       }
       final authenticated = await _biometricService.authenticate();

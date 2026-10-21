@@ -22,4 +22,8 @@ abstract class AppLockRepository {
   Future<Result<bool>> isOnboardingCompleted();
 
   Future<Result<void>> setOnboardingCompleted(bool completed);
+
+  Future<Result<String>> getLanguageCode();
+
+  Future<Result<void>> saveLanguageCode(String code);
 }

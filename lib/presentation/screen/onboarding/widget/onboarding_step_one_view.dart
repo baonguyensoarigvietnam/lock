@@ -4,6 +4,7 @@ import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/screen/onboarding/widget/onboarding_graphic_box.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class OnboardingStepOneView extends StatelessWidget {
   final VoidCallback onContinue;
@@ -15,6 +16,7 @@ class OnboardingStepOneView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return SafeArea(
       child: Column(
         children: [
@@ -31,7 +33,8 @@ class OnboardingStepOneView extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  'Protect your privacy',
+                  l10n.onboardingStep1Title,
+                  textAlign: TextAlign.center,
                   style: AppTypography.bold.copyWith(
                     fontSize: 24,
                     color: AppColorsPalette.black,
@@ -40,7 +43,7 @@ class OnboardingStepOneView extends StatelessWidget {
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  'Keep private photos, videos, and sensitive access protected on this device.',
+                  l10n.onboardingStep1Desc,
                   textAlign: TextAlign.center,
                   style: AppTypography.regular.copyWith(
                     fontSize: 15,
@@ -56,7 +59,7 @@ class OnboardingStepOneView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: CommonButton.filled(
-              text: 'Continue',
+              text: l10n.continueButton,
               onPressed: onContinue,
             ),
           ),

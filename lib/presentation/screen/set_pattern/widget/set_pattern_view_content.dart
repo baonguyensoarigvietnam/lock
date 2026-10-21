@@ -7,12 +7,14 @@ import 'package:applock/presentation/screen/set_pattern/view_model/set_pattern_s
 import 'package:applock/presentation/screen/set_pattern/view_model/set_pattern_view_model.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class SetPatternViewContent extends StatelessWidget {
   const SetPatternViewContent({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return BlocListener<SetPatternViewModel, SetPatternState>(
       listenWhen: (previous, current) =>
           !previous.isCompleted && current.isCompleted,
@@ -46,14 +48,14 @@ class SetPatternViewContent extends StatelessWidget {
                   final hasError = state.validationError != null;
 
                   final String title = isConfirm
-                      ? 'Confirm your pattern'
-                      : 'Draw an unlock pattern';
+                      ? l10n.confirmYourPatternTitle
+                      : l10n.drawUnlockPatternTitle;
 
                   final String subtitle = hasError
-                      ? state.validationError!
+                      ? l10n.patternDoesNotMatchError
                       : (isConfirm
-                          ? 'Draw your pattern again to confirm.'
-                          : 'Connect at least 4 dots.');
+                          ? l10n.drawPatternAgainConfirm
+                          : l10n.connectAtLeast4Dots);
 
                   return Column(
                     children: [
@@ -71,9 +73,7 @@ class SetPatternViewContent extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: AppTypography.regular.copyWith(
                           fontSize: 15,
-                          color: hasError
-                              ? AppColorsPalette.gray500
-                              : AppColorsPalette.gray500,
+                          color: AppColorsPalette.gray500,
                         ),
                       ),
                     ],
@@ -112,7 +112,7 @@ class SetPatternViewContent extends StatelessWidget {
                   context.read<SetPatternNavigator>().goToPin();
                 },
                 child: Text(
-                  'Use PIN instead',
+                  l10n.usePinInstead,
                   style: AppTypography.medium.copyWith(
                     fontSize: 14,
                     color: AppColorsPalette.black,

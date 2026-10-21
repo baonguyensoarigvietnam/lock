@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class DialogUtility {
   static Future<T?> _showDialog<T>({
@@ -242,14 +243,14 @@ class DialogUtility {
     required VoidCallback onImportAndDelete,
     required VoidCallback onImportOnly,
   }) {
+    final l10n = context.l10n;
     return showConfirmBottomSheet(
       context: context,
       icon: Icons.delete_outline_rounded,
-      title: 'Delete originals?',
-      description:
-          'After import, App Lock can ask the operating system to delete the original files when allowed.',
-      primaryButtonText: 'Import and delete originals',
-      secondaryButtonText: 'Import only',
+      title: l10n.deleteOriginalsDialogTitle,
+      description: l10n.deleteOriginalsDialogDesc,
+      primaryButtonText: l10n.importAndDeleteOriginalsButton,
+      secondaryButtonText: l10n.importOnlyButton,
       onPrimaryTap: onImportAndDelete,
       onSecondaryTap: onImportOnly,
     );
@@ -260,14 +261,14 @@ class DialogUtility {
     required BuildContext context,
     required VoidCallback onRestore,
   }) {
+    final l10n = context.l10n;
     return showConfirmBottomSheet(
       context: context,
       icon: Icons.restore_rounded,
-      title: 'Restore to gallery?',
-      description:
-          'A decrypted copy will be saved through the operating system. Temporary files are cleaned after restore.',
-      primaryButtonText: 'Restore',
-      secondaryButtonText: 'Cancel',
+      title: l10n.restoreToGalleryDialogTitle,
+      description: l10n.restoreToGalleryDialogDesc,
+      primaryButtonText: l10n.restoreAction,
+      secondaryButtonText: l10n.cancelButton,
       onPrimaryTap: onRestore,
     );
   }
@@ -277,13 +278,14 @@ class DialogUtility {
     required BuildContext context,
     required VoidCallback onDelete,
   }) {
+    final l10n = context.l10n;
     return showConfirmBottomSheet(
       context: context,
       icon: Icons.delete_outline_rounded,
-      title: 'Delete from Vault?',
-      description: 'This removes the encrypted vault copy from this device.',
-      primaryButtonText: 'Delete permanently',
-      secondaryButtonText: 'Cancel',
+      title: l10n.deleteFromVaultDialogTitle,
+      description: l10n.deleteFromVaultDialogDesc,
+      primaryButtonText: l10n.deletePermanentlyButton,
+      secondaryButtonText: l10n.cancelButton,
       onPrimaryTap: onDelete,
     );
   }
@@ -293,14 +295,14 @@ class DialogUtility {
     required BuildContext context,
     required VoidCallback onDelete,
   }) {
+    final l10n = context.l10n;
     return showConfirmBottomSheet(
       context: context,
       icon: Icons.delete_outline_rounded,
-      title: 'Delete alert?',
-      description:
-          'This removes the captured intruder photo and event log from this device.',
-      primaryButtonText: 'Delete alert',
-      secondaryButtonText: 'Cancel',
+      title: l10n.deleteAlertDialogTitle,
+      description: l10n.deleteAlertDialogDesc,
+      primaryButtonText: l10n.deleteAlertButton,
+      secondaryButtonText: l10n.cancelButton,
       onPrimaryTap: onDelete,
     );
   }

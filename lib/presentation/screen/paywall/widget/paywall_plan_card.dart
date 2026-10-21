@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class PaywallPlanCard extends StatelessWidget {
   final String title;
@@ -107,7 +108,7 @@ class PaywallPlanCard extends StatelessWidget {
                     if (originalPrice != null) ...[
                       const SizedBox(height: 1),
                       Text(
-                        'was $originalPrice',
+                        context.l10n.wasPrice(originalPrice!),
                         style: AppTypography.regular.copyWith(
                           fontSize: 12,
                           color: AppColorsPalette.gray500,

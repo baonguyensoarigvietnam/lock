@@ -9,12 +9,14 @@ import 'package:applock/presentation/screen/paywall/widget/paywall_feature_tile.
 import 'package:applock/presentation/screen/paywall/widget/paywall_plan_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class PaywallViewContent extends StatelessWidget {
   const PaywallViewContent({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return BlocListener<PaywallViewModel, PaywallState>(
       listenWhen: (prev, curr) => !prev.isPurchased && curr.isPurchased,
       listener: (context, state) {
@@ -41,7 +43,7 @@ class PaywallViewContent extends StatelessWidget {
                       const SizedBox(height: 18),
                       // Title & Subtitle
                       Text(
-                        'Upgrade to Premium',
+                        l10n.upgradeToPremium,
                         style: AppTypography.bold.copyWith(
                           fontSize: 24,
                           color: AppColorsPalette.black,
@@ -50,7 +52,7 @@ class PaywallViewContent extends StatelessWidget {
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        'Unlock more themes and remove ads.',
+                        l10n.paywallSubtitle,
                         style: AppTypography.regular.copyWith(
                           fontSize: 15,
                           color: AppColorsPalette.gray600,
@@ -59,36 +61,36 @@ class PaywallViewContent extends StatelessWidget {
                       const SizedBox(height: 24),
                       // 2x2 Feature Cards Grid
                       Row(
-                        children: const [
+                        children: [
                           Expanded(
                             child: PaywallFeatureTile(
                               icon: Icons.brush_outlined,
-                              title: 'Premium themes in future',
+                              title: l10n.paywallFeatureThemes,
                             ),
                           ),
-                          SizedBox(width: 12),
+                          const SizedBox(width: 12),
                           Expanded(
                             child: PaywallFeatureTile(
                               icon: Icons.folder_outlined,
-                              title: 'Unlimited vault',
+                              title: l10n.paywallFeatureVault,
                             ),
                           ),
                         ],
                       ),
                       const SizedBox(height: 12),
                       Row(
-                        children: const [
+                        children: [
                           Expanded(
                             child: PaywallFeatureTile(
                               icon: Icons.history_rounded,
-                              title: 'Full intruder alert history',
+                              title: l10n.paywallFeatureAlerts,
                             ),
                           ),
-                          SizedBox(width: 12),
+                          const SizedBox(width: 12),
                           Expanded(
                             child: PaywallFeatureTile(
                               icon: Icons.block_flipped,
-                              title: 'No ads',
+                              title: l10n.paywallFeatureNoAds,
                             ),
                           ),
                         ],
@@ -100,8 +102,8 @@ class PaywallViewContent extends StatelessWidget {
                           return Column(
                             children: [
                               PaywallPlanCard(
-                                title: 'Monthly',
-                                subtitle: 'Billed every month',
+                                title: l10n.monthlyPlanTitle,
+                                subtitle: l10n.monthlyPlanSubtitle,
                                 price: '\$2.99',
                                 isSelected: state.selectedPlan ==
                                     SubscriptionPlanType.monthly,
@@ -113,11 +115,11 @@ class PaywallViewContent extends StatelessWidget {
                               ),
                               const SizedBox(height: 12),
                               PaywallPlanCard(
-                                title: 'Yearly',
-                                subtitle: 'Billed annually',
+                                title: l10n.yearlyPlanTitle,
+                                subtitle: l10n.yearlyPlanSubtitle,
                                 price: '\$25.99',
                                 originalPrice: '\$35.99',
-                                badgeText: 'SAVE 40%',
+                                badgeText: l10n.save40Badge,
                                 isSelected: state.selectedPlan ==
                                     SubscriptionPlanType.yearly,
                                 onTap: () {
@@ -135,7 +137,7 @@ class PaywallViewContent extends StatelessWidget {
                       BlocBuilder<PaywallViewModel, PaywallState>(
                         builder: (context, state) {
                           return CommonButton.filled(
-                            text: 'Start Premium',
+                            text: l10n.startPremiumButton,
                             isLoading: state.isLoading,
                             onPressed: () {
                               context
@@ -151,7 +153,7 @@ class PaywallViewContent extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           _buildFooterLink(
-                            text: 'Restore purchases',
+                            text: l10n.restorePurchases,
                             onTap: () {
                               context
                                   .read<PaywallViewModel>()
@@ -160,12 +162,12 @@ class PaywallViewContent extends StatelessWidget {
                           ),
                           _buildFooterDivider(),
                           _buildFooterLink(
-                            text: 'Terms',
+                            text: l10n.termsLink,
                             onTap: () {},
                           ),
                           _buildFooterDivider(),
                           _buildFooterLink(
-                            text: 'Privacy Policy',
+                            text: l10n.privacyPolicyLink,
                             onTap: () {},
                           ),
                         ],

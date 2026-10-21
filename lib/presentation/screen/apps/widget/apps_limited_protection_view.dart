@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class AppsLimitedProtectionView extends StatelessWidget {
   final VoidCallback onFixPermissions;
@@ -15,6 +16,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
@@ -39,7 +41,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           Text(
-            'Protection may be limited',
+            l10n.protectionMayBeLimitedTitle,
             textAlign: TextAlign.center,
             style: AppTypography.bold.copyWith(
               fontSize: 22,
@@ -50,7 +52,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Text(
-              'To ensure App Lock works reliably in the background, please review the following Android system settings.',
+              l10n.protectionMayBeLimitedDesc,
               textAlign: TextAlign.center,
               style: AppTypography.regular.copyWith(
                 fontSize: 14,
@@ -96,7 +98,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
                         const SizedBox(width: 10),
                         Expanded(
                           child: Text(
-                            'Display over other apps',
+                            l10n.displayOverOtherAppsTitle,
                             style: AppTypography.bold.copyWith(
                               fontSize: 15,
                               color: AppColorsPalette.black,
@@ -109,7 +111,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 30),
                       child: Text(
-                        'Required to show the lock screen over protected apps. Without this, apps will not be locked.',
+                        l10n.displayOverOtherAppsWarningDesc,
                         style: AppTypography.regular.copyWith(
                           fontSize: 13,
                           color: AppColorsPalette.gray500,
@@ -139,7 +141,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
                             ),
                             const SizedBox(width: 4),
                             Text(
-                              'Disabled',
+                              l10n.statusDisabled,
                               style: AppTypography.medium.copyWith(
                                 fontSize: 12,
                                 color: AppColorsPalette.red600,
@@ -180,7 +182,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
                     const SizedBox(width: 10),
                     Expanded(
                       child: Text(
-                        'Battery optimization',
+                        l10n.batteryOptimizationTitle,
                         style: AppTypography.bold.copyWith(
                           fontSize: 15,
                           color: AppColorsPalette.black,
@@ -193,7 +195,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 30),
                   child: Text(
-                    'Android may aggressively kill App Lock in the background. Disable optimization to keep protection active.',
+                    l10n.batteryOptimizationDesc,
                     style: AppTypography.regular.copyWith(
                       fontSize: 13,
                       color: AppColorsPalette.gray500,
@@ -223,7 +225,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          'Restricted',
+                          l10n.statusRestricted,
                           style: AppTypography.medium.copyWith(
                             fontSize: 12,
                             color: AppColorsPalette.gray600,
@@ -240,7 +242,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
 
           // Primary Button: Fix permissions
           CommonButton.filled(
-            text: 'Fix permissions',
+            text: l10n.fixPermissionsButton,
             height: 50,
             cornerRadius: 12,
             backgroundColor: AppColorsPalette.black,
@@ -255,7 +257,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
 
           // Secondary Button: Continue with limited protection
           CommonButton.outline(
-            text: 'Continue with limited protection',
+            text: l10n.continueWithLimitedProtectionButton,
             height: 50,
             cornerRadius: 12,
             backgroundColor: AppColorsPalette.white,

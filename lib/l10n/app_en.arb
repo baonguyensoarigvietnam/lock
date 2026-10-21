@@ -1,0 +1,407 @@
+{
+  "@@locale": "en",
+  "appTitle": "AppLock",
+  "appLockTitle": "App Lock",
+  "continueButton": "Continue",
+  "getStartedButton": "Get started",
+  "skipButton": "Skip",
+  "cancelButton": "Cancel",
+  "saveButton": "Save",
+  "doneButton": "Done",
+  "resetButton": "Reset",
+  "restoreAction": "Restore",
+  "deleteAction": "Delete",
+  "infoAction": "Info",
+  "selectAction": "Select",
+  "selectAllAction": "Select All",
+  "seeAllAction": "See all",
+  "navHome": "Home",
+  "navApps": "Apps",
+  "navVault": "Vault",
+  "navAlerts": "Alerts",
+  "navSettings": "Settings",
+  "splashSubtitle": "Protect your private content",
+  "onboardingStep1Title": "Protect your privacy",
+  "onboardingStep1Desc": "Keep private photos, videos, and sensitive access protected on this device.",
+  "onboardingStep2Title": "Local-only protection",
+  "onboardingStep2Subtitle": "Your data never leaves your device.",
+  "onboardingNoAccountTitle": "No account",
+  "onboardingNoAccountDesc": "We don't ask for your email or phone number to use the app.",
+  "onboardingNoCloudTitle": "No cloud sync",
+  "onboardingNoCloudDesc": "Your data is never uploaded to any external servers or clouds.",
+  "onboardingNoRecoveryTitle": "No server-side recovery",
+  "onboardingNoRecoveryDesc": "If you lose your PIN, we cannot recover your data for you.",
+  "onboardingVaultStaysTitle": "Vault files stay here",
+  "onboardingVaultStaysDesc": "Everything secured in the vault remains strictly on this device.",
+  "unlockMethodTitle": "Set up your unlock method",
+  "unlockMethodSubtitle": "Choose how you'll unlock your private content.",
+  "createPinTitle": "Create PIN",
+  "createPinSubtitle": "4-8 digit numerical code",
+  "drawPatternTitle": "Draw pattern",
+  "drawPatternSubtitle": "Connect at least 4 dots",
+  "unlockMethodWarning": "Keep this safe. Vault data cannot be recovered if you forget it and biometric fallback is unavailable.",
+  "createYourPinTitle": "Create your PIN",
+  "confirmYourPinTitle": "Confirm your PIN",
+  "changePasscodeTitle": "Change Passcode",
+  "confirmYourPasscodeTitle": "Confirm your Passcode",
+  "usePinToAccessSubtitle": "Use this PIN to access your protected content.",
+  "reEnterPinSubtitle": "Re-enter your PIN to confirm.",
+  "reEnterPinShort": "Re-enter your PIN.",
+  "pinDoesNotMatchError": "PIN does not match.",
+  "usePatternInstead": "Use pattern instead",
+  "usePinInstead": "Use PIN instead",
+  "drawUnlockPatternTitle": "Draw an unlock pattern",
+  "confirmYourPatternTitle": "Confirm your pattern",
+  "connectAtLeast4Dots": "Connect at least 4 dots.",
+  "drawPatternAgainConfirm": "Draw your pattern again to confirm.",
+  "patternDoesNotMatchError": "Pattern does not match",
+  "enableBiometricTitle": "Enable biometric fallback",
+  "enableBiometricSubtitle": "Use your device's fingerprint or face scan to regain access if needed.",
+  "fasterUnlockTitle": "Faster unlock",
+  "fasterUnlockSubtitle": "Quickly access your vault without typing.",
+  "usesDeviceSecurityTitle": "Uses device security",
+  "usesDeviceSecuritySubtitle": "Leverages built-in biometric hardware.",
+  "helpsForgetPinTitle": "Helps if you forget your PIN",
+  "helpsForgetPinSubtitle": "A secure alternative way to get back in.",
+  "biometricInfoNote": "Biometric fallback only works if enabled before you forget your PIN.",
+  "enableBiometricButton": "Enable biometric",
+  "setUpPermissionsTitle": "Set up permissions",
+  "permissionGuideSubtitle": "Enable the permissions needed for App Lock, Vault, and security alerts. You can skip optional features and turn them on later.",
+  "usageAccessTitle": "Usage Access",
+  "usageAccessDesc": "Detect when selected apps are opened so App Lock can show the unlock screen.",
+  "displayOverOtherAppsTitle": "Display over other apps",
+  "displayOverOtherAppsDesc": "Show the unlock screen over protected apps for better reliability.",
+  "notificationsTitle": "Notifications",
+  "notificationsDesc": "Show protection status, security alerts, and permission warnings.",
+  "photosAndVideosTitle": "Photos and videos",
+  "photosAndVideosDesc": "Select media to import into your encrypted vault.",
+  "cameraTitle": "Camera",
+  "cameraDesc": "Capture a front-camera photo after 3 failed unlock attempts.",
+  "badgeRequired": "REQUIRED",
+  "badgeRecommended": "RECOMMENDED",
+  "badgeVault": "VAULT",
+  "badgeIntruder": "INTRUDER",
+  "upgradeToPremium": "Upgrade to Premium",
+  "paywallSubtitle": "Unlock more themes and remove ads.",
+  "paywallFeatureThemes": "Premium themes in future",
+  "paywallFeatureVault": "Unlimited vault",
+  "paywallFeatureAlerts": "Full intruder alert history",
+  "paywallFeatureNoAds": "No ads",
+  "monthlyPlanTitle": "Monthly",
+  "monthlyPlanSubtitle": "Billed every month",
+  "yearlyPlanTitle": "Yearly",
+  "yearlyPlanSubtitle": "Billed annually",
+  "save40Badge": "SAVE 40%",
+  "wasPrice": "was {price}",
+  "@wasPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "startPremiumButton": "Start Premium",
+  "restorePurchases": "Restore purchases",
+  "termsLink": "Terms",
+  "privacyPolicyLink": "Privacy Policy",
+  "unlockAppTitle": "Unlock {appName}",
+  "@unlockAppTitle": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "enterPinToContinue": "Enter your PIN to continue.",
+  "incorrectPinTryAgain": "Incorrect PIN. Try again.",
+  "incorrectPatternTryAgain": "Incorrect pattern. Try again.",
+  "forgotPinLink": "Forgot PIN?",
+  "forgotPatternLink": "Forgot Pattern?",
+  "useBiometricUnlockTitle": "Use biometric unlock",
+  "unlockWithDeviceAuthSubtitle": "Unlock with device authentication.",
+  "biometricNotRecognized": "BIOMETRIC NOT RECOGNIZED",
+  "recoverAccessTitle": "Recover access",
+  "useBiometricFallbackCardTitle": "Use biometric fallback",
+  "useBiometricFallbackCardDesc": "Authenticate with device biometrics, then create a new PIN or pattern.",
+  "authenticateButton": "Authenticate",
+  "vaultCannotBeRecoveredTitle": "Vault cannot be recovered",
+  "vaultCannotBeRecoveredDesc": "Without PIN, pattern, or biometric fallback, encrypted vault data cannot be recovered.",
+  "resetAppSecurityButton": "Reset app security",
+  "backToUnlockLink": "Back to unlock",
+  "resetSecurityQuestionTitle": "Reset security?",
+  "resetSecurityWarningDesc": "This will delete the key envelope.\nEncrypted vault data will no longer be\naccessible.",
+  "resetSecurityConfirmCheckbox": "I understand this cannot be\nundone",
+  "statusActive": "ACTIVE",
+  "statusIdle": "IDLE",
+  "appsProtectedLabel": "Apps protected",
+  "vaultItemsLabel": "Vault items",
+  "intruderAlertsLabel": "Intruder alerts",
+  "biometricFallbackLabel": "Biometric fallback",
+  "quickActionsTitle": "Quick Actions",
+  "lockAppsAction": "Lock Apps",
+  "themesAction": "Themes",
+  "promoBannerTitle": "UNLOCK ALL FEATURES",
+  "promoBannerSubtitle": "Unlimited themes, free ads and more.",
+  "themeMinimal": "Minimal",
+  "themeClassicPin": "Classic PIN",
+  "themePattern": "Pattern",
+  "themeVault": "Vault",
+  "themeFocus": "Focus",
+  "themePremiumColors": "Premium Colors",
+  "premiumBadge": "PREMIUM",
+  "applyThemeButton": "Apply theme",
+  "themeAppliedTitle": "Theme applied",
+  "themeAppliedSubtitle": "Your lock screens now use the\nselected theme.",
+  "premiumColorPreviewTitle": "Premium Color Preview",
+  "premiumThemesSubscriptionNote": "Premium themes are available with subscription.",
+  "backToThemesButton": "Back to themes",
+  "lockedAppsHeader": "Locked Apps",
+  "protectedAppsCount": "{count} protected apps",
+  "@protectedAppsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchAppsHint": "Search apps...",
+  "filterAll": "All",
+  "filterCategories": "Categories",
+  "filterLocked": "Locked",
+  "categoryChipLabel": "Category: {category}",
+  "@categoryChipLabel": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "noLockedAppsFound": "No locked apps found",
+  "noAppsFound": "No apps found",
+  "categorySocial": "Social",
+  "categoryMessaging": "Messaging",
+  "categoryPhotosVideo": "Photos & Video",
+  "categoryFinance": "Finance",
+  "categoryShopping": "Shopping",
+  "categorySystem": "System",
+  "categoryAppsBullet": "{count} Apps • ",
+  "@categoryAppsBullet": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryProtectedCount": "{count} Protected",
+  "@categoryProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "usageAccessRequiredTitle": "Usage Access required",
+  "usageAccessRequiredDesc": "Enable Usage Access to protect selected\napps.",
+  "enableUsageAccessButton": "Enable Usage Access",
+  "protectionMayBeLimitedTitle": "Protection may be limited",
+  "protectionMayBeLimitedDesc": "To ensure App Lock works reliably in the background, please review the following Android system settings.",
+  "displayOverOtherAppsWarningDesc": "Required to show the lock screen over protected apps. Without this, apps will not be locked.",
+  "statusDisabled": "Disabled",
+  "batteryOptimizationTitle": "Battery optimization",
+  "batteryOptimizationDesc": "Android may aggressively kill App Lock in the background. Disable optimization to keep protection active.",
+  "statusRestricted": "Restricted",
+  "fixPermissionsButton": "Fix permissions",
+  "continueWithLimitedProtectionButton": "Continue with limited protection",
+  "itemsProtectedCount": "{count}/100 items protected",
+  "@itemsProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "encryptedOnThisDevice": "Encrypted on this device",
+  "quickActionsSmallTitle": "Quick actions",
+  "addPhotosAction": "Add\nPhotos",
+  "importVideosAction": "Import\nVideos",
+  "createAlbumAction": "Create\nAlbum",
+  "albumsHeader": "Albums",
+  "vaultEmptyTitle": "Your vault is empty",
+  "vaultEmptySubtitle": "Import photos and videos to keep them\nencrypted on this device.",
+  "albumPrivatePhotos": "Private Photos",
+  "albumVideos": "Videos",
+  "albumGalleries": "Galleries",
+  "albumScreenshots": "Screenshots",
+  "albumPhotos": "Photos",
+  "vaultAlbumItemsCount": "{count} items",
+  "@vaultAlbumItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultItemsProtectedSubtitle": "{count} items • Protected",
+  "@vaultItemsProtectedSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importToVaultTitle": "Import to Vault",
+  "todaySection": "Today",
+  "september12Section": "September 12",
+  "selectedCountLabel": "{count} selected",
+  "@selectedCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "totalSizeMbLabel": "{size} MB total",
+  "@totalSizeMbLabel": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "moveToVaultButton": "Move to Vault",
+  "encryptingItemsTitle": "Encrypting selected items...",
+  "filesProcessedProgress": "{processed} of {total} files processed",
+  "@filesProcessedProgress": {
+    "placeholders": {
+      "processed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "keepAppOpenWarning": "Keep App Lock open until import finishes.",
+  "importCompleteTitle": "Import complete",
+  "importCompleteSubtitle": "Your data is now secured and encrypted.",
+  "itemsEncryptedTitle": "{count} items encrypted",
+  "@itemsEncryptedTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aes256Subtitle": "AES-256 Military Grade",
+  "originalsDeletedTitle": "Originals deleted",
+  "spaceRecoveredSubtitle": "Space recovered: 124 MB",
+  "originalsCouldNotBeDeletedTitle": "Originals could not be deleted\nautomatically",
+  "nextStepRequiredTitle": "Next Step Required",
+  "deleteOriginalsManuallyDesc": "Open Photos or Gallery to delete\noriginals manually.",
+  "viewVaultButton": "View Vault",
+  "backToVaultHomeLink": "Back to Vault Home",
+  "fileInfoTitle": "File info",
+  "protectedBadge": "Protected",
+  "propertiesHeader": "Properties",
+  "propertyName": "Name",
+  "propertyType": "Type",
+  "propertySize": "Size",
+  "propertyImportedDate": "Imported date",
+  "propertyEncryptionStatus": "Encryption status",
+  "intruderSelfieOffTitle": "Intruder Selfie is off",
+  "intruderSelfieOffSubtitle": "Enable it to capture a photo after 3\nfailed unlock attempts.",
+  "secureLogsTitle": "Secure Logs",
+  "secureLogsSubtitle": "View date, time, and photo of\nunauthorized attempts.",
+  "stealthCaptureTitle": "Stealth Capture",
+  "stealthCaptureSubtitle": "The front camera captures the photo\nsilently.",
+  "enableIntruderSelfieButton": "Enable Intruder Selfie",
+  "cameraPermissionDeniedTitle": "Camera permission denied",
+  "cameraPermissionDeniedSubtitle": "Intruder events can still be recorded\nwithout a photo.",
+  "intruderLoggingTitle": "Intruder Logging",
+  "intruderLoggingSubtitle": "Time, date, and attempted PINs will still\nbe stored in your security vault.",
+  "privacyFirstTitle": "Privacy First",
+  "privacyFirstSubtitle": "No photos are taken or stored without\nyour explicit camera permission.",
+  "openSettingsButton": "Open settings",
+  "statusSummaryTitle": "Status Summary",
+  "failedUnlockAttemptsToday": "2 failed unlock attempts today",
+  "alertsSavedPremium": "11 alerts saved",
+  "alertsSavedFree": "2 alerts saved on 10",
+  "failedMethodLabel": "Failed method: {method}",
+  "@failedMethodLabel": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  },
+  "viewDetailsAction": "View details",
+  "keepFullAlertHistoryTitle": "Keep full alert history",
+  "keepFullAlertHistoryDesc": "Free users only see the last 10\nalerts. Upgrade to store indefinitely.",
+  "alertDetailTitle": "Alert detail",
+  "noPhotoCapturedTitle": "No photo captured",
+  "noPhotoCapturedDesc": "The security system failed to\ninitialize the camera during this\nevent.",
+  "eventSummaryHeader": "EVENT SUMMARY",
+  "highAlertBadge": "High Alert",
+  "captureAnalysisTitle": "Capture Analysis",
+  "attemptedContextLabel": "Attempted context",
+  "failedMethodRowLabel": "Failed method",
+  "failedCountLabel": "Failed count",
+  "dateTimeLabel": "Date/time",
+  "platformLabel": "Platform",
+  "deviceModelLabel": "Device model",
+  "saveEvidenceButton": "Save evidence",
+  "enableCameraPermissionButton": "Enable camera permission",
+  "evidenceSavedSnackBar": "Evidence saved to device",
+  "deleteAlertButton": "Delete alert",
+  "settingsTitle": "Settings",
+  "settingsSubtitle": "Manage your app preferences.",
+  "freePlanTitle": "Free Plan",
+  "freeBadge": "FREE",
+  "freePlanDesc": "Upgrade to Premium for advanced security\nfeatures.",
+  "securitySectionHeader": "Security",
+  "biometricUnlockTitle": "Biometric Unlock",
+  "biometricUnlockSubtitle": "Use Face ID / Touch ID",
+  "autoLockDelayTitle": "Auto-lock delay",
+  "helpAndSupportHeader": "Help & Support",
+  "languagesTitle": "Languages",
+  "contactUsTitle": "Contact Us",
+  "termsOfServiceTitle": "Terms of Service",
+  "requireAuthenticationTitle": "Require Authentication",
+  "requireAuthenticationSubtitle": "Choose how quickly the app locks after you\nleave it. Shorter delays provide stronger privacy\nprotection.",
+  "delayImmediately": "Immediately",
+  "delay15Seconds": "After 15 seconds",
+  "delay30Seconds": "After 30 seconds",
+  "delay1Minute": "After 1 minute",
+  "delayScreenOff": "When screen turns off",
+  "settingLanguagesTitle": "Setting Languages",
+  "settingLanguagesSubtitle": "Choose your preferred language for the interface\nand document recognition.",
+  "langEnglish": "English",
+  "langVietnamese": "Vietnamese",
+  "langSpanish": "Spanish",
+  "langFrench": "French",
+  "langGerman": "German",
+  "langJapanese": "Japanese",
+  "langChinese": "Chinese",
+  "contactUsIntro": "We're here to help. Fill out the form below and\nour support team will get back to you as soon as\npossible.",
+  "emailAddressLabel": "Email Address",
+  "emailHint": "you@example.com",
+  "subjectLabel": "Subject",
+  "subjectHint": "Brief summary of your issue",
+  "messageLabel": "Message",
+  "messageHint": "Describe your issue in detail...",
+  "contactPrivacyDisclaimer": "By submitting this form, you agree to our Privacy Policy. We\nwill only use your email to respond to this request.",
+  "sendMessageButton": "Send message",
+  "messageSentSnackBar": "Message sent to support team",
+  "biometricNotSupportedError": "Device does not support or has not set up biometrics",
+  "deleteOriginalsDialogTitle": "Delete originals?",
+  "deleteOriginalsDialogDesc": "After import, App Lock can ask the operating system to delete the original files when allowed.",
+  "importAndDeleteOriginalsButton": "Import and delete originals",
+  "importOnlyButton": "Import only",
+  "restoreToGalleryDialogTitle": "Restore to gallery?",
+  "restoreToGalleryDialogDesc": "A decrypted copy will be saved through the operating system. Temporary files are cleaned after restore.",
+  "deleteFromVaultDialogTitle": "Delete from Vault?",
+  "deleteFromVaultDialogDesc": "This removes the encrypted vault copy from this device.",
+  "deletePermanentlyButton": "Delete permanently",
+  "deleteAlertDialogTitle": "Delete alert?",
+  "deleteAlertDialogDesc": "This removes the captured intruder photo and event log from this device."
+}

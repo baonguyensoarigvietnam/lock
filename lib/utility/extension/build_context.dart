@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart' show BuildContext, MediaQuery;
+import 'package:applock/l10n/app_localizations.dart';
 import 'package:applock/utility/enumeration/device_type.dart' show DeviceType;
+
+extension LocalizationHelper on BuildContext {
+  AppLocalizations get l10n => AppLocalizations.of(this);
+}
 
 extension ResponsiveHelper on BuildContext {
   static const double _tabletBreakpoint = 600;

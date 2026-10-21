@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:applock/presentation/common/widget/common_feature_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class VaultImportCompleteView extends StatelessWidget {
   final int encryptedCount;
@@ -21,6 +22,7 @@ class VaultImportCompleteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
@@ -76,7 +78,7 @@ class VaultImportCompleteView extends StatelessWidget {
           ),
           const SizedBox(height: 22),
           Text(
-            'Import complete',
+            l10n.importCompleteTitle,
             textAlign: TextAlign.center,
             style: AppTypography.bold.copyWith(
               fontSize: 24,
@@ -85,7 +87,7 @@ class VaultImportCompleteView extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'Your data is now secured and encrypted.',
+            l10n.importCompleteSubtitle,
             textAlign: TextAlign.center,
             style: AppTypography.regular.copyWith(
               fontSize: 14,
@@ -97,8 +99,8 @@ class VaultImportCompleteView extends StatelessWidget {
           // Card 1: items encrypted
           CommonFeatureCard(
             icon: Icons.lock_rounded,
-            title: '$encryptedCount items encrypted',
-            subtitle: 'AES-256 Military Grade',
+            title: l10n.itemsEncryptedTitle(encryptedCount),
+            subtitle: l10n.aes256Subtitle,
             backgroundColor: AppColorsPalette.gray50,
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           ),
@@ -106,19 +108,19 @@ class VaultImportCompleteView extends StatelessWidget {
 
           // Card 2: Originals deleted vs Originals could not be deleted automatically
           if (originalsDeleted)
-            const CommonFeatureCard(
+            CommonFeatureCard(
               icon: Icons.delete_sweep_outlined,
-              title: 'Originals deleted',
-              subtitle: 'Space recovered: 124 MB',
+              title: l10n.originalsDeletedTitle,
+              subtitle: l10n.spaceRecoveredSubtitle,
               backgroundColor: AppColorsPalette.gray50,
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             )
           else ...[
-            const CommonFeatureCard(
+            CommonFeatureCard(
               icon: Icons.delete_sweep_outlined,
-              title: 'Originals could not be deleted\nautomatically',
+              title: l10n.originalsCouldNotBeDeletedTitle,
               backgroundColor: AppColorsPalette.gray50,
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             ),
             const SizedBox(height: 12),
             // Card 3: Next Step Required (highlighted black border)
@@ -157,7 +159,7 @@ class VaultImportCompleteView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Next Step Required',
+                          l10n.nextStepRequiredTitle,
                           style: AppTypography.bold.copyWith(
                             fontSize: 15,
                             color: AppColorsPalette.black,
@@ -165,7 +167,7 @@ class VaultImportCompleteView extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          'Open Photos or Gallery to delete\noriginals manually.',
+                          l10n.deleteOriginalsManuallyDesc,
                           style: AppTypography.regular.copyWith(
                             fontSize: 13.5,
                             color: AppColorsPalette.gray600,
@@ -197,7 +199,7 @@ class VaultImportCompleteView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'View Vault',
+                    l10n.viewVaultButton,
                     style: AppTypography.semiBold.copyWith(
                       fontSize: 15,
                       color: AppColorsPalette.white,
@@ -222,7 +224,7 @@ class VaultImportCompleteView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
               child: Text(
-                'Back to Vault Home',
+                l10n.backToVaultHomeLink,
                 style: AppTypography.bold.copyWith(
                   fontSize: 14,
                   color: AppColorsPalette.black,

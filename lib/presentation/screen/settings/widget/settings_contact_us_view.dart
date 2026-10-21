@@ -3,6 +3,7 @@ import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class SettingsContactUsView extends StatefulWidget {
   final VoidCallback onBack;
@@ -33,6 +34,7 @@ class _SettingsContactUsViewState extends State<SettingsContactUsView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -48,7 +50,7 @@ class _SettingsContactUsViewState extends State<SettingsContactUsView> {
                 const SizedBox(height: 12),
                 // Intro Description
                 Text(
-                  "We're here to help. Fill out the form below and\nour support team will get back to you as soon as\npossible.",
+                  l10n.contactUsIntro,
                   style: AppTypography.regular.copyWith(
                     fontSize: 15,
                     color: AppColorsPalette.gray600,
@@ -58,37 +60,37 @@ class _SettingsContactUsViewState extends State<SettingsContactUsView> {
                 const SizedBox(height: 24),
 
                 // Email Address Field
-                _buildFieldLabel('Email Address'),
+                _buildFieldLabel(l10n.emailAddressLabel),
                 const SizedBox(height: 8),
                 _buildTextField(
                   controller: _emailController,
-                  hintText: 'you@example.com',
+                  hintText: l10n.emailHint,
                   keyboardType: TextInputType.emailAddress,
                 ),
                 const SizedBox(height: 20),
 
                 // Subject Field
-                _buildFieldLabel('Subject'),
+                _buildFieldLabel(l10n.subjectLabel),
                 const SizedBox(height: 8),
                 _buildTextField(
                   controller: _subjectController,
-                  hintText: 'Brief summary of your issue',
+                  hintText: l10n.subjectHint,
                 ),
                 const SizedBox(height: 20),
 
                 // Message Field
-                _buildFieldLabel('Message'),
+                _buildFieldLabel(l10n.messageLabel),
                 const SizedBox(height: 8),
                 _buildTextField(
                   controller: _messageController,
-                  hintText: 'Describe your issue in detail...',
+                  hintText: l10n.messageHint,
                   maxLines: 5,
                 ),
                 const SizedBox(height: 16),
 
                 // Privacy Policy Disclaimer
                 Text(
-                  'By submitting this form, you agree to our Privacy Policy. We\nwill only use your email to respond to this request.',
+                  l10n.contactPrivacyDisclaimer,
                   style: AppTypography.regular.copyWith(
                     fontSize: 12,
                     color: AppColorsPalette.gray500,
@@ -99,7 +101,7 @@ class _SettingsContactUsViewState extends State<SettingsContactUsView> {
 
                 // Send message Button
                 CommonButton.filled(
-                  text: 'Send message',
+                  text: l10n.sendMessageButton,
                   height: 48,
                   cornerRadius: 10,
                   backgroundColor: AppColorsPalette.black,
@@ -110,9 +112,9 @@ class _SettingsContactUsViewState extends State<SettingsContactUsView> {
                   ),
                   onPressed: () {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Message sent to support team'),
-                        duration: Duration(seconds: 2),
+                      SnackBar(
+                        content: Text(l10n.messageSentSnackBar),
+                        duration: const Duration(seconds: 2),
                       ),
                     );
                     widget.onSubmitted();

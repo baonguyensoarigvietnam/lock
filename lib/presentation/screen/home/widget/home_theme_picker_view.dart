@@ -3,6 +3,7 @@ import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class HomeThemePickerView extends StatefulWidget {
   final VoidCallback onApplyTheme;
@@ -23,14 +24,17 @@ class HomeThemePickerView extends StatefulWidget {
 class _HomeThemePickerViewState extends State<HomeThemePickerView> {
   int _selectedIndex = 0;
 
-  static const List<String> _themeTitles = [
-    'Minimal',
-    'Classic PIN',
-    'Pattern',
-    'Vault',
-    'Focus',
-    'Premium Colors',
-  ];
+  List<String> _getThemeTitles(BuildContext context) {
+    final l10n = context.l10n;
+    return [
+      l10n.themeMinimal,
+      l10n.themeClassicPin,
+      l10n.themePattern,
+      l10n.themeVault,
+      l10n.themeFocus,
+      l10n.themePremiumColors,
+    ];
+  }
 
   void _onCardTap(int index) {
     if (index == 5) {
@@ -43,6 +47,8 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final themeTitles = _getThemeTitles(context);
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -57,7 +63,7 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
           GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: _themeTitles.length,
+            itemCount: themeTitles.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 14,
@@ -65,14 +71,14 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
               childAspectRatio: 0.66,
             ),
             itemBuilder: (context, index) {
-              return _buildThemeGridItem(index);
+              return _buildThemeGridItem(context, index, themeTitles[index]);
             },
           ),
           const SizedBox(height: 22),
 
           // Apply theme Button
           CommonButton.filled(
-            text: 'Apply theme',
+            text: l10n.applyThemeButton,
             height: 48,
             cornerRadius: 10,
             backgroundColor: AppColorsPalette.black,
@@ -95,9 +101,9 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
     );
   }
 
-  Widget _buildThemeGridItem(int index) {
+  Widget _buildThemeGridItem(BuildContext context, int index, String title) {
+    final l10n = context.l10n;
     final isSelected = _selectedIndex == index;
-    final title = _themeTitles[index];
 
     if (isSelected) {
       return GestureDetector(
@@ -223,7 +229,7 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Text(
-                          'PREMIUM',
+                          l10n.premiumBadge,
                           style: AppTypography.bold.copyWith(
                             fontSize: 9,
                             letterSpacing: 0.4,

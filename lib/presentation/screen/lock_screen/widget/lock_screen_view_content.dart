@@ -12,6 +12,7 @@ import 'package:applock/presentation/screen/lock_screen/widget/lock_screen_reset
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/enumeration/lock_screen_step.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class LockScreenViewContent extends StatefulWidget {
   final String? appName;
@@ -45,6 +46,16 @@ class _LockScreenViewContentState extends State<LockScreenViewContent> {
     if (lower.contains('setting')) return Icons.settings_outlined;
     if (lower.contains('contact')) return Icons.contact_page_outlined;
     return Icons.image_outlined;
+  }
+
+  String _resolveErrorMessage(BuildContext context, String? errorMessage) {
+    final l10n = context.l10n;
+    if (errorMessage == null) return l10n.enterPinToContinue;
+    if (errorMessage.contains('4')) return l10n.connectAtLeast4Dots;
+    if (errorMessage.toLowerCase().contains('pattern')) {
+      return l10n.incorrectPatternTryAgain;
+    }
+    return l10n.incorrectPinTryAgain;
   }
 
   @override
@@ -104,6 +115,7 @@ class _LockScreenViewContentState extends State<LockScreenViewContent> {
   }
 
   Widget _buildStepBody(BuildContext context, LockScreenState state) {
+    final l10n = context.l10n;
     switch (state.step) {
       case LockScreenStep.pin:
         return _buildPinUnlockBody(context, state);
@@ -111,7 +123,9 @@ class _LockScreenViewContentState extends State<LockScreenViewContent> {
         return _buildPatternUnlockBody(context, state);
       case LockScreenStep.biometric:
         return LockScreenBiometricView(
-          statusText: state.biometricStatusText,
+          statusText: state.biometricStatusText != null
+              ? l10n.biometricNotRecognized
+              : null,
           onRetryBiometric: () =>
               context.read<LockScreenViewModel>().authenticateWithBiometric(),
           onUsePinInstead: () =>
@@ -139,7 +153,8 @@ class _LockScreenViewContentState extends State<LockScreenViewContent> {
   }
 
   Widget _buildAppUnlockHeader(BuildContext context, LockScreenState state) {
-    final subtitleText = state.errorMessage ?? 'Enter your PIN to continue.';
+    final l10n = context.l10n;
+    final subtitleText = _resolveErrorMessage(context, state.errorMessage);
 
     return Column(
       children: [
@@ -171,7 +186,7 @@ class _LockScreenViewContentState extends State<LockScreenViewContent> {
         ),
         const SizedBox(height: 24),
         Text(
-          'Unlock ${state.targetAppName}',
+          l10n.unlockAppTitle(state.targetAppName),
           style: AppTypography.bold.copyWith(
             fontSize: 24,
             color: AppColorsPalette.black,
@@ -193,6 +208,7 @@ class _LockScreenViewContentState extends State<LockScreenViewContent> {
   }
 
   Widget _buildPinUnlockBody(BuildContext context, LockScreenState state) {
+    final l10n = context.l10n;
     return Column(
       children: [
         _buildAppUnlockHeader(context, state),
@@ -219,7 +235,7 @@ class _LockScreenViewContentState extends State<LockScreenViewContent> {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
             child: Text(
-              'Forgot PIN?',
+              l10n.forgotPinLink,
               style: AppTypography.medium.copyWith(
                 fontSize: 14,
                 color: AppColorsPalette.gray600,
@@ -233,6 +249,7 @@ class _LockScreenViewContentState extends State<LockScreenViewContent> {
   }
 
   Widget _buildPatternUnlockBody(BuildContext context, LockScreenState state) {
+    final l10n = context.l10n;
     return Column(
       children: [
         _buildAppUnlockHeader(context, state),
@@ -282,7 +299,7 @@ class _LockScreenViewContentState extends State<LockScreenViewContent> {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
             child: Text(
-              'Forgot Pattern?',
+              l10n.forgotPatternLink,
               style: AppTypography.medium.copyWith(
                 fontSize: 14,
                 color: AppColorsPalette.gray600,

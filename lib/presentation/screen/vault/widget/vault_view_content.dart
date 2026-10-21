@@ -15,6 +15,7 @@ import 'package:applock/presentation/screen/vault/widget/vault_videos_detail_vie
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/enumeration/vault_step.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class VaultViewContent extends StatelessWidget {
   const VaultViewContent({super.key});
@@ -113,8 +114,8 @@ class VaultViewContent extends StatelessWidget {
 
   Widget _buildMainVaultOverview(BuildContext context, {required bool isEmpty}) {
     final vm = context.read<VaultViewModel>();
-    final protectedItemsText =
-        isEmpty ? '0/100 items protected' : '48/100 items protected';
+    final l10n = context.l10n;
+    final protectedItemsText = l10n.itemsProtectedCount(isEmpty ? 0 : 48);
 
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
@@ -173,7 +174,7 @@ class VaultViewContent extends StatelessWidget {
                       ),
                       const SizedBox(width: 6),
                       Text(
-                        'Encrypted on this device',
+                        l10n.encryptedOnThisDevice,
                         style: AppTypography.regular.copyWith(
                           fontSize: 13,
                           color: AppColorsPalette.gray500,
@@ -189,7 +190,7 @@ class VaultViewContent extends StatelessWidget {
 
           // Quick Actions Header
           Text(
-            'Quick actions',
+            l10n.quickActionsSmallTitle,
             style: AppTypography.bold.copyWith(
               fontSize: 16,
               color: AppColorsPalette.black,
@@ -203,7 +204,7 @@ class VaultViewContent extends StatelessWidget {
               Expanded(
                 child: _buildQuickActionButton(
                   icon: Icons.add_photo_alternate_outlined,
-                  label: 'Add\nPhotos',
+                  label: l10n.addPhotosAction,
                   isFilled: true,
                   onTap: () => vm.openImport(tabIndex: 0),
                 ),
@@ -212,7 +213,7 @@ class VaultViewContent extends StatelessWidget {
               Expanded(
                 child: _buildQuickActionButton(
                   icon: Icons.movie_creation_outlined,
-                  label: 'Import\nVideos',
+                  label: l10n.importVideosAction,
                   isFilled: false,
                   onTap: () => vm.openImport(tabIndex: 1),
                 ),
@@ -221,7 +222,7 @@ class VaultViewContent extends StatelessWidget {
               Expanded(
                 child: _buildQuickActionButton(
                   icon: Icons.create_new_folder_outlined,
-                  label: 'Create\nAlbum',
+                  label: l10n.createAlbumAction,
                   isFilled: false,
                   onTap: () => vm.setStep(VaultStep.albums),
                 ),
@@ -232,7 +233,7 @@ class VaultViewContent extends StatelessWidget {
 
           // Albums Section Header
           Text(
-            'Albums',
+            l10n.albumsHeader,
             style: AppTypography.bold.copyWith(
               fontSize: 16,
               color: AppColorsPalette.black,
@@ -241,9 +242,9 @@ class VaultViewContent extends StatelessWidget {
           const SizedBox(height: 14),
 
           if (isEmpty)
-            _buildEmptyVaultState()
+            _buildEmptyVaultState(context)
           else
-            _buildAlbumsGrid(vm),
+            _buildAlbumsGrid(context, vm),
 
           const SizedBox(height: 24),
         ],
@@ -301,7 +302,8 @@ class VaultViewContent extends StatelessWidget {
     );
   }
 
-  Widget _buildEmptyVaultState() {
+  Widget _buildEmptyVaultState(BuildContext context) {
+    final l10n = context.l10n;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Center(
@@ -359,7 +361,7 @@ class VaultViewContent extends StatelessWidget {
             ),
             const SizedBox(height: 22),
             Text(
-              'Your vault is empty',
+              l10n.vaultEmptyTitle,
               textAlign: TextAlign.center,
               style: AppTypography.bold.copyWith(
                 fontSize: 20,
@@ -368,7 +370,7 @@ class VaultViewContent extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              'Import photos and videos to keep them\nencrypted on this device.',
+              l10n.vaultEmptySubtitle,
               textAlign: TextAlign.center,
               style: AppTypography.regular.copyWith(
                 fontSize: 14,
@@ -382,7 +384,8 @@ class VaultViewContent extends StatelessWidget {
     );
   }
 
-  Widget _buildAlbumsGrid(VaultViewModel vm) {
+  Widget _buildAlbumsGrid(BuildContext context, VaultViewModel vm) {
+    final l10n = context.l10n;
     return GridView.count(
       crossAxisCount: 2,
       shrinkWrap: true,
@@ -392,26 +395,26 @@ class VaultViewContent extends StatelessWidget {
       childAspectRatio: 0.78,
       children: [
         VaultAlbumCard(
-          title: 'Private Photos',
-          subtitle: '24 items',
+          title: l10n.albumPrivatePhotos,
+          subtitle: l10n.vaultAlbumItemsCount(24),
           highlightedCellIndex: 2,
           onTap: () => vm.setStep(VaultStep.photosDetail),
         ),
         VaultAlbumCard(
-          title: 'Videos',
-          subtitle: '6 items',
+          title: l10n.albumVideos,
+          subtitle: l10n.vaultAlbumItemsCount(6),
           highlightedCellIndex: 3,
           onTap: () => vm.setStep(VaultStep.videosDetail),
         ),
         VaultAlbumCard(
-          title: 'Galleries',
-          subtitle: '8 items',
+          title: l10n.albumGalleries,
+          subtitle: l10n.vaultAlbumItemsCount(8),
           highlightedCellIndex: 0,
           onTap: () => vm.setStep(VaultStep.photosDetail),
         ),
         VaultAlbumCard(
-          title: 'Screenshots',
-          subtitle: '10 items',
+          title: l10n.albumScreenshots,
+          subtitle: l10n.vaultAlbumItemsCount(10),
           highlightedCellIndex: 1,
           onTap: () => vm.setStep(VaultStep.photosDetail),
         ),

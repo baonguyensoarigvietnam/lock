@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/dialog_utility.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 /// Shared bottom toolbar (Restore | Delete | Info) for Vault photo and video viewers.
 class CommonMediaViewerBottomBar extends StatelessWidget {
@@ -35,7 +36,7 @@ class CommonMediaViewerBottomBar extends StatelessWidget {
         children: [
           _buildActionItem(
             icon: Icons.restore_rounded,
-            label: 'Restore',
+            label: context.l10n.restoreAction,
             onTap: () {
               DialogUtility.showRestoreToGalleryBottomSheet(
                 context: context,
@@ -45,7 +46,7 @@ class CommonMediaViewerBottomBar extends StatelessWidget {
           ),
           _buildActionItem(
             icon: Icons.delete_outline_rounded,
-            label: 'Delete',
+            label: context.l10n.deleteAction,
             onTap: () {
               DialogUtility.showDeleteFromVaultBottomSheet(
                 context: context,
@@ -55,7 +56,7 @@ class CommonMediaViewerBottomBar extends StatelessWidget {
           ),
           _buildActionItem(
             icon: Icons.info_outline_rounded,
-            label: 'Info',
+            label: context.l10n.infoAction,
             onTap: onInfo,
           ),
         ],

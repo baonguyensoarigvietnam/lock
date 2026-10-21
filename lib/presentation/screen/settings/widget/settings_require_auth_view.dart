@@ -4,6 +4,7 @@ import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/common/widget/common_option_selector_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class SettingsRequireAuthView extends StatefulWidget {
   final String currentDelay;
@@ -23,7 +24,7 @@ class SettingsRequireAuthView extends StatefulWidget {
 }
 
 class _SettingsRequireAuthViewState extends State<SettingsRequireAuthView> {
-  static const List<String> _delayOptions = [
+  static const List<String> _delayKeys = [
     'Immediately',
     'After 15 seconds',
     'After 30 seconds',
@@ -31,10 +32,21 @@ class _SettingsRequireAuthViewState extends State<SettingsRequireAuthView> {
     'When screen turns off',
   ];
 
-  late String _selectedDelay = widget.currentDelay;
+  late int _selectedIndex = _delayKeys
+      .indexOf(widget.currentDelay)
+      .clamp(0, _delayKeys.length - 1);
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final localizedOptions = [
+      l10n.delayImmediately,
+      l10n.delay15Seconds,
+      l10n.delay30Seconds,
+      l10n.delay1Minute,
+      l10n.delayScreenOff,
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -50,7 +62,7 @@ class _SettingsRequireAuthViewState extends State<SettingsRequireAuthView> {
                 const SizedBox(height: 12),
                 // Title
                 Text(
-                  'Require Authentication',
+                  l10n.requireAuthenticationTitle,
                   style: AppTypography.bold.copyWith(
                     fontSize: 22,
                     color: AppColorsPalette.black,
@@ -60,7 +72,7 @@ class _SettingsRequireAuthViewState extends State<SettingsRequireAuthView> {
 
                 // Subtitle
                 Text(
-                  'Choose how quickly the app locks after you\nleave it. Shorter delays provide stronger privacy\nprotection.',
+                  l10n.requireAuthenticationSubtitle,
                   style: AppTypography.regular.copyWith(
                     fontSize: 14,
                     color: AppColorsPalette.gray500,
@@ -71,19 +83,22 @@ class _SettingsRequireAuthViewState extends State<SettingsRequireAuthView> {
 
                 // Options Group Card
                 CommonOptionSelectorCard(
-                  options: _delayOptions,
-                  selectedOption: _selectedDelay,
+                  options: localizedOptions,
+                  selectedOption: localizedOptions[_selectedIndex],
                   onSelect: (option) {
-                    setState(() {
-                      _selectedDelay = option;
-                    });
+                    final idx = localizedOptions.indexOf(option);
+                    if (idx != -1) {
+                      setState(() {
+                        _selectedIndex = idx;
+                      });
+                    }
                   },
                 ),
                 const SizedBox(height: 28),
 
                 // Save Button
                 CommonButton.filled(
-                  text: 'Save',
+                  text: l10n.saveButton,
                   height: 48,
                   cornerRadius: 10,
                   backgroundColor: AppColorsPalette.black,
@@ -93,7 +108,7 @@ class _SettingsRequireAuthViewState extends State<SettingsRequireAuthView> {
                     color: AppColorsPalette.white,
                   ),
                   onPressed: () {
-                    widget.onSave(_selectedDelay);
+                    widget.onSave(_delayKeys[_selectedIndex]);
                   },
                 ),
                 const SizedBox(height: 24),

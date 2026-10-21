@@ -4,6 +4,8 @@ import 'package:applock/application/view_model/global_view_model_state.dart';
 import 'package:applock/domain/repository/app_lock_repository.dart';
 import 'package:applock/presentation/common/base/base_view_model.dart';
 import 'package:applock/service/permission/permission_service.dart';
+import 'package:applock/utility/enumeration/app_language.dart';
+import 'package:applock/utility/helper/result.dart';
 
 @lazySingleton
 class GlobalViewModel extends BaseCubit<GlobalViewModelState> {
@@ -15,23 +17,38 @@ class GlobalViewModel extends BaseCubit<GlobalViewModelState> {
 
   Future<void> init() async {
     final configResult = await _repository.getLockConfig();
+    final langResult = await _repository.getLanguageCode();
     final isOverlay = await _permissionService.isOverlayPermissionGranted();
+
+    var savedLocale = state.locale;
+    if (langResult is Success<String>) {
+      savedLocale = AppLanguage.fromCode(langResult.data).locale;
+    }
 
     configResult.when(
       success: (config) {
         emit(state.copyWith(
+          locale: savedLocale,
           lockConfig: config,
           isOverlayGranted: isOverlay,
         ));
       },
       error: (_) {
-        emit(state.copyWith(isOverlayGranted: isOverlay));
+        emit(state.copyWith(
+          locale: savedLocale,
+          isOverlayGranted: isOverlay,
+        ));
       },
     );
   }
 
-  void setLocale(Locale locale) {
+  Future<void> setLocale(Locale locale) async {
     emit(state.copyWith(locale: locale));
+    await _repository.saveLanguageCode(locale.languageCode);
+  }
+
+  Future<void> setLanguage(AppLanguage language) async {
+    await setLocale(language.locale);
   }
 
   Future<void> refreshPermissions() async {

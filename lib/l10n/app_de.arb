@@ -1,0 +1,407 @@
+{
+  "@@locale": "de",
+  "appTitle": "AppLock",
+  "appLockTitle": "App-Sperre",
+  "continueButton": "Weiter",
+  "getStartedButton": "Loslegen",
+  "skipButton": "Überspringen",
+  "cancelButton": "Abbrechen",
+  "saveButton": "Speichern",
+  "doneButton": "Fertig",
+  "resetButton": "Zurücksetzen",
+  "restoreAction": "Wiederherstellen",
+  "deleteAction": "Löschen",
+  "infoAction": "Info",
+  "selectAction": "Auswählen",
+  "selectAllAction": "Alle auswählen",
+  "seeAllAction": "Alle ansehen",
+  "navHome": "Start",
+  "navApps": "Apps",
+  "navVault": "Tresor",
+  "navAlerts": "Warnungen",
+  "navSettings": "Einstellungen",
+  "splashSubtitle": "Schützen Sie Ihre privaten Inhalte",
+  "onboardingStep1Title": "Schützen Sie Ihre Privatsphäre",
+  "onboardingStep1Desc": "Schützen Sie private Fotos, Videos und sensible Zugriffe auf diesem Gerät.",
+  "onboardingStep2Title": "Nur lokaler Schutz",
+  "onboardingStep2Subtitle": "Ihre Daten verlassen niemals Ihr Gerät.",
+  "onboardingNoAccountTitle": "Kein Konto",
+  "onboardingNoAccountDesc": "Wir fragen weder nach E-Mail noch Telefonnummer, um die App zu nutzen.",
+  "onboardingNoCloudTitle": "Keine Cloud-Synchronisierung",
+  "onboardingNoCloudDesc": "Ihre Daten werden niemals auf externe Server oder Clouds hochgeladen.",
+  "onboardingNoRecoveryTitle": "Keine Server-Wiederherstellung",
+  "onboardingNoRecoveryDesc": "Wenn Sie Ihre PIN verlieren, können wir Ihre Daten nicht wiederherstellen.",
+  "onboardingVaultStaysTitle": "Tresor-Dateien bleiben hier",
+  "onboardingVaultStaysDesc": "Alles im Tresor bleibt ausschließlich auf diesem Gerät gespeichert.",
+  "unlockMethodTitle": "Entsperrmethode einrichten",
+  "unlockMethodSubtitle": "Wählen Sie, wie Sie Ihre privaten Inhalte entsperren möchten.",
+  "createPinTitle": "PIN erstellen",
+  "createPinSubtitle": "4- bis 8-stelliger Zahlencode",
+  "drawPatternTitle": "Muster zeichnen",
+  "drawPatternSubtitle": "Mindestens 4 Punkte verbinden",
+  "unlockMethodWarning": "Gut aufbewahren. Tresordaten können nicht wiederhergestellt werden, wenn Sie ihn vergessen und Biometrie nicht verfügbar ist.",
+  "createYourPinTitle": "Erstellen Sie Ihre PIN",
+  "confirmYourPinTitle": "Bestätigen Sie Ihre PIN",
+  "changePasscodeTitle": "Passcode ändern",
+  "confirmYourPasscodeTitle": "Bestätigen Sie Ihren Passcode",
+  "usePinToAccessSubtitle": "Verwenden Sie diese PIN für den Zugriff auf geschützte Inhalte.",
+  "reEnterPinSubtitle": "Geben Sie Ihre PIN zur Bestätigung erneut ein.",
+  "reEnterPinShort": "PIN erneut eingeben.",
+  "pinDoesNotMatchError": "PIN stimmt nicht überein.",
+  "usePatternInstead": "Stattdessen Muster verwenden",
+  "usePinInstead": "Stattdessen PIN verwenden",
+  "drawUnlockPatternTitle": "Entsperrmuster zeichnen",
+  "confirmYourPatternTitle": "Bestätigen Sie Ihr Muster",
+  "connectAtLeast4Dots": "Verbinden Sie mindestens 4 Punkte.",
+  "drawPatternAgainConfirm": "Zeichnen Sie Ihr Muster zur Bestätigung erneut.",
+  "patternDoesNotMatchError": "Muster stimmt nicht überein",
+  "enableBiometricTitle": "Biometrisches Fallback aktivieren",
+  "enableBiometricSubtitle": "Nutzen Sie Fingerabdruck oder Gesichtsscan Ihres Geräts, um bei Bedarf wieder Zugriff zu erhalten.",
+  "fasterUnlockTitle": "Schnelleres Entsperren",
+  "fasterUnlockSubtitle": "Schneller Zugriff auf Ihren Tresor ohne Tippen.",
+  "usesDeviceSecurityTitle": "Nutzt die Gerätesicherheit",
+  "usesDeviceSecuritySubtitle": "Verwendet die integrierte Biometrie-Hardware.",
+  "helpsForgetPinTitle": "Hilft bei vergessener PIN",
+  "helpsForgetPinSubtitle": "Ein sicherer alternativer Weg zurück in die App.",
+  "biometricInfoNote": "Das biometrische Fallback funktioniert nur, wenn es vor dem Vergessen der PIN aktiviert wurde.",
+  "enableBiometricButton": "Biometrie aktivieren",
+  "setUpPermissionsTitle": "Berechtigungen einrichten",
+  "permissionGuideSubtitle": "Aktivieren Sie die erforderlichen Berechtigungen für App-Sperre, Tresor und Warnungen. Optionale Funktionen können später aktiviert werden.",
+  "usageAccessTitle": "Nutzungszugriff",
+  "usageAccessDesc": "Erkennt das Öffnen ausgewählter Apps, um den Entsperrbildschirm anzuzeigen.",
+  "displayOverOtherAppsTitle": "Über anderen Apps einblenden",
+  "displayOverOtherAppsDesc": "Zeigt den Entsperrbildschirm zuverlässig über geschützten Apps an.",
+  "notificationsTitle": "Benachrichtigungen",
+  "notificationsDesc": "Zeigt Schutzstatus, Sicherheitswarnungen und Berechtigungshinweise an.",
+  "photosAndVideosTitle": "Fotos und Videos",
+  "photosAndVideosDesc": "Wählen Sie Medien zum Importieren in Ihren verschlüsselten Tresor aus.",
+  "cameraTitle": "Kamera",
+  "cameraDesc": "Macht nach 3 fehlgeschlagenen Entsperrversuchen ein Foto mit der Frontkamera.",
+  "badgeRequired": "ERFORDERLICH",
+  "badgeRecommended": "EMPFOHLEN",
+  "badgeVault": "TRESOR",
+  "badgeIntruder": "EINDRINGLING",
+  "upgradeToPremium": "Auf Premium upgraden",
+  "paywallSubtitle": "Schalten Sie weitere Themen frei und entfernen Sie Werbung.",
+  "paywallFeatureThemes": "Zukünftige Premium-Themen",
+  "paywallFeatureVault": "Unbegrenzter Tresor",
+  "paywallFeatureAlerts": "Vollständiger Warnungsverlauf",
+  "paywallFeatureNoAds": "Keine Werbung",
+  "monthlyPlanTitle": "Monatlich",
+  "monthlyPlanSubtitle": "Monatliche Abrechnung",
+  "yearlyPlanTitle": "Jährlich",
+  "yearlyPlanSubtitle": "Jährliche Abrechnung",
+  "save40Badge": "40% SPAREN",
+  "wasPrice": "vorher {price}",
+  "@wasPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "startPremiumButton": "Premium starten",
+  "restorePurchases": "Käufe wiederherstellen",
+  "termsLink": "AGB",
+  "privacyPolicyLink": "Datenschutzrichtlinie",
+  "unlockAppTitle": "{appName} entsperren",
+  "@unlockAppTitle": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "enterPinToContinue": "Geben Sie Ihre PIN ein, um fortzufahren.",
+  "incorrectPinTryAgain": "Falsche PIN. Bitte erneut versuchen.",
+  "incorrectPatternTryAgain": "Falsches Muster. Bitte erneut versuchen.",
+  "forgotPinLink": "PIN vergessen?",
+  "forgotPatternLink": "Muster vergessen?",
+  "useBiometricUnlockTitle": "Biometrisches Entsperren verwenden",
+  "unlockWithDeviceAuthSubtitle": "Mit Geräteauthentifizierung entsperren.",
+  "biometricNotRecognized": "BIOMETRIE NICHT ERKANNT",
+  "recoverAccessTitle": "Zugriff wiederherstellen",
+  "useBiometricFallbackCardTitle": "Biometrisches Fallback nutzen",
+  "useBiometricFallbackCardDesc": "Authentifizieren Sie sich biometrisch und erstellen Sie dann eine neue PIN oder ein Muster.",
+  "authenticateButton": "Authentifizieren",
+  "vaultCannotBeRecoveredTitle": "Tresor nicht wiederherstellbar",
+  "vaultCannotBeRecoveredDesc": "Ohne PIN, Muster oder biometrisches Fallback können verschlüsselte Tresordaten nicht wiederhergestellt werden.",
+  "resetAppSecurityButton": "App-Sicherheit zurücksetzen",
+  "backToUnlockLink": "Zurück zum Entsperren",
+  "resetSecurityQuestionTitle": "Sicherheit zurücksetzen?",
+  "resetSecurityWarningDesc": "Dadurch wird der Schlüsselumschlag gelöscht.\nVerschlüsselte Tresordaten sind danach nicht mehr\nzugänglich.",
+  "resetSecurityConfirmCheckbox": "Ich verstehe, dass dies nicht rückgängig\ngemacht werden kann",
+  "statusActive": "AKTIV",
+  "statusIdle": "INAKTIV",
+  "appsProtectedLabel": "Geschützte Apps",
+  "vaultItemsLabel": "Tresor-Elemente",
+  "intruderAlertsLabel": "Eindringlingswarnungen",
+  "biometricFallbackLabel": "Biometrisches Fallback",
+  "quickActionsTitle": "Schnellaktionen",
+  "lockAppsAction": "Apps sperren",
+  "themesAction": "Themen",
+  "promoBannerTitle": "ALLE FUNKTIONEN FREISCHALTEN",
+  "promoBannerSubtitle": "Unbegrenzte Themen, werbefrei und vieles mehr.",
+  "themeMinimal": "Minimal",
+  "themeClassicPin": "Klassische PIN",
+  "themePattern": "Muster",
+  "themeVault": "Tresor",
+  "themeFocus": "Fokus",
+  "themePremiumColors": "Premium-Farben",
+  "premiumBadge": "PREMIUM",
+  "applyThemeButton": "Thema anwenden",
+  "themeAppliedTitle": "Thema angewendet",
+  "themeAppliedSubtitle": "Ihre Sperrbildschirme verwenden jetzt das\nausgewählte Thema.",
+  "premiumColorPreviewTitle": "Premium-Farbvorschau",
+  "premiumThemesSubscriptionNote": "Premium-Themen sind mit einem Abonnement verfügbar.",
+  "backToThemesButton": "Zurück zu Themen",
+  "lockedAppsHeader": "Gesperrte Apps",
+  "protectedAppsCount": "{count} geschützte Apps",
+  "@protectedAppsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchAppsHint": "Apps suchen...",
+  "filterAll": "Alle",
+  "filterCategories": "Kategorien",
+  "filterLocked": "Gesperrt",
+  "categoryChipLabel": "Kategorie: {category}",
+  "@categoryChipLabel": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "noLockedAppsFound": "Keine gesperrten Apps gefunden",
+  "noAppsFound": "Keine Apps gefunden",
+  "categorySocial": "Soziale Netzwerke",
+  "categoryMessaging": "Messaging",
+  "categoryPhotosVideo": "Fotos & Videos",
+  "categoryFinance": "Finanzen",
+  "categoryShopping": "Shopping",
+  "categorySystem": "System",
+  "categoryAppsBullet": "{count} Apps • ",
+  "@categoryAppsBullet": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryProtectedCount": "{count} geschützt",
+  "@categoryProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "usageAccessRequiredTitle": "Nutzungszugriff erforderlich",
+  "usageAccessRequiredDesc": "Aktivieren Sie den Nutzungszugriff, um ausgewählte\nApps zu schützen.",
+  "enableUsageAccessButton": "Nutzungszugriff aktivieren",
+  "protectionMayBeLimitedTitle": "Schutz möglicherweise eingeschränkt",
+  "protectionMayBeLimitedDesc": "Damit App-Sperre zuverlässig im Hintergrund arbeitet, überprüfen Sie bitte folgende Android-Systemeinstellungen.",
+  "displayOverOtherAppsWarningDesc": "Erforderlich, um den Sperrbildschirm über geschützten Apps anzuzeigen.",
+  "statusDisabled": "Deaktiviert",
+  "batteryOptimizationTitle": "Akku-Optimierung",
+  "batteryOptimizationDesc": "Android kann die App im Hintergrund beenden. Deaktivieren Sie die Optimierung für dauerhaften Schutz.",
+  "statusRestricted": "Eingeschränkt",
+  "fixPermissionsButton": "Berechtigungen korrigieren",
+  "continueWithLimitedProtectionButton": "Mit eingeschränktem Schutz fortfahren",
+  "itemsProtectedCount": "{count}/100 Elemente geschützt",
+  "@itemsProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "encryptedOnThisDevice": "Auf diesem Gerät verschlüsselt",
+  "quickActionsSmallTitle": "Schnellaktionen",
+  "addPhotosAction": "Fotos\nhinzufügen",
+  "importVideosAction": "Videos\nimportieren",
+  "createAlbumAction": "Album\nerstellen",
+  "albumsHeader": "Alben",
+  "vaultEmptyTitle": "Ihr Tresor ist leer",
+  "vaultEmptySubtitle": "Importieren Sie Fotos und Videos, um sie\nauf diesem Gerät verschlüsselt aufzubewahren.",
+  "albumPrivatePhotos": "Private Fotos",
+  "albumVideos": "Videos",
+  "albumGalleries": "Galerien",
+  "albumScreenshots": "Screenshots",
+  "albumPhotos": "Fotos",
+  "vaultAlbumItemsCount": "{count} Elemente",
+  "@vaultAlbumItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultItemsProtectedSubtitle": "{count} Elemente • Geschützt",
+  "@vaultItemsProtectedSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importToVaultTitle": "In Tresor importieren",
+  "todaySection": "Heute",
+  "september12Section": "12. September",
+  "selectedCountLabel": "{count} ausgewählt",
+  "@selectedCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "totalSizeMbLabel": "{size} MB insgesamt",
+  "@totalSizeMbLabel": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "moveToVaultButton": "In Tresor verschieben",
+  "encryptingItemsTitle": "Ausgewählte Elemente werden verschlüsselt...",
+  "filesProcessedProgress": "{processed} von {total} Dateien verarbeitet",
+  "@filesProcessedProgress": {
+    "placeholders": {
+      "processed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "keepAppOpenWarning": "Lassen Sie die App geöffnet, bis der Import abgeschlossen ist.",
+  "importCompleteTitle": "Import abgeschlossen",
+  "importCompleteSubtitle": "Ihre Daten sind nun gesichert und verschlüsselt.",
+  "itemsEncryptedTitle": "{count} Elemente verschlüsselt",
+  "@itemsEncryptedTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aes256Subtitle": "AES-256 Militärstandard",
+  "originalsDeletedTitle": "Originale gelöscht",
+  "spaceRecoveredSubtitle": "Freigegebener Speicher: 124 MB",
+  "originalsCouldNotBeDeletedTitle": "Originale konnten nicht automatisch\ngelöscht werden",
+  "nextStepRequiredTitle": "Nächster Schritt erforderlich",
+  "deleteOriginalsManuallyDesc": "Öffnen Sie Fotos oder Galerie, um\nOriginale manuell zu löschen.",
+  "viewVaultButton": "Tresor ansehen",
+  "backToVaultHomeLink": "Zurück zur Tresor-Startseite",
+  "fileInfoTitle": "Datei-Info",
+  "protectedBadge": "Geschützt",
+  "propertiesHeader": "Eigenschaften",
+  "propertyName": "Name",
+  "propertyType": "Typ",
+  "propertySize": "Größe",
+  "propertyImportedDate": "Importdatum",
+  "propertyEncryptionStatus": "Verschlüsselungsstatus",
+  "intruderSelfieOffTitle": "Eindringlings-Selfie ist aus",
+  "intruderSelfieOffSubtitle": "Aktivieren, um nach 3 fehlgeschlagenen\nEntsperrversuchen ein Foto aufzunehmen.",
+  "secureLogsTitle": "Sichere Protokolle",
+  "secureLogsSubtitle": "Datum, Uhrzeit und Foto unbefugter\nZugriffsversuche ansehen.",
+  "stealthCaptureTitle": "Heimliche Aufnahme",
+  "stealthCaptureSubtitle": "Die Frontkamera nimmt das Foto\ngeräuschlos auf.",
+  "enableIntruderSelfieButton": "Eindringlings-Selfie aktivieren",
+  "cameraPermissionDeniedTitle": "Kameraberechtigung verweigert",
+  "cameraPermissionDeniedSubtitle": "Eindringlingsereignisse können weiterhin\nohne Foto protokolliert werden.",
+  "intruderLoggingTitle": "Eindringlings-Protokollierung",
+  "intruderLoggingSubtitle": "Uhrzeit, Datum und versuchte PINs werden weiterhin\nin Ihrem Sicherheitstresor gespeichert.",
+  "privacyFirstTitle": "Privatsphäre zuerst",
+  "privacyFirstSubtitle": "Ohne Ihre ausdrückliche Kameraberechtigung werden\nkeine Fotos aufgenommen oder gespeichert.",
+  "openSettingsButton": "Einstellungen öffnen",
+  "statusSummaryTitle": "Statusübersicht",
+  "failedUnlockAttemptsToday": "Heute 2 fehlgeschlagene Entsperrversuche",
+  "alertsSavedPremium": "11 Warnungen gespeichert",
+  "alertsSavedFree": "2 von 10 Warnungen gespeichert",
+  "failedMethodLabel": "Fehlgeschlagene Methode: {method}",
+  "@failedMethodLabel": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  },
+  "viewDetailsAction": "Details ansehen",
+  "keepFullAlertHistoryTitle": "Vollständigen Warnungsverlauf behalten",
+  "keepFullAlertHistoryDesc": "Kostenlose Nutzer sehen nur die letzten 10\nWarnungen. Für unbegrenzte Speicherung upgraden.",
+  "alertDetailTitle": "Warnungsdetails",
+  "noPhotoCapturedTitle": "Kein Foto aufgenommen",
+  "noPhotoCapturedDesc": "Das Sicherheitssystem konnte die Kamera\nwährend dieses Ereignisses nicht\ninitialisieren.",
+  "eventSummaryHeader": "EREIGNISÜBERSICHT",
+  "highAlertBadge": "Hohe Warnstufe",
+  "captureAnalysisTitle": "Aufnahmeanalyse",
+  "attemptedContextLabel": "Versuchter Kontext",
+  "failedMethodRowLabel": "Fehlgeschlagene Methode",
+  "failedCountLabel": "Fehlversuche",
+  "dateTimeLabel": "Datum/Uhrzeit",
+  "platformLabel": "Plattform",
+  "deviceModelLabel": "Gerätemodell",
+  "saveEvidenceButton": "Beweis sichern",
+  "enableCameraPermissionButton": "Kameraberechtigung aktivieren",
+  "evidenceSavedSnackBar": "Beweis auf dem Gerät gespeichert",
+  "deleteAlertButton": "Warnung löschen",
+  "settingsTitle": "Einstellungen",
+  "settingsSubtitle": "Verwalten Sie Ihre App-Einstellungen.",
+  "freePlanTitle": "Kostenloser Tarif",
+  "freeBadge": "KOSTENLOS",
+  "freePlanDesc": "Upgraden Sie auf Premium für erweiterte\nSicherheitsfunktionen.",
+  "securitySectionHeader": "Sicherheit",
+  "biometricUnlockTitle": "Biometrische Entsperrung",
+  "biometricUnlockSubtitle": "Face ID / Touch ID verwenden",
+  "autoLockDelayTitle": "Automatische Sperrverzögerung",
+  "helpAndSupportHeader": "Hilfe & Support",
+  "languagesTitle": "Sprachen",
+  "contactUsTitle": "Kontakt",
+  "termsOfServiceTitle": "Nutzungsbedingungen",
+  "requireAuthenticationTitle": "Authentifizierung anfordern",
+  "requireAuthenticationSubtitle": "Wählen Sie, wie schnell die App nach dem Verlassen sperrt.\nKürzere Zeiten bieten stärkeren Schutz Ihrer\nPrivatsphäre.",
+  "delayImmediately": "Sofort",
+  "delay15Seconds": "Nach 15 Sekunden",
+  "delay30Seconds": "Nach 30 Sekunden",
+  "delay1Minute": "Nach 1 Minute",
+  "delayScreenOff": "Wenn der Bildschirm ausgeht",
+  "settingLanguagesTitle": "Spracheinstellungen",
+  "settingLanguagesSubtitle": "Wählen Sie Ihre bevorzugte Sprache für die Oberfläche\nund die Dokumentenerkennung.",
+  "langEnglish": "Englisch (English)",
+  "langVietnamese": "Vietnamesisch (Vietnamese)",
+  "langSpanish": "Spanisch (Spanish)",
+  "langFrench": "Französisch (French)",
+  "langGerman": "Deutsch",
+  "langJapanese": "Japanisch (Japanese)",
+  "langChinese": "Chinesisch (Chinese)",
+  "contactUsIntro": "Wir helfen gerne. Füllen Sie das Formular unten aus und\nunser Support-Team meldet sich schnellstmöglich\nbei Ihnen.",
+  "emailAddressLabel": "E-Mail-Adresse",
+  "emailHint": "sie@beispiel.de",
+  "subjectLabel": "Betreff",
+  "subjectHint": "Kurze Zusammenfassung Ihres Anliegens",
+  "messageLabel": "Nachricht",
+  "messageHint": "Beschreiben Sie Ihr Problem im Detail...",
+  "contactPrivacyDisclaimer": "Mit dem Absenden stimmen Sie unserer Datenschutzrichtlinie zu. Wir\nverwenden Ihre E-Mail nur zur Beantwortung dieser Anfrage.",
+  "sendMessageButton": "Nachricht senden",
+  "messageSentSnackBar": "Nachricht an das Support-Team gesendet",
+  "biometricNotSupportedError": "Gerät unterstützt keine Biometrie oder ist nicht eingerichtet",
+  "deleteOriginalsDialogTitle": "Originale löschen?",
+  "deleteOriginalsDialogDesc": "Nach dem Import kann die App das Betriebssystem bitten, die Originaldateien zu löschen.",
+  "importAndDeleteOriginalsButton": "Importieren und Originale löschen",
+  "importOnlyButton": "Nur importieren",
+  "restoreToGalleryDialogTitle": "In Galerie wiederherstellen?",
+  "restoreToGalleryDialogDesc": "Eine entschlüsselte Kopie wird über das Betriebssystem gespeichert. Temporäre Dateien werden danach bereinigt.",
+  "deleteFromVaultDialogTitle": "Aus Tresor löschen?",
+  "deleteFromVaultDialogDesc": "Dadurch wird die verschlüsselte Tresorkopie von diesem Gerät entfernt.",
+  "deletePermanentlyButton": "Dauerhaft löschen",
+  "deleteAlertDialogTitle": "Warnung löschen?",
+  "deleteAlertDialogDesc": "Dadurch werden das Eindringlingsfoto und das Ereignisprotokoll von diesem Gerät entfernt."
+}

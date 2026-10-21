@@ -8,12 +8,14 @@ import 'package:applock/presentation/screen/set_passcode/view_model/set_passcode
 import 'package:applock/presentation/screen/set_passcode/view_model/set_passcode_view_model.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class SetPasscodeViewContent extends StatelessWidget {
   const SetPasscodeViewContent({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return BlocListener<SetPasscodeViewModel, SetPasscodeState>(
       listenWhen: (previous, current) =>
           !previous.isCompleted && current.isCompleted,
@@ -44,13 +46,14 @@ class SetPasscodeViewContent extends StatelessWidget {
                   final isConfirm = state.step == SetPasscodeStep.confirm;
                   final hasError = state.validationError != null;
 
-                  final String title =
-                      isConfirm ? 'Confirm your PIN' : 'Create your PIN';
+                  final String title = isConfirm
+                      ? l10n.confirmYourPinTitle
+                      : l10n.createYourPinTitle;
                   final String subtitle = hasError
-                      ? state.validationError!
+                      ? l10n.pinDoesNotMatchError
                       : (isConfirm
-                          ? 'Re-enter your PIN to confirm.'
-                          : 'Use this PIN to access your protected content.');
+                          ? l10n.reEnterPinSubtitle
+                          : l10n.usePinToAccessSubtitle);
 
                   return Column(
                     children: [
@@ -99,7 +102,7 @@ class SetPasscodeViewContent extends StatelessWidget {
                   context.read<SetPasscodeNavigator>().goToPattern();
                 },
                 child: Text(
-                  'Use pattern instead',
+                  l10n.usePatternInstead,
                   style: AppTypography.medium.copyWith(
                     fontSize: 14,
                     color: AppColorsPalette.black,

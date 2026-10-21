@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class HomeQuickActionsSection extends StatelessWidget {
   final VoidCallback onLockAppsTap;
@@ -18,11 +19,12 @@ class HomeQuickActionsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Quick Actions',
+          l10n.quickActionsTitle,
           style: AppTypography.bold.copyWith(
             fontSize: 18,
             color: AppColorsPalette.black,
@@ -34,7 +36,7 @@ class HomeQuickActionsSection extends StatelessWidget {
             Expanded(
               child: _buildActionCard(
                 icon: Icons.grid_view_rounded,
-                title: 'Lock Apps',
+                title: l10n.lockAppsAction,
                 onTap: onLockAppsTap,
               ),
             ),
@@ -42,7 +44,7 @@ class HomeQuickActionsSection extends StatelessWidget {
             Expanded(
               child: _buildActionCard(
                 icon: Icons.photo_library_outlined,
-                title: 'Vault',
+                title: l10n.navVault,
                 onTap: onVaultTap,
               ),
             ),
@@ -54,7 +56,7 @@ class HomeQuickActionsSection extends StatelessWidget {
             Expanded(
               child: _buildActionCard(
                 icon: Icons.edit_outlined,
-                title: 'Themes',
+                title: l10n.themesAction,
                 onTap: onThemesTap,
               ),
             ),
@@ -62,7 +64,7 @@ class HomeQuickActionsSection extends StatelessWidget {
             Expanded(
               child: _buildActionCard(
                 icon: Icons.shield_outlined,
-                title: 'Alerts',
+                title: l10n.navAlerts,
                 onTap: onAlertsTap,
               ),
             ),

@@ -12,7 +12,7 @@ class GlobalViewModelState extends BaseState {
   const GlobalViewModelState({
     super.status = ViewStatus.initial,
     super.errorMessage,
-    this.locale = const Locale('vi'),
+    this.locale = const Locale('en'),
     this.lockConfig = const LockConfig(),
     this.isOverlayGranted = false,
   });

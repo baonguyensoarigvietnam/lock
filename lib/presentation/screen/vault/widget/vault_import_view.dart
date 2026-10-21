@@ -3,6 +3,7 @@ import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/dialog_utility.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class VaultImportView extends StatefulWidget {
   final int initialTabIndex;
@@ -59,6 +60,7 @@ class _VaultImportViewState extends State<VaultImportView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     final selectedCount = _selectedIndices.length;
     final totalSizeMb = (selectedCount * 2.84).toStringAsFixed(1);
 
@@ -66,7 +68,7 @@ class _VaultImportViewState extends State<VaultImportView> {
       children: [
         CommonAppBar.titledBack(
           onBack: widget.onBack,
-          title: 'Import to Vault',
+          title: l10n.importToVaultTitle,
           actions: [
             IconButton(
               icon: const Icon(
@@ -85,8 +87,8 @@ class _VaultImportViewState extends State<VaultImportView> {
           color: AppColorsPalette.gray50,
           child: Row(
             children: [
-              _buildMediaTypeTab(label: 'Photos', index: 0),
-              _buildMediaTypeTab(label: 'Videos', index: 1),
+              _buildMediaTypeTab(label: l10n.albumPhotos, index: 0),
+              _buildMediaTypeTab(label: l10n.albumVideos, index: 1),
             ],
           ),
         ),
@@ -101,7 +103,8 @@ class _VaultImportViewState extends State<VaultImportView> {
               children: [
                 // Today Section Header
                 _buildSectionHeader(
-                  title: 'Today',
+                  context: context,
+                  title: l10n.todaySection,
                   onSelectAll: () => _selectAllRange(0, _todayCount),
                 ),
                 const SizedBox(height: 8),
@@ -123,7 +126,8 @@ class _VaultImportViewState extends State<VaultImportView> {
 
                 // September 12 Section Header
                 _buildSectionHeader(
-                  title: 'September 12',
+                  context: context,
+                  title: l10n.september12Section,
                   onSelectAll: () =>
                       _selectAllRange(_todayCount, _septemberCount),
                 ),
@@ -168,7 +172,7 @@ class _VaultImportViewState extends State<VaultImportView> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    '$selectedCount selected',
+                    l10n.selectedCountLabel(selectedCount),
                     style: AppTypography.bold.copyWith(
                       fontSize: 15,
                       color: AppColorsPalette.black,
@@ -176,7 +180,7 @@ class _VaultImportViewState extends State<VaultImportView> {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    '$totalSizeMb MB total',
+                    l10n.totalSizeMbLabel(totalSizeMb),
                     style: AppTypography.regular.copyWith(
                       fontSize: 12,
                       color: AppColorsPalette.gray500,
@@ -204,13 +208,13 @@ class _VaultImportViewState extends State<VaultImportView> {
                     color: selectedCount > 0
                         ? AppColorsPalette.black
                         : AppColorsPalette.gray300,
-                    borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Move to Vault',
+                        l10n.moveToVaultButton,
                         style: AppTypography.semiBold.copyWith(
                           fontSize: 14,
                           color: AppColorsPalette.white,
@@ -268,9 +272,11 @@ class _VaultImportViewState extends State<VaultImportView> {
   }
 
   Widget _buildSectionHeader({
+    required BuildContext context,
     required String title,
     required VoidCallback onSelectAll,
   }) {
+    final l10n = context.l10n;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(
@@ -291,7 +297,7 @@ class _VaultImportViewState extends State<VaultImportView> {
             onTap: onSelectAll,
             behavior: HitTestBehavior.opaque,
             child: Text(
-              'Select All',
+              l10n.selectAllAction,
               style: AppTypography.medium.copyWith(
                 fontSize: 12,
                 color: AppColorsPalette.gray500,

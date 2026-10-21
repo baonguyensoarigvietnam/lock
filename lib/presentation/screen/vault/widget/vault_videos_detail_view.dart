@@ -3,6 +3,7 @@ import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/screen/vault/widget/vault_album_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class _VaultVideoItemData {
   final String title;
@@ -105,6 +106,7 @@ class VaultVideosDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Stack(
       children: [
         Column(
@@ -133,7 +135,7 @@ class VaultVideosDetailView extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Videos',
+                              l10n.albumVideos,
                               style: AppTypography.bold.copyWith(
                                 fontSize: 18,
                                 color: AppColorsPalette.black,
@@ -141,7 +143,7 @@ class VaultVideosDetailView extends StatelessWidget {
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              '6 items • Protected',
+                              l10n.vaultItemsProtectedSubtitle(6),
                               style: AppTypography.regular.copyWith(
                                 fontSize: 12,
                                 color: AppColorsPalette.gray500,
@@ -175,7 +177,7 @@ class VaultVideosDetailView extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 5),
                                 Text(
-                                  'Select',
+                                  l10n.selectAction,
                                   style: AppTypography.semiBold.copyWith(
                                     fontSize: 12.5,
                                     color: AppColorsPalette.black,
@@ -217,7 +219,7 @@ class VaultVideosDetailView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Albums',
+                          l10n.albumsHeader,
                           style: AppTypography.bold.copyWith(
                             fontSize: 16,
                             color: AppColorsPalette.black,
@@ -226,7 +228,7 @@ class VaultVideosDetailView extends StatelessWidget {
                         GestureDetector(
                           onTap: onBack,
                           child: Text(
-                            'See all',
+                            l10n.seeAllAction,
                             style: AppTypography.semiBold.copyWith(
                               fontSize: 13,
                               color: AppColorsPalette.gray500,
@@ -240,8 +242,8 @@ class VaultVideosDetailView extends StatelessWidget {
                       children: [
                         Expanded(
                           child: VaultAlbumCard(
-                            title: 'Private Photos',
-                            subtitle: '24 items',
+                            title: l10n.albumPrivatePhotos,
+                            subtitle: l10n.vaultAlbumItemsCount(24),
                             highlightedCellIndex: 3,
                             onTap: onOpenPhotos,
                           ),
@@ -249,8 +251,8 @@ class VaultVideosDetailView extends StatelessWidget {
                         const SizedBox(width: 12),
                         Expanded(
                           child: VaultAlbumCard(
-                            title: 'Galleries',
-                            subtitle: '8 items',
+                            title: l10n.albumGalleries,
+                            subtitle: l10n.vaultAlbumItemsCount(8),
                             highlightedCellIndex: 0,
                             onTap: onBack,
                           ),

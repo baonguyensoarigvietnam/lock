@@ -8,6 +8,7 @@ import 'package:applock/presentation/screen/permission_guide/view_model/permissi
 import 'package:applock/presentation/screen/permission_guide/widget/permission_setup_item_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class PermissionGuideViewContent extends StatefulWidget {
   const PermissionGuideViewContent({super.key});
@@ -43,6 +44,7 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return BlocListener<PermissionGuideViewModel, PermissionGuideState>(
       listenWhen: (previous, current) =>
           !previous.isCompleted && current.isCompleted,
@@ -56,7 +58,7 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
             children: [
               // Top Bar
               CommonAppBar.titledBack(
-                title: 'Set up permissions',
+                title: l10n.setUpPermissionsTitle,
                 leadingIconSize: 24,
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 onBack: () =>
@@ -82,7 +84,7 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Text(
-                          'Enable the permissions needed for App Lock, Vault, and security alerts. You can skip optional features and turn them on later.',
+                          l10n.permissionGuideSubtitle,
                           textAlign: TextAlign.center,
                           style: AppTypography.regular.copyWith(
                             fontSize: 14,
@@ -100,11 +102,10 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
                             children: [
                               PermissionSetupItemCard(
                                 icon: Icons.sync_rounded,
-                                title: 'Usage Access',
-                                badgeText: 'REQUIRED',
+                                title: l10n.usageAccessTitle,
+                                badgeText: l10n.badgeRequired,
                                 badgeType: PermissionBadgeType.required,
-                                description:
-                                    'Detect when selected apps are opened so App Lock can show the unlock screen.',
+                                description: l10n.usageAccessDesc,
                                 isGranted: state.isUsageAccessGranted,
                                 onTap: () => context
                                     .read<PermissionGuideViewModel>()
@@ -113,11 +114,10 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
                               const SizedBox(height: 12),
                               PermissionSetupItemCard(
                                 icon: Icons.layers_outlined,
-                                title: 'Display over other apps',
-                                badgeText: 'RECOMMENDED',
+                                title: l10n.displayOverOtherAppsTitle,
+                                badgeText: l10n.badgeRecommended,
                                 badgeType: PermissionBadgeType.recommended,
-                                description:
-                                    'Show the unlock screen over protected apps for better reliability.',
+                                description: l10n.displayOverOtherAppsDesc,
                                 isGranted: state.isOverlayGranted,
                                 onTap: () => context
                                     .read<PermissionGuideViewModel>()
@@ -126,11 +126,10 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
                               const SizedBox(height: 12),
                               PermissionSetupItemCard(
                                 icon: Icons.notifications_none_rounded,
-                                title: 'Notifications',
-                                badgeText: 'RECOMMENDED',
+                                title: l10n.notificationsTitle,
+                                badgeText: l10n.badgeRecommended,
                                 badgeType: PermissionBadgeType.recommended,
-                                description:
-                                    'Show protection status, security alerts, and permission warnings.',
+                                description: l10n.notificationsDesc,
                                 isGranted: state.isNotificationGranted,
                                 onTap: () => context
                                     .read<PermissionGuideViewModel>()
@@ -139,11 +138,10 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
                               const SizedBox(height: 12),
                               PermissionSetupItemCard(
                                 icon: Icons.photo_library_outlined,
-                                title: 'Photos and videos',
-                                badgeText: 'VAULT',
+                                title: l10n.photosAndVideosTitle,
+                                badgeText: l10n.badgeVault,
                                 badgeType: PermissionBadgeType.vault,
-                                description:
-                                    'Select media to import into your encrypted vault.',
+                                description: l10n.photosAndVideosDesc,
                                 isGranted: state.isPhotosGranted,
                                 onTap: () => context
                                     .read<PermissionGuideViewModel>()
@@ -152,11 +150,10 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
                               const SizedBox(height: 12),
                               PermissionSetupItemCard(
                                 icon: Icons.camera_alt_outlined,
-                                title: 'Camera',
-                                badgeText: 'INTRUDER',
+                                title: l10n.cameraTitle,
+                                badgeText: l10n.badgeIntruder,
                                 badgeType: PermissionBadgeType.intruder,
-                                description:
-                                    'Capture a front-camera photo after 3 failed unlock attempts.',
+                                description: l10n.cameraDesc,
                                 isGranted: state.isCameraGranted,
                                 onTap: () => context
                                     .read<PermissionGuideViewModel>()
@@ -176,7 +173,7 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                 child: CommonButton.filled(
-                  text: 'Continue',
+                  text: l10n.continueButton,
                   cornerRadius: 14,
                   height: 52,
                   backgroundColor: AppColorsPalette.black,

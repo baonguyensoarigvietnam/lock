@@ -4,6 +4,7 @@ import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/common/widget/common_feature_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class AlertsCameraDeniedView extends StatelessWidget {
   final VoidCallback onOpenSettingsTap;
@@ -15,6 +16,7 @@ class AlertsCameraDeniedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -49,7 +51,7 @@ class AlertsCameraDeniedView extends StatelessWidget {
 
           // Title
           Text(
-            'Camera permission denied',
+            l10n.cameraPermissionDeniedTitle,
             textAlign: TextAlign.center,
             style: AppTypography.bold.copyWith(
               fontSize: 22,
@@ -60,7 +62,7 @@ class AlertsCameraDeniedView extends StatelessWidget {
 
           // Subtitle
           Text(
-            'Intruder events can still be recorded\nwithout a photo.',
+            l10n.cameraPermissionDeniedSubtitle,
             textAlign: TextAlign.center,
             style: AppTypography.regular.copyWith(
               fontSize: 14,
@@ -71,28 +73,26 @@ class AlertsCameraDeniedView extends StatelessWidget {
           const SizedBox(height: 32),
 
           // Feature Card 1: Intruder Logging
-          const CommonFeatureCard(
+          CommonFeatureCard(
             icon: Icons.history_rounded,
-            title: 'Intruder Logging',
-            subtitle:
-                'Time, date, and attempted PINs will still\nbe stored in your security vault.',
-            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
+            title: l10n.intruderLoggingTitle,
+            subtitle: l10n.intruderLoggingSubtitle,
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
           ),
           const SizedBox(height: 14),
 
           // Feature Card 2: Privacy First
-          const CommonFeatureCard(
+          CommonFeatureCard(
             icon: Icons.privacy_tip_outlined,
-            title: 'Privacy First',
-            subtitle:
-                'No photos are taken or stored without\nyour explicit camera permission.',
-            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
+            title: l10n.privacyFirstTitle,
+            subtitle: l10n.privacyFirstSubtitle,
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
           ),
           const SizedBox(height: 32),
 
           // Open settings Button
           CommonButton.filled(
-            text: 'Open settings',
+            text: l10n.openSettingsButton,
             height: 48,
             cornerRadius: 10,
             backgroundColor: AppColorsPalette.black,

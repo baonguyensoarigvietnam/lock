@@ -268,4 +268,24 @@ class AppLockRepositoryImpl implements AppLockRepository {
       return Result.error(e);
     }
   }
+
+  @override
+  Future<Result<String>> getLanguageCode() async {
+    try {
+      final code = _localDataSource.getLanguageCode();
+      return Result.success(code);
+    } catch (e) {
+      return Result.error(e);
+    }
+  }
+
+  @override
+  Future<Result<void>> saveLanguageCode(String code) async {
+    try {
+      await _localDataSource.setLanguageCode(code);
+      return const Result.success(null);
+    } catch (e) {
+      return Result.error(e);
+    }
+  }
 }

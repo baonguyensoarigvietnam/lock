@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:applock/application/view_model/global_view_model.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/screen/settings/settings_navigator.dart';
@@ -12,7 +13,9 @@ import 'package:applock/presentation/screen/settings/widget/settings_languages_v
 import 'package:applock/presentation/screen/settings/widget/settings_require_auth_view.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/enumeration/app_language.dart';
 import 'package:applock/utility/enumeration/settings_tab_step.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class SettingsViewContent extends StatefulWidget {
   const SettingsViewContent({super.key});
@@ -96,7 +99,13 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
         return SettingsLanguagesView(
           currentLanguage: state.selectedLanguage,
           onBack: () => vm.setStep(SettingsTabStep.overview),
-          onSave: (language) => vm.saveLanguage(language),
+          onSave: (language) {
+            final appLang = AppLanguage.fromNameOrCode(language);
+            try {
+              context.read<GlobalViewModel>().setLanguage(appLang);
+            } catch (_) {}
+            vm.saveLanguage(appLang.englishName);
+          },
         );
       case SettingsTabStep.contactUs:
         return SettingsContactUsView(
@@ -106,9 +115,28 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
     }
   }
 
+  String _resolveDelayLabel(BuildContext context, String rawDelay) {
+    final l10n = context.l10n;
+    switch (rawDelay) {
+      case 'Immediately':
+        return l10n.delayImmediately;
+      case 'After 15 seconds':
+        return l10n.delay15Seconds;
+      case 'After 30 seconds':
+        return l10n.delay30Seconds;
+      case 'After 1 minute':
+        return l10n.delay1Minute;
+      case 'When screen turns off':
+        return l10n.delayScreenOff;
+      default:
+        return rawDelay;
+    }
+  }
+
   Widget _buildSettingsOverview(BuildContext context, SettingsState state) {
     final vm = context.read<SettingsViewModel>();
     final navigator = context.read<SettingsNavigator>();
+    final l10n = context.l10n;
 
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
@@ -122,7 +150,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
 
           // Page Heading: Settings
           Text(
-            'Settings',
+            l10n.settingsTitle,
             style: AppTypography.bold.copyWith(
               fontSize: 24,
               color: AppColorsPalette.black,
@@ -130,7 +158,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
           ),
           const SizedBox(height: 4),
           Text(
-            'Manage your app preferences.',
+            l10n.settingsSubtitle,
             style: AppTypography.regular.copyWith(
               fontSize: 13.5,
               color: AppColorsPalette.gray500,
@@ -139,11 +167,11 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
           const SizedBox(height: 20),
 
           // Free Plan Banner Card
-          _buildFreePlanCard(navigator),
+          _buildFreePlanCard(context, navigator),
           const SizedBox(height: 24),
 
           // Security Section Header
-          _buildSectionHeader('Security'),
+          _buildSectionHeader(l10n.securitySectionHeader),
           const SizedBox(height: 12),
 
           // Security Group Container
@@ -160,19 +188,20 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
               children: [
                 _buildGroupTile(
                   icon: Icons.password_rounded,
-                  title: 'Change Passcode',
+                  title: l10n.changePasscodeTitle,
                   onTap: () => vm.startChangePin(),
                 ),
                 _buildGroupDivider(),
                 _buildBiometricTile(
+                  context: context,
                   isEnabled: state.isBiometricEnabled,
                   onToggle: (val) => vm.toggleBiometric(val),
                 ),
                 _buildGroupDivider(),
                 _buildGroupTile(
                   icon: Icons.timer_outlined,
-                  title: 'Auto-lock delay',
-                  subtitle: state.autoLockDelay,
+                  title: l10n.autoLockDelayTitle,
+                  subtitle: _resolveDelayLabel(context, state.autoLockDelay),
                   onTap: () =>
                       vm.setStep(SettingsTabStep.requireAuthentication),
                 ),
@@ -182,7 +211,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
           const SizedBox(height: 24),
 
           // Help & Support Section Header
-          _buildSectionHeader('Help & Support'),
+          _buildSectionHeader(l10n.helpAndSupportHeader),
           const SizedBox(height: 12),
 
           // Help & Support Group Container
@@ -199,25 +228,27 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
               children: [
                 _buildGroupTile(
                   icon: Icons.language_rounded,
-                  title: 'Languages',
+                  title: l10n.languagesTitle,
+                  subtitle: AppLanguage.fromNameOrCode(state.selectedLanguage)
+                      .localizedName(l10n),
                   onTap: () => vm.setStep(SettingsTabStep.languages),
                 ),
                 _buildGroupDivider(),
                 _buildGroupTile(
                   icon: Icons.mail_outline_rounded,
-                  title: 'Contact Us',
+                  title: l10n.contactUsTitle,
                   onTap: () => vm.setStep(SettingsTabStep.contactUs),
                 ),
                 _buildGroupDivider(),
                 _buildGroupTile(
                   icon: Icons.description_outlined,
-                  title: 'Terms of Service',
+                  title: l10n.termsOfServiceTitle,
                   onTap: () {},
                 ),
                 _buildGroupDivider(),
                 _buildGroupTile(
                   icon: Icons.policy_outlined,
-                  title: 'Privacy Policy',
+                  title: l10n.privacyPolicyLink,
                   onTap: () {},
                 ),
               ],
@@ -229,7 +260,8 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
     );
   }
 
-  Widget _buildFreePlanCard(SettingsNavigator navigator) {
+  Widget _buildFreePlanCard(BuildContext context, SettingsNavigator navigator) {
+    final l10n = context.l10n;
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
@@ -248,7 +280,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Free Plan',
+                l10n.freePlanTitle,
                 style: AppTypography.bold.copyWith(
                   fontSize: 15.5,
                   color: AppColorsPalette.black,
@@ -268,7 +300,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
                   ),
                 ),
                 child: Text(
-                  'FREE',
+                  l10n.freeBadge,
                   style: AppTypography.medium.copyWith(
                     fontSize: 10.5,
                     letterSpacing: 0.4,
@@ -280,7 +312,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
           ),
           const SizedBox(height: 6),
           Text(
-            'Upgrade to Premium for advanced security\nfeatures.',
+            l10n.freePlanDesc,
             style: AppTypography.regular.copyWith(
               fontSize: 12.5,
               color: AppColorsPalette.gray500,
@@ -289,7 +321,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
           ),
           const SizedBox(height: 14),
           CommonButton.filled(
-            text: 'Upgrade to Premium',
+            text: l10n.upgradeToPremium,
             height: 44,
             cornerRadius: 8,
             backgroundColor: AppColorsPalette.black,
@@ -385,9 +417,11 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
   }
 
   Widget _buildBiometricTile({
+    required BuildContext context,
     required bool isEnabled,
     required ValueChanged<bool> onToggle,
   }) {
+    final l10n = context.l10n;
     return GestureDetector(
       onTap: () => onToggle(!isEnabled),
       behavior: HitTestBehavior.opaque,
@@ -402,7 +436,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Biometric Unlock',
+                    l10n.biometricUnlockTitle,
                     style: AppTypography.medium.copyWith(
                       fontSize: 15,
                       color: AppColorsPalette.black,
@@ -410,7 +444,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    'Use Face ID / Touch ID',
+                    l10n.biometricUnlockSubtitle,
                     style: AppTypography.regular.copyWith(
                       fontSize: 12.5,
                       color: AppColorsPalette.gray500,

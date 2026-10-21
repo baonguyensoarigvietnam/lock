@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class AppBottomNavItem {
   final IconData icon;
   final IconData? activeIcon;
-  final String label;
+  final String Function(BuildContext context) labelBuilder;
 
   const AppBottomNavItem({
     required this.icon,
     this.activeIcon,
-    required this.label,
+    required this.labelBuilder,
   });
 }
 
@@ -17,31 +18,31 @@ class AppBottomNavBar extends StatelessWidget {
   final int currentIndex;
   final ValueChanged<int> onTap;
 
-  static const List<AppBottomNavItem> items = [
+  static final List<AppBottomNavItem> items = [
     AppBottomNavItem(
       icon: Icons.home_outlined,
       activeIcon: Icons.home_filled,
-      label: 'Home',
+      labelBuilder: (context) => context.l10n.navHome,
     ),
     AppBottomNavItem(
       icon: Icons.lock_outline_rounded,
       activeIcon: Icons.lock_rounded,
-      label: 'Apps',
+      labelBuilder: (context) => context.l10n.navApps,
     ),
     AppBottomNavItem(
       icon: Icons.grid_view_outlined,
       activeIcon: Icons.grid_view_rounded,
-      label: 'Vault',
+      labelBuilder: (context) => context.l10n.navVault,
     ),
     AppBottomNavItem(
       icon: Icons.notifications_none_rounded,
       activeIcon: Icons.notifications_rounded,
-      label: 'Alerts',
+      labelBuilder: (context) => context.l10n.navAlerts,
     ),
     AppBottomNavItem(
       icon: Icons.settings_outlined,
       activeIcon: Icons.settings_rounded,
-      label: 'Settings',
+      labelBuilder: (context) => context.l10n.navSettings,
     ),
   ];
 
@@ -103,7 +104,9 @@ class AppBottomNavBar extends StatelessWidget {
                       ),
                       const SizedBox(height: 3),
                       Text(
-                        item.label,
+                        item.labelBuilder(context),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight:

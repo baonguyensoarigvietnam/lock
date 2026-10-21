@@ -1,0 +1,407 @@
+{
+  "@@locale": "vi",
+  "appTitle": "AppLock",
+  "appLockTitle": "Khóa Ứng Dụng",
+  "continueButton": "Tiếp tục",
+  "getStartedButton": "Bắt đầu",
+  "skipButton": "Bỏ qua",
+  "cancelButton": "Hủy",
+  "saveButton": "Lưu",
+  "doneButton": "Hoàn tất",
+  "resetButton": "Đặt lại",
+  "restoreAction": "Khôi phục",
+  "deleteAction": "Xóa",
+  "infoAction": "Thông tin",
+  "selectAction": "Chọn",
+  "selectAllAction": "Chọn tất cả",
+  "seeAllAction": "Xem tất cả",
+  "navHome": "Trang chủ",
+  "navApps": "Ứng dụng",
+  "navVault": "Kho lưu trữ",
+  "navAlerts": "Cảnh báo",
+  "navSettings": "Cài đặt",
+  "splashSubtitle": "Bảo vệ nội dung riêng tư của bạn",
+  "onboardingStep1Title": "Bảo vệ quyền riêng tư",
+  "onboardingStep1Desc": "Giữ ảnh, video riêng tư và quyền truy cập nhạy cảm được bảo vệ trên thiết bị này.",
+  "onboardingStep2Title": "Bảo vệ cục bộ trên thiết bị",
+  "onboardingStep2Subtitle": "Dữ liệu của bạn không bao giờ rời khỏi thiết bị.",
+  "onboardingNoAccountTitle": "Không cần tài khoản",
+  "onboardingNoAccountDesc": "Chúng tôi không yêu cầu email hoặc số điện thoại để sử dụng ứng dụng.",
+  "onboardingNoCloudTitle": "Không đồng bộ đám mây",
+  "onboardingNoCloudDesc": "Dữ liệu của bạn không bao giờ được tải lên máy chủ hay đám mây bên ngoài.",
+  "onboardingNoRecoveryTitle": "Không khôi phục qua máy chủ",
+  "onboardingNoRecoveryDesc": "Nếu bạn quên mã PIN, chúng tôi không thể khôi phục dữ liệu giúp bạn.",
+  "onboardingVaultStaysTitle": "Tệp lưu trữ luôn ở đây",
+  "onboardingVaultStaysDesc": "Mọi thứ được bảo mật trong kho lưu trữ đều nằm hoàn toàn trên thiết bị này.",
+  "unlockMethodTitle": "Thiết lập phương thức mở khóa",
+  "unlockMethodSubtitle": "Chọn cách bạn sẽ mở khóa nội dung riêng tư của mình.",
+  "createPinTitle": "Tạo mã PIN",
+  "createPinSubtitle": "Mã số từ 4-8 chữ số",
+  "drawPatternTitle": "Vẽ hình mở khóa",
+  "drawPatternSubtitle": "Nối ít nhất 4 điểm",
+  "unlockMethodWarning": "Hãy giữ kỹ mã này. Dữ liệu kho lưu trữ không thể khôi phục nếu bạn quên và chưa bật sinh trắc học dự phòng.",
+  "createYourPinTitle": "Tạo mã PIN của bạn",
+  "confirmYourPinTitle": "Xác nhận mã PIN",
+  "changePasscodeTitle": "Đổi mật mã",
+  "confirmYourPasscodeTitle": "Xác nhận mật mã",
+  "usePinToAccessSubtitle": "Sử dụng mã PIN này để truy cập nội dung được bảo vệ.",
+  "reEnterPinSubtitle": "Nhập lại mã PIN để xác nhận.",
+  "reEnterPinShort": "Nhập lại mã PIN của bạn.",
+  "pinDoesNotMatchError": "Mã PIN không khớp.",
+  "usePatternInstead": "Sử dụng hình vẽ thay thế",
+  "usePinInstead": "Sử dụng mã PIN thay thế",
+  "drawUnlockPatternTitle": "Vẽ hình mở khóa",
+  "confirmYourPatternTitle": "Xác nhận hình vẽ",
+  "connectAtLeast4Dots": "Nối ít nhất 4 điểm.",
+  "drawPatternAgainConfirm": "Vẽ lại hình mở khóa để xác nhận.",
+  "patternDoesNotMatchError": "Hình vẽ không khớp",
+  "enableBiometricTitle": "Bật sinh trắc học dự phòng",
+  "enableBiometricSubtitle": "Sử dụng vân tay hoặc khuôn mặt trên thiết bị để lấy lại quyền truy cập khi cần.",
+  "fasterUnlockTitle": "Mở khóa nhanh hơn",
+  "fasterUnlockSubtitle": "Truy cập nhanh kho lưu trữ mà không cần nhập mã.",
+  "usesDeviceSecurityTitle": "Sử dụng bảo mật thiết bị",
+  "usesDeviceSecuritySubtitle": "Tận dụng phần cứng sinh trắc học tích hợp sẵn.",
+  "helpsForgetPinTitle": "Hỗ trợ khi bạn quên mã PIN",
+  "helpsForgetPinSubtitle": "Phương thức thay thế an toàn để đăng nhập lại.",
+  "biometricInfoNote": "Sinh trắc học dự phòng chỉ hoạt động nếu được bật trước khi bạn quên mã PIN.",
+  "enableBiometricButton": "Bật sinh trắc học",
+  "setUpPermissionsTitle": "Thiết lập quyền truy cập",
+  "permissionGuideSubtitle": "Bật các quyền cần thiết cho Khóa Ứng Dụng, Kho Lưu Trữ và cảnh báo bảo mật. Bạn có thể bỏ qua các tính năng tùy chọn và bật sau.",
+  "usageAccessTitle": "Quyền truy cập sử dụng",
+  "usageAccessDesc": "Phát hiện khi ứng dụng được bảo vệ mở ra để hiển thị màn hình mở khóa.",
+  "displayOverOtherAppsTitle": "Hiển thị trên ứng dụng khác",
+  "displayOverOtherAppsDesc": "Hiển thị màn hình mở khóa đè lên ứng dụng được bảo vệ để hoạt động ổn định hơn.",
+  "notificationsTitle": "Thông báo",
+  "notificationsDesc": "Hiển thị trạng thái bảo vệ, cảnh báo bảo mật và cảnh báo quyền truy cập.",
+  "photosAndVideosTitle": "Ảnh và video",
+  "photosAndVideosDesc": "Chọn phương tiện để nhập vào kho lưu trữ mã hóa của bạn.",
+  "cameraTitle": "Máy ảnh",
+  "cameraDesc": "Chụp ảnh bằng camera trước sau 3 lần mở khóa thất bại.",
+  "badgeRequired": "BẮT BUỘC",
+  "badgeRecommended": "KHUYẾN NGHỊ",
+  "badgeVault": "KHO LƯU TRỮ",
+  "badgeIntruder": "XÂM NHẬP",
+  "upgradeToPremium": "Nâng cấp lên Premium",
+  "paywallSubtitle": "Mở khóa thêm nhiều giao diện và gỡ bỏ quảng cáo.",
+  "paywallFeatureThemes": "Giao diện cao cấp mới",
+  "paywallFeatureVault": "Kho lưu trữ không giới hạn",
+  "paywallFeatureAlerts": "Toàn bộ lịch sử cảnh báo xâm nhập",
+  "paywallFeatureNoAds": "Không quảng cáo",
+  "monthlyPlanTitle": "Hàng tháng",
+  "monthlyPlanSubtitle": "Thanh toán mỗi tháng",
+  "yearlyPlanTitle": "Hàng năm",
+  "yearlyPlanSubtitle": "Thanh toán hàng năm",
+  "save40Badge": "TIẾT KIỆM 40%",
+  "wasPrice": "giá gốc {price}",
+  "@wasPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "startPremiumButton": "Bắt đầu Premium",
+  "restorePurchases": "Khôi phục giao dịch",
+  "termsLink": "Điều khoản",
+  "privacyPolicyLink": "Chính sách bảo mật",
+  "unlockAppTitle": "Mở khóa {appName}",
+  "@unlockAppTitle": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "enterPinToContinue": "Nhập mã PIN của bạn để tiếp tục.",
+  "incorrectPinTryAgain": "Mã PIN không đúng. Vui lòng thử lại.",
+  "incorrectPatternTryAgain": "Hình vẽ không đúng. Vui lòng thử lại.",
+  "forgotPinLink": "Quên mã PIN?",
+  "forgotPatternLink": "Quên hình vẽ?",
+  "useBiometricUnlockTitle": "Mở khóa bằng sinh trắc học",
+  "unlockWithDeviceAuthSubtitle": "Mở khóa bằng xác thực của thiết bị.",
+  "biometricNotRecognized": "KHÔNG NHẬN DIỆN ĐƯỢC SINH TRẮC HỌC",
+  "recoverAccessTitle": "Khôi phục quyền truy cập",
+  "useBiometricFallbackCardTitle": "Dùng sinh trắc học dự phòng",
+  "useBiometricFallbackCardDesc": "Xác thực bằng sinh trắc học của thiết bị, sau đó tạo mã PIN hoặc hình vẽ mới.",
+  "authenticateButton": "Xác thực",
+  "vaultCannotBeRecoveredTitle": "Không thể khôi phục kho lưu trữ",
+  "vaultCannotBeRecoveredDesc": "Nếu không có mã PIN, hình vẽ hoặc sinh trắc học dự phòng, dữ liệu mã hóa trong kho sẽ không thể khôi phục.",
+  "resetAppSecurityButton": "Đặt lại bảo mật ứng dụng",
+  "backToUnlockLink": "Quay lại mở khóa",
+  "resetSecurityQuestionTitle": "Đặt lại bảo mật?",
+  "resetSecurityWarningDesc": "Thao tác này sẽ xóa khóa bảo mật.\nDữ liệu mã hóa trong kho lưu trữ sẽ không thể\ntruy cập được nữa.",
+  "resetSecurityConfirmCheckbox": "Tôi hiểu thao tác này không thể\nhoàn tác",
+  "statusActive": "ĐANG BẬT",
+  "statusIdle": "ĐANG TẮT",
+  "appsProtectedLabel": "Ứng dụng được bảo vệ",
+  "vaultItemsLabel": "Mục trong kho",
+  "intruderAlertsLabel": "Cảnh báo xâm nhập",
+  "biometricFallbackLabel": "Sinh trắc học dự phòng",
+  "quickActionsTitle": "Thao tác nhanh",
+  "lockAppsAction": "Khóa ứng dụng",
+  "themesAction": "Giao diện",
+  "promoBannerTitle": "MỞ KHÓA TẤT CẢ TÍNH NĂNG",
+  "promoBannerSubtitle": "Không giới hạn giao diện, không quảng cáo và hơn thế nữa.",
+  "themeMinimal": "Tối giản",
+  "themeClassicPin": "PIN cổ điển",
+  "themePattern": "Hình vẽ",
+  "themeVault": "Kho lưu trữ",
+  "themeFocus": "Tập trung",
+  "themePremiumColors": "Màu sắc cao cấp",
+  "premiumBadge": "CAO CẤP",
+  "applyThemeButton": "Áp dụng giao diện",
+  "themeAppliedTitle": "Đã áp dụng giao diện",
+  "themeAppliedSubtitle": "Màn hình khóa của bạn hiện đã sử dụng\ngiao diện vừa chọn.",
+  "premiumColorPreviewTitle": "Xem trước màu cao cấp",
+  "premiumThemesSubscriptionNote": "Giao diện cao cấp khả dụng khi đăng ký gói.",
+  "backToThemesButton": "Quay lại giao diện",
+  "lockedAppsHeader": "Ứng dụng đã khóa",
+  "protectedAppsCount": "{count} ứng dụng được bảo vệ",
+  "@protectedAppsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchAppsHint": "Tìm kiếm ứng dụng...",
+  "filterAll": "Tất cả",
+  "filterCategories": "Danh mục",
+  "filterLocked": "Đã khóa",
+  "categoryChipLabel": "Danh mục: {category}",
+  "@categoryChipLabel": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "noLockedAppsFound": "Không tìm thấy ứng dụng đã khóa",
+  "noAppsFound": "Không tìm thấy ứng dụng",
+  "categorySocial": "Mạng xã hội",
+  "categoryMessaging": "Nhắn tin",
+  "categoryPhotosVideo": "Ảnh & Video",
+  "categoryFinance": "Tài chính",
+  "categoryShopping": "Mua sắm",
+  "categorySystem": "Hệ thống",
+  "categoryAppsBullet": "{count} ứng dụng • ",
+  "@categoryAppsBullet": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryProtectedCount": "{count} đã bảo vệ",
+  "@categoryProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "usageAccessRequiredTitle": "Cần quyền truy cập sử dụng",
+  "usageAccessRequiredDesc": "Bật quyền truy cập sử dụng để bảo vệ các\nứng dụng đã chọn.",
+  "enableUsageAccessButton": "Bật quyền truy cập sử dụng",
+  "protectionMayBeLimitedTitle": "Bảo vệ có thể bị hạn chế",
+  "protectionMayBeLimitedDesc": "Để đảm bảo Khóa Ứng Dụng hoạt động ổn định trong nền, vui lòng kiểm tra các cài đặt hệ thống Android sau.",
+  "displayOverOtherAppsWarningDesc": "Cần thiết để hiển thị màn hình khóa trên các ứng dụng được bảo vệ. Nếu tắt, ứng dụng sẽ không được khóa.",
+  "statusDisabled": "Đã tắt",
+  "batteryOptimizationTitle": "Tối ưu hóa pin",
+  "batteryOptimizationDesc": "Android có thể đóng Khóa Ứng Dụng chạy nền. Hãy tắt tối ưu hóa pin để duy trì trạng thái bảo vệ.",
+  "statusRestricted": "Bị giới hạn",
+  "fixPermissionsButton": "Khắc phục quyền",
+  "continueWithLimitedProtectionButton": "Tiếp tục với bảo vệ hạn chế",
+  "itemsProtectedCount": "Đã bảo vệ {count}/100 mục",
+  "@itemsProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "encryptedOnThisDevice": "Được mã hóa trên thiết bị này",
+  "quickActionsSmallTitle": "Thao tác nhanh",
+  "addPhotosAction": "Thêm\nẢnh",
+  "importVideosAction": "Nhập\nVideo",
+  "createAlbumAction": "Tạo\nAlbum",
+  "albumsHeader": "Album",
+  "vaultEmptyTitle": "Kho lưu trữ đang trống",
+  "vaultEmptySubtitle": "Nhập ảnh và video để giữ chúng\nđược mã hóa trên thiết bị này.",
+  "albumPrivatePhotos": "Ảnh riêng tư",
+  "albumVideos": "Video",
+  "albumGalleries": "Thư viện",
+  "albumScreenshots": "Ảnh chụp màn hình",
+  "albumPhotos": "Ảnh",
+  "vaultAlbumItemsCount": "{count} mục",
+  "@vaultAlbumItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultItemsProtectedSubtitle": "{count} mục • Đã bảo vệ",
+  "@vaultItemsProtectedSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importToVaultTitle": "Nhập vào Kho lưu trữ",
+  "todaySection": "Hôm nay",
+  "september12Section": "12 Tháng 9",
+  "selectedCountLabel": "Đã chọn {count}",
+  "@selectedCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "totalSizeMbLabel": "Tổng cộng {size} MB",
+  "@totalSizeMbLabel": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "moveToVaultButton": "Chuyển vào Kho",
+  "encryptingItemsTitle": "Đang mã hóa các mục đã chọn...",
+  "filesProcessedProgress": "Đã xử lý {processed}/{total} tệp",
+  "@filesProcessedProgress": {
+    "placeholders": {
+      "processed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "keepAppOpenWarning": "Hãy mở Khóa Ứng Dụng cho đến khi quá trình nhập hoàn tất.",
+  "importCompleteTitle": "Nhập hoàn tất",
+  "importCompleteSubtitle": "Dữ liệu của bạn hiện đã được bảo mật và mã hóa.",
+  "itemsEncryptedTitle": "Đã mã hóa {count} mục",
+  "@itemsEncryptedTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aes256Subtitle": "Chuẩn quân đội AES-256",
+  "originalsDeletedTitle": "Đã xóa tệp gốc",
+  "spaceRecoveredSubtitle": "Dung lượng giải phóng: 124 MB",
+  "originalsCouldNotBeDeletedTitle": "Không thể tự động xóa\ncác tệp gốc",
+  "nextStepRequiredTitle": "Bước tiếp theo cần thực hiện",
+  "deleteOriginalsManuallyDesc": "Mở Ảnh hoặc Bộ sưu tập để xóa\ncác tệp gốc theo cách thủ công.",
+  "viewVaultButton": "Xem Kho lưu trữ",
+  "backToVaultHomeLink": "Về trang chủ Kho lưu trữ",
+  "fileInfoTitle": "Thông tin tệp",
+  "protectedBadge": "Đã bảo vệ",
+  "propertiesHeader": "Thuộc tính",
+  "propertyName": "Tên",
+  "propertyType": "Loại",
+  "propertySize": "Kích thước",
+  "propertyImportedDate": "Ngày nhập",
+  "propertyEncryptionStatus": "Trạng thái mã hóa",
+  "intruderSelfieOffTitle": "Chụp ảnh kẻ xâm nhập đang tắt",
+  "intruderSelfieOffSubtitle": "Bật tính năng này để chụp ảnh sau 3 lần\nmở khóa thất bại.",
+  "secureLogsTitle": "Nhật ký bảo mật",
+  "secureLogsSubtitle": "Xem ngày, giờ và hình ảnh của các\nlần truy cập trái phép.",
+  "stealthCaptureTitle": "Chụp ẩn danh",
+  "stealthCaptureSubtitle": "Camera trước sẽ chụp ảnh một cách\nâm thầm.",
+  "enableIntruderSelfieButton": "Bật chụp ảnh kẻ xâm nhập",
+  "cameraPermissionDeniedTitle": "Quyền máy ảnh bị từ chối",
+  "cameraPermissionDeniedSubtitle": "Các sự kiện xâm nhập vẫn có thể được ghi lại\nmà không cần ảnh chụp.",
+  "intruderLoggingTitle": "Ghi nhật ký xâm nhập",
+  "intruderLoggingSubtitle": "Thời gian, ngày tháng và các lần thử mã PIN vẫn sẽ\nđược lưu trong kho bảo mật.",
+  "privacyFirstTitle": "Ưu tiên quyền riêng tư",
+  "privacyFirstSubtitle": "Không có bức ảnh nào được chụp hoặc lưu trữ nếu\nbạn không cấp quyền máy ảnh.",
+  "openSettingsButton": "Mở cài đặt",
+  "statusSummaryTitle": "Tóm tắt trạng thái",
+  "failedUnlockAttemptsToday": "2 lần mở khóa thất bại hôm nay",
+  "alertsSavedPremium": "Đã lưu 11 cảnh báo",
+  "alertsSavedFree": "Đã lưu 2/10 cảnh báo",
+  "failedMethodLabel": "Phương thức thất bại: {method}",
+  "@failedMethodLabel": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  },
+  "viewDetailsAction": "Xem chi tiết",
+  "keepFullAlertHistoryTitle": "Lưu toàn bộ lịch sử cảnh báo",
+  "keepFullAlertHistoryDesc": "Người dùng miễn phí chỉ xem được 10 cảnh báo\ngần nhất. Nâng cấp để lưu trữ không giới hạn.",
+  "alertDetailTitle": "Chi tiết cảnh báo",
+  "noPhotoCapturedTitle": "Không có ảnh chụp",
+  "noPhotoCapturedDesc": "Hệ thống bảo mật không thể\nkhởi tạo máy ảnh trong sự kiện\nnày.",
+  "eventSummaryHeader": "TÓM TẮT SỰ KIỆN",
+  "highAlertBadge": "Cảnh báo cao",
+  "captureAnalysisTitle": "Phân tích ghi nhận",
+  "attemptedContextLabel": "Ngữ cảnh truy cập",
+  "failedMethodRowLabel": "Phương thức thất bại",
+  "failedCountLabel": "Số lần thất bại",
+  "dateTimeLabel": "Ngày/giờ",
+  "platformLabel": "Nền tảng",
+  "deviceModelLabel": "Kiểu thiết bị",
+  "saveEvidenceButton": "Lưu bằng chứng",
+  "enableCameraPermissionButton": "Bật quyền máy ảnh",
+  "evidenceSavedSnackBar": "Đã lưu bằng chứng vào thiết bị",
+  "deleteAlertButton": "Xóa cảnh báo",
+  "settingsTitle": "Cài đặt",
+  "settingsSubtitle": "Quản lý tùy chọn ứng dụng của bạn.",
+  "freePlanTitle": "Gói Miễn Phí",
+  "freeBadge": "MIỄN PHÍ",
+  "freePlanDesc": "Nâng cấp lên Premium để mở khóa các tính năng\nbảo mật nâng cao.",
+  "securitySectionHeader": "Bảo mật",
+  "biometricUnlockTitle": "Mở khóa sinh trắc học",
+  "biometricUnlockSubtitle": "Sử dụng Face ID / Vân tay",
+  "autoLockDelayTitle": "Độ trễ tự động khóa",
+  "helpAndSupportHeader": "Trợ giúp & Hỗ trợ",
+  "languagesTitle": "Ngôn ngữ",
+  "contactUsTitle": "Liên hệ chúng tôi",
+  "termsOfServiceTitle": "Điều khoản dịch vụ",
+  "requireAuthenticationTitle": "Yêu cầu xác thực",
+  "requireAuthenticationSubtitle": "Chọn thời gian ứng dụng tự động khóa sau khi bạn\nrời đi. Thời gian ngắn hơn giúp bảo vệ quyền riêng tư\ntốt hơn.",
+  "delayImmediately": "Ngay lập tức",
+  "delay15Seconds": "Sau 15 giây",
+  "delay30Seconds": "Sau 30 giây",
+  "delay1Minute": "Sau 1 phút",
+  "delayScreenOff": "Khi màn hình tắt",
+  "settingLanguagesTitle": "Cài đặt ngôn ngữ",
+  "settingLanguagesSubtitle": "Chọn ngôn ngữ ưu tiên của bạn cho giao diện\nvà nhận dạng tài liệu.",
+  "langEnglish": "Tiếng Anh (English)",
+  "langVietnamese": "Tiếng Việt",
+  "langSpanish": "Tiếng Tây Ban Nha (Spanish)",
+  "langFrench": "Tiếng Pháp (French)",
+  "langGerman": "Tiếng Đức (German)",
+  "langJapanese": "Tiếng Nhật (Japanese)",
+  "langChinese": "Tiếng Trung (Chinese)",
+  "contactUsIntro": "Chúng tôi luôn sẵn sàng hỗ trợ. Hãy điền biểu mẫu bên dưới\nvà đội ngũ hỗ trợ sẽ phản hồi bạn sớm nhất\ncó thể.",
+  "emailAddressLabel": "Địa chỉ Email",
+  "emailHint": "ban@vidu.com",
+  "subjectLabel": "Tiêu đề",
+  "subjectHint": "Tóm tắt ngắn gọn vấn đề của bạn",
+  "messageLabel": "Nội dung",
+  "messageHint": "Mô tả chi tiết vấn đề của bạn...",
+  "contactPrivacyDisclaimer": "Bằng việc gửi biểu mẫu này, bạn đồng ý với Chính sách bảo mật của chúng tôi.\nChúng tôi chỉ dùng email của bạn để phản hồi yêu cầu này.",
+  "sendMessageButton": "Gửi tin nhắn",
+  "messageSentSnackBar": "Đã gửi tin nhắn tới đội ngũ hỗ trợ",
+  "biometricNotSupportedError": "Thiết bị không hỗ trợ hoặc chưa cài sinh trắc học",
+  "deleteOriginalsDialogTitle": "Xóa các tệp gốc?",
+  "deleteOriginalsDialogDesc": "Sau khi nhập, Khóa Ứng Dụng có thể yêu cầu hệ điều hành xóa các tệp gốc khi được phép.",
+  "importAndDeleteOriginalsButton": "Nhập và xóa tệp gốc",
+  "importOnlyButton": "Chỉ nhập tệp",
+  "restoreToGalleryDialogTitle": "Khôi phục về thư viện?",
+  "restoreToGalleryDialogDesc": "Một bản sao đã giải mã sẽ được lưu thông qua hệ điều hành. Các tệp tạm sẽ được dọn sạch sau khi khôi phục.",
+  "deleteFromVaultDialogTitle": "Xóa khỏi Kho lưu trữ?",
+  "deleteFromVaultDialogDesc": "Thao tác này sẽ xóa bản sao mã hóa trong kho khỏi thiết bị này.",
+  "deletePermanentlyButton": "Xóa vĩnh viễn",
+  "deleteAlertDialogTitle": "Xóa cảnh báo?",
+  "deleteAlertDialogDesc": "Thao tác này sẽ xóa ảnh chụp kẻ xâm nhập và nhật ký sự kiện khỏi thiết bị này."
+}

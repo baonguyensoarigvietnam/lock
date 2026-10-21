@@ -11,8 +11,17 @@ class AppLockLocalDataSource {
   static const String _keyBiometricEnabled = 'applock_biometric_enabled';
   static const String _keyServiceActive = 'applock_service_active';
   static const String _keyOnboardingCompleted = 'applock_onboarding_completed';
+  static const String _keyLanguageCode = 'applock_language_code';
 
   AppLockLocalDataSource(this._preferences);
+
+  String getLanguageCode() {
+    return _preferences.getString(_keyLanguageCode) ?? 'en';
+  }
+
+  Future<bool> setLanguageCode(String code) {
+    return _preferences.setString(_keyLanguageCode, code);
+  }
 
   bool isOnboardingCompleted() {
     return _preferences.getBool(_keyOnboardingCompleted) ?? false;

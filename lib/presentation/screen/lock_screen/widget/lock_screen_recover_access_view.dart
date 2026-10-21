@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class LockScreenRecoverAccessView extends StatelessWidget {
   final VoidCallback onAuthenticate;
@@ -17,6 +18,7 @@ class LockScreenRecoverAccessView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
@@ -24,7 +26,7 @@ class LockScreenRecoverAccessView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Recover access',
+            l10n.recoverAccessTitle,
             style: AppTypography.bold.copyWith(
               fontSize: 24,
               color: AppColorsPalette.black,
@@ -48,7 +50,7 @@ class LockScreenRecoverAccessView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Use biometric fallback',
+                  l10n.useBiometricFallbackCardTitle,
                   style: AppTypography.bold.copyWith(
                     fontSize: 16,
                     color: AppColorsPalette.black,
@@ -56,7 +58,7 @@ class LockScreenRecoverAccessView extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  'Authenticate with device biometrics, then create a new PIN or pattern.',
+                  l10n.useBiometricFallbackCardDesc,
                   style: AppTypography.regular.copyWith(
                     fontSize: 14,
                     color: AppColorsPalette.gray500,
@@ -65,7 +67,7 @@ class LockScreenRecoverAccessView extends StatelessWidget {
                 ),
                 const SizedBox(height: 18),
                 CommonButton.filled(
-                  text: 'Authenticate',
+                  text: l10n.authenticateButton,
                   height: 48,
                   cornerRadius: 10,
                   backgroundColor: AppColorsPalette.black,
@@ -97,7 +99,7 @@ class LockScreenRecoverAccessView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Vault cannot be recovered',
+                  l10n.vaultCannotBeRecoveredTitle,
                   style: AppTypography.bold.copyWith(
                     fontSize: 16,
                     color: AppColorsPalette.black,
@@ -105,7 +107,7 @@ class LockScreenRecoverAccessView extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  'Without PIN, pattern, or biometric fallback, encrypted vault data cannot be recovered.',
+                  l10n.vaultCannotBeRecoveredDesc,
                   style: AppTypography.regular.copyWith(
                     fontSize: 14,
                     color: AppColorsPalette.gray500,
@@ -114,7 +116,7 @@ class LockScreenRecoverAccessView extends StatelessWidget {
                 ),
                 const SizedBox(height: 18),
                 CommonButton.outline(
-                  text: 'Reset app security',
+                  text: l10n.resetAppSecurityButton,
                   height: 48,
                   cornerRadius: 10,
                   backgroundColor: AppColorsPalette.white,
@@ -140,7 +142,7 @@ class LockScreenRecoverAccessView extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
                 child: Text(
-                  'Back to unlock',
+                  l10n.backToUnlockLink,
                   style: AppTypography.semiBold.copyWith(
                     fontSize: 14,
                     color: AppColorsPalette.gray600,

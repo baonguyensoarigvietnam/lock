@@ -1,0 +1,407 @@
+{
+  "@@locale": "zh",
+  "appTitle": "AppLock",
+  "appLockTitle": "应用锁",
+  "continueButton": "继续",
+  "getStartedButton": "开始使用",
+  "skipButton": "跳过",
+  "cancelButton": "取消",
+  "saveButton": "保存",
+  "doneButton": "完成",
+  "resetButton": "重置",
+  "restoreAction": "恢复",
+  "deleteAction": "删除",
+  "infoAction": "信息",
+  "selectAction": "选择",
+  "selectAllAction": "全选",
+  "seeAllAction": "查看全部",
+  "navHome": "首页",
+  "navApps": "应用",
+  "navVault": "保险箱",
+  "navAlerts": "警报",
+  "navSettings": "设置",
+  "splashSubtitle": "保护您的私人内容",
+  "onboardingStep1Title": "保护您的隐私",
+  "onboardingStep1Desc": "在此设备上保护私人照片、视频和敏感访问权限。",
+  "onboardingStep2Title": "仅限本地保护",
+  "onboardingStep2Subtitle": "您的数据绝不会离开您的设备。",
+  "onboardingNoAccountTitle": "无需账号",
+  "onboardingNoAccountDesc": "使用本应用无需提供电子邮件或电话号码。",
+  "onboardingNoCloudTitle": "无云端同步",
+  "onboardingNoCloudDesc": "您的数据绝不会上传到任何外部服务器或云端。",
+  "onboardingNoRecoveryTitle": "无服务器端恢复",
+  "onboardingNoRecoveryDesc": "如果您忘记PIN码，我们无法为您恢复数据。",
+  "onboardingVaultStaysTitle": "保险箱文件留在本地",
+  "onboardingVaultStaysDesc": "保险箱中保护的所有内容均严格保存在此设备上。",
+  "unlockMethodTitle": "设置解锁方式",
+  "unlockMethodSubtitle": "选择解锁私人内容的方式。",
+  "createPinTitle": "创建PIN码",
+  "createPinSubtitle": "4-8位数字密码",
+  "drawPatternTitle": "绘制图案",
+  "drawPatternSubtitle": "至少连接4个点",
+  "unlockMethodWarning": "请妥善保管。如果忘记且未启用生物识别后备方案，保险箱数据将无法恢复。",
+  "createYourPinTitle": "创建您的PIN码",
+  "confirmYourPinTitle": "确认您的PIN码",
+  "changePasscodeTitle": "更改密码",
+  "confirmYourPasscodeTitle": "确认您的密码",
+  "usePinToAccessSubtitle": "使用此PIN码访问受保护的内容。",
+  "reEnterPinSubtitle": "请再次输入PIN码以确认。",
+  "reEnterPinShort": "请重新输入您的PIN码。",
+  "pinDoesNotMatchError": "PIN码不匹配。",
+  "usePatternInstead": "改用图案解锁",
+  "usePinInstead": "改用PIN码解锁",
+  "drawUnlockPatternTitle": "绘制解锁图案",
+  "confirmYourPatternTitle": "确认您的图案",
+  "connectAtLeast4Dots": "请至少连接4个点。",
+  "drawPatternAgainConfirm": "请再次绘制图案以确认。",
+  "patternDoesNotMatchError": "图案不匹配",
+  "enableBiometricTitle": "启用生物识别后备",
+  "enableBiometricSubtitle": "需要时可使用设备的指纹或面部扫描重新获得访问权限。",
+  "fasterUnlockTitle": "更快的解锁速度",
+  "fasterUnlockSubtitle": "无需输入即可快速访问您的保险箱。",
+  "usesDeviceSecurityTitle": "使用设备安全机制",
+  "usesDeviceSecuritySubtitle": "利用内置的生物识别硬件。",
+  "helpsForgetPinTitle": "忘记PIN码时的救星",
+  "helpsForgetPinSubtitle": "一种安全的替代恢复访问方式。",
+  "biometricInfoNote": "生物识别后备仅在您忘记PIN码之前启用才有效。",
+  "enableBiometricButton": "启用生物识别",
+  "setUpPermissionsTitle": "设置权限",
+  "permissionGuideSubtitle": "启用应用锁、保险箱和安全警报所需的权限。您可以跳过可选功能并在稍后开启。",
+  "usageAccessTitle": "使用情况访问权限",
+  "usageAccessDesc": "检测所选应用何时打开，以便应用锁显示解锁屏幕。",
+  "displayOverOtherAppsTitle": "在其他应用上层显示",
+  "displayOverOtherAppsDesc": "在受保护的应用上方显示解锁屏幕，提高稳定性。",
+  "notificationsTitle": "通知",
+  "notificationsDesc": "显示保护状态、安全警报和权限警告。",
+  "photosAndVideosTitle": "照片和视频",
+  "photosAndVideosDesc": "选择要导入加密保险箱的媒体文件。",
+  "cameraTitle": "相机",
+  "cameraDesc": "在3次解锁失败后使用前置摄像头拍照。",
+  "badgeRequired": "必需",
+  "badgeRecommended": "推荐",
+  "badgeVault": "保险箱",
+  "badgeIntruder": "入侵者",
+  "upgradeToPremium": "升级到高级版",
+  "paywallSubtitle": "解锁更多主题并移除广告。",
+  "paywallFeatureThemes": "更多高级主题",
+  "paywallFeatureVault": "无限容量保险箱",
+  "paywallFeatureAlerts": "完整入侵警报历史",
+  "paywallFeatureNoAds": "无广告",
+  "monthlyPlanTitle": "月度订阅",
+  "monthlyPlanSubtitle": "按月计费",
+  "yearlyPlanTitle": "年度订阅",
+  "yearlyPlanSubtitle": "按年计费",
+  "save40Badge": "立省40%",
+  "wasPrice": "原价 {price}",
+  "@wasPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "startPremiumButton": "开启高级版",
+  "restorePurchases": "恢复购买",
+  "termsLink": "条款",
+  "privacyPolicyLink": "隐私政策",
+  "unlockAppTitle": "解锁 {appName}",
+  "@unlockAppTitle": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "enterPinToContinue": "输入您的PIN码以继续。",
+  "incorrectPinTryAgain": "PIN码不正确，请重试。",
+  "incorrectPatternTryAgain": "图案不正确，请重试。",
+  "forgotPinLink": "忘记PIN码？",
+  "forgotPatternLink": "忘记图案？",
+  "useBiometricUnlockTitle": "使用生物识别解锁",
+  "unlockWithDeviceAuthSubtitle": "使用设备身份验证解锁。",
+  "biometricNotRecognized": "未识别到生物特征",
+  "recoverAccessTitle": "恢复访问权限",
+  "useBiometricFallbackCardTitle": "使用生物识别后备",
+  "useBiometricFallbackCardDesc": "使用设备生物识别进行验证，然后创建新的PIN码或图案。",
+  "authenticateButton": "验证身份",
+  "vaultCannotBeRecoveredTitle": "保险箱无法恢复",
+  "vaultCannotBeRecoveredDesc": "如果没有PIN码、图案或生物识别后备，加密的保险箱数据将无法恢复。",
+  "resetAppSecurityButton": "重置应用安全设置",
+  "backToUnlockLink": "返回解锁",
+  "resetSecurityQuestionTitle": "重置安全设置？",
+  "resetSecurityWarningDesc": "这将删除密钥信封。\n加密的保险箱数据将不再\n可访问。",
+  "resetSecurityConfirmCheckbox": "我明白此操作无法\n撤销",
+  "statusActive": "已激活",
+  "statusIdle": "空闲",
+  "appsProtectedLabel": "受保护的应用",
+  "vaultItemsLabel": "保险箱项目",
+  "intruderAlertsLabel": "入侵者警报",
+  "biometricFallbackLabel": "生物识别后备",
+  "quickActionsTitle": "快捷操作",
+  "lockAppsAction": "锁定应用",
+  "themesAction": "主题",
+  "promoBannerTitle": "解锁全部功能",
+  "promoBannerSubtitle": "无限主题、免广告及更多特权。",
+  "themeMinimal": "极简",
+  "themeClassicPin": "经典PIN码",
+  "themePattern": "图案",
+  "themeVault": "保险箱",
+  "themeFocus": "专注",
+  "themePremiumColors": "高级色彩",
+  "premiumBadge": "高级版",
+  "applyThemeButton": "应用主题",
+  "themeAppliedTitle": "主题已应用",
+  "themeAppliedSubtitle": "您的锁屏现在已使用\n所选主题。",
+  "premiumColorPreviewTitle": "高级色彩预览",
+  "premiumThemesSubscriptionNote": "订阅即可使用高级主题。",
+  "backToThemesButton": "返回主题",
+  "lockedAppsHeader": "已锁定应用",
+  "protectedAppsCount": "{count} 个受保护应用",
+  "@protectedAppsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchAppsHint": "搜索应用...",
+  "filterAll": "全部",
+  "filterCategories": "分类",
+  "filterLocked": "已锁定",
+  "categoryChipLabel": "分类：{category}",
+  "@categoryChipLabel": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "noLockedAppsFound": "未找到已锁定的应用",
+  "noAppsFound": "未找到应用",
+  "categorySocial": "社交",
+  "categoryMessaging": "通讯",
+  "categoryPhotosVideo": "照片与视频",
+  "categoryFinance": "金融",
+  "categoryShopping": "购物",
+  "categorySystem": "系统",
+  "categoryAppsBullet": "{count} 个应用 • ",
+  "@categoryAppsBullet": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryProtectedCount": "{count} 个受保护",
+  "@categoryProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "usageAccessRequiredTitle": "需要使用情况访问权限",
+  "usageAccessRequiredDesc": "启用使用情况访问权限以保护所选\n应用。",
+  "enableUsageAccessButton": "启用使用情况访问权限",
+  "protectionMayBeLimitedTitle": "保护可能受限",
+  "protectionMayBeLimitedDesc": "为确保应用锁在后台稳定运行，请检查以下Android系统设置。",
+  "displayOverOtherAppsWarningDesc": "需要在受保护的应用上方显示锁屏。否则应用将无法被锁定。",
+  "statusDisabled": "已禁用",
+  "batteryOptimizationTitle": "电池优化",
+  "batteryOptimizationDesc": "Android可能会在后台强制关闭应用锁。请禁用电池优化以保持保护处于激活状态。",
+  "statusRestricted": "受限",
+  "fixPermissionsButton": "修复权限",
+  "continueWithLimitedProtectionButton": "在受限保护下继续",
+  "itemsProtectedCount": "已保护 {count}/100 项",
+  "@itemsProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "encryptedOnThisDevice": "已在此设备上加密",
+  "quickActionsSmallTitle": "快捷操作",
+  "addPhotosAction": "添加\n照片",
+  "importVideosAction": "导入\n视频",
+  "createAlbumAction": "创建\n相册",
+  "albumsHeader": "相册",
+  "vaultEmptyTitle": "您的保险箱为空",
+  "vaultEmptySubtitle": "导入照片和视频以在此设备上\n加密保存。",
+  "albumPrivatePhotos": "私密照片",
+  "albumVideos": "视频",
+  "albumGalleries": "图库",
+  "albumScreenshots": "屏幕截图",
+  "albumPhotos": "照片",
+  "vaultAlbumItemsCount": "{count} 项",
+  "@vaultAlbumItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultItemsProtectedSubtitle": "{count} 项 • 已受保护",
+  "@vaultItemsProtectedSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importToVaultTitle": "导入到保险箱",
+  "todaySection": "今天",
+  "september12Section": "9月12日",
+  "selectedCountLabel": "已选择 {count} 项",
+  "@selectedCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "totalSizeMbLabel": "共 {size} MB",
+  "@totalSizeMbLabel": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "moveToVaultButton": "移至保险箱",
+  "encryptingItemsTitle": "正在加密所选项目...",
+  "filesProcessedProgress": "已处理 {processed}/{total} 个文件",
+  "@filesProcessedProgress": {
+    "placeholders": {
+      "processed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "keepAppOpenWarning": "在导入完成前请保持应用锁处于打开状态。",
+  "importCompleteTitle": "导入完成",
+  "importCompleteSubtitle": "您的数据现已安全加密。",
+  "itemsEncryptedTitle": "已加密 {count} 个项目",
+  "@itemsEncryptedTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aes256Subtitle": "AES-256 军用级加密",
+  "originalsDeletedTitle": "原文件已删除",
+  "spaceRecoveredSubtitle": "已释放空间：124 MB",
+  "originalsCouldNotBeDeletedTitle": "无法自动删除\n原始文件",
+  "nextStepRequiredTitle": "需要执行下一步",
+  "deleteOriginalsManuallyDesc": "打开照片或图库以手动删除\n原始文件。",
+  "viewVaultButton": "查看保险箱",
+  "backToVaultHomeLink": "返回保险箱首页",
+  "fileInfoTitle": "文件信息",
+  "protectedBadge": "已受保护",
+  "propertiesHeader": "属性",
+  "propertyName": "名称",
+  "propertyType": "类型",
+  "propertySize": "大小",
+  "propertyImportedDate": "导入日期",
+  "propertyEncryptionStatus": "加密状态",
+  "intruderSelfieOffTitle": "入侵者抓拍已关闭",
+  "intruderSelfieOffSubtitle": "启用后将在3次解锁失败后\n自动抓拍照片。",
+  "secureLogsTitle": "安全日志",
+  "secureLogsSubtitle": "查看未经授权尝试的日期、时间和\n抓拍照片。",
+  "stealthCaptureTitle": "静默抓拍",
+  "stealthCaptureSubtitle": "前置摄像头将静默完成\n照片抓拍。",
+  "enableIntruderSelfieButton": "启用入侵者抓拍",
+  "cameraPermissionDeniedTitle": "相机权限被拒绝",
+  "cameraPermissionDeniedSubtitle": "即使没有照片，仍然可以记录\n入侵事件。",
+  "intruderLoggingTitle": "入侵日志记录",
+  "intruderLoggingSubtitle": "时间、日期和尝试的PIN码仍将\n保存在您的安全保险箱中。",
+  "privacyFirstTitle": "隐私至上",
+  "privacyFirstSubtitle": "未经您的明确相机许可，绝不会拍摄\n或存储任何照片。",
+  "openSettingsButton": "打开设置",
+  "statusSummaryTitle": "状态摘要",
+  "failedUnlockAttemptsToday": "今日有 2 次解锁失败尝试",
+  "alertsSavedPremium": "已保存 11 条警报",
+  "alertsSavedFree": "已保存 2/10 条警报",
+  "failedMethodLabel": "失败方式：{method}",
+  "@failedMethodLabel": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  },
+  "viewDetailsAction": "查看详情",
+  "keepFullAlertHistoryTitle": "保留完整警报历史",
+  "keepFullAlertHistoryDesc": "免费用户仅能查看最近10条\n警报。升级即可无限期保存。",
+  "alertDetailTitle": "警报详情",
+  "noPhotoCapturedTitle": "未抓拍到照片",
+  "noPhotoCapturedDesc": "安全系统在此事件期间未能\n初始化相机。",
+  "eventSummaryHeader": "事件摘要",
+  "highAlertBadge": "高级警报",
+  "captureAnalysisTitle": "抓拍分析",
+  "attemptedContextLabel": "尝试访问内容",
+  "failedMethodRowLabel": "失败方式",
+  "failedCountLabel": "失败次数",
+  "dateTimeLabel": "日期/时间",
+  "platformLabel": "平台",
+  "deviceModelLabel": "设备型号",
+  "saveEvidenceButton": "保存证据",
+  "enableCameraPermissionButton": "启用相机权限",
+  "evidenceSavedSnackBar": "证据已保存到设备",
+  "deleteAlertButton": "删除警报",
+  "settingsTitle": "设置",
+  "settingsSubtitle": "管理您的应用偏好设置。",
+  "freePlanTitle": "免费版",
+  "freeBadge": "免费",
+  "freePlanDesc": "升级到高级版以获取高级安全\n功能。",
+  "securitySectionHeader": "安全",
+  "biometricUnlockTitle": "生物识别解锁",
+  "biometricUnlockSubtitle": "使用面容 ID / 触控 ID",
+  "autoLockDelayTitle": "自动锁定延迟",
+  "helpAndSupportHeader": "帮助与支持",
+  "languagesTitle": "语言",
+  "contactUsTitle": "联系我们",
+  "termsOfServiceTitle": "服务条款",
+  "requireAuthenticationTitle": "需要身份验证",
+  "requireAuthenticationSubtitle": "选择离开应用后自动锁定的时间。\n较短的延迟可提供更强的隐私\n保护。",
+  "delayImmediately": "立即",
+  "delay15Seconds": "15秒后",
+  "delay30Seconds": "30秒后",
+  "delay1Minute": "1分钟后",
+  "delayScreenOff": "屏幕关闭时",
+  "settingLanguagesTitle": "语言设置",
+  "settingLanguagesSubtitle": "选择您偏好的界面和文档识别\n语言。",
+  "langEnglish": "英语 (English)",
+  "langVietnamese": "越南语 (Vietnamese)",
+  "langSpanish": "西班牙语 (Spanish)",
+  "langFrench": "法语 (French)",
+  "langGerman": "德语 (German)",
+  "langJapanese": "日语 (Japanese)",
+  "langChinese": "中文",
+  "contactUsIntro": "我们随时为您提供帮助。请填写以下表单，\n我们的支持团队将尽快回复\n您。",
+  "emailAddressLabel": "电子邮箱",
+  "emailHint": "you@example.com",
+  "subjectLabel": "主题",
+  "subjectHint": "简要概述您的问题",
+  "messageLabel": "留言内容",
+  "messageHint": "详细描述您遇到的问题...",
+  "contactPrivacyDisclaimer": "提交此表单即表示您同意我们的隐私政策。我们\n仅会使用您的电子邮箱来回复此请求。",
+  "sendMessageButton": "发送消息",
+  "messageSentSnackBar": "消息已发送至支持团队",
+  "biometricNotSupportedError": "设备不支持或尚未设置生物识别",
+  "deleteOriginalsDialogTitle": "删除原始文件？",
+  "deleteOriginalsDialogDesc": "导入后，应用锁可以在允许的情况下请求操作系统删除原始文件。",
+  "importAndDeleteOriginalsButton": "导入并删除原文件",
+  "importOnlyButton": "仅导入",
+  "restoreToGalleryDialogTitle": "恢复到图库？",
+  "restoreToGalleryDialogDesc": "解密后的副本将通过操作系统保存。恢复后将清理临时文件。",
+  "deleteFromVaultDialogTitle": "从保险箱中删除？",
+  "deleteFromVaultDialogDesc": "这将从此设备中移除加密的保险箱副本。",
+  "deletePermanentlyButton": "永久删除",
+  "deleteAlertDialogTitle": "删除警报？",
+  "deleteAlertDialogDesc": "这将从此设备中移除抓拍的入侵者照片和事件日志。"
+}

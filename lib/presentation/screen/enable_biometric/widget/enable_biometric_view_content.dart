@@ -8,6 +8,7 @@ import 'package:applock/presentation/screen/enable_biometric/view_model/enable_b
 import 'package:applock/presentation/screen/enable_biometric/view_model/enable_biometric_view_model.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class EnableBiometricViewContent extends StatefulWidget {
   const EnableBiometricViewContent({super.key});
@@ -29,6 +30,7 @@ class _EnableBiometricViewContentState
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return BlocListener<EnableBiometricViewModel, EnableBiometricState>(
       listenWhen: (previous, current) =>
           !previous.isCompleted && current.isCompleted,
@@ -67,7 +69,7 @@ class _EnableBiometricViewContentState
                 const SizedBox(height: 20),
                 // Heading
                 Text(
-                  'Enable biometric fallback',
+                  l10n.enableBiometricTitle,
                   textAlign: TextAlign.center,
                   style: AppTypography.bold.copyWith(
                     fontSize: 24,
@@ -79,7 +81,7 @@ class _EnableBiometricViewContentState
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
-                    'Use your device\'s fingerprint or face scan to regain access if needed.',
+                    l10n.enableBiometricSubtitle,
                     textAlign: TextAlign.center,
                     style: AppTypography.regular.copyWith(
                       fontSize: 15,
@@ -90,22 +92,22 @@ class _EnableBiometricViewContentState
                 ),
                 const SizedBox(height: 24),
                 // Feature Cards
-                const CommonFeatureCard(
+                CommonFeatureCard(
                   icon: Icons.bolt_rounded,
-                  title: 'Faster unlock',
-                  subtitle: 'Quickly access your vault without typing.',
+                  title: l10n.fasterUnlockTitle,
+                  subtitle: l10n.fasterUnlockSubtitle,
                 ),
                 const SizedBox(height: 12),
-                const CommonFeatureCard(
+                CommonFeatureCard(
                   icon: Icons.shield_outlined,
-                  title: 'Uses device security',
-                  subtitle: 'Leverages built-in biometric hardware.',
+                  title: l10n.usesDeviceSecurityTitle,
+                  subtitle: l10n.usesDeviceSecuritySubtitle,
                 ),
                 const SizedBox(height: 12),
-                const CommonFeatureCard(
+                CommonFeatureCard(
                   icon: Icons.lock_outline_rounded,
-                  title: 'Helps if you forget your PIN',
-                  subtitle: 'A secure alternative way to get back in.',
+                  title: l10n.helpsForgetPinTitle,
+                  subtitle: l10n.helpsForgetPinSubtitle,
                 ),
                 const Spacer(),
                 // Information box
@@ -130,7 +132,7 @@ class _EnableBiometricViewContentState
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          'Biometric fallback only works if enabled before you forget your PIN.',
+                          l10n.biometricInfoNote,
                           style: AppTypography.regular.copyWith(
                             fontSize: 13,
                             color: AppColorsPalette.gray700,
@@ -144,7 +146,7 @@ class _EnableBiometricViewContentState
                 const SizedBox(height: 16),
                 // Buttons
                 CommonButton.filled(
-                  text: 'Enable biometric',
+                  text: l10n.enableBiometricButton,
                   cornerRadius: 14,
                   height: 52,
                   backgroundColor: AppColorsPalette.black,
@@ -155,7 +157,7 @@ class _EnableBiometricViewContentState
                 ),
                 const SizedBox(height: 10),
                 CommonButton.outline(
-                  text: 'Skip',
+                  text: l10n.skipButton,
                   cornerRadius: 14,
                   height: 52,
                   backgroundColor: AppColorsPalette.white,

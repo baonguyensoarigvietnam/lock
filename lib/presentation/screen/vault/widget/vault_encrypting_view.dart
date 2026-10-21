@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class VaultEncryptingView extends StatefulWidget {
   final int totalFiles;
@@ -40,6 +41,7 @@ class _VaultEncryptingViewState extends State<VaultEncryptingView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     final progress =
         widget.totalFiles > 0 ? (_processedCount / widget.totalFiles) : 0.6;
 
@@ -53,7 +55,7 @@ class _VaultEncryptingViewState extends State<VaultEncryptingView> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Encrypting selected items...',
+                l10n.encryptingItemsTitle,
                 textAlign: TextAlign.center,
                 style: AppTypography.bold.copyWith(
                   fontSize: 19,
@@ -62,7 +64,10 @@ class _VaultEncryptingViewState extends State<VaultEncryptingView> {
               ),
               const SizedBox(height: 8),
               Text(
-                '$_processedCount of ${widget.totalFiles} files processed',
+                l10n.filesProcessedProgress(
+                  _processedCount,
+                  widget.totalFiles,
+                ),
                 textAlign: TextAlign.center,
                 style: AppTypography.regular.copyWith(
                   fontSize: 14,
@@ -112,7 +117,7 @@ class _VaultEncryptingViewState extends State<VaultEncryptingView> {
                     const SizedBox(width: 10),
                     Flexible(
                       child: Text(
-                        'Keep App Lock open until import finishes.',
+                        l10n.keepAppOpenWarning,
                         style: AppTypography.regular.copyWith(
                           fontSize: 13,
                           color: AppColorsPalette.gray600,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class HomeStatusCardsSection extends StatelessWidget {
   final int lockedCount;
@@ -24,6 +25,7 @@ class HomeStatusCardsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return SizedBox(
       height: 160,
       child: Row(
@@ -69,7 +71,9 @@ class HomeStatusCardsSection extends StatelessWidget {
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
-                              isServiceActive ? 'ACTIVE' : 'IDLE',
+                              isServiceActive
+                                  ? l10n.statusActive
+                                  : l10n.statusIdle,
                               style: const TextStyle(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w700,
@@ -93,7 +97,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                           ),
                           const SizedBox(height: 2),
                           Text(
-                            'Apps protected',
+                            l10n.appsProtectedLabel,
                             style: AppTypography.regular.copyWith(
                               fontSize: 13,
                               color: AppColorsPalette.gray600,
@@ -162,7 +166,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    'Vault items',
+                                    l10n.vaultItemsLabel,
                                     style: AppTypography.regular.copyWith(
                                       fontSize: 12,
                                       color: AppColorsPalette.gray600,
@@ -242,7 +246,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                                               ),
                                             ),
                                             Text(
-                                              'Intruder alerts',
+                                              l10n.intruderAlertsLabel,
                                               style: AppTypography.regular
                                                   .copyWith(
                                                 fontSize: 12,

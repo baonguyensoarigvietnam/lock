@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class LockScreenResetSecurityView extends StatelessWidget {
   final bool isConfirmed;
@@ -19,6 +20,7 @@ class LockScreenResetSecurityView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -47,7 +49,7 @@ class LockScreenResetSecurityView extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           Text(
-            'Reset security?',
+            l10n.resetSecurityQuestionTitle,
             textAlign: TextAlign.center,
             style: AppTypography.bold.copyWith(
               fontSize: 24,
@@ -58,7 +60,7 @@ class LockScreenResetSecurityView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              'This will delete the key envelope.\nEncrypted vault data will no longer be\naccessible.',
+              l10n.resetSecurityWarningDesc,
               textAlign: TextAlign.center,
               style: AppTypography.regular.copyWith(
                 fontSize: 15,
@@ -112,7 +114,7 @@ class LockScreenResetSecurityView extends StatelessWidget {
                   const SizedBox(width: 14),
                   Expanded(
                     child: Text(
-                      'I understand this cannot be\nundone',
+                      l10n.resetSecurityConfirmCheckbox,
                       style: AppTypography.regular.copyWith(
                         fontSize: 14,
                         color: AppColorsPalette.black,
@@ -128,7 +130,7 @@ class LockScreenResetSecurityView extends StatelessWidget {
 
           // Reset Button (disabled gray until confirmed)
           CommonButton.filled(
-            text: 'Reset',
+            text: l10n.resetButton,
             height: 50,
             cornerRadius: 10,
             backgroundColor: AppColorsPalette.black,
@@ -147,7 +149,7 @@ class LockScreenResetSecurityView extends StatelessWidget {
 
           // Cancel Button
           CommonButton.outline(
-            text: 'Cancel',
+            text: l10n.cancelButton,
             height: 50,
             cornerRadius: 10,
             backgroundColor: AppColorsPalette.white,

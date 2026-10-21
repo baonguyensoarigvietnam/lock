@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class AppsUsageAccessCard extends StatelessWidget {
   final VoidCallback onEnableTap;
@@ -13,6 +14,7 @@ class AppsUsageAccessCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Center(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -47,7 +49,7 @@ class AppsUsageAccessCard extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Text(
-                'Usage Access required',
+                l10n.usageAccessRequiredTitle,
                 textAlign: TextAlign.center,
                 style: AppTypography.bold.copyWith(
                   fontSize: 18,
@@ -56,7 +58,7 @@ class AppsUsageAccessCard extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                'Enable Usage Access to protect selected\napps.',
+                l10n.usageAccessRequiredDesc,
                 textAlign: TextAlign.center,
                 style: AppTypography.regular.copyWith(
                   fontSize: 14,
@@ -66,7 +68,7 @@ class AppsUsageAccessCard extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               CommonButton.filled(
-                text: 'Enable Usage Access',
+                text: l10n.enableUsageAccessButton,
                 height: 48,
                 cornerRadius: 10,
                 backgroundColor: AppColorsPalette.black,

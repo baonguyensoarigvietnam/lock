@@ -3,6 +3,7 @@ import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class HomePremiumColorPreviewView extends StatelessWidget {
   final VoidCallback onUpgradeToPremium;
@@ -16,6 +17,7 @@ class HomePremiumColorPreviewView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -30,7 +32,7 @@ class HomePremiumColorPreviewView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Premium Color Preview',
+                l10n.premiumColorPreviewTitle,
                 style: AppTypography.bold.copyWith(
                   fontSize: 17,
                   color: AppColorsPalette.black,
@@ -46,7 +48,7 @@ class HomePremiumColorPreviewView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: Text(
-                  'PREMIUM',
+                  l10n.premiumBadge,
                   style: AppTypography.semiBold.copyWith(
                     fontSize: 11,
                     letterSpacing: 0.6,
@@ -92,7 +94,7 @@ class HomePremiumColorPreviewView extends StatelessWidget {
 
           // Subscription Info Text
           Text(
-            'Premium themes are available with subscription.',
+            l10n.premiumThemesSubscriptionNote,
             textAlign: TextAlign.center,
             style: AppTypography.regular.copyWith(
               fontSize: 14,
@@ -103,7 +105,7 @@ class HomePremiumColorPreviewView extends StatelessWidget {
 
           // Upgrade to Premium Button
           CommonButton.filled(
-            text: 'Upgrade to Premium',
+            text: l10n.upgradeToPremium,
             height: 48,
             cornerRadius: 10,
             backgroundColor: AppColorsPalette.black,
@@ -118,7 +120,7 @@ class HomePremiumColorPreviewView extends StatelessWidget {
 
           // Back to themes Button
           CommonButton.outline(
-            text: 'Back to themes',
+            text: l10n.backToThemesButton,
             height: 48,
             cornerRadius: 10,
             backgroundColor: AppColorsPalette.white,

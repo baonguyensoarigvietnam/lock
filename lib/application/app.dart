@@ -5,7 +5,9 @@ import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:applock/application/view_model/global_view_model.dart';
 import 'package:applock/application/view_model/global_view_model_state.dart';
+import 'package:applock/l10n/app_localizations.dart';
 import 'package:applock/presentation/theme/app_theme.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -26,8 +28,11 @@ class MyApp extends StatelessWidget {
         child: BlocBuilder<GlobalViewModel, GlobalViewModelState>(
           builder: (context, state) {
             return MaterialApp.router(
-              title: 'AppLock',
+              onGenerateTitle: (context) => context.l10n.appTitle,
               debugShowCheckedModeBanner: false,
+              locale: state.locale,
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
+              supportedLocales: AppLocalizations.supportedLocales,
               theme: AppTheme.darkTheme,
               routerConfig: GetIt.instance<GoRouter>(),
             );

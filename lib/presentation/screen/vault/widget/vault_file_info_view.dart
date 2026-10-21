@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class VaultFileInfoView extends StatelessWidget {
   final String fileName;
@@ -23,11 +24,12 @@ class VaultFileInfoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Column(
       children: [
         CommonAppBar.titledBack(
           onBack: onBack,
-          title: 'File info',
+          title: l10n.fileInfoTitle,
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         ),
         Expanded(
@@ -102,7 +104,7 @@ class VaultFileInfoView extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Text(
-                            'Protected',
+                            l10n.protectedBadge,
                             style: AppTypography.bold.copyWith(
                               fontSize: 13,
                               color: AppColorsPalette.white,
@@ -117,7 +119,7 @@ class VaultFileInfoView extends StatelessWidget {
 
                 // Properties Section Title
                 Text(
-                  'Properties',
+                  l10n.propertiesHeader,
                   style: AppTypography.bold.copyWith(
                     fontSize: 17,
                     color: AppColorsPalette.black,
@@ -139,7 +141,7 @@ class VaultFileInfoView extends StatelessWidget {
                     children: [
                       _buildPropertyRow(
                         icon: Icons.article_outlined,
-                        label: 'Name',
+                        label: l10n.propertyName,
                         value: fileNameWithoutExtension,
                       ),
                       const Divider(
@@ -149,7 +151,7 @@ class VaultFileInfoView extends StatelessWidget {
                       ),
                       _buildPropertyRow(
                         icon: Icons.article_outlined,
-                        label: 'Type',
+                        label: l10n.propertyType,
                         value: fileType,
                       ),
                       const Divider(
@@ -159,7 +161,7 @@ class VaultFileInfoView extends StatelessWidget {
                       ),
                       _buildPropertyRow(
                         icon: Icons.storage_rounded,
-                        label: 'Size',
+                        label: l10n.propertySize,
                         value: fileSize,
                       ),
                       const Divider(
@@ -169,7 +171,7 @@ class VaultFileInfoView extends StatelessWidget {
                       ),
                       _buildPropertyRow(
                         icon: Icons.calendar_today_outlined,
-                        label: 'Imported date',
+                        label: l10n.propertyImportedDate,
                         value: importedDate,
                       ),
                       const Divider(
@@ -179,7 +181,7 @@ class VaultFileInfoView extends StatelessWidget {
                       ),
                       _buildPropertyRow(
                         icon: Icons.enhanced_encryption_outlined,
-                        label: 'Encryption status',
+                        label: l10n.propertyEncryptionStatus,
                         value: 'AES-256',
                         isHighlightedValue: true,
                       ),

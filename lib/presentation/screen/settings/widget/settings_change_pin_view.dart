@@ -4,6 +4,7 @@ import 'package:applock/presentation/common/widget/common_pin_dots.dart';
 import 'package:applock/presentation/common/widget/common_pin_keypad.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class SettingsChangePinView extends StatefulWidget {
   final bool isConfirmStep;
@@ -75,12 +76,13 @@ class _SettingsChangePinViewState extends State<SettingsChangePinView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     final title = widget.isConfirmStep
-        ? 'Confirm your Passcode'
-        : 'Change Passcode';
+        ? l10n.confirmYourPasscodeTitle
+        : l10n.changePasscodeTitle;
     final subtitle = widget.isConfirmStep
-        ? (_hasMismatch ? 'PIN does not match.' : 'Re-enter your PIN.')
-        : 'Use this PIN to access your protected content.';
+        ? (_hasMismatch ? l10n.pinDoesNotMatchError : l10n.reEnterPinShort)
+        : l10n.usePinToAccessSubtitle;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -155,7 +157,7 @@ class _SettingsChangePinViewState extends State<SettingsChangePinView> {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
               child: Text(
-                'Use pattern instead',
+                l10n.usePatternInstead,
                 style: AppTypography.bold.copyWith(
                   fontSize: 14,
                   color: AppColorsPalette.black,

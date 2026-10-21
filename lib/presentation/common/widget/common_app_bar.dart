@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 /// Shared app bar with named constructors tailored to each screen pattern:
 /// - [CommonAppBar.brand]: Centered "App Lock" brand header (main tabs, onboarding, biometric, unlock method).
@@ -9,11 +10,11 @@ import 'package:applock/presentation/theme/app_text_palette.dart';
 /// - [CommonAppBar.close]: Left close (X) button with optional title/actions (Paywall).
 /// - [CommonAppBar.custom]: Full customization of leading, title, and trailing widgets.
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
-  /// Centered brand header (defaults to `'App Lock'`).
+  /// Centered brand header (defaults to localized `'App Lock'`).
   ///
   /// Used in Onboarding, Unlock Method, Enable Biometric, and the 5 main tabs.
   const CommonAppBar.brand({
-    this.title = 'App Lock',
+    this.title,
     this.titleStyle,
     this.onTitleTap,
     this.actions,
@@ -127,9 +128,10 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
     // Pure brand header without leading/actions
     if (_leadingType == _AppBarLeadingType.none &&
         (actions == null || actions!.isEmpty)) {
+      final resolvedTitle = title ?? context.l10n.appLockTitle;
       final titleWidget = Center(
         child: Text(
-          title ?? '',
+          resolvedTitle,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: titleStyle ??

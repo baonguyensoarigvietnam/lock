@@ -6,6 +6,7 @@ import 'package:applock/presentation/screen/splash/view_model/splash_state.dart'
 import 'package:applock/presentation/screen/splash/view_model/splash_view_model.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class SplashViewContent extends StatefulWidget {
   const SplashViewContent({super.key});
@@ -39,6 +40,7 @@ class _SplashViewContentState extends State<SplashViewContent>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return BlocListener<SplashViewModel, SplashState>(
       listenWhen: (previous, current) =>
           previous.isSuccess != current.isSuccess && current.isSuccess,
@@ -64,7 +66,7 @@ class _SplashViewContentState extends State<SplashViewContent>
               ),
               const SizedBox(height: 24),
               Text(
-                'App Lock',
+                l10n.appLockTitle,
                 style: AppTypography.bold.copyWith(
                   fontSize: 26,
                   color: AppColorsPalette.black,
@@ -73,7 +75,7 @@ class _SplashViewContentState extends State<SplashViewContent>
               ),
               const SizedBox(height: 8),
               Text(
-                'Protect your private content',
+                l10n.splashSubtitle,
                 style: AppTypography.regular.copyWith(
                   fontSize: 15,
                   color: AppColorsPalette.gray500,

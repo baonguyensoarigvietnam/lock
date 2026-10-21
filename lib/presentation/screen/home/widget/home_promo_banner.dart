@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class HomePromoBanner extends StatelessWidget {
   final VoidCallback onTap;
@@ -12,6 +13,7 @@ class HomePromoBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Material(
       color: AppColorsPalette.transparent,
       child: InkWell(
@@ -31,7 +33,7 @@ class HomePromoBanner extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'UNLOCK ALL FEATURES',
+                      l10n.promoBannerTitle,
                       style: AppTypography.bold.copyWith(
                         fontSize: 15.5,
                         color: AppColorsPalette.white,
@@ -40,7 +42,7 @@ class HomePromoBanner extends StatelessWidget {
                     ),
                     const SizedBox(height: 3),
                     Text(
-                      'Unlimited themes, free ads and more.',
+                      l10n.promoBannerSubtitle,
                       style: AppTypography.regular.copyWith(
                         fontSize: 12.5,
                         color: AppColorsPalette.gray400,

@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class AlertsIntruderIllustration extends StatelessWidget {
   final bool hasPhoto;
@@ -15,6 +16,7 @@ class AlertsIntruderIllustration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     if (!hasPhoto) {
       if (isLarge) {
         return Container(
@@ -52,7 +54,7 @@ class AlertsIntruderIllustration extends StatelessWidget {
               ),
               const SizedBox(height: 18),
               Text(
-                'No photo captured',
+                l10n.noPhotoCapturedTitle,
                 textAlign: TextAlign.center,
                 style: AppTypography.bold.copyWith(
                   fontSize: 17,
@@ -61,7 +63,7 @@ class AlertsIntruderIllustration extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                'The security system failed to\ninitialize the camera during this\nevent.',
+                l10n.noPhotoCapturedDesc,
                 textAlign: TextAlign.center,
                 style: AppTypography.regular.copyWith(
                   fontSize: 13.5,

@@ -1,0 +1,407 @@
+{
+  "@@locale": "ja",
+  "appTitle": "AppLock",
+  "appLockTitle": "アプリロック",
+  "continueButton": "続ける",
+  "getStartedButton": "始める",
+  "skipButton": "スキップ",
+  "cancelButton": "キャンセル",
+  "saveButton": "保存",
+  "doneButton": "完了",
+  "resetButton": "リセット",
+  "restoreAction": "復元",
+  "deleteAction": "削除",
+  "infoAction": "情報",
+  "selectAction": "選択",
+  "selectAllAction": "すべて選択",
+  "seeAllAction": "すべて見る",
+  "navHome": "ホーム",
+  "navApps": "アプリ",
+  "navVault": "金庫",
+  "navAlerts": "アラート",
+  "navSettings": "設定",
+  "splashSubtitle": "プライベートなコンテンツを保護",
+  "onboardingStep1Title": "プライバシーを保護",
+  "onboardingStep1Desc": "プライベートな写真、動画、機密アクセスをこのデバイス上で保護します。",
+  "onboardingStep2Title": "ローカルのみの保護",
+  "onboardingStep2Subtitle": "データがデバイスから外部に出ることはありません。",
+  "onboardingNoAccountTitle": "アカウント不要",
+  "onboardingNoAccountDesc": "アプリの利用にメールアドレスや電話番号は不要です。",
+  "onboardingNoCloudTitle": "クラウド同期なし",
+  "onboardingNoCloudDesc": "データが外部サーバーやクラウドにアップロードされることはありません。",
+  "onboardingNoRecoveryTitle": "サーバー側での復元なし",
+  "onboardingNoRecoveryDesc": "PINを紛失した場合、当社でデータを復元することはできません。",
+  "onboardingVaultStaysTitle": "ファイルは端末内に保持",
+  "onboardingVaultStaysDesc": "金庫内のすべてのデータはこのデバイス内にのみ保存されます。",
+  "unlockMethodTitle": "ロック解除方法の設定",
+  "unlockMethodSubtitle": "プライベートコンテンツのロック解除方法を選択してください。",
+  "createPinTitle": "PINを作成",
+  "createPinSubtitle": "4〜8桁の数字コード",
+  "drawPatternTitle": "パターンを描画",
+  "drawPatternSubtitle": "少なくとも4つの点を結ぶ",
+  "unlockMethodWarning": "大切に保管してください。忘れた場合、生体認証が有効でなければ金庫のデータは復元できません。",
+  "createYourPinTitle": "PINを作成",
+  "confirmYourPinTitle": "PINの確認",
+  "changePasscodeTitle": "パスコードを変更",
+  "confirmYourPasscodeTitle": "パスコードの確認",
+  "usePinToAccessSubtitle": "保護されたコンテンツにアクセスするためにこのPINを使用します。",
+  "reEnterPinSubtitle": "確認のためもう一度PINを入力してください。",
+  "reEnterPinShort": "PINを再入力してください。",
+  "pinDoesNotMatchError": "PINが一致しません。",
+  "usePatternInstead": "代わりにパターンを使用",
+  "usePinInstead": "代わりにPINを使用",
+  "drawUnlockPatternTitle": "ロック解除パターンを描画",
+  "confirmYourPatternTitle": "パターンの確認",
+  "connectAtLeast4Dots": "少なくとも4つの点を結んでください。",
+  "drawPatternAgainConfirm": "確認のためもう一度パターンを描画してください。",
+  "patternDoesNotMatchError": "パターンが一致しません",
+  "enableBiometricTitle": "生体認証の代替手段を有効化",
+  "enableBiometricSubtitle": "必要に応じて端末の指紋や顔認証でアクセスを回復できます。",
+  "fasterUnlockTitle": "素早いロック解除",
+  "fasterUnlockSubtitle": "入力なしで素早く金庫にアクセスできます。",
+  "usesDeviceSecurityTitle": "端末のセキュリティを活用",
+  "usesDeviceSecuritySubtitle": "内蔵の生体認証ハードウェアを活用します。",
+  "helpsForgetPinTitle": "PINを忘れた際も安心",
+  "helpsForgetPinSubtitle": "安全に再アクセスするための代替手段になります。",
+  "biometricInfoNote": "生体認証による復旧は、PINを忘れる前に有効にしていた場合のみ機能します。",
+  "enableBiometricButton": "生体認証を有効にする",
+  "setUpPermissionsTitle": "権限のセットアップ",
+  "permissionGuideSubtitle": "アプリロック、金庫、セキュリティ警告に必要な権限を有効にします。オプション機能はスキップして後でオンにできます。",
+  "usageAccessTitle": "使用状況へのアクセス",
+  "usageAccessDesc": "選択したアプリが起動されたことを検知し、ロック解除画面を表示します。",
+  "displayOverOtherAppsTitle": "他のアプリの上に重ねて表示",
+  "displayOverOtherAppsDesc": "保護されたアプリの上にロック画面を表示し、信頼性を高めます。",
+  "notificationsTitle": "通知",
+  "notificationsDesc": "保護ステータス、セキュリティ警告、権限の警告を表示します。",
+  "photosAndVideosTitle": "写真と動画",
+  "photosAndVideosDesc": "暗号化された金庫にインポートするメディアを選択します。",
+  "cameraTitle": "カメラ",
+  "cameraDesc": "ロック解除に3回失敗するとフロントカメラで写真を撮影します。",
+  "badgeRequired": "必須",
+  "badgeRecommended": "推奨",
+  "badgeVault": "金庫",
+  "badgeIntruder": "侵入者",
+  "upgradeToPremium": "プレミアムにアップグレード",
+  "paywallSubtitle": "さらに多くのテーマを解放し、広告を非表示にします。",
+  "paywallFeatureThemes": "今後のプレミアムテーマ",
+  "paywallFeatureVault": "無制限の金庫",
+  "paywallFeatureAlerts": "完全な侵入警告履歴",
+  "paywallFeatureNoAds": "広告なし",
+  "monthlyPlanTitle": "月額プラン",
+  "monthlyPlanSubtitle": "毎月請求",
+  "yearlyPlanTitle": "年額プラン",
+  "yearlyPlanSubtitle": "毎年請求",
+  "save40Badge": "40%お得",
+  "wasPrice": "通常 {price}",
+  "@wasPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "startPremiumButton": "プレミアムを開始",
+  "restorePurchases": "購入を復元",
+  "termsLink": "利用規約",
+  "privacyPolicyLink": "プライバシーポリシー",
+  "unlockAppTitle": "{appName} のロックを解除",
+  "@unlockAppTitle": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "enterPinToContinue": "続行するにはPINを入力してください。",
+  "incorrectPinTryAgain": "PINが正しくありません。もう一度お試しください。",
+  "incorrectPatternTryAgain": "パターンが正しくありません。もう一度お試しください。",
+  "forgotPinLink": "PINをお忘れですか？",
+  "forgotPatternLink": "パターンをお忘れですか？",
+  "useBiometricUnlockTitle": "生体認証でロック解除",
+  "unlockWithDeviceAuthSubtitle": "デバイスの認証機能でロックを解除します。",
+  "biometricNotRecognized": "生体認証を認識できませんでした",
+  "recoverAccessTitle": "アクセスの回復",
+  "useBiometricFallbackCardTitle": "生体認証の代替手段を使用",
+  "useBiometricFallbackCardDesc": "端末の生体認証で認証した後、新しいPINまたはパターンを作成します。",
+  "authenticateButton": "認証する",
+  "vaultCannotBeRecoveredTitle": "金庫は復元できません",
+  "vaultCannotBeRecoveredDesc": "PIN、パターン、または生体認証がない場合、暗号化された金庫データは復元できません。",
+  "resetAppSecurityButton": "アプリのセキュリティをリセット",
+  "backToUnlockLink": "ロック解除に戻る",
+  "resetSecurityQuestionTitle": "セキュリティをリセットしますか？",
+  "resetSecurityWarningDesc": "これにより鍵データが削除されます。\n暗号化された金庫のデータには今後アクセス\nできなくなります。",
+  "resetSecurityConfirmCheckbox": "この操作は元に戻せないことを\n理解しました",
+  "statusActive": "有効",
+  "statusIdle": "待機中",
+  "appsProtectedLabel": "保護されたアプリ",
+  "vaultItemsLabel": "金庫のアイテム",
+  "intruderAlertsLabel": "侵入者アラート",
+  "biometricFallbackLabel": "生体認証の代替",
+  "quickActionsTitle": "クイックアクション",
+  "lockAppsAction": "アプリをロック",
+  "themesAction": "テーマ",
+  "promoBannerTitle": "すべての機能をアンロック",
+  "promoBannerSubtitle": "無制限のテーマ、広告なし、その他多数の特典。",
+  "themeMinimal": "ミニマル",
+  "themeClassicPin": "クラシックPIN",
+  "themePattern": "パターン",
+  "themeVault": "金庫",
+  "themeFocus": "フォーカス",
+  "themePremiumColors": "プレミアムカラー",
+  "premiumBadge": "プレミアム",
+  "applyThemeButton": "テーマを適用",
+  "themeAppliedTitle": "テーマを適用しました",
+  "themeAppliedSubtitle": "ロック画面に選択したテーマが\n適用されました。",
+  "premiumColorPreviewTitle": "プレミアムカラーのプレビュー",
+  "premiumThemesSubscriptionNote": "プレミアムテーマはサブスクリプションでご利用いただけます。",
+  "backToThemesButton": "テーマ一覧に戻る",
+  "lockedAppsHeader": "ロック中のアプリ",
+  "protectedAppsCount": "{count} 個の保護されたアプリ",
+  "@protectedAppsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchAppsHint": "アプリを検索...",
+  "filterAll": "すべて",
+  "filterCategories": "カテゴリ",
+  "filterLocked": "ロック中",
+  "categoryChipLabel": "カテゴリ: {category}",
+  "@categoryChipLabel": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "noLockedAppsFound": "ロックされたアプリが見つかりません",
+  "noAppsFound": "アプリが見つかりません",
+  "categorySocial": "ソーシャル",
+  "categoryMessaging": "メッセージ",
+  "categoryPhotosVideo": "写真＆動画",
+  "categoryFinance": "ファイナンス",
+  "categoryShopping": "ショッピング",
+  "categorySystem": "システム",
+  "categoryAppsBullet": "{count} アプリ • ",
+  "@categoryAppsBullet": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryProtectedCount": "{count} 件保護中",
+  "@categoryProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "usageAccessRequiredTitle": "使用状況へのアクセスが必要です",
+  "usageAccessRequiredDesc": "選択したアプリを保護するには、使用状況への\nアクセスを有効にしてください。",
+  "enableUsageAccessButton": "使用状況へのアクセスを有効化",
+  "protectionMayBeLimitedTitle": "保護が制限される可能性があります",
+  "protectionMayBeLimitedDesc": "バックグラウンドで確実に動作させるため、以下のAndroidシステム設定をご確認ください。",
+  "displayOverOtherAppsWarningDesc": "保護されたアプリの上にロック画面を表示するために必要です。",
+  "statusDisabled": "無効",
+  "batteryOptimizationTitle": "バッテリーの最適化",
+  "batteryOptimizationDesc": "Androidがバックグラウンドでアプリを終了させる場合があります。保護を維持するには最適化を無効にしてください。",
+  "statusRestricted": "制限あり",
+  "fixPermissionsButton": "権限を修正する",
+  "continueWithLimitedProtectionButton": "制限付きの保護で続行",
+  "itemsProtectedCount": "{count}/100 件のアイテムを保護中",
+  "@itemsProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "encryptedOnThisDevice": "このデバイス上で暗号化済み",
+  "quickActionsSmallTitle": "クイックアクション",
+  "addPhotosAction": "写真を\n追加",
+  "importVideosAction": "動画を\nインポート",
+  "createAlbumAction": "アルバム\n作成",
+  "albumsHeader": "アルバム",
+  "vaultEmptyTitle": "金庫は空です",
+  "vaultEmptySubtitle": "写真や動画をインポートして\nこの端末内で暗号化して保管しましょう。",
+  "albumPrivatePhotos": "プライベート写真",
+  "albumVideos": "動画",
+  "albumGalleries": "ギャラリー",
+  "albumScreenshots": "スクリーンショット",
+  "albumPhotos": "写真",
+  "vaultAlbumItemsCount": "{count} 件",
+  "@vaultAlbumItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultItemsProtectedSubtitle": "{count} 件 • 保護済み",
+  "@vaultItemsProtectedSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importToVaultTitle": "金庫にインポート",
+  "todaySection": "今日",
+  "september12Section": "9月12日",
+  "selectedCountLabel": "{count} 件選択中",
+  "@selectedCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "totalSizeMbLabel": "合計 {size} MB",
+  "@totalSizeMbLabel": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "moveToVaultButton": "金庫に移動",
+  "encryptingItemsTitle": "選択したアイテムを暗号化しています...",
+  "filesProcessedProgress": "{total} 件中 {processed} 件を処理済み",
+  "@filesProcessedProgress": {
+    "placeholders": {
+      "processed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "keepAppOpenWarning": "インポートが完了するまでアプリを閉じないでください。",
+  "importCompleteTitle": "インポート完了",
+  "importCompleteSubtitle": "データは安全に暗号化されました。",
+  "itemsEncryptedTitle": "{count} 件のアイテムを暗号化",
+  "@itemsEncryptedTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aes256Subtitle": "AES-256 軍事グレード",
+  "originalsDeletedTitle": "元のファイルを削除済み",
+  "spaceRecoveredSubtitle": "空き容量の回復: 124 MB",
+  "originalsCouldNotBeDeletedTitle": "元のファイルを自動的に削除\nできませんでした",
+  "nextStepRequiredTitle": "次のステップが必要です",
+  "deleteOriginalsManuallyDesc": "写真またはギャラリーを開いて\n元のファイルを手動で削除してください。",
+  "viewVaultButton": "金庫を表示",
+  "backToVaultHomeLink": "金庫のホームに戻る",
+  "fileInfoTitle": "ファイル情報",
+  "protectedBadge": "保護済み",
+  "propertiesHeader": "プロパティ",
+  "propertyName": "名前",
+  "propertyType": "種類",
+  "propertySize": "サイズ",
+  "propertyImportedDate": "インポート日",
+  "propertyEncryptionStatus": "暗号化ステータス",
+  "intruderSelfieOffTitle": "侵入者セルフィーはオフです",
+  "intruderSelfieOffSubtitle": "有効にすると、ロック解除に3回失敗した際に\n写真を撮影します。",
+  "secureLogsTitle": "セキュアログ",
+  "secureLogsSubtitle": "不正なアクセス試行の日時と写真を\n確認できます。",
+  "stealthCaptureTitle": "ステルス撮影",
+  "stealthCaptureSubtitle": "フロントカメラで音を立てずに\n撮影します。",
+  "enableIntruderSelfieButton": "侵入者セルフィーを有効化",
+  "cameraPermissionDeniedTitle": "カメラの権限が拒否されました",
+  "cameraPermissionDeniedSubtitle": "写真なしでも侵入イベントの記録は\n引き続き行われます。",
+  "intruderLoggingTitle": "侵入ログ記録",
+  "intruderLoggingSubtitle": "日時や試行されたPINは引き続き\nセキュリティ金庫に保存されます。",
+  "privacyFirstTitle": "プライバシー第一",
+  "privacyFirstSubtitle": "明示的なカメラの許可なしに写真が撮影・保存\nされることはありません。",
+  "openSettingsButton": "設定を開く",
+  "statusSummaryTitle": "ステータス概要",
+  "failedUnlockAttemptsToday": "本日のロック解除失敗: 2件",
+  "alertsSavedPremium": "11件のアラートを保存済み",
+  "alertsSavedFree": "2/10件のアラートを保存済み",
+  "failedMethodLabel": "失敗した方法: {method}",
+  "@failedMethodLabel": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  },
+  "viewDetailsAction": "詳細を見る",
+  "keepFullAlertHistoryTitle": "すべてのアラート履歴を保持",
+  "keepFullAlertHistoryDesc": "無料プランでは最新10件のみ表示されます。\n無期限に保存するにはアップグレードしてください。",
+  "alertDetailTitle": "アラートの詳細",
+  "noPhotoCapturedTitle": "写真は撮影されませんでした",
+  "noPhotoCapturedDesc": "このイベント中にセキュリティシステムが\nカメラを初期化できませんでした。",
+  "eventSummaryHeader": "イベント概要",
+  "highAlertBadge": "高警戒",
+  "captureAnalysisTitle": "キャプチャ分析",
+  "attemptedContextLabel": "試行された対象",
+  "failedMethodRowLabel": "失敗した認証方法",
+  "failedCountLabel": "失敗回数",
+  "dateTimeLabel": "日時",
+  "platformLabel": "プラットフォーム",
+  "deviceModelLabel": "端末モデル",
+  "saveEvidenceButton": "証拠を保存",
+  "enableCameraPermissionButton": "カメラ権限を有効にする",
+  "evidenceSavedSnackBar": "証拠を端末に保存しました",
+  "deleteAlertButton": "アラートを削除",
+  "settingsTitle": "設定",
+  "settingsSubtitle": "アプリの設定を管理します。",
+  "freePlanTitle": "無料プラン",
+  "freeBadge": "無料",
+  "freePlanDesc": "高度なセキュリティ機能を利用するには\nプレミアムにアップグレードしてください。",
+  "securitySectionHeader": "セキュリティ",
+  "biometricUnlockTitle": "生体認証ロック解除",
+  "biometricUnlockSubtitle": "Face ID / Touch ID を使用",
+  "autoLockDelayTitle": "自動ロックの遅延",
+  "helpAndSupportHeader": "ヘルプ＆サポート",
+  "languagesTitle": "言語",
+  "contactUsTitle": "お問い合わせ",
+  "termsOfServiceTitle": "利用規約",
+  "requireAuthenticationTitle": "認証を要求",
+  "requireAuthenticationSubtitle": "アプリを離れた後にロックされるまでの時間を選択します。\n短いほどプライバシー保護が強化されます。",
+  "delayImmediately": "即時",
+  "delay15Seconds": "15秒後",
+  "delay30Seconds": "30秒後",
+  "delay1Minute": "1分後",
+  "delayScreenOff": "画面オフ時",
+  "settingLanguagesTitle": "言語設定",
+  "settingLanguagesSubtitle": "インターフェースとドキュメント認識に使用する\n優先言語を選択してください。",
+  "langEnglish": "英語 (English)",
+  "langVietnamese": "ベトナム語 (Vietnamese)",
+  "langSpanish": "スペイン語 (Spanish)",
+  "langFrench": "フランス語 (French)",
+  "langGerman": "ドイツ語 (German)",
+  "langJapanese": "日本語",
+  "langChinese": "中国語 (Chinese)",
+  "contactUsIntro": "サポートいたします。以下のフォームにご記入いただければ、\nサポートチームより折り返しご連絡\nいたします。",
+  "emailAddressLabel": "メールアドレス",
+  "emailHint": "you@example.com",
+  "subjectLabel": "件名",
+  "subjectHint": "問題の概要を簡潔に入力",
+  "messageLabel": "メッセージ",
+  "messageHint": "問題の詳細をご記入ください...",
+  "contactPrivacyDisclaimer": "このフォームを送信することで、プライバシーポリシーに同意したものとみなされます。\nメールアドレスはこのお問い合わせへの返信にのみ使用されます。",
+  "sendMessageButton": "メッセージを送信",
+  "messageSentSnackBar": "サポートチームにメッセージを送信しました",
+  "biometricNotSupportedError": "この端末は生体認証に対応していないか、未設定です",
+  "deleteOriginalsDialogTitle": "元のファイルを削除しますか？",
+  "deleteOriginalsDialogDesc": "インポート後、許可されている場合はOSを通じて元のファイルを削除できます。",
+  "importAndDeleteOriginalsButton": "インポートして元のファイルを削除",
+  "importOnlyButton": "インポートのみ",
+  "restoreToGalleryDialogTitle": "ギャラリーに復元しますか？",
+  "restoreToGalleryDialogDesc": "復号されたコピーがOS経由で保存されます。一時ファイルは復元後に消去されます。",
+  "deleteFromVaultDialogTitle": "金庫から削除しますか？",
+  "deleteFromVaultDialogDesc": "暗号化された金庫のコピーをこの端末から削除します。",
+  "deletePermanentlyButton": "完全に削除",
+  "deleteAlertDialogTitle": "アラートを削除しますか？",
+  "deleteAlertDialogDesc": "撮影された侵入者の写真とイベントログをこの端末から削除します。"
+}

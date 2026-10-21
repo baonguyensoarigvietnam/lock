@@ -3,6 +3,7 @@ import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class HomeThemeAppliedView extends StatelessWidget {
   final VoidCallback onDone;
@@ -14,6 +15,7 @@ class HomeThemeAppliedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -59,7 +61,7 @@ class HomeThemeAppliedView extends StatelessWidget {
 
           // Title
           Text(
-            'Theme applied',
+            l10n.themeAppliedTitle,
             textAlign: TextAlign.center,
             style: AppTypography.bold.copyWith(
               fontSize: 22,
@@ -70,7 +72,7 @@ class HomeThemeAppliedView extends StatelessWidget {
 
           // Subtitle
           Text(
-            'Your lock screens now use the\nselected theme.',
+            l10n.themeAppliedSubtitle,
             textAlign: TextAlign.center,
             style: AppTypography.regular.copyWith(
               fontSize: 14,
@@ -102,7 +104,7 @@ class HomeThemeAppliedView extends StatelessWidget {
 
           // Done Button
           CommonButton.filled(
-            text: 'Done',
+            text: l10n.doneButton,
             height: 48,
             cornerRadius: 10,
             backgroundColor: AppColorsPalette.black,

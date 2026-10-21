@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class AppCategoryItemData {
   final String title;
@@ -63,8 +64,30 @@ class AppsCategoriesListView extends StatelessWidget {
     super.key,
   });
 
+  static String resolveCategoryTitle(BuildContext context, String key) {
+    final l10n = context.l10n;
+    switch (key) {
+      case 'Social':
+        return l10n.categorySocial;
+      case 'Messaging':
+        return l10n.categoryMessaging;
+      case 'Photos & Video':
+        return l10n.categoryPhotosVideo;
+      case 'Finance':
+        return l10n.categoryFinance;
+      case 'Shopping':
+        return l10n.categoryShopping;
+      case 'System':
+      case 'System App':
+        return l10n.categorySystem;
+      default:
+        return key;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return ListView.separated(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.only(top: 6, bottom: 20),
@@ -73,6 +96,7 @@ class AppsCategoriesListView extends StatelessWidget {
       itemBuilder: (context, index) {
         final category = categories[index];
         final hasProtected = category.protectedApps > 0;
+        final localizedTitle = resolveCategoryTitle(context, category.title);
 
         return InkWell(
           onTap: () => onCategoryTap(category.title),
@@ -110,7 +134,7 @@ class AppsCategoriesListView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        category.title,
+                        localizedTitle,
                         style: AppTypography.bold.copyWith(
                           fontSize: 15,
                           color: AppColorsPalette.black,
@@ -124,9 +148,13 @@ class AppsCategoriesListView extends StatelessWidget {
                             color: AppColorsPalette.gray500,
                           ),
                           children: [
-                            TextSpan(text: '${category.totalApps} Apps • '),
                             TextSpan(
-                              text: '${category.protectedApps} Protected',
+                              text: l10n.categoryAppsBullet(category.totalApps),
+                            ),
+                            TextSpan(
+                              text: l10n.categoryProtectedCount(
+                                category.protectedApps,
+                              ),
                               style: AppTypography.medium.copyWith(
                                 fontSize: 12,
                                 color: hasProtected

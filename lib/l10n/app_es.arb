@@ -1,0 +1,407 @@
+{
+  "@@locale": "es",
+  "appTitle": "AppLock",
+  "appLockTitle": "Bloqueo de Apps",
+  "continueButton": "Continuar",
+  "getStartedButton": "Comenzar",
+  "skipButton": "Omitir",
+  "cancelButton": "Cancelar",
+  "saveButton": "Guardar",
+  "doneButton": "Listo",
+  "resetButton": "Restablecer",
+  "restoreAction": "Restaurar",
+  "deleteAction": "Eliminar",
+  "infoAction": "Info",
+  "selectAction": "Seleccionar",
+  "selectAllAction": "Seleccionar todo",
+  "seeAllAction": "Ver todo",
+  "navHome": "Inicio",
+  "navApps": "Apps",
+  "navVault": "Bóveda",
+  "navAlerts": "Alertas",
+  "navSettings": "Ajustes",
+  "splashSubtitle": "Protege tu contenido privado",
+  "onboardingStep1Title": "Protege tu privacidad",
+  "onboardingStep1Desc": "Mantén fotos, videos privados y accesos sensibles protegidos en este dispositivo.",
+  "onboardingStep2Title": "Protección solo local",
+  "onboardingStep2Subtitle": "Tus datos nunca salen de tu dispositivo.",
+  "onboardingNoAccountTitle": "Sin cuenta",
+  "onboardingNoAccountDesc": "No pedimos tu correo ni número de teléfono para usar la aplicación.",
+  "onboardingNoCloudTitle": "Sin sincronización en la nube",
+  "onboardingNoCloudDesc": "Tus datos nunca se suben a servidores externos ni a la nube.",
+  "onboardingNoRecoveryTitle": "Sin recuperación por servidor",
+  "onboardingNoRecoveryDesc": "Si pierdes tu PIN, no podremos recuperar tus datos.",
+  "onboardingVaultStaysTitle": "Los archivos se quedan aquí",
+  "onboardingVaultStaysDesc": "Todo lo asegurado en la bóveda permanece estrictamente en este dispositivo.",
+  "unlockMethodTitle": "Configura tu método de desbloqueo",
+  "unlockMethodSubtitle": "Elige cómo desbloquearás tu contenido privado.",
+  "createPinTitle": "Crear PIN",
+  "createPinSubtitle": "Código numérico de 4 a 8 dígitos",
+  "drawPatternTitle": "Dibujar patrón",
+  "drawPatternSubtitle": "Conecta al menos 4 puntos",
+  "unlockMethodWarning": "Guárdalo en un lugar seguro. Los datos de la bóveda no se pueden recuperar si lo olvidas y la biometría no está disponible.",
+  "createYourPinTitle": "Crea tu PIN",
+  "confirmYourPinTitle": "Confirma tu PIN",
+  "changePasscodeTitle": "Cambiar código",
+  "confirmYourPasscodeTitle": "Confirma tu código",
+  "usePinToAccessSubtitle": "Usa este PIN para acceder a tu contenido protegido.",
+  "reEnterPinSubtitle": "Vuelve a ingresar tu PIN para confirmar.",
+  "reEnterPinShort": "Vuelve a ingresar tu PIN.",
+  "pinDoesNotMatchError": "El PIN no coincide.",
+  "usePatternInstead": "Usar patrón en su lugar",
+  "usePinInstead": "Usar PIN en su lugar",
+  "drawUnlockPatternTitle": "Dibuja un patrón de desbloqueo",
+  "confirmYourPatternTitle": "Confirma tu patrón",
+  "connectAtLeast4Dots": "Conecta al menos 4 puntos.",
+  "drawPatternAgainConfirm": "Dibuja tu patrón de nuevo para confirmar.",
+  "patternDoesNotMatchError": "El patrón no coincide",
+  "enableBiometricTitle": "Activar respaldo biométrico",
+  "enableBiometricSubtitle": "Usa la huella digital o el reconocimiento facial de tu dispositivo para recuperar el acceso si es necesario.",
+  "fasterUnlockTitle": "Desbloqueo más rápido",
+  "fasterUnlockSubtitle": "Accede rápidamente a tu bóveda sin escribir.",
+  "usesDeviceSecurityTitle": "Usa la seguridad del dispositivo",
+  "usesDeviceSecuritySubtitle": "Aprovecha el hardware biométrico integrado.",
+  "helpsForgetPinTitle": "Ayuda si olvidas tu PIN",
+  "helpsForgetPinSubtitle": "Una alternativa segura para volver a entrar.",
+  "biometricInfoNote": "El respaldo biométrico solo funciona si se activa antes de olvidar tu PIN.",
+  "enableBiometricButton": "Activar biometría",
+  "setUpPermissionsTitle": "Configurar permisos",
+  "permissionGuideSubtitle": "Activa los permisos necesarios para Bloqueo de Apps, Bóveda y alertas. Puedes omitir funciones opcionales y activarlas después.",
+  "usageAccessTitle": "Acceso de uso",
+  "usageAccessDesc": "Detecta cuándo se abren las apps seleccionadas para mostrar la pantalla de desbloqueo.",
+  "displayOverOtherAppsTitle": "Mostrar sobre otras apps",
+  "displayOverOtherAppsDesc": "Muestra la pantalla de desbloqueo sobre las apps protegidas para mayor fiabilidad.",
+  "notificationsTitle": "Notificaciones",
+  "notificationsDesc": "Muestra el estado de protección, alertas de seguridad y avisos de permisos.",
+  "photosAndVideosTitle": "Fotos y videos",
+  "photosAndVideosDesc": "Selecciona archivos multimedia para importar a tu bóveda cifrada.",
+  "cameraTitle": "Cámara",
+  "cameraDesc": "Toma una foto con la cámara frontal tras 3 intentos fallidos de desbloqueo.",
+  "badgeRequired": "REQUERIDO",
+  "badgeRecommended": "RECOMENDADO",
+  "badgeVault": "BÓVEDA",
+  "badgeIntruder": "INTRUSO",
+  "upgradeToPremium": "Actualizar a Premium",
+  "paywallSubtitle": "Desbloquea más temas y elimina los anuncios.",
+  "paywallFeatureThemes": "Temas premium futuros",
+  "paywallFeatureVault": "Bóveda ilimitada",
+  "paywallFeatureAlerts": "Historial completo de alertas",
+  "paywallFeatureNoAds": "Sin anuncios",
+  "monthlyPlanTitle": "Mensual",
+  "monthlyPlanSubtitle": "Facturado cada mes",
+  "yearlyPlanTitle": "Anual",
+  "yearlyPlanSubtitle": "Facturado anualmente",
+  "save40Badge": "AHORRA 40%",
+  "wasPrice": "antes {price}",
+  "@wasPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "startPremiumButton": "Iniciar Premium",
+  "restorePurchases": "Restaurar compras",
+  "termsLink": "Términos",
+  "privacyPolicyLink": "Política de privacidad",
+  "unlockAppTitle": "Desbloquear {appName}",
+  "@unlockAppTitle": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "enterPinToContinue": "Ingresa tu PIN para continuar.",
+  "incorrectPinTryAgain": "PIN incorrecto. Inténtalo de nuevo.",
+  "incorrectPatternTryAgain": "Patrón incorrecto. Inténtalo de nuevo.",
+  "forgotPinLink": "¿Olvidaste tu PIN?",
+  "forgotPatternLink": "¿Olvidaste el patrón?",
+  "useBiometricUnlockTitle": "Usar desbloqueo biométrico",
+  "unlockWithDeviceAuthSubtitle": "Desbloquea con la autenticación del dispositivo.",
+  "biometricNotRecognized": "BIOMETRÍA NO RECONOCIDA",
+  "recoverAccessTitle": "Recuperar acceso",
+  "useBiometricFallbackCardTitle": "Usar respaldo biométrico",
+  "useBiometricFallbackCardDesc": "Autentícate con la biometría del dispositivo y luego crea un nuevo PIN o patrón.",
+  "authenticateButton": "Autenticar",
+  "vaultCannotBeRecoveredTitle": "La bóveda no se puede recuperar",
+  "vaultCannotBeRecoveredDesc": "Sin PIN, patrón o respaldo biométrico, los datos cifrados de la bóveda no se pueden recuperar.",
+  "resetAppSecurityButton": "Restablecer seguridad de la app",
+  "backToUnlockLink": "Volver al desbloqueo",
+  "resetSecurityQuestionTitle": "¿Restablecer seguridad?",
+  "resetSecurityWarningDesc": "Esto eliminará el sobre de claves.\nLos datos cifrados de la bóveda ya no serán\naccesibles.",
+  "resetSecurityConfirmCheckbox": "Entiendo que esto no se puede\ndeshacer",
+  "statusActive": "ACTIVO",
+  "statusIdle": "INACTIVO",
+  "appsProtectedLabel": "Apps protegidas",
+  "vaultItemsLabel": "Elementos en bóveda",
+  "intruderAlertsLabel": "Alertas de intrusos",
+  "biometricFallbackLabel": "Respaldo biométrico",
+  "quickActionsTitle": "Acciones rápidas",
+  "lockAppsAction": "Bloquear apps",
+  "themesAction": "Temas",
+  "promoBannerTitle": "DESBLOQUEA TODAS LAS FUNCIONES",
+  "promoBannerSubtitle": "Temas ilimitados, sin anuncios y mucho más.",
+  "themeMinimal": "Minimalista",
+  "themeClassicPin": "PIN clásico",
+  "themePattern": "Patrón",
+  "themeVault": "Bóveda",
+  "themeFocus": "Enfoque",
+  "themePremiumColors": "Colores Premium",
+  "premiumBadge": "PREMIUM",
+  "applyThemeButton": "Aplicar tema",
+  "themeAppliedTitle": "Tema aplicado",
+  "themeAppliedSubtitle": "Tus pantallas de bloqueo ahora usan el\ntema seleccionado.",
+  "premiumColorPreviewTitle": "Vista previa de color Premium",
+  "premiumThemesSubscriptionNote": "Los temas premium están disponibles con suscripción.",
+  "backToThemesButton": "Volver a temas",
+  "lockedAppsHeader": "Apps bloqueadas",
+  "protectedAppsCount": "{count} apps protegidas",
+  "@protectedAppsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchAppsHint": "Buscar aplicaciones...",
+  "filterAll": "Todas",
+  "filterCategories": "Categorías",
+  "filterLocked": "Bloqueadas",
+  "categoryChipLabel": "Categoría: {category}",
+  "@categoryChipLabel": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "noLockedAppsFound": "No se encontraron apps bloqueadas",
+  "noAppsFound": "No se encontraron aplicaciones",
+  "categorySocial": "Social",
+  "categoryMessaging": "Mensajería",
+  "categoryPhotosVideo": "Fotos y video",
+  "categoryFinance": "Finanzas",
+  "categoryShopping": "Compras",
+  "categorySystem": "Sistema",
+  "categoryAppsBullet": "{count} Apps • ",
+  "@categoryAppsBullet": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryProtectedCount": "{count} protegidas",
+  "@categoryProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "usageAccessRequiredTitle": "Se requiere acceso de uso",
+  "usageAccessRequiredDesc": "Activa el acceso de uso para proteger las\naplicaciones seleccionadas.",
+  "enableUsageAccessButton": "Activar acceso de uso",
+  "protectionMayBeLimitedTitle": "La protección puede verse limitada",
+  "protectionMayBeLimitedDesc": "Para garantizar que Bloqueo de Apps funcione de forma fiable en segundo plano, revisa los siguientes ajustes de Android.",
+  "displayOverOtherAppsWarningDesc": "Necesario para mostrar la pantalla de bloqueo sobre las apps protegidas. Sin esto, no se bloquearán.",
+  "statusDisabled": "Desactivado",
+  "batteryOptimizationTitle": "Optimización de batería",
+  "batteryOptimizationDesc": "Android puede cerrar la app en segundo plano. Desactiva la optimización para mantener la protección activa.",
+  "statusRestricted": "Restringido",
+  "fixPermissionsButton": "Corregir permisos",
+  "continueWithLimitedProtectionButton": "Continuar con protección limitada",
+  "itemsProtectedCount": "{count}/100 elementos protegidos",
+  "@itemsProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "encryptedOnThisDevice": "Cifrado en este dispositivo",
+  "quickActionsSmallTitle": "Acciones rápidas",
+  "addPhotosAction": "Añadir\nFotos",
+  "importVideosAction": "Importar\nVideos",
+  "createAlbumAction": "Crear\nÁlbum",
+  "albumsHeader": "Álbumes",
+  "vaultEmptyTitle": "Tu bóveda está vacía",
+  "vaultEmptySubtitle": "Importa fotos y videos para mantenerlos\ncifrados en este dispositivo.",
+  "albumPrivatePhotos": "Fotos privadas",
+  "albumVideos": "Videos",
+  "albumGalleries": "Galerías",
+  "albumScreenshots": "Capturas",
+  "albumPhotos": "Fotos",
+  "vaultAlbumItemsCount": "{count} elementos",
+  "@vaultAlbumItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultItemsProtectedSubtitle": "{count} elementos • Protegidos",
+  "@vaultItemsProtectedSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importToVaultTitle": "Importar a la Bóveda",
+  "todaySection": "Hoy",
+  "september12Section": "12 de septiembre",
+  "selectedCountLabel": "{count} seleccionados",
+  "@selectedCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "totalSizeMbLabel": "{size} MB en total",
+  "@totalSizeMbLabel": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "moveToVaultButton": "Mover a la Bóveda",
+  "encryptingItemsTitle": "Cifrando elementos seleccionados...",
+  "filesProcessedProgress": "{processed} de {total} archivos procesados",
+  "@filesProcessedProgress": {
+    "placeholders": {
+      "processed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "keepAppOpenWarning": "Mantén la aplicación abierta hasta que termine la importación.",
+  "importCompleteTitle": "Importación completada",
+  "importCompleteSubtitle": "Tus datos ahora están seguros y cifrados.",
+  "itemsEncryptedTitle": "{count} elementos cifrados",
+  "@itemsEncryptedTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aes256Subtitle": "Grado militar AES-256",
+  "originalsDeletedTitle": "Originales eliminados",
+  "spaceRecoveredSubtitle": "Espacio recuperado: 124 MB",
+  "originalsCouldNotBeDeletedTitle": "No se pudieron eliminar los originales\nautomáticamente",
+  "nextStepRequiredTitle": "Siguiente paso requerido",
+  "deleteOriginalsManuallyDesc": "Abre Fotos o Galería para eliminar\nlos originales manualmente.",
+  "viewVaultButton": "Ver Bóveda",
+  "backToVaultHomeLink": "Volver al inicio de la Bóveda",
+  "fileInfoTitle": "Información del archivo",
+  "protectedBadge": "Protegido",
+  "propertiesHeader": "Propiedades",
+  "propertyName": "Nombre",
+  "propertyType": "Tipo",
+  "propertySize": "Tamaño",
+  "propertyImportedDate": "Fecha de importación",
+  "propertyEncryptionStatus": "Estado de cifrado",
+  "intruderSelfieOffTitle": "Selfie de intruso desactivado",
+  "intruderSelfieOffSubtitle": "Actívalo para tomar una foto tras 3\nintentos fallidos de desbloqueo.",
+  "secureLogsTitle": "Registros seguros",
+  "secureLogsSubtitle": "Consulta fecha, hora y foto de\nintentos no autorizados.",
+  "stealthCaptureTitle": "Captura silenciosa",
+  "stealthCaptureSubtitle": "La cámara frontal toma la foto\nsilenciosamente.",
+  "enableIntruderSelfieButton": "Activar Selfie de intruso",
+  "cameraPermissionDeniedTitle": "Permiso de cámara denegado",
+  "cameraPermissionDeniedSubtitle": "Los eventos de intrusos aún pueden registrarse\nsin una foto.",
+  "intruderLoggingTitle": "Registro de intrusos",
+  "intruderLoggingSubtitle": "La hora, fecha e intentos de PIN seguirán\nguardándose en tu bóveda de seguridad.",
+  "privacyFirstTitle": "Privacidad primero",
+  "privacyFirstSubtitle": "No se toman ni guardan fotos sin tu\npermiso explícito de cámara.",
+  "openSettingsButton": "Abrir ajustes",
+  "statusSummaryTitle": "Resumen de estado",
+  "failedUnlockAttemptsToday": "2 intentos fallidos hoy",
+  "alertsSavedPremium": "11 alertas guardadas",
+  "alertsSavedFree": "2 alertas guardadas de 10",
+  "failedMethodLabel": "Método fallido: {method}",
+  "@failedMethodLabel": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  },
+  "viewDetailsAction": "Ver detalles",
+  "keepFullAlertHistoryTitle": "Conserva todo el historial de alertas",
+  "keepFullAlertHistoryDesc": "Los usuarios gratuitos solo ven las últimas 10\nalertas. Actualiza para guardar sin límite.",
+  "alertDetailTitle": "Detalle de alerta",
+  "noPhotoCapturedTitle": "No se capturó foto",
+  "noPhotoCapturedDesc": "El sistema de seguridad no pudo\ninicializar la cámara durante este\nevento.",
+  "eventSummaryHeader": "RESUMEN DEL EVENTO",
+  "highAlertBadge": "Alerta alta",
+  "captureAnalysisTitle": "Análisis de captura",
+  "attemptedContextLabel": "Contexto del intento",
+  "failedMethodRowLabel": "Método fallido",
+  "failedCountLabel": "Intentos fallidos",
+  "dateTimeLabel": "Fecha/hora",
+  "platformLabel": "Plataforma",
+  "deviceModelLabel": "Modelo de dispositivo",
+  "saveEvidenceButton": "Guardar evidencia",
+  "enableCameraPermissionButton": "Activar permiso de cámara",
+  "evidenceSavedSnackBar": "Evidencia guardada en el dispositivo",
+  "deleteAlertButton": "Eliminar alerta",
+  "settingsTitle": "Ajustes",
+  "settingsSubtitle": "Administra las preferencias de la aplicación.",
+  "freePlanTitle": "Plan Gratuito",
+  "freeBadge": "GRATIS",
+  "freePlanDesc": "Actualiza a Premium para funciones de seguridad\navanzadas.",
+  "securitySectionHeader": "Seguridad",
+  "biometricUnlockTitle": "Desbloqueo biométrico",
+  "biometricUnlockSubtitle": "Usar Face ID / Touch ID",
+  "autoLockDelayTitle": "Retraso de bloqueo automático",
+  "helpAndSupportHeader": "Ayuda y soporte",
+  "languagesTitle": "Idiomas",
+  "contactUsTitle": "Contáctanos",
+  "termsOfServiceTitle": "Términos de servicio",
+  "requireAuthenticationTitle": "Requerir autenticación",
+  "requireAuthenticationSubtitle": "Elige qué tan rápido se bloquea la app al salir.\nLos tiempos más cortos brindan mayor protección\nde privacidad.",
+  "delayImmediately": "Inmediatamente",
+  "delay15Seconds": "Después de 15 segundos",
+  "delay30Seconds": "Después de 30 segundos",
+  "delay1Minute": "Después de 1 minuto",
+  "delayScreenOff": "Cuando se apague la pantalla",
+  "settingLanguagesTitle": "Configuración de idioma",
+  "settingLanguagesSubtitle": "Elige tu idioma preferido para la interfaz\ny el reconocimiento de documentos.",
+  "langEnglish": "Inglés (English)",
+  "langVietnamese": "Vietnamita (Vietnamese)",
+  "langSpanish": "Español",
+  "langFrench": "Francés (French)",
+  "langGerman": "Alemán (German)",
+  "langJapanese": "Japonés (Japanese)",
+  "langChinese": "Chino (Chinese)",
+  "contactUsIntro": "Estamos aquí para ayudar. Completa el formulario y\nnuestro equipo de soporte te responderá lo antes\nposible.",
+  "emailAddressLabel": "Correo electrónico",
+  "emailHint": "tu@ejemplo.com",
+  "subjectLabel": "Asunto",
+  "subjectHint": "Resumen breve de tu problema",
+  "messageLabel": "Mensaje",
+  "messageHint": "Describe tu problema en detalle...",
+  "contactPrivacyDisclaimer": "Al enviar este formulario, aceptas nuestra Política de privacidad.\nSolo usaremos tu correo para responder a esta solicitud.",
+  "sendMessageButton": "Enviar mensaje",
+  "messageSentSnackBar": "Mensaje enviado al equipo de soporte",
+  "biometricNotSupportedError": "El dispositivo no admite o no tiene configurada la biometría",
+  "deleteOriginalsDialogTitle": "¿Eliminar originales?",
+  "deleteOriginalsDialogDesc": "Tras importar, la app puede pedir al sistema operativo que elimine los archivos originales cuando esté permitido.",
+  "importAndDeleteOriginalsButton": "Importar y eliminar originales",
+  "importOnlyButton": "Solo importar",
+  "restoreToGalleryDialogTitle": "¿Restaurar a la galería?",
+  "restoreToGalleryDialogDesc": "Se guardará una copia descifrada a través del sistema operativo. Los archivos temporales se limpian después.",
+  "deleteFromVaultDialogTitle": "¿Eliminar de la Bóveda?",
+  "deleteFromVaultDialogDesc": "Esto eliminará la copia cifrada de la bóveda de este dispositivo.",
+  "deletePermanentlyButton": "Eliminar permanentemente",
+  "deleteAlertDialogTitle": "¿Eliminar alerta?",
+  "deleteAlertDialogDesc": "Esto eliminará la foto del intruso y el registro del evento de este dispositivo."
+}

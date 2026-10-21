@@ -12,6 +12,7 @@ import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/enumeration/apps_filter_tab.dart';
 import 'package:applock/utility/enumeration/apps_tab_step.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class AppsViewContent extends StatefulWidget {
   const AppsViewContent({super.key});
@@ -80,6 +81,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
 
   Widget _buildLockedAppsMainContent(BuildContext context, AppsState state) {
     final vm = context.read<AppsViewModel>();
+    final l10n = context.l10n;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -92,7 +94,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Locked Apps',
+                l10n.lockedAppsHeader,
                 style: AppTypography.bold.copyWith(
                   fontSize: 22,
                   color: AppColorsPalette.black,
@@ -114,7 +116,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
                     ),
                   ),
                   child: Text(
-                    '${state.lockedCount} protected apps',
+                    l10n.protectedAppsCount(state.lockedCount),
                     style: AppTypography.medium.copyWith(
                       fontSize: 12,
                       color: AppColorsPalette.gray500,
@@ -145,7 +147,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
                 color: AppColorsPalette.black,
               ),
               decoration: InputDecoration(
-                hintText: 'Search apps...',
+                hintText: l10n.searchAppsHint,
                 hintStyle: AppTypography.regular.copyWith(
                   color: AppColorsPalette.gray400,
                   fontSize: 14,
@@ -178,19 +180,19 @@ class _AppsViewContentState extends State<AppsViewContent> {
               children: [
                 _buildSegmentTab(
                   context: context,
-                  label: 'All',
+                  label: l10n.filterAll,
                   tab: AppsFilterTab.all,
                   currentTab: state.appsFilterTab,
                 ),
                 _buildSegmentTab(
                   context: context,
-                  label: 'Categories',
+                  label: l10n.filterCategories,
                   tab: AppsFilterTab.categories,
                   currentTab: state.appsFilterTab,
                 ),
                 _buildSegmentTab(
                   context: context,
-                  label: 'Locked',
+                  label: l10n.filterLocked,
                   tab: AppsFilterTab.locked,
                   currentTab: state.appsFilterTab,
                 ),
@@ -220,7 +222,12 @@ class _AppsViewContentState extends State<AppsViewContent> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Category: ${state.selectedCategory}',
+                          l10n.categoryChipLabel(
+                            AppsCategoriesListView.resolveCategoryTitle(
+                              context,
+                              state.selectedCategory!,
+                            ),
+                          ),
                           style: AppTypography.medium.copyWith(
                             fontSize: 12,
                             color: AppColorsPalette.gray700,
@@ -287,6 +294,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
   Widget _buildTabViewContent(BuildContext context, AppsState state) {
     final vm = context.read<AppsViewModel>();
     final navigator = context.read<AppsNavigator>();
+    final l10n = context.l10n;
 
     if (state.isLoading) {
       return const Center(
@@ -306,7 +314,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
         if (lockedApps.isEmpty) {
           return Center(
             child: Text(
-              'No locked apps found',
+              l10n.noLockedAppsFound,
               style: AppTypography.regular.copyWith(
                 color: AppColorsPalette.gray500,
                 fontSize: 14,
@@ -356,7 +364,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
         if (state.filteredApps.isEmpty) {
           return Center(
             child: Text(
-              'No apps found',
+              l10n.noAppsFound,
               style: AppTypography.regular.copyWith(
                 color: AppColorsPalette.gray500,
                 fontSize: 14,

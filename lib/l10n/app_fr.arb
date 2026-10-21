@@ -1,0 +1,407 @@
+{
+  "@@locale": "fr",
+  "appTitle": "AppLock",
+  "appLockTitle": "Verrou d'Apps",
+  "continueButton": "Continuer",
+  "getStartedButton": "Commencer",
+  "skipButton": "Ignorer",
+  "cancelButton": "Annuler",
+  "saveButton": "Enregistrer",
+  "doneButton": "Terminé",
+  "resetButton": "Réinitialiser",
+  "restoreAction": "Restaurer",
+  "deleteAction": "Supprimer",
+  "infoAction": "Infos",
+  "selectAction": "Sélectionner",
+  "selectAllAction": "Tout sélectionner",
+  "seeAllAction": "Tout voir",
+  "navHome": "Accueil",
+  "navApps": "Applications",
+  "navVault": "Coffre-fort",
+  "navAlerts": "Alertes",
+  "navSettings": "Paramètres",
+  "splashSubtitle": "Protégez votre contenu privé",
+  "onboardingStep1Title": "Protégez votre vie privée",
+  "onboardingStep1Desc": "Gardez vos photos, vidéos privées et accès sensibles protégés sur cet appareil.",
+  "onboardingStep2Title": "Protection uniquement locale",
+  "onboardingStep2Subtitle": "Vos données ne quittent jamais votre appareil.",
+  "onboardingNoAccountTitle": "Aucun compte",
+  "onboardingNoAccountDesc": "Nous ne demandons ni votre e-mail ni votre numéro de téléphone.",
+  "onboardingNoCloudTitle": "Aucune synchronisation cloud",
+  "onboardingNoCloudDesc": "Vos données ne sont jamais envoyées sur des serveurs externes.",
+  "onboardingNoRecoveryTitle": "Aucune récupération serveur",
+  "onboardingNoRecoveryDesc": "Si vous perdez votre code PIN, nous ne pouvons pas récupérer vos données.",
+  "onboardingVaultStaysTitle": "Vos fichiers restent ici",
+  "onboardingVaultStaysDesc": "Tout ce qui est sécurisé dans le coffre reste strictement sur cet appareil.",
+  "unlockMethodTitle": "Configurez votre méthode de déverrouillage",
+  "unlockMethodSubtitle": "Choisissez comment déverrouiller votre contenu privé.",
+  "createPinTitle": "Créer un code PIN",
+  "createPinSubtitle": "Code numérique de 4 à 8 chiffres",
+  "drawPatternTitle": "Dessiner un schéma",
+  "drawPatternSubtitle": "Reliez au moins 4 points",
+  "unlockMethodWarning": "Gardez-le en sécurité. Les données du coffre ne peuvent pas être récupérées en cas d'oubli sans biométrie.",
+  "createYourPinTitle": "Créez votre code PIN",
+  "confirmYourPinTitle": "Confirmez votre code PIN",
+  "changePasscodeTitle": "Changer le code d'accès",
+  "confirmYourPasscodeTitle": "Confirmez votre code",
+  "usePinToAccessSubtitle": "Utilisez ce code PIN pour accéder à votre contenu protégé.",
+  "reEnterPinSubtitle": "Saisissez à nouveau votre code PIN pour confirmer.",
+  "reEnterPinShort": "Ressaisissez votre PIN.",
+  "pinDoesNotMatchError": "Le code PIN ne correspond pas.",
+  "usePatternInstead": "Utiliser un schéma à la place",
+  "usePinInstead": "Utiliser un code PIN à la place",
+  "drawUnlockPatternTitle": "Dessinez un schéma de déverrouillage",
+  "confirmYourPatternTitle": "Confirmez votre schéma",
+  "connectAtLeast4Dots": "Reliez au moins 4 points.",
+  "drawPatternAgainConfirm": "Dessinez à nouveau votre schéma pour confirmer.",
+  "patternDoesNotMatchError": "Le schéma ne correspond pas",
+  "enableBiometricTitle": "Activer le secours biométrique",
+  "enableBiometricSubtitle": "Utilisez l'empreinte digitale ou la reconnaissance faciale de votre appareil pour retrouver l'accès.",
+  "fasterUnlockTitle": "Déverrouillage plus rapide",
+  "fasterUnlockSubtitle": "Accédez rapidement à votre coffre sans saisir de code.",
+  "usesDeviceSecurityTitle": "Utilise la sécurité de l'appareil",
+  "usesDeviceSecuritySubtitle": "S'appuie sur le matériel biométrique intégré.",
+  "helpsForgetPinTitle": "Utile en cas d'oubli du PIN",
+  "helpsForgetPinSubtitle": "Un moyen alternatif sécurisé pour retrouver l'accès.",
+  "biometricInfoNote": "Le secours biométrique ne fonctionne que s'il est activé avant d'oublier votre PIN.",
+  "enableBiometricButton": "Activer la biométrie",
+  "setUpPermissionsTitle": "Configurer les autorisations",
+  "permissionGuideSubtitle": "Activez les autorisations requises pour le verrouillage, le coffre et les alertes. Les fonctions optionnelles peuvent être activées plus tard.",
+  "usageAccessTitle": "Accès aux données d'utilisation",
+  "usageAccessDesc": "Détecte l'ouverture des applications protégées pour afficher l'écran de verrouillage.",
+  "displayOverOtherAppsTitle": "Superposer aux autres applications",
+  "displayOverOtherAppsDesc": "Affiche l'écran de déverrouillage par-dessus les applications protégées.",
+  "notificationsTitle": "Notifications",
+  "notificationsDesc": "Affiche l'état de la protection, les alertes de sécurité et les avertissements.",
+  "photosAndVideosTitle": "Photos et vidéos",
+  "photosAndVideosDesc": "Sélectionnez des médias à importer dans votre coffre-fort chiffré.",
+  "cameraTitle": "Caméra",
+  "cameraDesc": "Prend une photo avec la caméra frontale après 3 échecs de déverrouillage.",
+  "badgeRequired": "REQUIS",
+  "badgeRecommended": "RECOMMANDÉ",
+  "badgeVault": "COFFRE",
+  "badgeIntruder": "INTRUS",
+  "upgradeToPremium": "Passer à Premium",
+  "paywallSubtitle": "Débloquez plus de thèmes et supprimez les publicités.",
+  "paywallFeatureThemes": "Futurs thèmes premium",
+  "paywallFeatureVault": "Coffre-fort illimité",
+  "paywallFeatureAlerts": "Historique complet des alertes",
+  "paywallFeatureNoAds": "Sans publicité",
+  "monthlyPlanTitle": "Mensuel",
+  "monthlyPlanSubtitle": "Facturé chaque mois",
+  "yearlyPlanTitle": "Annuel",
+  "yearlyPlanSubtitle": "Facturé annuellement",
+  "save40Badge": "ÉCONOMISEZ 40%",
+  "wasPrice": "au lieu de {price}",
+  "@wasPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "startPremiumButton": "Démarrer Premium",
+  "restorePurchases": "Restaurer les achats",
+  "termsLink": "Conditions",
+  "privacyPolicyLink": "Politique de confidentialité",
+  "unlockAppTitle": "Déverrouiller {appName}",
+  "@unlockAppTitle": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "enterPinToContinue": "Entrez votre code PIN pour continuer.",
+  "incorrectPinTryAgain": "Code PIN incorrect. Réessayez.",
+  "incorrectPatternTryAgain": "Schéma incorrect. Réessayez.",
+  "forgotPinLink": "PIN oublié ?",
+  "forgotPatternLink": "Schéma oublié ?",
+  "useBiometricUnlockTitle": "Utiliser le déverrouillage biométrique",
+  "unlockWithDeviceAuthSubtitle": "Déverrouillez avec l'authentification de l'appareil.",
+  "biometricNotRecognized": "BIOMÉTRIE NON RECONNUE",
+  "recoverAccessTitle": "Récupérer l'accès",
+  "useBiometricFallbackCardTitle": "Utiliser le secours biométrique",
+  "useBiometricFallbackCardDesc": "Authentifiez-vous avec la biométrie, puis créez un nouveau PIN ou schéma.",
+  "authenticateButton": "S'authentifier",
+  "vaultCannotBeRecoveredTitle": "Le coffre ne peut pas être récupéré",
+  "vaultCannotBeRecoveredDesc": "Sans PIN, schéma ou secours biométrique, les données chiffrées sont irrécupérables.",
+  "resetAppSecurityButton": "Réinitialiser la sécurité",
+  "backToUnlockLink": "Retour au déverrouillage",
+  "resetSecurityQuestionTitle": "Réinitialiser la sécurité ?",
+  "resetSecurityWarningDesc": "Cela supprimera l'enveloppe de clé.\nLes données chiffrées du coffre ne seront plus\naccessibles.",
+  "resetSecurityConfirmCheckbox": "Je comprends que cette action est\nirréversible",
+  "statusActive": "ACTIF",
+  "statusIdle": "INACTIF",
+  "appsProtectedLabel": "Applications protégées",
+  "vaultItemsLabel": "Éléments du coffre",
+  "intruderAlertsLabel": "Alertes d'intrusion",
+  "biometricFallbackLabel": "Secours biométrique",
+  "quickActionsTitle": "Actions rapides",
+  "lockAppsAction": "Verrouiller apps",
+  "themesAction": "Thèmes",
+  "promoBannerTitle": "DÉBLOQUEZ TOUTES LES FONCTIONS",
+  "promoBannerSubtitle": "Thèmes illimités, sans publicité et plus encore.",
+  "themeMinimal": "Minimaliste",
+  "themeClassicPin": "PIN classique",
+  "themePattern": "Schéma",
+  "themeVault": "Coffre-fort",
+  "themeFocus": "Concentration",
+  "themePremiumColors": "Couleurs Premium",
+  "premiumBadge": "PREMIUM",
+  "applyThemeButton": "Appliquer le thème",
+  "themeAppliedTitle": "Thème appliqué",
+  "themeAppliedSubtitle": "Vos écrans de verrouillage utilisent désormais\nle thème sélectionné.",
+  "premiumColorPreviewTitle": "Aperçu des couleurs Premium",
+  "premiumThemesSubscriptionNote": "Les thèmes premium sont disponibles avec un abonnement.",
+  "backToThemesButton": "Retour aux thèmes",
+  "lockedAppsHeader": "Applications verrouillées",
+  "protectedAppsCount": "{count} apps protégées",
+  "@protectedAppsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchAppsHint": "Rechercher des applications...",
+  "filterAll": "Toutes",
+  "filterCategories": "Catégories",
+  "filterLocked": "Verrouillées",
+  "categoryChipLabel": "Catégorie : {category}",
+  "@categoryChipLabel": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "noLockedAppsFound": "Aucune application verrouillée trouvée",
+  "noAppsFound": "Aucune application trouvée",
+  "categorySocial": "Réseaux sociaux",
+  "categoryMessaging": "Messagerie",
+  "categoryPhotosVideo": "Photos et vidéos",
+  "categoryFinance": "Finance",
+  "categoryShopping": "Shopping",
+  "categorySystem": "Système",
+  "categoryAppsBullet": "{count} Apps • ",
+  "@categoryAppsBullet": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryProtectedCount": "{count} protégées",
+  "@categoryProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "usageAccessRequiredTitle": "Accès aux données d'utilisation requis",
+  "usageAccessRequiredDesc": "Activez l'accès à l'utilisation pour protéger\nles applications sélectionnées.",
+  "enableUsageAccessButton": "Activer l'accès d'utilisation",
+  "protectionMayBeLimitedTitle": "La protection peut être limitée",
+  "protectionMayBeLimitedDesc": "Pour garantir un fonctionnement fiable en arrière-plan, veuillez vérifier les paramètres système Android suivants.",
+  "displayOverOtherAppsWarningDesc": "Requis pour afficher l'écran de verrouillage sur les applications protégées.",
+  "statusDisabled": "Désactivé",
+  "batteryOptimizationTitle": "Optimisation de la batterie",
+  "batteryOptimizationDesc": "Android peut fermer l'application en arrière-plan. Désactivez l'optimisation pour garder la protection active.",
+  "statusRestricted": "Restreint",
+  "fixPermissionsButton": "Corriger les autorisations",
+  "continueWithLimitedProtectionButton": "Continuer avec une protection limitée",
+  "itemsProtectedCount": "{count}/100 éléments protégés",
+  "@itemsProtectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "encryptedOnThisDevice": "Chiffré sur cet appareil",
+  "quickActionsSmallTitle": "Actions rapides",
+  "addPhotosAction": "Ajouter\nPhotos",
+  "importVideosAction": "Importer\nVidéos",
+  "createAlbumAction": "Créer\nAlbum",
+  "albumsHeader": "Albums",
+  "vaultEmptyTitle": "Votre coffre-fort est vide",
+  "vaultEmptySubtitle": "Importez des photos et vidéos pour les garder\nchiffrées sur cet appareil.",
+  "albumPrivatePhotos": "Photos privées",
+  "albumVideos": "Vidéos",
+  "albumGalleries": "Galeries",
+  "albumScreenshots": "Captures d'écran",
+  "albumPhotos": "Photos",
+  "vaultAlbumItemsCount": "{count} éléments",
+  "@vaultAlbumItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultItemsProtectedSubtitle": "{count} éléments • Protégés",
+  "@vaultItemsProtectedSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importToVaultTitle": "Importer dans le Coffre",
+  "todaySection": "Aujourd'hui",
+  "september12Section": "12 septembre",
+  "selectedCountLabel": "{count} sélectionnés",
+  "@selectedCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "totalSizeMbLabel": "{size} Mo au total",
+  "@totalSizeMbLabel": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "moveToVaultButton": "Déplacer vers le Coffre",
+  "encryptingItemsTitle": "Chiffrement des éléments sélectionnés...",
+  "filesProcessedProgress": "{processed} fichiers sur {total} traités",
+  "@filesProcessedProgress": {
+    "placeholders": {
+      "processed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "keepAppOpenWarning": "Gardez l'application ouverte jusqu'à la fin de l'importation.",
+  "importCompleteTitle": "Importation terminée",
+  "importCompleteSubtitle": "Vos données sont maintenant sécurisées et chiffrées.",
+  "itemsEncryptedTitle": "{count} éléments chiffrés",
+  "@itemsEncryptedTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aes256Subtitle": "Qualité militaire AES-256",
+  "originalsDeletedTitle": "Originaux supprimés",
+  "spaceRecoveredSubtitle": "Espace récupéré : 124 Mo",
+  "originalsCouldNotBeDeletedTitle": "Les originaux n'ont pas pu être supprimés\nautomatiquement",
+  "nextStepRequiredTitle": "Étape suivante requise",
+  "deleteOriginalsManuallyDesc": "Ouvrez Photos ou Galerie pour supprimer\nles originaux manuellement.",
+  "viewVaultButton": "Voir le Coffre",
+  "backToVaultHomeLink": "Retour à l'accueil du Coffre",
+  "fileInfoTitle": "Infos sur le fichier",
+  "protectedBadge": "Protégé",
+  "propertiesHeader": "Propriétés",
+  "propertyName": "Nom",
+  "propertyType": "Type",
+  "propertySize": "Taille",
+  "propertyImportedDate": "Date d'importation",
+  "propertyEncryptionStatus": "État du chiffrement",
+  "intruderSelfieOffTitle": "Selfie d'intrus désactivé",
+  "intruderSelfieOffSubtitle": "Activez-le pour prendre une photo après 3\ntentatives de déverrouillage échouées.",
+  "secureLogsTitle": "Journaux sécurisés",
+  "secureLogsSubtitle": "Consultez la date, l'heure et la photo des\ntentatives non autorisées.",
+  "stealthCaptureTitle": "Capture discrète",
+  "stealthCaptureSubtitle": "La caméra frontale prend la photo\nsans bruit.",
+  "enableIntruderSelfieButton": "Activer le Selfie d'intrus",
+  "cameraPermissionDeniedTitle": "Autorisation de caméra refusée",
+  "cameraPermissionDeniedSubtitle": "Les événements d'intrusion peuvent toujours être\nenregistrés sans photo.",
+  "intruderLoggingTitle": "Journal d'intrusion",
+  "intruderLoggingSubtitle": "L'heure, la date et les tentatives seront toujours\nstockées dans votre coffre de sécurité.",
+  "privacyFirstTitle": "La confidentialité d'abord",
+  "privacyFirstSubtitle": "Aucune photo n'est prise ou stockée sans\nvotre autorisation explicite.",
+  "openSettingsButton": "Ouvrir les paramètres",
+  "statusSummaryTitle": "Résumé de l'état",
+  "failedUnlockAttemptsToday": "2 tentatives échouées aujourd'hui",
+  "alertsSavedPremium": "11 alertes enregistrées",
+  "alertsSavedFree": "2 alertes enregistrées sur 10",
+  "failedMethodLabel": "Méthode échouée : {method}",
+  "@failedMethodLabel": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  },
+  "viewDetailsAction": "Voir les détails",
+  "keepFullAlertHistoryTitle": "Conserver tout l'historique des alertes",
+  "keepFullAlertHistoryDesc": "Les utilisateurs gratuits ne voient que les 10\ndernières alertes. Passez à Premium pour tout garder.",
+  "alertDetailTitle": "Détail de l'alerte",
+  "noPhotoCapturedTitle": "Aucune photo capturée",
+  "noPhotoCapturedDesc": "Le système de sécurité n'a pas pu\ninitialiser la caméra lors de cet\névénement.",
+  "eventSummaryHeader": "RÉSUMÉ DE L'ÉVÉNEMENT",
+  "highAlertBadge": "Alerte élevée",
+  "captureAnalysisTitle": "Analyse de la capture",
+  "attemptedContextLabel": "Contexte de la tentative",
+  "failedMethodRowLabel": "Méthode échouée",
+  "failedCountLabel": "Nombre d'échecs",
+  "dateTimeLabel": "Date/heure",
+  "platformLabel": "Plateforme",
+  "deviceModelLabel": "Modèle d'appareil",
+  "saveEvidenceButton": "Enregistrer la preuve",
+  "enableCameraPermissionButton": "Activer l'autorisation caméra",
+  "evidenceSavedSnackBar": "Preuve enregistrée sur l'appareil",
+  "deleteAlertButton": "Supprimer l'alerte",
+  "settingsTitle": "Paramètres",
+  "settingsSubtitle": "Gérez les préférences de votre application.",
+  "freePlanTitle": "Forfait Gratuit",
+  "freeBadge": "GRATUIT",
+  "freePlanDesc": "Passez à Premium pour des fonctionnalités de\nsécurité avancées.",
+  "securitySectionHeader": "Sécurité",
+  "biometricUnlockTitle": "Déverrouillage biométrique",
+  "biometricUnlockSubtitle": "Utiliser Face ID / Touch ID",
+  "autoLockDelayTitle": "Délai de verrouillage auto",
+  "helpAndSupportHeader": "Aide et support",
+  "languagesTitle": "Langues",
+  "contactUsTitle": "Nous contacter",
+  "termsOfServiceTitle": "Conditions d'utilisation",
+  "requireAuthenticationTitle": "Exiger l'authentification",
+  "requireAuthenticationSubtitle": "Choisissez la rapidité de verrouillage après avoir quitté\nl'application. Un délai court offre une meilleure\nprotection.",
+  "delayImmediately": "Immédiatement",
+  "delay15Seconds": "Après 15 secondes",
+  "delay30Seconds": "Après 30 secondes",
+  "delay1Minute": "Après 1 minute",
+  "delayScreenOff": "Quand l'écran s'éteint",
+  "settingLanguagesTitle": "Paramètres de langue",
+  "settingLanguagesSubtitle": "Choisissez votre langue préférée pour l'interface\net la reconnaissance de documents.",
+  "langEnglish": "Anglais (English)",
+  "langVietnamese": "Vietnamien (Vietnamese)",
+  "langSpanish": "Espagnol (Spanish)",
+  "langFrench": "Français",
+  "langGerman": "Allemand (German)",
+  "langJapanese": "Japonais (Japanese)",
+  "langChinese": "Chinois (Chinese)",
+  "contactUsIntro": "Nous sommes là pour vous aider. Remplissez le formulaire\net notre équipe vous répondra dès que\npossible.",
+  "emailAddressLabel": "Adresse e-mail",
+  "emailHint": "vous@exemple.com",
+  "subjectLabel": "Objet",
+  "subjectHint": "Bref résumé de votre problème",
+  "messageLabel": "Message",
+  "messageHint": "Décrivez votre problème en détail...",
+  "contactPrivacyDisclaimer": "En soumettant ce formulaire, vous acceptez notre Politique de confidentialité.\nVotre e-mail ne servira qu'à vous répondre.",
+  "sendMessageButton": "Envoyer le message",
+  "messageSentSnackBar": "Message envoyé à l'équipe de support",
+  "biometricNotSupportedError": "L'appareil ne prend pas en charge ou n'a pas configuré la biométrie",
+  "deleteOriginalsDialogTitle": "Supprimer les originaux ?",
+  "deleteOriginalsDialogDesc": "Après l'importation, l'application peut demander au système de supprimer les fichiers originaux.",
+  "importAndDeleteOriginalsButton": "Importer et supprimer les originaux",
+  "importOnlyButton": "Importer uniquement",
+  "restoreToGalleryDialogTitle": "Restaurer dans la galerie ?",
+  "restoreToGalleryDialogDesc": "Une copie déchiffrée sera enregistrée via le système. Les fichiers temporaires seront nettoyés.",
+  "deleteFromVaultDialogTitle": "Supprimer du Coffre ?",
+  "deleteFromVaultDialogDesc": "Cela supprime la copie chiffrée du coffre de cet appareil.",
+  "deletePermanentlyButton": "Supprimer définitivement",
+  "deleteAlertDialogTitle": "Supprimer l'alerte ?",
+  "deleteAlertDialogDesc": "Cela supprime la photo de l'intrus et le journal d'événements de cet appareil."
+}

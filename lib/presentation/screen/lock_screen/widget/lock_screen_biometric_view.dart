@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class LockScreenBiometricView extends StatelessWidget {
   final String? statusText;
@@ -17,6 +18,7 @@ class LockScreenBiometricView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
@@ -48,7 +50,7 @@ class LockScreenBiometricView extends StatelessWidget {
           ),
           const SizedBox(height: 28),
           Text(
-            'Use biometric unlock',
+            l10n.useBiometricUnlockTitle,
             textAlign: TextAlign.center,
             style: AppTypography.bold.copyWith(
               fontSize: 24,
@@ -57,7 +59,7 @@ class LockScreenBiometricView extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'Unlock with device authentication.',
+            l10n.unlockWithDeviceAuthSubtitle,
             textAlign: TextAlign.center,
             style: AppTypography.regular.copyWith(
               fontSize: 15,
@@ -77,7 +79,7 @@ class LockScreenBiometricView extends StatelessWidget {
             ),
           const Spacer(flex: 3),
           CommonButton.filled(
-            text: 'Use PIN instead',
+            text: l10n.usePinInstead,
             height: 52,
             cornerRadius: 12,
             backgroundColor: AppColorsPalette.black,

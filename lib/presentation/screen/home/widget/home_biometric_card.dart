@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class HomeBiometricCard extends StatelessWidget {
   final bool isEnabled;
@@ -15,6 +16,7 @@ class HomeBiometricCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
@@ -35,7 +37,7 @@ class HomeBiometricCard extends StatelessWidget {
           ),
           const SizedBox(width: 14),
           Text(
-            'Biometric fallback',
+            l10n.biometricFallbackLabel,
             style: AppTypography.medium.copyWith(
               fontSize: 15,
               color: AppColorsPalette.black,

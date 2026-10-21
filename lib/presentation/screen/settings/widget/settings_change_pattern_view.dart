@@ -4,6 +4,7 @@ import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/pattern_lock_grid.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class SettingsChangePatternView extends StatefulWidget {
   final bool isConfirmStep;
@@ -67,12 +68,13 @@ class _SettingsChangePatternViewState extends State<SettingsChangePatternView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     final title = widget.isConfirmStep
-        ? 'Confirm your Passcode'
-        : 'Change Passcode';
+        ? l10n.confirmYourPasscodeTitle
+        : l10n.changePasscodeTitle;
     final subtitle = widget.isConfirmStep
-        ? 'Pattern does not match'
-        : 'Connect at least 4 dots.';
+        ? l10n.patternDoesNotMatchError
+        : l10n.connectAtLeast4Dots;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,7 +145,7 @@ class _SettingsChangePatternViewState extends State<SettingsChangePatternView> {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
               child: Text(
-                'Use PIN instead',
+                l10n.usePinInstead,
                 style: AppTypography.bold.copyWith(
                   fontSize: 14,
                   color: AppColorsPalette.black,

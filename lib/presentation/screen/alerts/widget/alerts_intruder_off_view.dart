@@ -4,6 +4,7 @@ import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/common/widget/common_feature_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class AlertsIntruderOffView extends StatelessWidget {
   final VoidCallback onEnableTap;
@@ -15,6 +16,7 @@ class AlertsIntruderOffView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -78,7 +80,7 @@ class AlertsIntruderOffView extends StatelessWidget {
 
           // Title
           Text(
-            'Intruder Selfie is off',
+            l10n.intruderSelfieOffTitle,
             textAlign: TextAlign.center,
             style: AppTypography.bold.copyWith(
               fontSize: 22,
@@ -89,7 +91,7 @@ class AlertsIntruderOffView extends StatelessWidget {
 
           // Subtitle
           Text(
-            'Enable it to capture a photo after 3\nfailed unlock attempts.',
+            l10n.intruderSelfieOffSubtitle,
             textAlign: TextAlign.center,
             style: AppTypography.regular.copyWith(
               fontSize: 14,
@@ -100,26 +102,26 @@ class AlertsIntruderOffView extends StatelessWidget {
           const SizedBox(height: 32),
 
           // Feature Card 1: Secure Logs
-          const CommonFeatureCard(
+          CommonFeatureCard(
             icon: Icons.security_rounded,
-            title: 'Secure Logs',
-            subtitle: 'View date, time, and photo of\nunauthorized attempts.',
-            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
+            title: l10n.secureLogsTitle,
+            subtitle: l10n.secureLogsSubtitle,
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
           ),
           const SizedBox(height: 14),
 
           // Feature Card 2: Stealth Capture
-          const CommonFeatureCard(
+          CommonFeatureCard(
             icon: Icons.visibility_off_outlined,
-            title: 'Stealth Capture',
-            subtitle: 'The front camera captures the photo\nsilently.',
-            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
+            title: l10n.stealthCaptureTitle,
+            subtitle: l10n.stealthCaptureSubtitle,
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
           ),
           const SizedBox(height: 32),
 
           // Enable Intruder Selfie Button
           CommonButton.filled(
-            text: 'Enable Intruder Selfie',
+            text: l10n.enableIntruderSelfieButton,
             height: 48,
             cornerRadius: 10,
             backgroundColor: AppColorsPalette.black,
