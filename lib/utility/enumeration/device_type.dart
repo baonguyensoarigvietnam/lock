@@ -1,6 +1,7 @@
 import 'dart:io';
 
 enum DeviceType {
+  smallMobile,
   mobile,
   tablet,
   desktop,
