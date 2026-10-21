@@ -1,3 +1,4 @@
+import 'package:applock/application/router/router_endpoint.dart';
 import 'package:applock/presentation/common/base/base_navigator.dart';
 
 class LockScreenNavigator extends BaseNavigator {
@@ -7,5 +8,15 @@ class LockScreenNavigator extends BaseNavigator {
     if (router.canPop()) {
       router.pop(true);
     }
+  }
+
+  void goBack() {
+    if (router.canPop()) {
+      router.pop();
+    }
+  }
+
+  void goToUnlockMethod() {
+    router.pushReplacement(RouterEndpoint.unlockMethod.path);
   }
 }

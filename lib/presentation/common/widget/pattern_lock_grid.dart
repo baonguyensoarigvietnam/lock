@@ -109,7 +109,10 @@ class _PatternLockGridState extends State<PatternLockGrid> {
 
   @override
   Widget build(BuildContext context) {
-    final dotsToShow = widget.isReadOnly ? widget.selectedDots : _selected;
+    final dotsToShow =
+        widget.selectedDots.isNotEmpty && !_isDrawing
+            ? widget.selectedDots
+            : _selected;
     final isError = widget.isError;
 
     return GestureDetector(
@@ -177,7 +180,7 @@ class _PatternDot extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color activeColor =
         isError ? const Color(0xFFEF4444) : const Color(0xFF000000);
-    final Color inactiveColor = const Color(0xFFD1D5DB);
+    const Color inactiveColor = Color(0xFFD1D5DB);
 
     if (isSelected) {
       return SizedBox(
@@ -214,7 +217,7 @@ class _PatternDot extends StatelessWidget {
         child: Container(
           width: 10,
           height: 10,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: inactiveColor,
           ),

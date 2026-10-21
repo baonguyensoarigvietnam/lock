@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:applock/presentation/common/widget/pattern_lock_grid.dart';
 import 'package:applock/presentation/screen/set_pattern/set_pattern_navigator.dart';
 import 'package:applock/presentation/screen/set_pattern/view_model/set_pattern_state.dart';
 import 'package:applock/presentation/screen/set_pattern/view_model/set_pattern_view_model.dart';
-import 'package:applock/presentation/screen/set_pattern/widget/pattern_lock_grid.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 

@@ -6,6 +6,7 @@ import 'package:applock/presentation/theme/app_text_palette.dart';
 class HomeAppItemTile extends StatelessWidget {
   final AppLockItem item;
   final ValueChanged<bool> onToggle;
+  final VoidCallback? onTap;
   final String? customSubtitle;
   final EdgeInsetsGeometry padding;
 
@@ -13,6 +14,7 @@ class HomeAppItemTile extends StatelessWidget {
     super.key,
     required this.item,
     required this.onToggle,
+    this.onTap,
     this.customSubtitle,
     this.padding = const EdgeInsets.symmetric(vertical: 12),
   });
@@ -43,9 +45,12 @@ class HomeAppItemTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final subtitleText = customSubtitle ?? item.category;
 
-    return Padding(
-      padding: padding,
-      child: Row(
+    return GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: Padding(
+        padding: padding,
+        child: Row(
         children: [
           // App Icon Box
           Container(
@@ -144,6 +149,7 @@ class HomeAppItemTile extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ),
+  );
   }
 }

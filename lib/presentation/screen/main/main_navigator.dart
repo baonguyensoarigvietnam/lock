@@ -10,7 +10,8 @@ class MainNavigator extends BaseNavigator {
 
   void goToSetPattern() => router.push(RouterEndpoint.setPattern.path);
 
-  void goToLockScreen() => router.push(RouterEndpoint.lockScreen.path);
+  void goToLockScreen({String? appName}) =>
+      router.push(RouterEndpoint.lockScreen.path, extra: appName);
 
   void goToPermissionGuide() => router.push(RouterEndpoint.permissionGuide.path);
 }

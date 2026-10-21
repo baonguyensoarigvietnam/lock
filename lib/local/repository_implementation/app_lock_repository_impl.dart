@@ -193,11 +193,13 @@ class AppLockRepositoryImpl implements AppLockRepository {
   Future<Result<LockConfig>> getLockConfig() async {
     try {
       final pin = _localDataSource.getPinCode();
+      final pattern = _localDataSource.getPattern();
       final bio = _localDataSource.isBiometricEnabled();
       final service = _localDataSource.isServiceActive();
       return Result.success(
         LockConfig(
           pinCode: pin,
+          pattern: pattern,
           isBiometricEnabled: bio,
           isServiceActive: service,
         ),

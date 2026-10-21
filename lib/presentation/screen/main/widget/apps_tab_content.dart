@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:applock/presentation/screen/home/view_model/home_state.dart';
 import 'package:applock/presentation/screen/home/view_model/home_view_model.dart';
 import 'package:applock/presentation/screen/home/widget/home_app_item_tile.dart';
+import 'package:applock/presentation/screen/main/main_navigator.dart';
 import 'package:applock/presentation/screen/main/widget/apps_categories_list_view.dart';
 import 'package:applock/presentation/screen/main/widget/apps_limited_protection_view.dart';
 import 'package:applock/presentation/screen/main/widget/apps_usage_access_card.dart';
@@ -354,6 +355,11 @@ class _AppsTabContentState extends State<AppsTabContent> {
                     horizontal: 14,
                     vertical: 14,
                   ),
+                  onTap: () {
+                    context
+                        .read<MainNavigator>()
+                        .goToLockScreen(appName: item.appName);
+                  },
                   onToggle: (_) {
                     context.read<HomeViewModel>().toggleLock(item.packageName);
                   },
@@ -387,6 +393,11 @@ class _AppsTabContentState extends State<AppsTabContent> {
             final item = state.filteredApps[index];
             return HomeAppItemTile(
               item: item,
+              onTap: () {
+                context
+                    .read<MainNavigator>()
+                    .goToLockScreen(appName: item.appName);
+              },
               onToggle: (_) {
                 context.read<HomeViewModel>().toggleLock(item.packageName);
               },
