@@ -1,165 +1,147 @@
 import 'package:flutter/material.dart';
+import 'package:applock/presentation/screen/main/widget/alerts_camera_denied_view.dart';
+import 'package:applock/presentation/screen/main/widget/alerts_detail_view.dart';
+import 'package:applock/presentation/screen/main/widget/alerts_intruder_off_view.dart';
+import 'package:applock/presentation/screen/main/widget/alerts_list_view.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
-import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/enumeration/alerts_tab_step.dart';
 
-class AlertsTabContent extends StatelessWidget {
+class AlertsTabContent extends StatefulWidget {
   const AlertsTabContent({super.key});
+
+  @override
+  State<AlertsTabContent> createState() => _AlertsTabContentState();
+}
+
+class _AlertsTabContentState extends State<AlertsTabContent> {
+  AlertsTabStep _currentStep = AlertsTabStep.intruderSelfieOff;
+  AlertsTabStep _previousListStep = AlertsTabStep.alertsListFree;
+
+  static const List<AlertEventItem> _defaultAlerts = [
+    AlertEventItem(
+      title: 'Gallery',
+      timeLabel: '14:22 PM',
+      failedMethod: 'PIN',
+      attemptedContext: 'Vault Access',
+      detailedMethod: 'PIN Code',
+      failedCount: 3,
+      detailedDateTime: 'Oct 24, 02:14 AM',
+      hasPhoto: true,
+    ),
+    AlertEventItem(
+      title: 'Main Unlock',
+      timeLabel: '09:15 AM',
+      failedMethod: 'Pattern',
+      attemptedContext: 'Main Unlock',
+      detailedMethod: 'Pattern',
+      failedCount: 3,
+      detailedDateTime: 'Oct 24, 09:15 AM',
+      hasPhoto: true,
+    ),
+    AlertEventItem(
+      title: 'Vault Unlock',
+      timeLabel: 'Yesterday',
+      failedMethod: 'Pattern',
+      attemptedContext: 'Vault Access',
+      detailedMethod: 'Pattern',
+      failedCount: 3,
+      detailedDateTime: 'Oct 23, 08:40 PM',
+      hasPhoto: true,
+    ),
+    AlertEventItem(
+      title: 'Main Unlock',
+      timeLabel: 'Aug 12',
+      failedMethod: 'Pattern',
+      attemptedContext: 'Main Unlock',
+      detailedMethod: 'Pattern',
+      failedCount: 3,
+      detailedDateTime: 'Aug 12, 11:18 AM',
+      hasPhoto: false,
+    ),
+  ];
+
+  late AlertEventItem _selectedAlert = _defaultAlerts.first;
+
+  void _openAlertDetail(AlertEventItem item, AlertsTabStep fromStep) {
+    setState(() {
+      _selectedAlert = item;
+      _previousListStep = fromStep;
+      _currentStep = AlertsTabStep.alertDetail;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColorsPalette.white,
-      appBar: AppBar(
-        backgroundColor: AppColorsPalette.white,
-        elevation: 0,
-        title: Text(
-          'Intruder Alerts',
-          style: AppTypography.bold.copyWith(
-            fontSize: 20,
-            color: AppColorsPalette.black,
-          ),
-        ),
-        centerTitle: true,
-      ),
       body: SafeArea(
-        child: ListView(
-          physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-          children: [
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: const Color(0xFFF9FAFB),
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(
-                  color: const Color(0xFFE5E7EB),
-                  width: 1.2,
-                ),
-              ),
-              child: Row(
-                children: [
-                  Container(
-                    width: 44,
-                    height: 44,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFF3F4F6),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: const Icon(
-                      Icons.shield_outlined,
-                      color: AppColorsPalette.black,
-                      size: 24,
-                    ),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Break-in Detection Active',
-                          style: AppTypography.bold.copyWith(
-                            fontSize: 15.5,
-                            color: AppColorsPalette.black,
-                          ),
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          'Front camera snaps photo after 3 failed unlock attempts',
-                          style: AppTypography.regular.copyWith(
-                            fontSize: 12.5,
-                            color: AppColorsPalette.gray600,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 24),
-            Text(
-              'Recent Activity (2)',
-              style: AppTypography.bold.copyWith(
-                fontSize: 17,
-                color: AppColorsPalette.black,
-              ),
-            ),
-            const SizedBox(height: 14),
-            _buildAlertItem(
-              title: 'Failed PIN attempt (3x)',
-              subtitle: 'Facebook • Today at 10:42 AM',
-            ),
-            const SizedBox(height: 12),
-            _buildAlertItem(
-              title: 'Incorrect Pattern (3x)',
-              subtitle: 'Photos • Yesterday at 08:15 PM',
-            ),
-          ],
-        ),
+        child: _buildStepContent(),
       ),
     );
   }
 
-  Widget _buildAlertItem({
-    required String title,
-    required String subtitle,
-  }) {
-    return Container(
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: AppColorsPalette.white,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: const Color(0xFFE5E7EB),
-          width: 1.2,
-        ),
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 44,
-            height: 44,
-            decoration: BoxDecoration(
-              color: const Color(0xFFFEE2E2),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: const Icon(
-              Icons.camera_alt_outlined,
-              color: Color(0xFFDC2626),
-              size: 22,
-            ),
-          ),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: AppTypography.bold.copyWith(
-                    fontSize: 14.5,
-                    color: AppColorsPalette.black,
-                  ),
-                ),
-                const SizedBox(height: 3),
-                Text(
-                  subtitle,
-                  style: AppTypography.regular.copyWith(
-                    fontSize: 12.5,
-                    color: AppColorsPalette.gray600,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const Icon(
-            Icons.chevron_right_rounded,
-            color: Color(0xFF9CA3AF),
-            size: 20,
-          ),
-        ],
-      ),
-    );
+  Widget _buildStepContent() {
+    switch (_currentStep) {
+      case AlertsTabStep.intruderSelfieOff:
+        return AlertsIntruderOffView(
+          onEnableTap: () {
+            setState(() {
+              _currentStep = AlertsTabStep.cameraPermissionDenied;
+            });
+          },
+        );
+      case AlertsTabStep.cameraPermissionDenied:
+        return AlertsCameraDeniedView(
+          onOpenSettingsTap: () {
+            setState(() {
+              _currentStep = AlertsTabStep.alertsListFree;
+            });
+          },
+        );
+      case AlertsTabStep.alertsListFree:
+        return AlertsListView(
+          isPremium: false,
+          items: _defaultAlerts,
+          onToggleMode: () {
+            setState(() {
+              _currentStep = AlertsTabStep.alertsListPremium;
+            });
+          },
+          onUpgradeTap: () {
+            setState(() {
+              _currentStep = AlertsTabStep.alertsListPremium;
+            });
+          },
+          onSelectAlert: (item) =>
+              _openAlertDetail(item, AlertsTabStep.alertsListFree),
+        );
+      case AlertsTabStep.alertsListPremium:
+        return AlertsListView(
+          isPremium: true,
+          items: _defaultAlerts,
+          onToggleMode: () {
+            setState(() {
+              _currentStep = AlertsTabStep.alertsListFree;
+            });
+          },
+          onUpgradeTap: () {},
+          onSelectAlert: (item) =>
+              _openAlertDetail(item, AlertsTabStep.alertsListPremium),
+        );
+      case AlertsTabStep.alertDetail:
+        return AlertsDetailView(
+          item: _selectedAlert,
+          onBack: () {
+            setState(() {
+              _currentStep = _previousListStep;
+            });
+          },
+          onDeleteConfirmed: () {
+            setState(() {
+              _currentStep = _previousListStep;
+            });
+          },
+        );
+    }
   }
 }

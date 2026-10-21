@@ -281,7 +281,24 @@ class DialogUtility {
       icon: Icons.delete_outline_rounded,
       title: 'Delete from Vault?',
       description: 'This removes the encrypted vault copy from this device.',
-      primaryButtonText: 'Delete',
+      primaryButtonText: 'Delete permanently',
+      secondaryButtonText: 'Cancel',
+      onPrimaryTap: onDelete,
+    );
+  }
+
+  /// "Delete alert?" bottom sheet in Intruder Alert Detail
+  static Future<void> showDeleteAlertBottomSheet({
+    required BuildContext context,
+    required VoidCallback onDelete,
+  }) {
+    return showConfirmBottomSheet(
+      context: context,
+      icon: Icons.delete_outline_rounded,
+      title: 'Delete alert?',
+      description:
+          'This removes the captured intruder photo and event log from this device.',
+      primaryButtonText: 'Delete alert',
       secondaryButtonText: 'Cancel',
       onPrimaryTap: onDelete,
     );
