@@ -6,50 +6,74 @@ import 'package:applock/presentation/theme/app_text_palette.dart';
 class HomeAppItemTile extends StatelessWidget {
   final AppLockItem item;
   final ValueChanged<bool> onToggle;
+  final String? customSubtitle;
+  final EdgeInsetsGeometry padding;
 
   const HomeAppItemTile({
     super.key,
     required this.item,
     required this.onToggle,
+    this.customSubtitle,
+    this.padding = const EdgeInsets.symmetric(vertical: 12),
   });
+
+  IconData _resolveIcon(String appName, String packageName) {
+    final lower = '${appName.toLowerCase()} ${packageName.toLowerCase()}';
+    if (lower.contains('gallery')) return Icons.image_outlined;
+    if (lower.contains('message') || lower.contains('messaging')) {
+      return Icons.chat_outlined;
+    }
+    if (lower.contains('photo')) return Icons.photo_library_outlined;
+    if (lower.contains('gmail') || lower.contains('email')) {
+      return Icons.email_outlined;
+    }
+    if (lower.contains('instagram') || lower.contains('camera')) {
+      return Icons.camera_alt_outlined;
+    }
+    if (lower.contains('bank')) return Icons.account_balance_outlined;
+    if (lower.contains('file') || lower.contains('document')) {
+      return Icons.folder_outlined;
+    }
+    if (lower.contains('setting')) return Icons.settings_outlined;
+    if (lower.contains('contact')) return Icons.contact_page_outlined;
+    return Icons.apps_rounded;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      decoration: BoxDecoration(
-        color: AppColorsPalette.slate800,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: item.isLocked
-              ? AppColorsPalette.primary.withValues(alpha: 0.5)
-              : AppColorsPalette.gray800,
-          width: 1,
-        ),
-      ),
+    final subtitleText = customSubtitle ?? item.category;
+
+    return Padding(
+      padding: padding,
       child: Row(
         children: [
-          // App Icon
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: SizedBox(
-              width: 44,
-              height: 44,
+          // App Icon Box
+          Container(
+            width: 42,
+            height: 42,
+            decoration: BoxDecoration(
+              color: AppColorsPalette.gray100,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                color: AppColorsPalette.gray200,
+                width: 1,
+              ),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(9),
               child: item.icon != null
                   ? Image.memory(item.icon!, fit: BoxFit.cover)
-                  : Container(
-                      color: AppColorsPalette.primary.withValues(alpha: 0.15),
-                      child: const Icon(
-                        Icons.apps_rounded,
-                        color: AppColorsPalette.primary,
-                        size: 24,
+                  : Center(
+                      child: Icon(
+                        _resolveIcon(item.appName, item.packageName),
+                        color: AppColorsPalette.gray600,
+                        size: 21,
                       ),
                     ),
             ),
           ),
           const SizedBox(width: 14),
-          // App Title & Package
+          // App Title & Category/Subtitle
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,33 +82,65 @@ class HomeAppItemTile extends StatelessWidget {
                   item.appName,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: AppTypography.semiBold.copyWith(
-                    color: AppColorsPalette.white,
+                  style: AppTypography.bold.copyWith(
+                    color: AppColorsPalette.black,
                     fontSize: 15,
                   ),
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  item.packageName,
+                  subtitleText,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: AppTypography.regular.copyWith(
-                    color: AppColorsPalette.gray400,
+                    color: AppColorsPalette.gray500,
                     fontSize: 12,
                   ),
                 ),
               ],
             ),
           ),
-          const SizedBox(width: 8),
-          // Lock / Unlock Switch
-          Switch(
-            value: item.isLocked,
-            activeThumbColor: AppColorsPalette.primary,
-            activeTrackColor: AppColorsPalette.primary.withValues(alpha: 0.4),
-            inactiveThumbColor: AppColorsPalette.gray400,
-            inactiveTrackColor: AppColorsPalette.slate900,
-            onChanged: onToggle,
+          const SizedBox(width: 12),
+          // Custom Pill Switch matching design
+          GestureDetector(
+            onTap: () => onToggle(!item.isLocked),
+            behavior: HitTestBehavior.opaque,
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 180),
+              curve: Curves.easeInOut,
+              width: 48,
+              height: 28,
+              padding: const EdgeInsets.all(3),
+              decoration: BoxDecoration(
+                color: item.isLocked
+                    ? AppColorsPalette.black
+                    : AppColorsPalette.gray200,
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: AnimatedAlign(
+                duration: const Duration(milliseconds: 180),
+                curve: Curves.easeInOut,
+                alignment: item.isLocked
+                    ? Alignment.centerRight
+                    : Alignment.centerLeft,
+                child: Container(
+                  width: 22,
+                  height: 22,
+                  decoration: BoxDecoration(
+                    color: item.isLocked
+                        ? AppColorsPalette.white
+                        : AppColorsPalette.gray100,
+                    shape: BoxShape.circle,
+                    border: item.isLocked
+                        ? null
+                        : Border.all(
+                            color: AppColorsPalette.gray300,
+                            width: 1,
+                          ),
+                  ),
+                ),
+              ),
+            ),
           ),
         ],
       ),

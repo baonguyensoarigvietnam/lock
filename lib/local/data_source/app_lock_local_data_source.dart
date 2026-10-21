@@ -22,8 +22,19 @@ class AppLockLocalDataSource {
     return _preferences.setBool(_keyOnboardingCompleted, completed);
   }
 
+  static const List<String> _defaultLockedPackages = [
+    'com.android.gallery3d',
+    'com.google.android.apps.messaging',
+    'com.google.android.apps.photos',
+    'com.android.banking',
+    'com.android.contacts',
+  ];
+
   Set<String> getLockedPackages() {
-    final list = _preferences.getStringList(_keyLockedPackages) ?? [];
+    final list = _preferences.getStringList(_keyLockedPackages);
+    if (list == null) {
+      return _defaultLockedPackages.toSet();
+    }
     return list.toSet();
   }
 

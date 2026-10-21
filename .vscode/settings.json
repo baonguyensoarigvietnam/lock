@@ -1,3 +1,9 @@
 {
-    "dart.flutterSdkPath": "/Users/baonguyensoarigvietnam/workspace/led-banner-mobile/led-banner/.fvm/versions/3.44.2"
+  "dart.flutterSdkPath": ".fvm/versions/3.44.2",
+  "search.exclude": {
+    "**/.fvm": true
+  },
+  "files.watcherExclude": {
+    "**/.fvm": true
+  }
 }
