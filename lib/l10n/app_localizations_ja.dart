@@ -1093,4 +1093,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get appsCategoryOther => 'その他';
+
+  @override
+  String get dialogAdvertisementDownload => '今すぐダウンロード';
 }

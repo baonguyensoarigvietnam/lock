@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:applock/application/view_model/global_view_model.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
+import 'package:applock/presentation/common/widget/native_ad_widget.dart';
 import 'package:applock/presentation/screen/settings/settings_navigator.dart';
 import 'package:applock/presentation/screen/settings/view_model/settings_state.dart';
 import 'package:applock/presentation/screen/settings/view_model/settings_view_model.dart';
@@ -103,8 +105,11 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
           currentLanguage: state.selectedLanguage,
           onBack: () => vm.setStep(SettingsTabStep.overview),
           onSave: (language) {
-            context.read<GlobalViewModel>().setLanguage(language);
-            vm.saveLanguage(language);
+            final globalVm = context.read<GlobalViewModel>();
+            globalVm.setLanguage(language);
+            globalVm.showInterstitialAd(
+              onDismiss: () => vm.saveLanguage(language),
+            );
           },
         );
       case SettingsTabStep.contactUs:
@@ -278,6 +283,10 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
                 ),
               ],
             ),
+          ),
+          const NativeAdWidget(
+            templateType: TemplateType.medium,
+            padding: EdgeInsets.only(top: 20),
           ),
           const SizedBox(height: 24),
         ],

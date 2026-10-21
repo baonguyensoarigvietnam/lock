@@ -1142,4 +1142,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get appsCategoryOther => 'Khác';
+
+  @override
+  String get dialogAdvertisementDownload => 'Tải ngay';
 }

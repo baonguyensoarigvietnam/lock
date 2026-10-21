@@ -518,5 +518,6 @@
   "vaultVideosEmptyTitle": "No videos yet",
   "vaultDetailEmptySubtitle": "Tap + to choose items with the system photo picker. They are encrypted on this device.",
   "vaultPreviewUnavailable": "Preview unavailable",
-  "appsCategoryOther": "Other"
+  "appsCategoryOther": "Other",
+  "dialogAdvertisementDownload": "Download Now"
 }

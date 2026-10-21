@@ -473,5 +473,6 @@
   "vaultVideosEmptyTitle": "Aucune vidéo pour l'instant",
   "vaultDetailEmptySubtitle": "Appuyez sur + pour choisir des éléments avec le sélecteur de photos du système. Ils sont chiffrés sur cet appareil.",
   "vaultPreviewUnavailable": "Aperçu indisponible",
-  "appsCategoryOther": "Autres"
+  "appsCategoryOther": "Autres",
+  "dialogAdvertisementDownload": "Télécharger maintenant"
 }

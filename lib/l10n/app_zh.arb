@@ -473,5 +473,6 @@
   "vaultVideosEmptyTitle": "暂无视频",
   "vaultDetailEmptySubtitle": "点按 + 通过系统照片选择器选择项目。它们会在此设备上加密。",
   "vaultPreviewUnavailable": "无法预览",
-  "appsCategoryOther": "其他"
+  "appsCategoryOther": "其他",
+  "dialogAdvertisementDownload": "立即下载"
 }

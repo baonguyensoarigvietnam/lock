@@ -57,7 +57,17 @@ class PaywallViewContent extends StatelessWidget {
             children: [
               // Top Bar with Close button
               CommonAppBar.close(
-                onClose: () => context.read<PaywallNavigator>().close(),
+                onClose: () {
+                  final navigator = context.read<PaywallNavigator>();
+                  final globalVm = context.read<GlobalViewModel?>();
+                  if (globalVm != null) {
+                    globalVm.showInterstitialAd(
+                      onDismiss: () => navigator.close(),
+                    );
+                  } else {
+                    navigator.close();
+                  }
+                },
               ),
               Expanded(
                 child: SingleChildScrollView(

@@ -473,5 +473,6 @@
   "vaultVideosEmptyTitle": "Aún no hay vídeos",
   "vaultDetailEmptySubtitle": "Toca + para elegir elementos con el selector de fotos del sistema. Se cifran en este dispositivo.",
   "vaultPreviewUnavailable": "Vista previa no disponible",
-  "appsCategoryOther": "Otros"
+  "appsCategoryOther": "Otros",
+  "dialogAdvertisementDownload": "Descargar ahora"
 }

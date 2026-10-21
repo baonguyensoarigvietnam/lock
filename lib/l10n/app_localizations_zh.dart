@@ -1079,4 +1079,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get appsCategoryOther => '其他';
+
+  @override
+  String get dialogAdvertisementDownload => '立即下载';
 }

@@ -59,6 +59,10 @@ dependencies:
   in_app_purchase: ^3.3.1
   image_picker_android: ^0.8.13+25
   image_picker_platform_interface: ^2.11.2
+  dio: ^5.9.2
+  retrofit: ^4.9.2
+  json_annotation: ^4.12.0
+  google_mobile_ads: ^8.0.0
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +71,8 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   build_runner: ^2.13.1
   injectable_generator: ^3.0.2
+  json_serializable: ^6.13.1
+  retrofit_generator: ^10.2.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

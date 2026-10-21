@@ -2117,6 +2117,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Other'**
   String get appsCategoryOther;
+
+  /// No description provided for @dialogAdvertisementDownload.
+  ///
+  /// In en, this message translates to:
+  /// **'Download Now'**
+  String get dialogAdvertisementDownload;
 }
 
 class _AppLocalizationsDelegate

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:applock/domain/model/advertisement.dart';
 import 'package:applock/domain/model/lock_config.dart';
 import 'package:applock/presentation/common/base/base_view_model.dart';
 import 'package:applock/utility/enumeration/view_status.dart';
@@ -12,6 +13,17 @@ class GlobalViewModelState extends BaseState {
   /// Whether the user owns an active Premium entitlement.
   final bool isPremium;
 
+  /// Whether AdMob SDK has been initialized and is ready to load ads.
+  final bool isAdmobReady;
+
+  /// Whether an interstitial ad is currently being triggered.
+  final bool? shouldShowInterstitialAd;
+
+  /// Active cross-promotion advertisement from the Central Hub.
+  final Advertisement? advertisement;
+
+  bool get isPro => isPremium;
+
   const GlobalViewModelState({
     super.status = ViewStatus.initial,
     super.errorMessage,
@@ -19,6 +31,9 @@ class GlobalViewModelState extends BaseState {
     this.lockConfig = const LockConfig(),
     this.isOverlayGranted = false,
     this.isPremium = false,
+    this.isAdmobReady = false,
+    this.shouldShowInterstitialAd,
+    this.advertisement,
   });
 
   @override
@@ -29,14 +44,23 @@ class GlobalViewModelState extends BaseState {
     LockConfig? lockConfig,
     bool? isOverlayGranted,
     bool? isPremium,
+    bool? isAdmobReady,
+    bool? showInterstitialAd,
+    Nullable<Advertisement>? advertisement,
   }) {
     return GlobalViewModelState(
       status: status ?? this.status,
-      errorMessage: errorMessage != null ? errorMessage.value : this.errorMessage,
+      errorMessage:
+          errorMessage != null ? errorMessage.value : this.errorMessage,
       locale: locale ?? this.locale,
       lockConfig: lockConfig ?? this.lockConfig,
       isOverlayGranted: isOverlayGranted ?? this.isOverlayGranted,
       isPremium: isPremium ?? this.isPremium,
+      isAdmobReady: isAdmobReady ?? this.isAdmobReady,
+      shouldShowInterstitialAd:
+          showInterstitialAd ?? shouldShowInterstitialAd,
+      advertisement:
+          advertisement != null ? advertisement.value : this.advertisement,
     );
   }
 }

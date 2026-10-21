@@ -1154,4 +1154,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get appsCategoryOther => 'Autres';
+
+  @override
+  String get dialogAdvertisementDownload => 'Télécharger maintenant';
 }

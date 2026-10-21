@@ -473,5 +473,6 @@
   "vaultVideosEmptyTitle": "Chưa có video",
   "vaultDetailEmptySubtitle": "Nhấn + để chọn mục bằng trình chọn ảnh của hệ thống. Chúng được mã hoá trên thiết bị này.",
   "vaultPreviewUnavailable": "Không thể xem trước",
-  "appsCategoryOther": "Khác"
+  "appsCategoryOther": "Khác",
+  "dialogAdvertisementDownload": "Tải ngay"
 }

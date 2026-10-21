@@ -473,5 +473,6 @@
   "vaultVideosEmptyTitle": "動画はまだありません",
   "vaultDetailEmptySubtitle": "+ をタップして、システムの写真選択ツールから選んでください。この端末上で暗号化されます。",
   "vaultPreviewUnavailable": "プレビューを表示できません",
-  "appsCategoryOther": "その他"
+  "appsCategoryOther": "その他",
+  "dialogAdvertisementDownload": "今すぐダウンロード"
 }

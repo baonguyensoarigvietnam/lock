@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:applock/application/view_model/global_view_model.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
+import 'package:applock/presentation/common/widget/native_ad_widget.dart';
 import 'package:applock/presentation/screen/home/home_navigator.dart';
 import 'package:applock/presentation/screen/home/view_model/home_state.dart';
 import 'package:applock/presentation/screen/home/view_model/home_view_model.dart';
@@ -105,7 +107,11 @@ class _HomeViewContentState extends State<HomeViewContent> {
         );
       case HomeThemeStep.themeApplied:
         return HomeThemeAppliedView(
-          onDone: () => vm.setThemeStep(HomeThemeStep.dashboard),
+          onDone: () {
+            context.read<GlobalViewModel>().showInterstitialAd(
+              onDismiss: () => vm.setThemeStep(HomeThemeStep.dashboard),
+            );
+          },
         );
       case HomeThemeStep.premiumColorPreview:
         return HomePremiumColorPreviewView(
@@ -164,6 +170,10 @@ class _HomeViewContentState extends State<HomeViewContent> {
             // Promotional Banner
             HomePromoBanner(
               onTap: () => navigator.goToPaywall(),
+            ),
+            const NativeAdWidget(
+              templateType: TemplateType.small,
+              padding: EdgeInsets.only(top: 16),
             ),
           ],
           const SizedBox(height: 24),

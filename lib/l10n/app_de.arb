@@ -473,5 +473,6 @@
   "vaultVideosEmptyTitle": "Noch keine Videos",
   "vaultDetailEmptySubtitle": "Tippe auf +, um Elemente mit der System-Fotoauswahl auszuwählen. Sie werden auf diesem Gerät verschlüsselt.",
   "vaultPreviewUnavailable": "Vorschau nicht verfügbar",
-  "appsCategoryOther": "Sonstige"
+  "appsCategoryOther": "Sonstige",
+  "dialogAdvertisementDownload": "Jetzt herunterladen"
 }
