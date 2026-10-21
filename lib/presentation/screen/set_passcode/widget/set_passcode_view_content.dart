@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_pin_dots.dart';
 import 'package:applock/presentation/common/widget/common_pin_keypad.dart';
 import 'package:applock/presentation/screen/set_passcode/set_passcode_navigator.dart';
@@ -25,24 +26,16 @@ class SetPasscodeViewContent extends StatelessWidget {
           child: Column(
             children: [
               // Top Bar with back button
-              Align(
-                alignment: Alignment.centerLeft,
-                child: IconButton(
-                  padding: const EdgeInsets.only(left: 16, top: 8),
-                  icon: const Icon(
-                    Icons.arrow_back_rounded,
-                    color: AppColorsPalette.black,
-                    size: 26,
-                  ),
-                  onPressed: () {
-                    final vm = context.read<SetPasscodeViewModel>();
-                    if (vm.state.step == SetPasscodeStep.confirm) {
-                      vm.handleBack();
-                    } else {
-                      context.read<SetPasscodeNavigator>().goBack();
-                    }
-                  },
-                ),
+              CommonAppBar.back(
+                leadingIconSize: 26,
+                onBack: () {
+                  final vm = context.read<SetPasscodeViewModel>();
+                  if (vm.state.step == SetPasscodeStep.confirm) {
+                    vm.handleBack();
+                  } else {
+                    context.read<SetPasscodeNavigator>().goBack();
+                  }
+                },
               ),
               const SizedBox(height: 16),
               // Heading & Subtitle

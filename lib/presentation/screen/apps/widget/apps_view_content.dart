@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:applock/presentation/common/widget/common_app_lock_header.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/screen/apps/apps_navigator.dart';
 import 'package:applock/presentation/screen/apps/view_model/apps_state.dart';
 import 'package:applock/presentation/screen/apps/view_model/apps_view_model.dart';
@@ -47,7 +47,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
             return Column(
               children: [
                 const SizedBox(height: 12),
-                const CommonAppLockHeader(),
+                const CommonAppBar.brand(),
                 const SizedBox(height: 12),
                 Expanded(
                   child: _buildStepBody(context, state),

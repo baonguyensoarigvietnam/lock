@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:applock/presentation/common/widget/common_app_lock_header.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/screen/vault/view_model/vault_state.dart';
 import 'package:applock/presentation/screen/vault/view_model/vault_view_model.dart';
 import 'package:applock/presentation/screen/vault/widget/vault_album_card.dart';
@@ -123,7 +123,7 @@ class VaultViewContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 12),
-          const CommonAppLockHeader(),
+          const CommonAppBar.brand(),
           const SizedBox(height: 18),
 
           // Summary Card (tapping toggles between 0/100 empty state and 48/100 albums state)

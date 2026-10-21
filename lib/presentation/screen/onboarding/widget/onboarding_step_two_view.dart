@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/common/widget/app_lock_shield_badge.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/screen/onboarding/widget/onboarding_feature_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
@@ -20,13 +21,7 @@ class OnboardingStepTwoView extends StatelessWidget {
         children: [
           const SizedBox(height: 12),
           // Top Title
-          Text(
-            'App Lock',
-            style: AppTypography.bold.copyWith(
-              fontSize: 20,
-              color: AppColorsPalette.black,
-            ),
-          ),
+          const CommonAppBar.brand(),
           const SizedBox(height: 20),
           // Shield Badge
           const AppLockShieldBadge(

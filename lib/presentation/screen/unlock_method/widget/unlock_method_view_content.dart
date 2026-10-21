@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/screen/unlock_method/unlock_method_navigator.dart';
 import 'package:applock/presentation/screen/unlock_method/view_model/unlock_method_state.dart';
@@ -23,15 +24,7 @@ class UnlockMethodViewContent extends StatelessWidget {
             children: [
               const SizedBox(height: 12),
               // Top Title
-              Center(
-                child: Text(
-                  'App Lock',
-                  style: AppTypography.bold.copyWith(
-                    fontSize: 20,
-                    color: AppColorsPalette.black,
-                  ),
-                ),
-              ),
+              const CommonAppBar.brand(),
               const SizedBox(height: 32),
               // Heading
               Text(

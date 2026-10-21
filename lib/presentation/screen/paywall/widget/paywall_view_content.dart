@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/screen/paywall/paywall_navigator.dart';
 import 'package:applock/presentation/screen/paywall/view_model/paywall_state.dart';
@@ -25,17 +26,8 @@ class PaywallViewContent extends StatelessWidget {
           child: Column(
             children: [
               // Top Bar with Close button
-              Align(
-                alignment: Alignment.centerLeft,
-                child: IconButton(
-                  padding: const EdgeInsets.only(left: 16, top: 4),
-                  icon: const Icon(
-                    Icons.close_rounded,
-                    color: AppColorsPalette.black,
-                    size: 26,
-                  ),
-                  onPressed: () => context.read<PaywallNavigator>().close(),
-                ),
+              CommonAppBar.close(
+                onClose: () => context.read<PaywallNavigator>().close(),
               ),
               Expanded(
                 child: SingleChildScrollView(

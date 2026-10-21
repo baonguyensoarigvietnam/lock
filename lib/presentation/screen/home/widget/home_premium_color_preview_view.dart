@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:applock/presentation/common/widget/common_app_lock_header.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
@@ -22,7 +22,7 @@ class HomePremiumColorPreviewView extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 12),
-          const CommonAppLockHeader(),
+          const CommonAppBar.brand(),
           const SizedBox(height: 24),
 
           // Header Row: "Premium Color Preview" + "PREMIUM" Pill Badge

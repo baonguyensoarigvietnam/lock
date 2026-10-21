@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:applock/presentation/common/widget/common_subpage_app_bar.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/screen/vault/widget/vault_album_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
@@ -24,7 +24,7 @@ class VaultPhotosDetailView extends StatelessWidget {
       children: [
         Column(
           children: [
-            CommonSubpageAppBar(
+            CommonAppBar.back(
               onBack: onBack,
               padding: const EdgeInsets.fromLTRB(12, 8, 20, 8),
               actions: [

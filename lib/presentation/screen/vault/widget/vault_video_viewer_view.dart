@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_media_viewer_bottom_bar.dart';
-import 'package:applock/presentation/common/widget/common_subpage_app_bar.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 
@@ -31,7 +31,7 @@ class _VaultVideoViewerViewState extends State<VaultVideoViewerView> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CommonSubpageAppBar(
+        CommonAppBar.titledBack(
           onBack: widget.onBack,
           title: widget.fileName,
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),

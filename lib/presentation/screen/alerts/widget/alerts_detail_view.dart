@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
-import 'package:applock/presentation/common/widget/common_subpage_app_bar.dart';
 import 'package:applock/presentation/screen/alerts/widget/alerts_intruder_illustration.dart';
 import 'package:applock/presentation/screen/alerts/widget/alerts_list_view.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
@@ -41,7 +41,7 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
     return Column(
       children: [
         // Top Header Bar
-        CommonSubpageAppBar(
+        CommonAppBar.titledBack(
           title: 'Alert detail',
           onBack: widget.onBack,
         ),

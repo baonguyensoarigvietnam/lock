@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/pattern_lock_grid.dart';
 import 'package:applock/presentation/screen/set_pattern/set_pattern_navigator.dart';
 import 'package:applock/presentation/screen/set_pattern/view_model/set_pattern_state.dart';
@@ -25,24 +26,16 @@ class SetPatternViewContent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // ── Back button ──────────────────────────────────────────────
-              Align(
-                alignment: Alignment.centerLeft,
-                child: IconButton(
-                  padding: const EdgeInsets.only(left: 16, top: 8),
-                  icon: const Icon(
-                    Icons.arrow_back_rounded,
-                    color: AppColorsPalette.black,
-                    size: 26,
-                  ),
-                  onPressed: () {
-                    final vm = context.read<SetPatternViewModel>();
-                    if (vm.state.step == SetPatternStep.confirm) {
-                      vm.handleBack();
-                    } else {
-                      context.read<SetPatternNavigator>().goBack();
-                    }
-                  },
-                ),
+              CommonAppBar.back(
+                leadingIconSize: 26,
+                onBack: () {
+                  final vm = context.read<SetPatternViewModel>();
+                  if (vm.state.step == SetPatternStep.confirm) {
+                    vm.handleBack();
+                  } else {
+                    context.read<SetPatternNavigator>().goBack();
+                  }
+                },
               ),
               const SizedBox(height: 16),
 

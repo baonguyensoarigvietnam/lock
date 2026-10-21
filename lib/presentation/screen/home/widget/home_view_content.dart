@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:applock/presentation/common/widget/common_app_lock_header.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/screen/home/home_navigator.dart';
 import 'package:applock/presentation/screen/home/view_model/home_state.dart';
 import 'package:applock/presentation/screen/home/view_model/home_view_model.dart';
@@ -88,7 +88,7 @@ class _HomeViewContentState extends State<HomeViewContent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 12),
-          const CommonAppLockHeader(),
+          const CommonAppBar.brand(),
           const SizedBox(height: 20),
 
           // Status Overview Cards

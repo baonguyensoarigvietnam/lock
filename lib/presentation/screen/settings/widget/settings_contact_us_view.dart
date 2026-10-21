@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
-import 'package:applock/presentation/common/widget/common_subpage_app_bar.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 
@@ -37,7 +37,7 @@ class _SettingsContactUsViewState extends State<SettingsContactUsView> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Top-left Back Button
-        CommonSubpageAppBar(onBack: widget.onBack),
+        CommonAppBar.back(onBack: widget.onBack),
         Expanded(
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),

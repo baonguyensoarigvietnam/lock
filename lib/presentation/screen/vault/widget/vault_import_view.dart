@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:applock/presentation/common/widget/common_subpage_app_bar.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/dialog_utility.dart';
@@ -64,7 +64,7 @@ class _VaultImportViewState extends State<VaultImportView> {
 
     return Column(
       children: [
-        CommonSubpageAppBar(
+        CommonAppBar.titledBack(
           onBack: widget.onBack,
           title: 'Import to Vault',
           actions: [

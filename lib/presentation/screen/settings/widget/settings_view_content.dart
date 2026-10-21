@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:applock/presentation/common/widget/common_app_lock_header.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/screen/settings/settings_navigator.dart';
 import 'package:applock/presentation/screen/settings/view_model/settings_state.dart';
@@ -117,7 +117,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 12),
-          const CommonAppLockHeader(),
+          const CommonAppBar.brand(),
           const SizedBox(height: 18),
 
           // Page Heading: Settings

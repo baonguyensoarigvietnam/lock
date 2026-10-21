@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:applock/presentation/common/widget/common_app_lock_header.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
@@ -50,7 +50,7 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
         children: [
           const SizedBox(height: 12),
           // Top Title: App Lock (tapping title returns to Home dashboard)
-          CommonAppLockHeader(onTap: widget.onBackToDashboard),
+          CommonAppBar.brand(onTitleTap: widget.onBackToDashboard),
           const SizedBox(height: 20),
 
           // 2-Column Grid of 6 Themes

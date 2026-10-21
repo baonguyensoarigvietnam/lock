@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/screen/onboarding/widget/onboarding_graphic_box.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
@@ -19,13 +20,7 @@ class OnboardingStepOneView extends StatelessWidget {
         children: [
           const SizedBox(height: 12),
           // Top Header
-          Text(
-            'App Lock',
-            style: AppTypography.bold.copyWith(
-              fontSize: 20,
-              color: AppColorsPalette.black,
-            ),
-          ),
+          const CommonAppBar.brand(),
           const Spacer(flex: 1),
           // Center Graphic Card
           const OnboardingGraphicBox(),

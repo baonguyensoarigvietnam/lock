@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:applock/presentation/common/widget/common_app_lock_header.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/common/widget/common_feature_card.dart';
 import 'package:applock/presentation/screen/enable_biometric/enable_biometric_navigator.dart';
@@ -44,7 +44,7 @@ class _EnableBiometricViewContentState
               children: [
                 const SizedBox(height: 12),
                 // Top Title
-                const CommonAppLockHeader(),
+                const CommonAppBar.brand(),
                 const SizedBox(height: 24),
                 // Biometric Icon Circle
                 Center(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/screen/permission_guide/permission_guide_navigator.dart';
 import 'package:applock/presentation/screen/permission_guide/view_model/permission_guide_state.dart';
@@ -54,33 +55,12 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
           child: Column(
             children: [
               // Top Bar
-              Padding(
+              CommonAppBar.titledBack(
+                title: 'Set up permissions',
+                leadingIconSize: 24,
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                child: Row(
-                  children: [
-                    IconButton(
-                      icon: const Icon(
-                        Icons.arrow_back_rounded,
-                        color: AppColorsPalette.black,
-                        size: 24,
-                      ),
-                      onPressed: () =>
-                          context.read<PermissionGuideNavigator>().goBack(),
-                    ),
-                    Expanded(
-                      child: Center(
-                        child: Text(
-                          'Set up permissions',
-                          style: AppTypography.bold.copyWith(
-                            fontSize: 18,
-                            color: AppColorsPalette.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 48), // Balance leading back button
-                  ],
-                ),
+                onBack: () =>
+                    context.read<PermissionGuideNavigator>().goBack(),
               ),
               Expanded(
                 child: SingleChildScrollView(
