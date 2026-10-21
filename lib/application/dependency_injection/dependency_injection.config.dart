@@ -1,0 +1,135 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format width=80
+
+// **************************************************************************
+// InjectableConfigGenerator
+// **************************************************************************
+
+// ignore_for_file: type=lint
+// coverage:ignore-file
+
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+
+import 'package:applock/application/dependency_injection/dependency_injection.dart'
+    as _i1035;
+import 'package:applock/application/view_model/global_view_model.dart' as _i641;
+import 'package:applock/domain/repository/app_lock_repository.dart' as _i128;
+import 'package:applock/local/data_source/app_lock_local_data_source.dart'
+    as _i178;
+import 'package:applock/local/repository_implementation/app_lock_repository_impl.dart'
+    as _i876;
+import 'package:applock/presentation/screen/enable_biometric/view_model/enable_biometric_view_model.dart'
+    as _i1045;
+import 'package:applock/presentation/screen/home/view_model/home_view_model.dart'
+    as _i669;
+import 'package:applock/presentation/screen/lock_screen/view_model/lock_screen_view_model.dart'
+    as _i693;
+import 'package:applock/presentation/screen/main/view_model/main_view_model.dart'
+    as _i543;
+import 'package:applock/presentation/screen/onboarding/view_model/onboarding_view_model.dart'
+    as _i541;
+import 'package:applock/presentation/screen/paywall/view_model/paywall_view_model.dart'
+    as _i131;
+import 'package:applock/presentation/screen/permission_guide/view_model/permission_guide_view_model.dart'
+    as _i345;
+import 'package:applock/presentation/screen/set_passcode/view_model/set_passcode_view_model.dart'
+    as _i930;
+import 'package:applock/presentation/screen/set_pattern/view_model/set_pattern_view_model.dart'
+    as _i960;
+import 'package:applock/presentation/screen/splash/view_model/splash_view_model.dart'
+    as _i989;
+import 'package:applock/presentation/screen/unlock_method/view_model/unlock_method_view_model.dart'
+    as _i955;
+import 'package:applock/service/app_lock/app_lock_service.dart' as _i270;
+import 'package:applock/service/app_lock/biometric_service.dart' as _i189;
+import 'package:applock/service/permission/permission_service.dart' as _i897;
+import 'package:get_it/get_it.dart' as _i174;
+import 'package:go_router/go_router.dart' as _i583;
+import 'package:injectable/injectable.dart' as _i526;
+import 'package:package_info_plus/package_info_plus.dart' as _i655;
+import 'package:shared_preferences/shared_preferences.dart' as _i460;
+
+extension GetItInjectableX on _i174.GetIt {
+  // initializes the registration of main-scope dependencies inside of GetIt
+  Future<_i174.GetIt> init({
+    String? environment,
+    _i526.EnvironmentFilter? environmentFilter,
+  }) async {
+    final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    final globalDependencyInjectionModule = _$GlobalDependencyInjectionModule();
+    await gh.factoryAsync<_i460.SharedPreferences>(
+      () => globalDependencyInjectionModule.sharedPreferences,
+      preResolve: true,
+    );
+    await gh.factoryAsync<_i655.PackageInfo>(
+      () => globalDependencyInjectionModule.packageInfo,
+      preResolve: true,
+    );
+    gh.factory<_i543.MainViewModel>(() => _i543.MainViewModel());
+    gh.factory<_i131.PaywallViewModel>(() => _i131.PaywallViewModel());
+    gh.factory<_i955.UnlockMethodViewModel>(
+      () => _i955.UnlockMethodViewModel(),
+    );
+    gh.lazySingleton<_i270.AppLockService>(() => _i270.AppLockService());
+    gh.lazySingleton<_i189.BiometricService>(() => _i189.BiometricService());
+    gh.lazySingleton<_i897.PermissionService>(() => _i897.PermissionService());
+    gh.lazySingleton<_i178.AppLockLocalDataSource>(
+      () => _i178.AppLockLocalDataSource(gh<_i460.SharedPreferences>()),
+    );
+    gh.lazySingleton<_i128.AppLockRepository>(
+      () => _i876.AppLockRepositoryImpl(gh<_i178.AppLockLocalDataSource>()),
+    );
+    gh.factory<_i669.HomeViewModel>(
+      () => _i669.HomeViewModel(
+        gh<_i128.AppLockRepository>(),
+        gh<_i897.PermissionService>(),
+        gh<_i270.AppLockService>(),
+        gh<_i189.BiometricService>(),
+      ),
+    );
+    gh.lazySingleton<_i641.GlobalViewModel>(
+      () => _i641.GlobalViewModel(
+        gh<_i128.AppLockRepository>(),
+        gh<_i897.PermissionService>(),
+      ),
+    );
+    gh.factory<_i1045.EnableBiometricViewModel>(
+      () => _i1045.EnableBiometricViewModel(
+        gh<_i128.AppLockRepository>(),
+        gh<_i189.BiometricService>(),
+      ),
+    );
+    gh.factory<_i693.LockScreenViewModel>(
+      () => _i693.LockScreenViewModel(
+        gh<_i128.AppLockRepository>(),
+        gh<_i189.BiometricService>(),
+      ),
+    );
+    gh.factory<_i541.OnboardingViewModel>(
+      () => _i541.OnboardingViewModel(gh<_i128.AppLockRepository>()),
+    );
+    gh.factory<_i930.SetPasscodeViewModel>(
+      () => _i930.SetPasscodeViewModel(gh<_i128.AppLockRepository>()),
+    );
+    gh.factory<_i960.SetPatternViewModel>(
+      () => _i960.SetPatternViewModel(gh<_i128.AppLockRepository>()),
+    );
+    gh.factory<_i989.SplashViewModel>(
+      () => _i989.SplashViewModel(gh<_i128.AppLockRepository>()),
+    );
+    gh.singleton<_i583.GoRouter>(
+      () => globalDependencyInjectionModule.router(gh<_i641.GlobalViewModel>()),
+    );
+    gh.factory<_i345.PermissionGuideViewModel>(
+      () => _i345.PermissionGuideViewModel(
+        gh<_i897.PermissionService>(),
+        gh<_i128.AppLockRepository>(),
+        gh<_i270.AppLockService>(),
+      ),
+    );
+    return this;
+  }
+}
+
+class _$GlobalDependencyInjectionModule
+    extends _i1035.GlobalDependencyInjectionModule {}
