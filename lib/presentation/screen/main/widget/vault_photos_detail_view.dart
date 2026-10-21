@@ -247,7 +247,7 @@ class _WireframePhotoCell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFFEBECEF),
+        color: AppColorsPalette.gray150,
         border: Border.all(
           color: AppColorsPalette.gray200,
           width: 0.8,
@@ -264,7 +264,7 @@ class _DiagonalCrossPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xFFD5D7DC)
+      ..color = AppColorsPalette.gray250
       ..strokeWidth = 0.8;
 
     const pad = 12.0;

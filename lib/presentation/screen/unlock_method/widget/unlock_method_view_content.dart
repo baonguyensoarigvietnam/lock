@@ -99,7 +99,7 @@ class UnlockMethodViewContent extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF3F4F6),
+                  color: AppColorsPalette.gray100,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Row(
@@ -135,7 +135,7 @@ class UnlockMethodViewContent extends StatelessWidget {
                     text: 'Continue',
                     backgroundColor: state.canContinue
                         ? AppColorsPalette.black
-                        : const Color(0xFF737686),
+                        : AppColorsPalette.gray500,
                     onPressed: state.canContinue
                         ? () {
                             final nav = context.read<UnlockMethodNavigator>();

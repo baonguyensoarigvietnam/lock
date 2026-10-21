@@ -26,7 +26,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
             width: 68,
             height: 68,
             decoration: const BoxDecoration(
-              color: Color(0xFFFEE2E2),
+              color: AppColorsPalette.red50,
               shape: BoxShape.circle,
             ),
             child: const Center(
@@ -126,7 +126,7 @@ class AppsLimitedProtectionView extends StatelessWidget {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: const Color(0xFFFEE2E2),
+                          color: AppColorsPalette.red50,
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Row(

@@ -59,7 +59,7 @@ class _EnableBiometricViewContentState
                     width: 76,
                     height: 76,
                     decoration: const BoxDecoration(
-                      color: Color(0xFFF3F4F6),
+                      color: AppColorsPalette.gray100,
                       shape: BoxShape.circle,
                     ),
                     child: const Center(
@@ -120,7 +120,7 @@ class _EnableBiometricViewContentState
                   width: double.infinity,
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFEEEEF0),
+                    color: AppColorsPalette.gray150,
                     borderRadius: BorderRadius.circular(14),
                   ),
                   child: Row(
@@ -140,7 +140,7 @@ class _EnableBiometricViewContentState
                           'Biometric fallback only works if enabled before you forget your PIN.',
                           style: AppTypography.regular.copyWith(
                             fontSize: 13,
-                            color: const Color(0xFF374151),
+                            color: AppColorsPalette.gray700,
                             height: 1.35,
                           ),
                         ),
@@ -167,7 +167,7 @@ class _EnableBiometricViewContentState
                   height: 52,
                   backgroundColor: AppColorsPalette.white,
                   textColor: AppColorsPalette.black,
-                  borderColor: const Color(0xFF1F2937),
+                  borderColor: AppColorsPalette.gray800,
                   borderWidth: 1.4,
                   onPressed: () {
                     context.read<EnableBiometricViewModel>().skip();

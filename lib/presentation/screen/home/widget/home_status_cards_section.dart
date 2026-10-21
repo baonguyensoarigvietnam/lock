@@ -33,7 +33,7 @@ class HomeStatusCardsSection extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Material(
-              color: Colors.transparent,
+              color: AppColorsPalette.transparent,
               child: InkWell(
                 onTap: onAppsProtectedTap,
                 borderRadius: BorderRadius.circular(16),
@@ -43,7 +43,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                     color: AppColorsPalette.white,
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
-                      color: const Color(0xFFE5E7EB),
+                      color: AppColorsPalette.gray200,
                       width: 1.2,
                     ),
                   ),
@@ -65,7 +65,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                               vertical: 3.5,
                             ),
                             decoration: BoxDecoration(
-                              color: const Color(0xFFF3F4F6),
+                              color: AppColorsPalette.gray100,
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
@@ -73,7 +73,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                               style: const TextStyle(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w700,
-                                color: Color(0xFF374151),
+                                color: AppColorsPalette.gray700,
                                 letterSpacing: 0.5,
                               ),
                             ),
@@ -116,7 +116,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                 // Top Card: Vault items
                 Expanded(
                   child: Material(
-                    color: Colors.transparent,
+                    color: AppColorsPalette.transparent,
                     child: InkWell(
                       onTap: onVaultTap,
                       borderRadius: BorderRadius.circular(16),
@@ -129,7 +129,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                           color: AppColorsPalette.white,
                           borderRadius: BorderRadius.circular(16),
                           border: Border.all(
-                            color: const Color(0xFFE5E7EB),
+                            color: AppColorsPalette.gray200,
                             width: 1.2,
                           ),
                         ),
@@ -139,7 +139,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                               width: 38,
                               height: 38,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFF9FAFB),
+                                color: AppColorsPalette.gray50,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: const Icon(
@@ -181,7 +181,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                 // Bottom Card: Intruder alerts (with black accent line on left)
                 Expanded(
                   child: Material(
-                    color: Colors.transparent,
+                    color: AppColorsPalette.transparent,
                     child: InkWell(
                       onTap: onAlertsTap,
                       borderRadius: BorderRadius.circular(16),
@@ -190,7 +190,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                           color: AppColorsPalette.white,
                           borderRadius: BorderRadius.circular(16),
                           border: Border.all(
-                            color: const Color(0xFFE5E7EB),
+                            color: AppColorsPalette.gray200,
                             width: 1.2,
                           ),
                         ),
@@ -215,7 +215,7 @@ class HomeStatusCardsSection extends StatelessWidget {
                                         width: 38,
                                         height: 38,
                                         decoration: BoxDecoration(
-                                          color: const Color(0xFFF3F4F6),
+                                          color: AppColorsPalette.gray100,
                                           borderRadius:
                                               BorderRadius.circular(10),
                                         ),

@@ -140,8 +140,8 @@ class VaultAlbumCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: isHighlighted
-            ? const Color(0xFFC8CCD0)
-            : const Color(0xFFE2E4E7),
+            ? AppColorsPalette.gray350
+            : AppColorsPalette.gray200,
         borderRadius: borderRadius,
       ),
     );

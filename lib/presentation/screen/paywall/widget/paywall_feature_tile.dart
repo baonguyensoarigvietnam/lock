@@ -20,7 +20,7 @@ class PaywallFeatureTile extends StatelessWidget {
         color: AppColorsPalette.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: const Color(0xFFE5E7EB),
+          color: AppColorsPalette.gray200,
           width: 1.0,
         ),
       ),

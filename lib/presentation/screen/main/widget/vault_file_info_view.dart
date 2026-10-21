@@ -69,7 +69,7 @@ class VaultFileInfoView extends StatelessWidget {
                         width: double.infinity,
                         height: 210,
                         decoration: BoxDecoration(
-                          color: const Color(0xFFEDEDED),
+                          color: AppColorsPalette.gray150,
                           borderRadius: BorderRadius.circular(14),
                           border: Border.all(
                             color: AppColorsPalette.gray200,
@@ -86,7 +86,7 @@ class VaultFileInfoView extends StatelessWidget {
                                 const Icon(
                                   Icons.insert_drive_file_outlined,
                                   size: 108,
-                                  color: Color(0xFFD5D7DC),
+                                  color: AppColorsPalette.gray250,
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.min,

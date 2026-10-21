@@ -24,7 +24,7 @@ class CommonButton extends StatelessWidget {
     this.leadingIcon,
     this.trailingIcon,
     this.padding = const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-    this.borderColor = Colors.transparent,
+    this.borderColor = AppColorsPalette.transparent,
     this.borderWidth = 0,
     this.height = 56,
     this.width,
@@ -179,7 +179,7 @@ class CommonButton extends StatelessWidget {
         : null;
 
     return Material(
-      color: Colors.transparent,
+      color: AppColorsPalette.transparent,
       borderRadius: BorderRadius.circular(cornerRadius),
       child: InkWell(
         onTap: (isEnabled && !isLoading) ? onPressed : null,

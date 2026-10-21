@@ -22,7 +22,7 @@ class HomeBiometricCard extends StatelessWidget {
         color: AppColorsPalette.white,
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color: const Color(0xFFE5E7EB),
+          color: AppColorsPalette.gray200,
           width: 1.2,
         ),
       ),

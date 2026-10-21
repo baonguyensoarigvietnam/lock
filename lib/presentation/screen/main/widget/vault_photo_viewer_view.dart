@@ -60,7 +60,7 @@ class VaultPhotoViewerView extends StatelessWidget {
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: const Color(0xFFEBECEF),
+                color: AppColorsPalette.gray150,
                 border: Border.all(
                   color: AppColorsPalette.gray200,
                   width: 1,
@@ -77,7 +77,7 @@ class VaultPhotoViewerView extends StatelessWidget {
                     child: Icon(
                       Icons.image_outlined,
                       size: 96,
-                      color: Color(0xFFB8BCC2),
+                      color: AppColorsPalette.gray350,
                     ),
                   ),
                   Positioned(
@@ -193,7 +193,7 @@ class _LargeWireframeCrossPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xFFD5D7DC)
+      ..color = AppColorsPalette.gray250
       ..strokeWidth = 1.0;
 
     final topOffset = size.height * 0.14;

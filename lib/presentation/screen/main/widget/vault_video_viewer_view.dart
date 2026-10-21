@@ -75,9 +75,9 @@ class _VaultVideoViewerViewState extends State<VaultVideoViewerView> {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Color(0xFF2B2D30),
-                  Color(0xFF5A5D63),
-                  Color(0xFF1A1B1E),
+                  AppColorsPalette.gray700,
+                  AppColorsPalette.gray550,
+                  AppColorsPalette.gray900,
                 ],
                 stops: [0.0, 0.55, 1.0],
               ),
@@ -101,7 +101,7 @@ class _VaultVideoViewerViewState extends State<VaultVideoViewerView> {
                       width: 68,
                       height: 68,
                       decoration: const BoxDecoration(
-                        color: Color(0xFFE5E7EB),
+                        color: AppColorsPalette.gray200,
                         shape: BoxShape.circle,
                       ),
                       child: Center(
@@ -129,7 +129,7 @@ class _VaultVideoViewerViewState extends State<VaultVideoViewerView> {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: const Color(0xFFD1D5DB),
+                          color: AppColorsPalette.gray300,
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(
@@ -157,7 +157,7 @@ class _VaultVideoViewerViewState extends State<VaultVideoViewerView> {
                                 Expanded(
                                   flex: 55,
                                   child: Container(
-                                    color: const Color(0xFFD1D5DB),
+                                    color: AppColorsPalette.gray300,
                                   ),
                                 ),
                               ],
@@ -170,7 +170,7 @@ class _VaultVideoViewerViewState extends State<VaultVideoViewerView> {
                         '07:52',
                         style: AppTypography.medium.copyWith(
                           fontSize: 11.5,
-                          color: const Color(0xFF737373),
+                          color: AppColorsPalette.gray500,
                         ),
                       ),
                     ],
@@ -268,7 +268,7 @@ class _VideoBeamPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.white.withValues(alpha: 0.08)
+      ..color = AppColorsPalette.white.withValues(alpha: 0.08)
       ..style = PaintingStyle.fill;
 
     final path = Path()

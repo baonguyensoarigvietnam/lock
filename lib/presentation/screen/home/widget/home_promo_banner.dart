@@ -13,7 +13,7 @@ class HomePromoBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.transparent,
+      color: AppColorsPalette.transparent,
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(14),
@@ -21,7 +21,7 @@ class HomePromoBanner extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
           decoration: BoxDecoration(
-            color: const Color(0xFF111827),
+            color: AppColorsPalette.gray900,
             borderRadius: BorderRadius.circular(14),
           ),
           child: Row(
@@ -43,7 +43,7 @@ class HomePromoBanner extends StatelessWidget {
                       'Unlimited themes, free ads and more.',
                       style: AppTypography.regular.copyWith(
                         fontSize: 12.5,
-                        color: const Color(0xFF9CA3AF),
+                        color: AppColorsPalette.gray400,
                       ),
                     ),
                   ],

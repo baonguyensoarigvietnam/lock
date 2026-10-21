@@ -23,7 +23,7 @@ class BiometricFeatureCard extends StatelessWidget {
         color: AppColorsPalette.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: const Color(0xFFE5E7EB),
+          color: AppColorsPalette.gray200,
           width: 1.2,
         ),
       ),
@@ -34,7 +34,7 @@ class BiometricFeatureCard extends StatelessWidget {
             width: 42,
             height: 42,
             decoration: BoxDecoration(
-              color: const Color(0xFFF3F4F6),
+              color: AppColorsPalette.gray100,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(

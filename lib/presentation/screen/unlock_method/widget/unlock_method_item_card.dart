@@ -30,7 +30,7 @@ class UnlockMethodItemCard extends StatelessWidget {
           color: AppColorsPalette.white,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: isSelected ? AppColorsPalette.black : const Color(0xFFE5E7EB),
+            color: isSelected ? AppColorsPalette.black : AppColorsPalette.gray200,
             width: isSelected ? 1.5 : 1.0,
           ),
         ),
@@ -41,7 +41,7 @@ class UnlockMethodItemCard extends StatelessWidget {
               width: 46,
               height: 46,
               decoration: const BoxDecoration(
-                color: Color(0xFFF3F4F6),
+                color: AppColorsPalette.gray100,
                 shape: BoxShape.circle,
               ),
               child: Center(child: icon),
@@ -79,7 +79,7 @@ class UnlockMethodItemCard extends StatelessWidget {
                 border: Border.all(
                   color: isSelected
                       ? AppColorsPalette.black
-                      : const Color(0xFFD1D5DB),
+                      : AppColorsPalette.gray300,
                   width: 1.5,
                 ),
               ),

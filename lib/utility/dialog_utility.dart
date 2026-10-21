@@ -63,7 +63,8 @@ class DialogUtility {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(cornerRadius)),
             ),
-            backgroundColor: isTransparent ? Colors.transparent : null,
+            backgroundColor:
+                isTransparent ? AppColorsPalette.transparent : null,
             insetPadding: const EdgeInsets.symmetric(horizontal: 24),
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 392),
@@ -101,7 +102,7 @@ class DialogUtility {
       isScrollControlled: true,
       barrierColor:
           barrierColor ?? AppColorsPalette.black.withValues(alpha: 0.45),
-      backgroundColor: Colors.transparent,
+      backgroundColor: AppColorsPalette.transparent,
       constraints: const BoxConstraints(maxWidth: double.infinity),
       builder: (_) => content,
     );

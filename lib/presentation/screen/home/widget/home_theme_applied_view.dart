@@ -135,20 +135,20 @@ class HomeThemeAppliedView extends StatelessWidget {
       height: 264,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: const Color(0xFFE6E6E6),
+        color: AppColorsPalette.gray200,
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color: const Color(0xFFDADADA),
+          color: AppColorsPalette.gray250,
           width: 1,
         ),
       ),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: const Color(0xFFF3F3F3),
+          color: AppColorsPalette.gray100,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            color: const Color(0xFFE2E2E2),
+            color: AppColorsPalette.gray200,
             width: 1,
           ),
         ),
@@ -159,7 +159,7 @@ class HomeThemeAppliedView extends StatelessWidget {
               width: topBarWidth,
               height: 3.5,
               decoration: BoxDecoration(
-                color: const Color(0xFFE2E2E2),
+                color: AppColorsPalette.gray200,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -168,7 +168,7 @@ class HomeThemeAppliedView extends StatelessWidget {
               width: bottomBarWidth,
               height: 3.5,
               decoration: BoxDecoration(
-                color: const Color(0xFFE2E2E2),
+                color: AppColorsPalette.gray200,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),

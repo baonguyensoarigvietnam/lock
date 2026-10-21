@@ -37,7 +37,7 @@ class PaywallPlanCard extends StatelessWidget {
               color: AppColorsPalette.white,
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
-                color: isSelected ? AppColorsPalette.black : const Color(0xFFE5E7EB),
+                color: isSelected ? AppColorsPalette.black : AppColorsPalette.gray200,
                 width: isSelected ? 1.5 : 1.0,
               ),
             ),
@@ -52,7 +52,7 @@ class PaywallPlanCard extends StatelessWidget {
                     border: Border.all(
                       color: isSelected
                           ? AppColorsPalette.black
-                          : const Color(0xFFD1D5DB),
+                          : AppColorsPalette.gray300,
                       width: 1.5,
                     ),
                   ),

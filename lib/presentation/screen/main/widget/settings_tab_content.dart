@@ -514,7 +514,7 @@ class _SettingsTabContentState extends State<SettingsTabContent> {
                 decoration: BoxDecoration(
                   color: isEnabled
                       ? AppColorsPalette.white
-                      : const Color(0xFF5A5A5A),
+                      : AppColorsPalette.gray550,
                   shape: BoxShape.circle,
                 ),
               ),

@@ -34,7 +34,7 @@ class PermissionSetupItemCard extends StatelessWidget {
     final bool isRequired = badgeType == PermissionBadgeType.required;
 
     return Material(
-      color: Colors.transparent,
+      color: AppColorsPalette.transparent,
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(16),
@@ -47,7 +47,7 @@ class PermissionSetupItemCard extends StatelessWidget {
             border: Border.all(
               color: isGranted
                   ? AppColorsPalette.green500.withValues(alpha: 0.6)
-                  : const Color(0xFFE5E7EB),
+                  : AppColorsPalette.gray200,
               width: 1.2,
             ),
           ),
@@ -60,7 +60,7 @@ class PermissionSetupItemCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: isGranted
                       ? AppColorsPalette.green500.withValues(alpha: 0.12)
-                      : const Color(0xFFF3F4F6),
+                      : AppColorsPalette.gray100,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(
@@ -96,7 +96,7 @@ class PermissionSetupItemCard extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: isRequired
                                 ? AppColorsPalette.black
-                                : const Color(0xFFE5E7EB),
+                                : AppColorsPalette.gray200,
                             borderRadius: BorderRadius.circular(6),
                           ),
                           child: Text(
@@ -109,7 +109,7 @@ class PermissionSetupItemCard extends StatelessWidget {
                               letterSpacing: 0.4,
                               color: isRequired
                                   ? AppColorsPalette.white
-                                  : const Color(0xFF4B5563),
+                                  : AppColorsPalette.gray600,
                             ),
                           ),
                         ),
@@ -123,7 +123,7 @@ class PermissionSetupItemCard extends StatelessWidget {
                         else
                           const Icon(
                             Icons.chevron_right_rounded,
-                            color: Color(0xFF9CA3AF),
+                            color: AppColorsPalette.gray400,
                             size: 20,
                           ),
                       ],

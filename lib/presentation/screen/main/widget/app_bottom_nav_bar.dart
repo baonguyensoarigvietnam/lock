@@ -60,7 +60,7 @@ class AppBottomNavBar extends StatelessWidget {
         color: AppColorsPalette.white,
         border: Border(
           top: BorderSide(
-            color: Color(0xFFE5E7EB),
+            color: AppColorsPalette.gray200,
             width: 1.0,
           ),
         ),
@@ -77,8 +77,8 @@ class AppBottomNavBar extends StatelessWidget {
               return Expanded(
                 child: InkWell(
                   onTap: () => onTap(index),
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
+                  splashColor: AppColorsPalette.transparent,
+                  highlightColor: AppColorsPalette.transparent,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -89,7 +89,7 @@ class AppBottomNavBar extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: isSelected
                               ? AppColorsPalette.black
-                              : Colors.transparent,
+                              : AppColorsPalette.transparent,
                           borderRadius: BorderRadius.circular(2),
                         ),
                       ),
@@ -99,7 +99,7 @@ class AppBottomNavBar extends StatelessWidget {
                         size: 22,
                         color: isSelected
                             ? AppColorsPalette.black
-                            : const Color(0xFF9CA3AF),
+                            : AppColorsPalette.gray400,
                       ),
                       const SizedBox(height: 3),
                       Text(
@@ -110,7 +110,7 @@ class AppBottomNavBar extends StatelessWidget {
                               isSelected ? FontWeight.w600 : FontWeight.w500,
                           color: isSelected
                               ? AppColorsPalette.black
-                              : const Color(0xFF9CA3AF),
+                              : AppColorsPalette.gray400,
                         ),
                       ),
                       const SizedBox(height: 6),

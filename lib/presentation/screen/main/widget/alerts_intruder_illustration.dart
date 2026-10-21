@@ -19,7 +19,7 @@ class AlertsIntruderIllustration extends StatelessWidget {
       if (isLarge) {
         return Container(
           decoration: BoxDecoration(
-            color: const Color(0xFFEEEEEE),
+            color: AppColorsPalette.gray150,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
               color: AppColorsPalette.gray200,
@@ -75,7 +75,7 @@ class AlertsIntruderIllustration extends StatelessWidget {
       }
 
       return Container(
-        color: const Color(0xFFEBEBEB),
+        color: AppColorsPalette.gray150,
         child: const Center(
           child: Icon(
             Icons.camera_alt_outlined,
@@ -96,8 +96,8 @@ class AlertsIntruderIllustration extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Color(0xFF1A1A1A),
-            Color(0xFF0A0A0A),
+            AppColorsPalette.gray900,
+            AppColorsPalette.gray950,
           ],
         ),
       ),
@@ -106,10 +106,10 @@ class AlertsIntruderIllustration extends StatelessWidget {
           width: phoneWidth,
           height: phoneHeight,
           decoration: BoxDecoration(
-            color: const Color(0xFF1F1F1F),
+            color: AppColorsPalette.gray800,
             borderRadius: BorderRadius.circular(borderRadius),
             border: Border.all(
-              color: const Color(0xFF525252),
+              color: AppColorsPalette.gray550,
               width: isLarge ? 3.0 : 1.5,
             ),
             boxShadow: [
@@ -135,9 +135,9 @@ class AlertsIntruderIllustration extends StatelessWidget {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                        Color(0xFFD4D4D4),
-                        Color(0xFF525252),
-                        Color(0xFF121212),
+                        AppColorsPalette.gray300,
+                        AppColorsPalette.gray550,
+                        AppColorsPalette.gray900,
                       ],
                       stops: [0.0, 0.45, 0.9],
                     ),
@@ -151,7 +151,7 @@ class AlertsIntruderIllustration extends StatelessWidget {
                     width: phoneWidth * 0.44,
                     height: isLarge ? 12 : 5,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF0F0F0F),
+                      color: AppColorsPalette.gray950,
                       borderRadius: BorderRadius.vertical(
                         bottom: Radius.circular(isLarge ? 8 : 3),
                       ),
@@ -262,9 +262,9 @@ class _HoodedIntruderPainter extends CustomPainter {
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
         colors: [
-          Color(0xFF3A3A3A),
-          Color(0xFF141414),
-          Color(0xFF080808),
+          AppColorsPalette.gray700,
+          AppColorsPalette.gray900,
+          AppColorsPalette.gray950,
         ],
       ).createShader(Rect.fromLTWH(0, h * 0.45, w, h * 0.55));
 
@@ -282,9 +282,9 @@ class _HoodedIntruderPainter extends CustomPainter {
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
         colors: [
-          Color(0xFF5A5A5A),
-          Color(0xFF262626),
-          Color(0xFF121212),
+          AppColorsPalette.gray550,
+          AppColorsPalette.gray800,
+          AppColorsPalette.gray900,
         ],
       ).createShader(Rect.fromLTWH(w * 0.24, h * 0.06, w * 0.52, h * 0.5));
 
@@ -296,7 +296,7 @@ class _HoodedIntruderPainter extends CustomPainter {
     canvas.drawOval(hoodRect, hoodPaint);
 
     // Inner Dark Face / Mask Shadow
-    final facePaint = Paint()..color = const Color(0xFF0B0B0B);
+    final facePaint = Paint()..color = AppColorsPalette.gray950;
     final faceRect = Rect.fromCenter(
       center: Offset(w * 0.5, h * 0.33),
       width: w * 0.32,
@@ -306,7 +306,7 @@ class _HoodedIntruderPainter extends CustomPainter {
 
     // Subtle eye-slit highlight
     final eyePaint = Paint()
-      ..color = const Color(0xFF737373).withValues(alpha: 0.55)
+      ..color = AppColorsPalette.gray500.withValues(alpha: 0.55)
       ..style = PaintingStyle.fill;
     canvas.drawOval(
       Rect.fromCenter(
@@ -326,9 +326,9 @@ class _HoodedIntruderPainter extends CustomPainter {
     );
 
     // Small handheld phone in intruder's hand
-    final miniPhonePaint = Paint()..color = const Color(0xFF0E0E0E);
+    final miniPhonePaint = Paint()..color = AppColorsPalette.gray950;
     final miniPhoneBorder = Paint()
-      ..color = const Color(0xFF525252)
+      ..color = AppColorsPalette.gray550
       ..style = PaintingStyle.stroke
       ..strokeWidth = isLarge ? 1.4 : 0.8;
 

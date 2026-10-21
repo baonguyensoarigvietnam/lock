@@ -278,7 +278,7 @@ class AlertsListView extends StatelessWidget {
                 width: 38,
                 height: 38,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1F2937),
+                  color: AppColorsPalette.gray800,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Center(

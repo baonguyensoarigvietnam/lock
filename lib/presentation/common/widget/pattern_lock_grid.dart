@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:applock/presentation/theme/app_colors_palette.dart';
 
 /// A 3×3 pattern lock grid widget.
 /// Calls [onPatternComplete] when the user lifts their finger.
@@ -179,8 +180,8 @@ class _PatternDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color activeColor =
-        isError ? const Color(0xFFEF4444) : const Color(0xFF000000);
-    const Color inactiveColor = Color(0xFFD1D5DB);
+        isError ? AppColorsPalette.red500 : AppColorsPalette.black;
+    const Color inactiveColor = AppColorsPalette.gray300;
 
     if (isSelected) {
       return SizedBox(
@@ -192,7 +193,7 @@ class _PatternDot extends StatelessWidget {
             height: 28,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.transparent,
+              color: AppColorsPalette.transparent,
               border: Border.all(color: activeColor, width: 2.2),
             ),
             child: Center(
@@ -255,7 +256,7 @@ class _PatternLinePainter extends CustomPainter {
     if (selected.isEmpty) return;
 
     final Color lineColor =
-        isError ? const Color(0xFFEF4444) : const Color(0xFFB0B3B8);
+        isError ? AppColorsPalette.red500 : AppColorsPalette.gray400;
 
     final paint = Paint()
       ..color = lineColor

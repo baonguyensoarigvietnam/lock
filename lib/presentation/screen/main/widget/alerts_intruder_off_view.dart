@@ -61,7 +61,7 @@ class AlertsIntruderOffView extends StatelessWidget {
                     width: 32,
                     height: 32,
                     decoration: BoxDecoration(
-                      color: const Color(0xFFB91C1C),
+                      color: AppColorsPalette.red700,
                       shape: BoxShape.circle,
                       border: Border.all(
                         color: AppColorsPalette.white,

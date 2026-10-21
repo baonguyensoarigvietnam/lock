@@ -22,10 +22,10 @@ class OnboardingFeatureCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       decoration: BoxDecoration(
-        color: const Color(0xFFF9FAFB),
+        color: AppColorsPalette.gray50,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: const Color(0xFFE5E7EB),
+          color: AppColorsPalette.gray200,
           width: 1.0,
         ),
       ),

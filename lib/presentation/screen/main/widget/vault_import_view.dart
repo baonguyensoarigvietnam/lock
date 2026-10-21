@@ -335,15 +335,15 @@ class _VaultImportViewState extends State<VaultImportView> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: isTopFeatured
-                ? [
-                    const Color(0xFF4B5563),
-                    const Color(0xFF9CA3AF),
-                    const Color(0xFF374151),
+                ? const [
+                    AppColorsPalette.gray600,
+                    AppColorsPalette.gray400,
+                    AppColorsPalette.gray700,
                   ]
-                : [
-                    const Color(0xFFC8CCD2),
-                    const Color(0xFFECEEF1),
-                    const Color(0xFFF3F4F6),
+                : const [
+                    AppColorsPalette.gray350,
+                    AppColorsPalette.gray150,
+                    AppColorsPalette.gray100,
                   ],
           ),
           border: Border.all(

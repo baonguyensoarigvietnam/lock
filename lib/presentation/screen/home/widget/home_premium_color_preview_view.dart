@@ -71,7 +71,7 @@ class HomePremiumColorPreviewView extends StatelessWidget {
             width: double.infinity,
             height: 316,
             decoration: BoxDecoration(
-              color: const Color(0xFFF9F9F9),
+              color: AppColorsPalette.gray50,
               borderRadius: BorderRadius.circular(14),
               border: Border.all(
                 color: AppColorsPalette.gray200,
@@ -83,7 +83,7 @@ class HomePremiumColorPreviewView extends StatelessWidget {
                 width: 62,
                 height: 62,
                 decoration: const BoxDecoration(
-                  color: Color(0xFF5A5A5A),
+                  color: AppColorsPalette.gray550,
                   shape: BoxShape.circle,
                 ),
                 child: const Center(

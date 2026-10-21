@@ -16,10 +16,10 @@ class OnboardingGraphicBox extends StatelessWidget {
       ),
       margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-        color: const Color(0xFFF3F4F6),
+        color: AppColorsPalette.gray100,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: const Color(0xFF3B82F6),
+          color: AppColorsPalette.blue600,
           width: 1.5,
         ),
       ),

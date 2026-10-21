@@ -203,9 +203,9 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                         colors: [
-                          Color(0xFFE6E6E6),
-                          Color(0xFFFFFFFF),
-                          Color(0xFFEBEBEB),
+                          AppColorsPalette.gray200,
+                          AppColorsPalette.white,
+                          AppColorsPalette.gray150,
                         ],
                       )
                     : null,
@@ -269,9 +269,9 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
         return AppColorsPalette.black;
       case 1:
       case 3:
-        return const Color(0xFFF9FAFB);
+        return AppColorsPalette.gray50;
       default:
-        return const Color(0xFFFCFCFC);
+        return AppColorsPalette.white;
     }
   }
 
@@ -310,10 +310,10 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
                 width: 20,
                 height: 20,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFEEEEEE),
+                  color: AppColorsPalette.gray150,
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: const Color(0xFFE0E0E0),
+                    color: AppColorsPalette.gray200,
                     width: 1,
                   ),
                 ),
@@ -344,7 +344,7 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
                   decoration: BoxDecoration(
                     color: isCenter
                         ? AppColorsPalette.black
-                        : const Color(0xFFD4D4D4),
+                        : AppColorsPalette.gray300,
                     shape: BoxShape.circle,
                   ),
                 ),
@@ -366,7 +366,7 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: const Color(0xFF5A5A5A),
+                    color: AppColorsPalette.gray550,
                     width: 2.5,
                   ),
                 ),
@@ -376,14 +376,14 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
                 child: Container(
                   width: 2.5,
                   height: 34,
-                  color: const Color(0xFF5A5A5A),
+                  color: AppColorsPalette.gray550,
                 ),
               ),
               Container(
                 width: 14,
                 height: 14,
                 decoration: const BoxDecoration(
-                  color: Color(0xFF5A5A5A),
+                  color: AppColorsPalette.gray550,
                   shape: BoxShape.circle,
                 ),
               ),
@@ -404,9 +404,9 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
           children: [
             _buildColorDot(AppColorsPalette.black),
             const SizedBox(width: 10),
-            _buildColorDot(const Color(0xFF5A5A5A)),
+            _buildColorDot(AppColorsPalette.gray550),
             const SizedBox(width: 10),
-            _buildColorDot(const Color(0xFFB91C1C)),
+            _buildColorDot(AppColorsPalette.red700),
           ],
         );
 

@@ -118,10 +118,10 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                         vertical: 3,
                       ),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFFEE2E2),
+                        color: AppColorsPalette.red50,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: const Color(0xFFFCA5A5),
+                          color: AppColorsPalette.red300,
                           width: 1,
                         ),
                       ),
@@ -129,7 +129,7 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                         'High Alert',
                         style: AppTypography.semiBold.copyWith(
                           fontSize: 11,
-                          color: const Color(0xFFB91C1C),
+                          color: AppColorsPalette.red700,
                         ),
                       ),
                     ),

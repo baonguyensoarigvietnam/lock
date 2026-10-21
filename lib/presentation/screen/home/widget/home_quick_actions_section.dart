@@ -78,7 +78,7 @@ class HomeQuickActionsSection extends StatelessWidget {
     required VoidCallback onTap,
   }) {
     return Material(
-      color: Colors.transparent,
+      color: AppColorsPalette.transparent,
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(16),
@@ -88,7 +88,7 @@ class HomeQuickActionsSection extends StatelessWidget {
             color: AppColorsPalette.white,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: const Color(0xFFE5E7EB),
+              color: AppColorsPalette.gray200,
               width: 1.2,
             ),
           ),
