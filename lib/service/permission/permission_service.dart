@@ -1,94 +1,91 @@
 import 'dart:io';
 
+import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+/// Runtime permission helper.
+///
+/// Special-access permissions (usage access, overlay, battery optimization)
+/// are checked natively and requested by opening the matching system settings
+/// page; the result must be re-checked when the app resumes.
 @lazySingleton
 class PermissionService {
-  /// Check whether the overlay ("draw over other apps") permission is granted
+  static const MethodChannel _channel =
+      MethodChannel('com.example.applock/lock');
+
+  Future<bool> _nativeBool(String method, {bool fallback = false}) async {
+    try {
+      return await _channel.invokeMethod<bool>(method) ?? fallback;
+    } on PlatformException {
+      return fallback;
+    } on MissingPluginException {
+      return fallback;
+    }
+  }
+
+  /// Whether "Display over other apps" is granted (needed to show the lock
+  /// screen on top of a protected app).
   Future<bool> isOverlayPermissionGranted() async {
     if (!Platform.isAndroid) return true;
-    return Permission.systemAlertWindow.isGranted;
+    return _nativeBool('canDrawOverlays');
   }
 
-  /// Request overlay permission (opens system setting on Android)
+  /// Opens the overlay settings page. Re-check on resume.
   Future<bool> requestOverlayPermission() async {
     if (!Platform.isAndroid) return true;
-    final status = await Permission.systemAlertWindow.request();
-    return status.isGranted;
+    await _nativeBool('openOverlaySettings');
+    return isOverlayPermissionGranted();
   }
 
-  /// Check whether notification permission is granted
   Future<bool> isNotificationPermissionGranted() async {
     return Permission.notification.isGranted;
   }
 
-  /// Request notification permission
   Future<bool> requestNotificationPermission() async {
     final status = await Permission.notification.request();
     return status.isGranted;
   }
 
-  /// Check whether battery optimization is ignored
   Future<bool> isBatteryOptimizationIgnored() async {
     if (!Platform.isAndroid) return true;
-    return Permission.ignoreBatteryOptimizations.isGranted;
+    return _nativeBool('isIgnoringBatteryOptimizations', fallback: true);
   }
 
-  /// Request ignore battery optimizations
+  /// Opens the system battery optimization list (no restricted permission
+  /// needed). Re-check on resume.
   Future<bool> requestIgnoreBatteryOptimization() async {
     if (!Platform.isAndroid) return true;
-    final status = await Permission.ignoreBatteryOptimizations.request();
-    return status.isGranted;
+    await _nativeBool('openBatteryOptimizationSettings');
+    return isBatteryOptimizationIgnored();
   }
 
-  /// Check whether photos & videos permission is granted
-  Future<bool> isPhotosPermissionGranted() async {
-    if (Platform.isAndroid) {
-      final photos = await Permission.photos.isGranted;
-      final storage = await Permission.storage.isGranted;
-      return photos || storage;
-    }
-    return Permission.photos.isGranted;
-  }
-
-  /// Request photos & videos permission
-  Future<bool> requestPhotosPermission() async {
-    if (Platform.isAndroid) {
-      var status = await Permission.photos.request();
-      if (!status.isGranted) {
-        status = await Permission.storage.request();
-      }
-      return status.isGranted;
-    }
-    final status = await Permission.photos.request();
-    return status.isGranted;
-  }
-
-  /// Check whether camera permission is granted
   Future<bool> isCameraPermissionGranted() async {
     return Permission.camera.isGranted;
   }
 
-  /// Request camera permission
+  Future<bool> isCameraPermissionPermanentlyDenied() async {
+    return Permission.camera.isPermanentlyDenied;
+  }
+
   Future<bool> requestCameraPermission() async {
     final status = await Permission.camera.request();
     return status.isGranted;
   }
 
-  /// Check whether usage access permission is granted (mocked on non-Android)
+  /// Whether Usage Access is granted (required to detect the foreground app).
   Future<bool> isUsageAccessGranted() async {
     if (!Platform.isAndroid) return true;
-    // On Android, usage access requires special settings
-    return false;
+    return _nativeBool('hasUsageAccess');
   }
 
-  /// Request usage access by opening app/system settings
+  /// Opens the Usage Access settings page. Re-check on resume.
   Future<bool> requestUsageAccess() async {
-    return openAppSettings();
+    if (!Platform.isAndroid) return true;
+    await _nativeBool('openUsageAccessSettings');
+    return isUsageAccessGranted();
   }
 
-  /// Opens app settings
   Future<bool> openAppSettingsPage() async {
     return openAppSettings();
   }

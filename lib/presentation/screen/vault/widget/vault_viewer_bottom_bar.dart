@@ -4,15 +4,16 @@ import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/dialog_utility.dart';
 import 'package:applock/utility/extension/build_context.dart';
 
-/// Shared bottom toolbar (Restore | Delete | Info) for Vault photo and video viewers.
-class CommonMediaViewerBottomBar extends StatelessWidget {
-  final VoidCallback onRestoreConfirmed;
+/// Bottom toolbar (Delete | Info) for the vault photo and video viewers.
+///
+/// "Restore to gallery" is intentionally not offered: writing back to the
+/// shared gallery would require storage permissions or a MediaStore plugin.
+class VaultViewerBottomBar extends StatelessWidget {
   final VoidCallback onDeleteConfirmed;
   final VoidCallback onInfo;
 
-  const CommonMediaViewerBottomBar({
+  const VaultViewerBottomBar({
     super.key,
-    required this.onRestoreConfirmed,
     required this.onDeleteConfirmed,
     required this.onInfo,
   });
@@ -34,16 +35,6 @@ class CommonMediaViewerBottomBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildActionItem(
-            icon: Icons.restore_rounded,
-            label: context.l10n.restoreAction,
-            onTap: () {
-              DialogUtility.showRestoreToGalleryBottomSheet(
-                context: context,
-                onRestore: onRestoreConfirmed,
-              );
-            },
-          ),
           _buildActionItem(
             icon: Icons.delete_outline_rounded,
             label: context.l10n.deleteAction,

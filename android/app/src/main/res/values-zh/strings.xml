@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Lock</string>
+    <string name="lock_service_channel_name">App Lock 保护</string>
+    <string name="lock_service_channel_description">保持对已锁定应用的保护</string>
+    <string name="lock_service_notification_title">App Lock 正在运行</string>
+    <string name="lock_service_notification_text">正在保护所选应用</string>
+    <string name="lock_service_fgs_subtype">保持 App Lock 运行以保护所选应用。</string>
+</resources>

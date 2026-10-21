@@ -237,42 +237,6 @@ class DialogUtility {
     );
   }
 
-  /// "Delete originals?" bottom sheet during Vault Import
-  static Future<void> showDeleteOriginalsBottomSheet({
-    required BuildContext context,
-    required VoidCallback onImportAndDelete,
-    required VoidCallback onImportOnly,
-  }) {
-    final l10n = context.l10n;
-    return showConfirmBottomSheet(
-      context: context,
-      icon: Icons.delete_outline_rounded,
-      title: l10n.deleteOriginalsDialogTitle,
-      description: l10n.deleteOriginalsDialogDesc,
-      primaryButtonText: l10n.importAndDeleteOriginalsButton,
-      secondaryButtonText: l10n.importOnlyButton,
-      onPrimaryTap: onImportAndDelete,
-      onSecondaryTap: onImportOnly,
-    );
-  }
-
-  /// "Restore to gallery?" bottom sheet in Vault Media Viewer
-  static Future<void> showRestoreToGalleryBottomSheet({
-    required BuildContext context,
-    required VoidCallback onRestore,
-  }) {
-    final l10n = context.l10n;
-    return showConfirmBottomSheet(
-      context: context,
-      icon: Icons.restore_rounded,
-      title: l10n.restoreToGalleryDialogTitle,
-      description: l10n.restoreToGalleryDialogDesc,
-      primaryButtonText: l10n.restoreAction,
-      secondaryButtonText: l10n.cancelButton,
-      onPrimaryTap: onRestore,
-    );
-  }
-
   /// "Delete from Vault?" bottom sheet in Vault Media Viewer
   static Future<void> showDeleteFromVaultBottomSheet({
     required BuildContext context,

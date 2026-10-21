@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
-import 'package:applock/presentation/screen/apps/apps_navigator.dart';
 import 'package:applock/presentation/screen/apps/view_model/apps_state.dart';
 import 'package:applock/presentation/screen/apps/view_model/apps_view_model.dart';
 import 'package:applock/presentation/screen/apps/widget/apps_categories_list_view.dart';
@@ -23,10 +22,15 @@ class AppsViewContent extends StatefulWidget {
 
 class _AppsViewContentState extends State<AppsViewContent> {
   final TextEditingController _searchController = TextEditingController();
+  late final AppLifecycleListener _lifecycleListener;
 
   @override
   void initState() {
     super.initState();
+    // Coming back from a system settings page: re-check permissions.
+    _lifecycleListener = AppLifecycleListener(
+      onResume: () => context.read<AppsViewModel>().refreshPermissions(),
+    );
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<AppsViewModel>().init();
     });
@@ -34,6 +38,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
 
   @override
   void dispose() {
+    _lifecycleListener.dispose();
     _searchController.dispose();
     super.dispose();
   }
@@ -71,6 +76,8 @@ class _AppsViewContentState extends State<AppsViewContent> {
         );
       case AppsTabStep.limitedProtectionWarning:
         return AppsLimitedProtectionView(
+          isOverlayGranted: state.isOverlayGranted,
+          isBatteryOptimizationIgnored: state.isBatteryOptimizationIgnored,
           onFixPermissions: () => vm.fixLimitedPermissions(),
           onContinueLimited: () => vm.continueWithLimitedProtection(),
         );
@@ -223,10 +230,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
                       children: [
                         Text(
                           l10n.categoryChipLabel(
-                            AppsCategoriesListView.resolveCategoryTitle(
-                              context,
-                              state.selectedCategory!,
-                            ),
+                            state.selectedCategory!.label(l10n),
                           ),
                           style: AppTypography.medium.copyWith(
                             fontSize: 12,
@@ -293,7 +297,6 @@ class _AppsViewContentState extends State<AppsViewContent> {
 
   Widget _buildTabViewContent(BuildContext context, AppsState state) {
     final vm = context.read<AppsViewModel>();
-    final navigator = context.read<AppsNavigator>();
     final l10n = context.l10n;
 
     if (state.isLoading) {
@@ -307,6 +310,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
     switch (state.appsFilterTab) {
       case AppsFilterTab.categories:
         return AppsCategoriesListView(
+          apps: state.apps,
           onCategoryTap: (category) => vm.selectCategory(category),
         );
       case AppsFilterTab.locked:
@@ -348,12 +352,11 @@ class _AppsViewContentState extends State<AppsViewContent> {
                 final item = lockedApps[index];
                 return AppsItemTile(
                   item: item,
-                  customSubtitle: item.lockedSubtitle,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 14,
                     vertical: 14,
                   ),
-                  onTap: () => navigator.goToLockScreen(appName: item.appName),
+                  onTap: () => vm.toggleLock(item.packageName),
                   onToggle: (_) => vm.toggleLock(item.packageName),
                 );
               },
@@ -385,7 +388,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
             final item = state.filteredApps[index];
             return AppsItemTile(
               item: item,
-              onTap: () => navigator.goToLockScreen(appName: item.appName),
+              onTap: () => vm.toggleLock(item.packageName),
               onToggle: (_) => vm.toggleLock(item.packageName),
             );
           },

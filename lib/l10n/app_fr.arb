@@ -9,11 +9,8 @@
   "saveButton": "Enregistrer",
   "doneButton": "Terminé",
   "resetButton": "Réinitialiser",
-  "restoreAction": "Restaurer",
   "deleteAction": "Supprimer",
   "infoAction": "Infos",
-  "selectAction": "Sélectionner",
-  "selectAllAction": "Tout sélectionner",
   "seeAllAction": "Tout voir",
   "navHome": "Accueil",
   "navApps": "Applications",
@@ -73,13 +70,10 @@
   "displayOverOtherAppsDesc": "Affiche l'écran de déverrouillage par-dessus les applications protégées.",
   "notificationsTitle": "Notifications",
   "notificationsDesc": "Affiche l'état de la protection, les alertes de sécurité et les avertissements.",
-  "photosAndVideosTitle": "Photos et vidéos",
-  "photosAndVideosDesc": "Sélectionnez des médias à importer dans votre coffre-fort chiffré.",
   "cameraTitle": "Caméra",
   "cameraDesc": "Prend une photo avec la caméra frontale après 3 échecs de déverrouillage.",
   "badgeRequired": "REQUIS",
   "badgeRecommended": "RECOMMANDÉ",
-  "badgeVault": "COFFRE",
   "badgeIntruder": "INTRUS",
   "upgradeToPremium": "Passer à Premium",
   "paywallSubtitle": "Débloquez plus de thèmes et supprimez les publicités.",
@@ -224,14 +218,10 @@
   "quickActionsSmallTitle": "Actions rapides",
   "addPhotosAction": "Ajouter\nPhotos",
   "importVideosAction": "Importer\nVidéos",
-  "createAlbumAction": "Créer\nAlbum",
   "albumsHeader": "Albums",
   "vaultEmptyTitle": "Votre coffre-fort est vide",
   "vaultEmptySubtitle": "Importez des photos et vidéos pour les garder\nchiffrées sur cet appareil.",
-  "albumPrivatePhotos": "Photos privées",
   "albumVideos": "Vidéos",
-  "albumGalleries": "Galeries",
-  "albumScreenshots": "Captures d'écran",
   "albumPhotos": "Photos",
   "vaultAlbumItemsCount": "{count} éléments",
   "@vaultAlbumItemsCount": {
@@ -249,26 +239,6 @@
       }
     }
   },
-  "importToVaultTitle": "Importer dans le Coffre",
-  "todaySection": "Aujourd'hui",
-  "september12Section": "12 septembre",
-  "selectedCountLabel": "{count} sélectionnés",
-  "@selectedCountLabel": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "totalSizeMbLabel": "{size} Mo au total",
-  "@totalSizeMbLabel": {
-    "placeholders": {
-      "size": {
-        "type": "String"
-      }
-    }
-  },
-  "moveToVaultButton": "Déplacer vers le Coffre",
   "encryptingItemsTitle": "Chiffrement des éléments sélectionnés...",
   "filesProcessedProgress": "{processed} fichiers sur {total} traités",
   "@filesProcessedProgress": {
@@ -293,8 +263,6 @@
     }
   },
   "aes256Subtitle": "Qualité militaire AES-256",
-  "originalsDeletedTitle": "Originaux supprimés",
-  "spaceRecoveredSubtitle": "Espace récupéré : 124 Mo",
   "originalsCouldNotBeDeletedTitle": "Les originaux n'ont pas pu être supprimés\nautomatiquement",
   "nextStepRequiredTitle": "Étape suivante requise",
   "deleteOriginalsManuallyDesc": "Ouvrez Photos ou Galerie pour supprimer\nles originaux manuellement.",
@@ -323,9 +291,6 @@
   "privacyFirstSubtitle": "Aucune photo n'est prise ou stockée sans\nvotre autorisation explicite.",
   "openSettingsButton": "Ouvrir les paramètres",
   "statusSummaryTitle": "Résumé de l'état",
-  "failedUnlockAttemptsToday": "2 tentatives échouées aujourd'hui",
-  "alertsSavedPremium": "11 alertes enregistrées",
-  "alertsSavedFree": "2 alertes enregistrées sur 10",
   "failedMethodLabel": "Méthode échouée : {method}",
   "@failedMethodLabel": {
     "placeholders": {
@@ -347,11 +312,8 @@
   "failedMethodRowLabel": "Méthode échouée",
   "failedCountLabel": "Nombre d'échecs",
   "dateTimeLabel": "Date/heure",
-  "platformLabel": "Plateforme",
-  "deviceModelLabel": "Modèle d'appareil",
   "saveEvidenceButton": "Enregistrer la preuve",
   "enableCameraPermissionButton": "Activer l'autorisation caméra",
-  "evidenceSavedSnackBar": "Preuve enregistrée sur l'appareil",
   "deleteAlertButton": "Supprimer l'alerte",
   "settingsTitle": "Paramètres",
   "settingsSubtitle": "Gérez les préférences de votre application.",
@@ -391,17 +353,125 @@
   "messageHint": "Décrivez votre problème en détail...",
   "contactPrivacyDisclaimer": "En soumettant ce formulaire, vous acceptez notre Politique de confidentialité.\nVotre e-mail ne servira qu'à vous répondre.",
   "sendMessageButton": "Envoyer le message",
-  "messageSentSnackBar": "Message envoyé à l'équipe de support",
   "biometricNotSupportedError": "L'appareil ne prend pas en charge ou n'a pas configuré la biométrie",
-  "deleteOriginalsDialogTitle": "Supprimer les originaux ?",
-  "deleteOriginalsDialogDesc": "Après l'importation, l'application peut demander au système de supprimer les fichiers originaux.",
-  "importAndDeleteOriginalsButton": "Importer et supprimer les originaux",
-  "importOnlyButton": "Importer uniquement",
-  "restoreToGalleryDialogTitle": "Restaurer dans la galerie ?",
-  "restoreToGalleryDialogDesc": "Une copie déchiffrée sera enregistrée via le système. Les fichiers temporaires seront nettoyés.",
   "deleteFromVaultDialogTitle": "Supprimer du Coffre ?",
   "deleteFromVaultDialogDesc": "Cela supprime la copie chiffrée du coffre de cet appareil.",
   "deletePermanentlyButton": "Supprimer définitivement",
   "deleteAlertDialogTitle": "Supprimer l'alerte ?",
-  "deleteAlertDialogDesc": "Cela supprime la photo de l'intrus et le journal d'événements de cet appareil."
+  "deleteAlertDialogDesc": "Cela supprime la photo de l'intrus et le journal d'événements de cet appareil.",
+  "purchaseFallbackMonthlyPrice": "$2.99",
+  "purchaseFallbackYearlyPrice": "$25.99",
+  "purchaseFallbackYearlyOriginalPrice": "$35.99",
+  "purchaseSaveBadge": "ÉCONOMISEZ {percent} %",
+  "purchaseBillingUnavailable": "Google Play Billing n'est pas disponible sur cet appareil. Vérifiez votre compte Play Store et réessayez.",
+  "purchaseProductsNotFound": "Les offres Premium ne sont pas disponibles pour le moment. Veuillez réessayer plus tard.",
+  "purchaseProductsLoading": "Chargement des offres, veuillez réessayer dans un instant.",
+  "purchaseFailed": "L'achat a échoué. Veuillez réessayer.",
+  "purchasePending": "Votre achat est en attente. Premium sera débloqué une fois le paiement effectué.",
+  "purchaseRestoreSuccess": "Achats restaurés. Premium est actif.",
+  "purchaseRestoreNothing": "Aucun achat précédent trouvé.",
+  "purchaseRestoreFailed": "Impossible de restaurer les achats. Veuillez réessayer.",
+  "purchaseAlreadyPremium": "Vous êtes déjà Premium",
+  "purchaseOpenLinkFailed": "Impossible d'ouvrir le lien.",
+  "intruderFailedAttemptsToday": "{count, plural, =0{Aucune tentative de déverrouillage échouée aujourd'hui} =1{1 tentative de déverrouillage échouée aujourd'hui} other{{count} tentatives de déverrouillage échouées aujourd'hui}}",
+  "intruderAlertsSaved": "{count, plural, =0{Aucune alerte enregistrée} =1{1 alerte enregistrée} other{{count} alertes enregistrées}}",
+  "intruderAlertsShownOfTotal": "{shown} sur {total} alertes enregistrées affichées",
+  "intruderMethodPin": "Code PIN",
+  "intruderMethodPattern": "Schéma",
+  "intruderMethodBiometric": "Biométrie",
+  "intruderMainUnlock": "Déverrouillage principal",
+  "intruderYesterday": "Hier",
+  "intruderEvidenceSavedTo": "Preuve enregistrée dans {path}",
+  "intruderEvidenceSaveFailed": "Impossible d'enregistrer la preuve",
+  "intruderAlertDeleted": "Alerte supprimée",
+  "intruderDeleteFailed": "Impossible de supprimer l'alerte",
+  "intruderNoAlertsTitle": "Aucune alerte d'intrus pour le moment",
+  "intruderNoAlertsSubtitle": "Après 3 tentatives de déverrouillage échouées, App Lock prend discrètement une photo de l'intrus et l'enregistre ici.",
+  "lockBiometricReason": "Confirmez votre identité pour déverrouiller",
+  "lockEnableBiometricReason": "Authentifiez-vous pour activer le déverrouillage biométrique",
+  "lockDeviceAuthReason": "Vérifiez votre identité avec le verrouillage de l'appareil",
+  "lockDeviceNotSecureError": "Configurez un verrouillage d'écran sur l'appareil pour récupérer l'accès.",
+  "lockAuthFailedError": "Échec de l'authentification. Réessayez.",
+  "lockUsageAccessNeeded": "Accordez l'accès aux données d'utilisation pour démarrer la protection.",
+  "lockPasscodeUpdated": "Code mis à jour",
+  "lockPatternUpdated": "Schéma mis à jour",
+  "lockSaveFailed": "Échec de l'enregistrement. Réessayez.",
+  "lockPremiumPlanTitle": "Forfait Premium",
+  "lockPremiumPlanDesc": "Toutes les fonctionnalités Premium sont débloquées.",
+  "lockContactFormIncomplete": "Veuillez saisir votre e-mail et un message.",
+  "lockContactInvalidEmail": "Veuillez saisir une adresse e-mail valide.",
+  "lockContactNoEmailApp": "Aucune appli e-mail trouvée. Écrivez à {email}",
+  "lockOpenLinkFailed": "Impossible d'ouvrir le lien.",
+  "lockBatteryOptimizationTitle": "Optimisation de la batterie",
+  "lockBatteryOptimizationDesc": "Réglez App Lock sur « Non optimisée » pour garder la protection active.",
+  "vaultItemsProtectedUnlimited": "{count} éléments protégés",
+  "@vaultItemsProtectedUnlimited": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultLimitReachedTitle": "Limite du coffre-fort atteinte",
+  "vaultLimitReachedDesc": "L'offre gratuite protège jusqu'à {limit} éléments. Passez à Premium pour un stockage illimité.",
+  "@vaultLimitReachedDesc": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultUpgradeButton": "Passer à Premium",
+  "vaultOperationFailed": "Une erreur s'est produite. Veuillez réessayer.",
+  "vaultSizeBytes": "{size} o",
+  "@vaultSizeBytes": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeKb": "{size} Ko",
+  "@vaultSizeKb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeMb": "{size} Mo",
+  "@vaultSizeMb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeGb": "{size} Go",
+  "@vaultSizeGb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultItemSubtitle": "{date} • {size}",
+  "@vaultItemSubtitle": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultEncryptionAes256": "AES-256",
+  "vaultTypePhoto": "Photo",
+  "vaultTypeVideo": "Vidéo",
+  "vaultPhotosEmptyTitle": "Aucune photo pour l'instant",
+  "vaultVideosEmptyTitle": "Aucune vidéo pour l'instant",
+  "vaultDetailEmptySubtitle": "Appuyez sur + pour choisir des éléments avec le sélecteur de photos du système. Ils sont chiffrés sur cet appareil.",
+  "vaultPreviewUnavailable": "Aperçu indisponible",
+  "appsCategoryOther": "Autres"
 }

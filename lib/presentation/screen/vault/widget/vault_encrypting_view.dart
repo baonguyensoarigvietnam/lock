@@ -1,53 +1,26 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/extension/build_context.dart';
 
-class VaultEncryptingView extends StatefulWidget {
+/// Shows real progress while picked files are being encrypted.
+class VaultEncryptingView extends StatelessWidget {
   final int totalFiles;
-  final VoidCallback onComplete;
+  final int processedFiles;
 
   const VaultEncryptingView({
     super.key,
-    this.totalFiles = 5,
-    required this.onComplete,
+    required this.totalFiles,
+    required this.processedFiles,
   });
-
-  @override
-  State<VaultEncryptingView> createState() => _VaultEncryptingViewState();
-}
-
-class _VaultEncryptingViewState extends State<VaultEncryptingView> {
-  late int _processedCount;
-  Timer? _timer;
-
-  @override
-  void initState() {
-    super.initState();
-    _processedCount = (widget.totalFiles * 0.6).round().clamp(1, widget.totalFiles);
-    _timer = Timer(const Duration(milliseconds: 1600), () {
-      if (mounted) {
-        widget.onComplete();
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer?.cancel();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final progress =
-        widget.totalFiles > 0 ? (_processedCount / widget.totalFiles) : 0.6;
+    final progress = totalFiles > 0 ? (processedFiles / totalFiles) : 0.0;
 
-    return GestureDetector(
-      onTap: widget.onComplete,
-      behavior: HitTestBehavior.opaque,
+    return PopScope(
+      canPop: false,
       child: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -64,10 +37,7 @@ class _VaultEncryptingViewState extends State<VaultEncryptingView> {
               ),
               const SizedBox(height: 8),
               Text(
-                l10n.filesProcessedProgress(
-                  _processedCount,
-                  widget.totalFiles,
-                ),
+                l10n.filesProcessedProgress(processedFiles, totalFiles),
                 textAlign: TextAlign.center,
                 style: AppTypography.regular.copyWith(
                   fontSize: 14,
@@ -81,11 +51,15 @@ class _VaultEncryptingViewState extends State<VaultEncryptingView> {
                 child: SizedBox(
                   height: 6,
                   width: double.infinity,
-                  child: LinearProgressIndicator(
-                    value: progress,
-                    backgroundColor: AppColorsPalette.gray100,
-                    valueColor: const AlwaysStoppedAnimation<Color>(
-                      AppColorsPalette.black,
+                  child: TweenAnimationBuilder<double>(
+                    tween: Tween(end: progress),
+                    duration: const Duration(milliseconds: 250),
+                    builder: (context, value, _) => LinearProgressIndicator(
+                      value: value,
+                      backgroundColor: AppColorsPalette.gray100,
+                      valueColor: const AlwaysStoppedAnimation<Color>(
+                        AppColorsPalette.black,
+                      ),
                     ),
                   ),
                 ),

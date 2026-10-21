@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:applock/domain/model/vault_item.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
+import 'package:applock/presentation/screen/vault/widget/vault_format_helper.dart';
+import 'package:applock/presentation/screen/vault/widget/vault_thumbnail.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/extension/build_context.dart';
 
 class VaultFileInfoView extends StatelessWidget {
-  final String fileName;
-  final String fileNameWithoutExtension;
-  final String fileType;
-  final String fileSize;
-  final String importedDate;
+  final VaultItem item;
   final VoidCallback onBack;
 
   const VaultFileInfoView({
     super.key,
-    this.fileName = 'IMG_20240315.jpg',
-    this.fileNameWithoutExtension = 'IMG_20240315',
-    this.fileType = 'JPG',
-    this.fileSize = '4.2 MB',
-    this.importedDate = 'Oct 24, 2023',
+    required this.item,
     required this.onBack,
   });
 
@@ -56,40 +51,13 @@ class VaultFileInfoView extends StatelessWidget {
                             width: 1,
                           ),
                         ),
-                        child: Center(
-                          child: SizedBox(
-                            width: 120,
-                            height: 110,
-                            child: Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                const Icon(
-                                  Icons.insert_drive_file_outlined,
-                                  size: 108,
-                                  color: AppColorsPalette.gray250,
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    const Icon(
-                                      Icons.image_outlined,
-                                      size: 38,
-                                      color: AppColorsPalette.gray700,
-                                    ),
-                                    const SizedBox(height: 6),
-                                    Text(
-                                      fileName,
-                                      style: AppTypography.medium.copyWith(
-                                        fontSize: 11,
-                                        color: AppColorsPalette.gray600,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                        child: item.isPhoto
+                            ? VaultThumbnail(
+                                item: item,
+                                iconSize: 48,
+                                borderRadius: BorderRadius.circular(13),
+                              )
+                            : _buildFileIcon(),
                       ),
                       Positioned(
                         right: 16,
@@ -142,47 +110,36 @@ class VaultFileInfoView extends StatelessWidget {
                       _buildPropertyRow(
                         icon: Icons.article_outlined,
                         label: l10n.propertyName,
-                        value: fileNameWithoutExtension,
+                        value: item.nameWithoutExtension,
                       ),
-                      const Divider(
-                        height: 1,
-                        thickness: 1,
-                        color: AppColorsPalette.gray200,
-                      ),
+                      _buildDivider(),
                       _buildPropertyRow(
-                        icon: Icons.article_outlined,
+                        icon: item.isVideo
+                            ? Icons.movie_outlined
+                            : Icons.image_outlined,
                         label: l10n.propertyType,
-                        value: fileType,
+                        value: VaultFormatHelper.fileType(context, item),
                       ),
-                      const Divider(
-                        height: 1,
-                        thickness: 1,
-                        color: AppColorsPalette.gray200,
-                      ),
+                      _buildDivider(),
                       _buildPropertyRow(
                         icon: Icons.storage_rounded,
                         label: l10n.propertySize,
-                        value: fileSize,
+                        value: VaultFormatHelper.fileSize(
+                          context,
+                          item.sizeBytes,
+                        ),
                       ),
-                      const Divider(
-                        height: 1,
-                        thickness: 1,
-                        color: AppColorsPalette.gray200,
-                      ),
+                      _buildDivider(),
                       _buildPropertyRow(
                         icon: Icons.calendar_today_outlined,
                         label: l10n.propertyImportedDate,
-                        value: importedDate,
+                        value: VaultFormatHelper.date(context, item.createdAt),
                       ),
-                      const Divider(
-                        height: 1,
-                        thickness: 1,
-                        color: AppColorsPalette.gray200,
-                      ),
+                      _buildDivider(),
                       _buildPropertyRow(
                         icon: Icons.enhanced_encryption_outlined,
                         label: l10n.propertyEncryptionStatus,
-                        value: 'AES-256',
+                        value: l10n.vaultEncryptionAes256,
                         isHighlightedValue: true,
                       ),
                     ],
@@ -194,6 +151,53 @@ class VaultFileInfoView extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildFileIcon() {
+    return Center(
+      child: SizedBox(
+        width: 160,
+        height: 110,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            const Icon(
+              Icons.insert_drive_file_outlined,
+              size: 108,
+              color: AppColorsPalette.gray250,
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.movie_outlined,
+                  size: 38,
+                  color: AppColorsPalette.gray700,
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  item.originalName,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTypography.medium.copyWith(
+                    fontSize: 11,
+                    color: AppColorsPalette.gray600,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDivider() {
+    return const Divider(
+      height: 1,
+      thickness: 1,
+      color: AppColorsPalette.gray200,
     );
   }
 
@@ -220,34 +224,41 @@ class VaultFileInfoView extends StatelessWidget {
               color: AppColorsPalette.gray800,
             ),
           ),
-          const Spacer(),
-          if (isHighlightedValue)
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  value,
-                  style: AppTypography.bold.copyWith(
-                    fontSize: 14,
-                    color: AppColorsPalette.black,
+          const SizedBox(width: 12),
+          Expanded(
+            child: isHighlightedValue
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Flexible(
+                        child: Text(
+                          value,
+                          textAlign: TextAlign.end,
+                          style: AppTypography.bold.copyWith(
+                            fontSize: 14,
+                            color: AppColorsPalette.black,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      const Icon(
+                        Icons.verified_rounded,
+                        size: 16,
+                        color: AppColorsPalette.black,
+                      ),
+                    ],
+                  )
+                : Text(
+                    value,
+                    textAlign: TextAlign.end,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTypography.regular.copyWith(
+                      fontSize: 14,
+                      color: AppColorsPalette.gray600,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 5),
-                const Icon(
-                  Icons.verified_rounded,
-                  size: 16,
-                  color: AppColorsPalette.black,
-                ),
-              ],
-            )
-          else
-            Text(
-              value,
-              style: AppTypography.regular.copyWith(
-                fontSize: 14,
-                color: AppColorsPalette.gray600,
-              ),
-            ),
+          ),
         ],
       ),
     );

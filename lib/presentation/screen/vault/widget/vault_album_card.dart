@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:applock/domain/model/vault_item.dart';
+import 'package:applock/presentation/screen/vault/widget/vault_thumbnail.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 
 class VaultAlbumCard extends StatelessWidget {
   final String title;
   final String subtitle;
-  final int highlightedCellIndex;
+
+  /// Up to four items shown as the 2x2 preview grid.
+  final List<VaultItem> previewItems;
   final VoidCallback onTap;
 
   const VaultAlbumCard({
     super.key,
     required this.title,
     required this.subtitle,
-    this.highlightedCellIndex = 2,
+    this.previewItems = const [],
     required this.onTap,
   });
 
@@ -44,7 +48,7 @@ class VaultAlbumCard extends StatelessWidget {
                       children: [
                         Expanded(
                           child: _buildMiniCell(
-                            isHighlighted: highlightedCellIndex == 0,
+                            index: 0,
                             borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(8),
                             ),
@@ -53,7 +57,7 @@ class VaultAlbumCard extends StatelessWidget {
                         const SizedBox(width: 4),
                         Expanded(
                           child: _buildMiniCell(
-                            isHighlighted: highlightedCellIndex == 1,
+                            index: 1,
                             borderRadius: const BorderRadius.only(
                               topRight: Radius.circular(8),
                             ),
@@ -68,7 +72,7 @@ class VaultAlbumCard extends StatelessWidget {
                       children: [
                         Expanded(
                           child: _buildMiniCell(
-                            isHighlighted: highlightedCellIndex == 2,
+                            index: 2,
                             borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(8),
                             ),
@@ -77,7 +81,7 @@ class VaultAlbumCard extends StatelessWidget {
                         const SizedBox(width: 4),
                         Expanded(
                           child: _buildMiniCell(
-                            isHighlighted: highlightedCellIndex == 3,
+                            index: 3,
                             borderRadius: const BorderRadius.only(
                               bottomRight: Radius.circular(8),
                             ),
@@ -134,14 +138,21 @@ class VaultAlbumCard extends StatelessWidget {
   }
 
   Widget _buildMiniCell({
-    required bool isHighlighted,
+    required int index,
     required BorderRadius borderRadius,
   }) {
+    if (index < previewItems.length) {
+      return SizedBox.expand(
+        child: VaultThumbnail(
+          item: previewItems[index],
+          iconSize: 16,
+          borderRadius: borderRadius,
+        ),
+      );
+    }
     return Container(
       decoration: BoxDecoration(
-        color: isHighlighted
-            ? AppColorsPalette.gray350
-            : AppColorsPalette.gray200,
+        color: AppColorsPalette.gray200,
         borderRadius: borderRadius,
       ),
     );

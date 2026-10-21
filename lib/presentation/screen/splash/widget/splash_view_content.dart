@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:applock/domain/model/lock_screen_args.dart';
 import 'package:applock/presentation/common/widget/app_lock_shield_badge.dart';
 import 'package:applock/presentation/screen/splash/splash_navigator.dart';
 import 'package:applock/presentation/screen/splash/view_model/splash_state.dart';
@@ -46,12 +47,18 @@ class _SplashViewContentState extends State<SplashViewContent>
           previous.isSuccess != current.isSuccess && current.isSuccess,
       listener: (context, state) {
         final navigator = context.read<SplashNavigator>();
-        if (!state.isOnboardingCompleted) {
-          navigator.goToOnboarding();
-        } else if (state.hasPin) {
-          navigator.goToHome();
-        } else {
-          navigator.goToSetPasscode();
+        switch (state.destination) {
+          case SplashDestination.onboarding:
+            navigator.goToOnboarding();
+          case SplashDestination.setPasscode:
+            navigator.goToSetPasscode();
+          case SplashDestination.lockScreen:
+            navigator.goToLockScreen(
+              state.lockArgs ??
+                  const LockScreenArgs(mode: LockScreenMode.selfUnlock),
+            );
+          case null:
+            navigator.goToHome();
         }
       },
       child: Scaffold(

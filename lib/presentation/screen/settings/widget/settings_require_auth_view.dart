@@ -4,12 +4,13 @@ import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/common/widget/common_option_selector_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/enumeration/auto_lock_delay.dart';
 import 'package:applock/utility/extension/build_context.dart';
 
 class SettingsRequireAuthView extends StatefulWidget {
-  final String currentDelay;
+  final AutoLockDelay currentDelay;
   final VoidCallback onBack;
-  final ValueChanged<String> onSave;
+  final ValueChanged<AutoLockDelay> onSave;
 
   const SettingsRequireAuthView({
     required this.currentDelay,
@@ -24,28 +25,13 @@ class SettingsRequireAuthView extends StatefulWidget {
 }
 
 class _SettingsRequireAuthViewState extends State<SettingsRequireAuthView> {
-  static const List<String> _delayKeys = [
-    'Immediately',
-    'After 15 seconds',
-    'After 30 seconds',
-    'After 1 minute',
-    'When screen turns off',
-  ];
-
-  late int _selectedIndex = _delayKeys
-      .indexOf(widget.currentDelay)
-      .clamp(0, _delayKeys.length - 1);
+  late int _selectedIndex = AutoLockDelay.values.indexOf(widget.currentDelay);
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final localizedOptions = [
-      l10n.delayImmediately,
-      l10n.delay15Seconds,
-      l10n.delay30Seconds,
-      l10n.delay1Minute,
-      l10n.delayScreenOff,
-    ];
+    final localizedOptions =
+        AutoLockDelay.values.map((delay) => delay.label(l10n)).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,7 +94,7 @@ class _SettingsRequireAuthViewState extends State<SettingsRequireAuthView> {
                     color: AppColorsPalette.white,
                   ),
                   onPressed: () {
-                    widget.onSave(_delayKeys[_selectedIndex]);
+                    widget.onSave(AutoLockDelay.values[_selectedIndex]);
                   },
                 ),
                 const SizedBox(height: 24),

@@ -3,7 +3,10 @@ import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/constant/link_constant.dart';
 import 'package:applock/utility/extension/build_context.dart';
+import 'package:applock/utility/snack_bar_utility.dart';
+import 'package:applock/utility/url_launcher_utility.dart';
 
 class SettingsContactUsView extends StatefulWidget {
   final VoidCallback onBack;
@@ -23,6 +26,45 @@ class _SettingsContactUsViewState extends State<SettingsContactUsView> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _subjectController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
+
+  static final RegExp _emailRegex = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
+  bool _isSending = false;
+
+  Future<void> _send() async {
+    if (_isSending) return;
+    final l10n = context.l10n;
+    final email = _emailController.text.trim();
+    final subject = _subjectController.text.trim();
+    final message = _messageController.text.trim();
+
+    if (email.isEmpty || subject.isEmpty || message.isEmpty) {
+      SnackBarUtility.show(context, l10n.lockContactFormIncomplete);
+      return;
+    }
+    if (!_emailRegex.hasMatch(email)) {
+      SnackBarUtility.show(context, l10n.lockContactInvalidEmail);
+      return;
+    }
+
+    setState(() => _isSending = true);
+    final opened = await UrlLauncherUtility.sendEmail(
+      to: LinkConstants.supportEmail,
+      subject: subject,
+      body: '$message\n\n— $email',
+    );
+    if (!mounted) return;
+    setState(() => _isSending = false);
+
+    if (!opened) {
+      SnackBarUtility.show(
+        context,
+        l10n.lockContactNoEmailApp(LinkConstants.supportEmail),
+        duration: const Duration(seconds: 4),
+      );
+      return;
+    }
+    widget.onSubmitted();
+  }
 
   @override
   void dispose() {
@@ -110,15 +152,7 @@ class _SettingsContactUsViewState extends State<SettingsContactUsView> {
                     fontSize: 14,
                     color: AppColorsPalette.white,
                   ),
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(l10n.messageSentSnackBar),
-                        duration: const Duration(seconds: 2),
-                      ),
-                    );
-                    widget.onSubmitted();
-                  },
+                  onPressed: _send,
                 ),
                 const SizedBox(height: 24),
               ],

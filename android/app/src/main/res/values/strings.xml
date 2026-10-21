@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Lock</string>
+    <string name="lock_service_channel_name">App Lock protection</string>
+    <string name="lock_service_channel_description">Keeps protection active for your locked apps</string>
+    <string name="lock_service_notification_title">App Lock is active</string>
+    <string name="lock_service_notification_text">Protecting your selected apps</string>
+    <string name="lock_service_fgs_subtype">Keeps App Lock running to protect your selected apps.</string>
+</resources>

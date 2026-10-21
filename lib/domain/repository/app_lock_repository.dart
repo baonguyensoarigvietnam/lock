@@ -1,5 +1,7 @@
 import 'package:applock/domain/model/app_lock_item.dart';
 import 'package:applock/domain/model/lock_config.dart';
+import 'package:applock/utility/enumeration/auto_lock_delay.dart';
+import 'package:applock/utility/enumeration/lock_screen_theme.dart';
 import 'package:applock/utility/helper/result.dart';
 
 abstract class AppLockRepository {
@@ -26,4 +28,12 @@ abstract class AppLockRepository {
   Future<Result<String>> getLanguageCode();
 
   Future<Result<void>> saveLanguageCode(String code);
+
+  Future<Result<AutoLockDelay>> getAutoLockDelay();
+
+  Future<Result<void>> saveAutoLockDelay(AutoLockDelay delay);
+
+  Future<Result<LockScreenTheme>> getLockScreenTheme();
+
+  Future<Result<void>> saveLockScreenTheme(LockScreenTheme theme);
 }

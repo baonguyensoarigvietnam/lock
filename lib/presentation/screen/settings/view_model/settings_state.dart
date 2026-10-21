@@ -1,4 +1,6 @@
 import 'package:applock/presentation/common/base/base_view_model.dart';
+import 'package:applock/utility/enumeration/app_language.dart';
+import 'package:applock/utility/enumeration/auto_lock_delay.dart';
 import 'package:applock/utility/enumeration/settings_tab_step.dart';
 import 'package:applock/utility/enumeration/view_status.dart';
 import 'package:applock/utility/helper/nullable.dart';
@@ -8,8 +10,8 @@ class SettingsState extends BaseState {
   final bool isBiometricEnabled;
   final String firstPin;
   final List<int> firstPattern;
-  final String autoLockDelay;
-  final String selectedLanguage;
+  final AutoLockDelay autoLockDelay;
+  final AppLanguage selectedLanguage;
 
   const SettingsState({
     super.status = ViewStatus.initial,
@@ -18,8 +20,8 @@ class SettingsState extends BaseState {
     this.isBiometricEnabled = false,
     this.firstPin = '',
     this.firstPattern = const [],
-    this.autoLockDelay = 'Immediately',
-    this.selectedLanguage = 'English',
+    this.autoLockDelay = AutoLockDelay.immediately,
+    this.selectedLanguage = AppLanguage.en,
   });
 
   @override
@@ -30,8 +32,8 @@ class SettingsState extends BaseState {
     bool? isBiometricEnabled,
     String? firstPin,
     List<int>? firstPattern,
-    String? autoLockDelay,
-    String? selectedLanguage,
+    AutoLockDelay? autoLockDelay,
+    AppLanguage? selectedLanguage,
   }) {
     return SettingsState(
       status: status ?? this.status,

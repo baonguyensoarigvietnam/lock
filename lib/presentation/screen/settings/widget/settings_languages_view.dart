@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:applock/application/view_model/global_view_model.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/common/widget/common_option_selector_card.dart';
@@ -10,9 +8,9 @@ import 'package:applock/utility/enumeration/app_language.dart';
 import 'package:applock/utility/extension/build_context.dart';
 
 class SettingsLanguagesView extends StatefulWidget {
-  final String currentLanguage;
+  final AppLanguage currentLanguage;
   final VoidCallback onBack;
-  final ValueChanged<String> onSave;
+  final ValueChanged<AppLanguage> onSave;
 
   const SettingsLanguagesView({
     required this.currentLanguage,
@@ -26,8 +24,7 @@ class SettingsLanguagesView extends StatefulWidget {
 }
 
 class _SettingsLanguagesViewState extends State<SettingsLanguagesView> {
-  late AppLanguage _selectedLanguage =
-      AppLanguage.fromNameOrCode(widget.currentLanguage);
+  late AppLanguage _selectedLanguage = widget.currentLanguage;
 
   @override
   Widget build(BuildContext context) {
@@ -97,14 +94,7 @@ class _SettingsLanguagesViewState extends State<SettingsLanguagesView> {
                     fontSize: 14,
                     color: AppColorsPalette.white,
                   ),
-                  onPressed: () {
-                    try {
-                      context
-                          .read<GlobalViewModel>()
-                          .setLanguage(_selectedLanguage);
-                    } catch (_) {}
-                    widget.onSave(_selectedLanguage.englishName);
-                  },
+                  onPressed: () => widget.onSave(_selectedLanguage),
                 ),
                 const SizedBox(height: 24),
               ],

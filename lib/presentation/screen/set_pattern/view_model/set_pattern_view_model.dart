@@ -65,7 +65,7 @@ class SetPatternViewModel extends BaseCubit<SetPatternState> {
         await Future.delayed(const Duration(milliseconds: 200));
         emit(state.copyWith(
           currentPattern: [],
-          validationError: const Nullable('Pattern does not match'),
+          validationError: const Nullable('mismatch'),
         ));
       }
     }

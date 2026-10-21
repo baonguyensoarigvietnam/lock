@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:applock/application/router/router_endpoint.dart';
 import 'package:applock/application/router/router_key.dart';
 import 'package:applock/application/view_model/global_view_model.dart';
+import 'package:applock/domain/model/lock_screen_args.dart';
 import 'package:applock/presentation/screen/enable_biometric/enable_biometric_page.dart';
 import 'package:applock/presentation/screen/main/main_page.dart';
 import 'package:applock/presentation/screen/lock_screen/lock_screen_page.dart';
@@ -72,8 +73,11 @@ final class AppRouter {
         name: RouterEndpoint.lockScreen.name,
         path: RouterEndpoint.lockScreen.path,
         builder: (context, state) {
-          final appName = state.extra as String?;
-          return LockScreenPage(appName: appName);
+          final extra = state.extra;
+          final args = extra is LockScreenArgs
+              ? extra
+              : LockScreenArgs(appName: extra is String ? extra : null);
+          return LockScreenPage(args: args);
         },
       ),
       GoRoute(

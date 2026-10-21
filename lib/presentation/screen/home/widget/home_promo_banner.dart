@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:applock/application/view_model/global_view_model.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/extension/build_context.dart';
@@ -13,6 +15,13 @@ class HomePromoBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Nullable lookup: the banner still renders when no GlobalViewModel is
+    // provided (e.g. widget tests).
+    final isPremium = context.select<GlobalViewModel?, bool>(
+      (vm) => vm?.state.isPremium ?? false,
+    );
+    if (isPremium) return const SizedBox.shrink();
+
     final l10n = context.l10n;
     return Material(
       color: AppColorsPalette.transparent,

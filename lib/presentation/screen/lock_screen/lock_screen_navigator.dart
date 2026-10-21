@@ -4,9 +4,21 @@ import 'package:applock/presentation/common/base/base_navigator.dart';
 class LockScreenNavigator extends BaseNavigator {
   const LockScreenNavigator({required super.router});
 
+  /// Preview / in-app usage: just close the lock screen.
   void unlockSuccess() {
     if (router.canPop()) {
       router.pop(true);
+    } else {
+      router.go(RouterEndpoint.home.path);
+    }
+  }
+
+  /// App Lock itself was unlocked: continue where the user left off.
+  void enterApp() {
+    if (router.canPop()) {
+      router.pop(true);
+    } else {
+      router.go(RouterEndpoint.home.path);
     }
   }
 
@@ -16,7 +28,17 @@ class LockScreenNavigator extends BaseNavigator {
     }
   }
 
+  /// Closes the lock screen route after the external flow finished, leaving
+  /// the app on the home screen for the next time it is opened.
+  void closeExternal() {
+    if (router.canPop()) {
+      router.pop();
+    } else {
+      router.go(RouterEndpoint.home.path);
+    }
+  }
+
   void goToUnlockMethod() {
-    router.pushReplacement(RouterEndpoint.unlockMethod.path);
+    router.go(RouterEndpoint.unlockMethod.path);
   }
 }

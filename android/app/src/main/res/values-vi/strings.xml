@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Lock</string>
+    <string name="lock_service_channel_name">Bảo vệ App Lock</string>
+    <string name="lock_service_channel_description">Duy trì bảo vệ cho các ứng dụng đã khoá</string>
+    <string name="lock_service_notification_title">App Lock đang hoạt động</string>
+    <string name="lock_service_notification_text">Đang bảo vệ các ứng dụng đã chọn</string>
+    <string name="lock_service_fgs_subtype">Giữ App Lock chạy để bảo vệ các ứng dụng đã chọn.</string>
+</resources>

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:applock/domain/model/app_lock_item.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/extension/build_context.dart';
 
 class AppsItemTile extends StatelessWidget {
   final AppLockItem item;
@@ -43,7 +44,7 @@ class AppsItemTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final subtitleText = customSubtitle ?? item.category;
+    final subtitleText = customSubtitle ?? item.category.label(context.l10n);
 
     return GestureDetector(
       onTap: onTap,

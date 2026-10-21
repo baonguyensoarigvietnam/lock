@@ -36,19 +36,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get resetButton => 'Đặt lại';
 
   @override
-  String get restoreAction => 'Khôi phục';
-
-  @override
   String get deleteAction => 'Xóa';
 
   @override
   String get infoAction => 'Thông tin';
-
-  @override
-  String get selectAction => 'Chọn';
-
-  @override
-  String get selectAllAction => 'Chọn tất cả';
 
   @override
   String get seeAllAction => 'Xem tất cả';
@@ -246,13 +237,6 @@ class AppLocalizationsVi extends AppLocalizations {
       'Hiển thị trạng thái bảo vệ, cảnh báo bảo mật và cảnh báo quyền truy cập.';
 
   @override
-  String get photosAndVideosTitle => 'Ảnh và video';
-
-  @override
-  String get photosAndVideosDesc =>
-      'Chọn phương tiện để nhập vào kho lưu trữ mã hóa của bạn.';
-
-  @override
   String get cameraTitle => 'Máy ảnh';
 
   @override
@@ -264,9 +248,6 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get badgeRecommended => 'KHUYẾN NGHỊ';
-
-  @override
-  String get badgeVault => 'KHO LƯU TRỮ';
 
   @override
   String get badgeIntruder => 'XÂM NHẬP';
@@ -583,9 +564,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get importVideosAction => 'Nhập\nVideo';
 
   @override
-  String get createAlbumAction => 'Tạo\nAlbum';
-
-  @override
   String get albumsHeader => 'Album';
 
   @override
@@ -596,16 +574,7 @@ class AppLocalizationsVi extends AppLocalizations {
       'Nhập ảnh và video để giữ chúng\nđược mã hóa trên thiết bị này.';
 
   @override
-  String get albumPrivatePhotos => 'Ảnh riêng tư';
-
-  @override
   String get albumVideos => 'Video';
-
-  @override
-  String get albumGalleries => 'Thư viện';
-
-  @override
-  String get albumScreenshots => 'Ảnh chụp màn hình';
 
   @override
   String get albumPhotos => 'Ảnh';
@@ -619,28 +588,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String vaultItemsProtectedSubtitle(int count) {
     return '$count mục • Đã bảo vệ';
   }
-
-  @override
-  String get importToVaultTitle => 'Nhập vào Kho lưu trữ';
-
-  @override
-  String get todaySection => 'Hôm nay';
-
-  @override
-  String get september12Section => '12 Tháng 9';
-
-  @override
-  String selectedCountLabel(int count) {
-    return 'Đã chọn $count';
-  }
-
-  @override
-  String totalSizeMbLabel(String size) {
-    return 'Tổng cộng $size MB';
-  }
-
-  @override
-  String get moveToVaultButton => 'Chuyển vào Kho';
 
   @override
   String get encryptingItemsTitle => 'Đang mã hóa các mục đã chọn...';
@@ -668,12 +615,6 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get aes256Subtitle => 'Chuẩn quân đội AES-256';
-
-  @override
-  String get originalsDeletedTitle => 'Đã xóa tệp gốc';
-
-  @override
-  String get spaceRecoveredSubtitle => 'Dung lượng giải phóng: 124 MB';
 
   @override
   String get originalsCouldNotBeDeletedTitle =>
@@ -768,15 +709,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get statusSummaryTitle => 'Tóm tắt trạng thái';
 
   @override
-  String get failedUnlockAttemptsToday => '2 lần mở khóa thất bại hôm nay';
-
-  @override
-  String get alertsSavedPremium => 'Đã lưu 11 cảnh báo';
-
-  @override
-  String get alertsSavedFree => 'Đã lưu 2/10 cảnh báo';
-
-  @override
   String failedMethodLabel(String method) {
     return 'Phương thức thất bại: $method';
   }
@@ -823,19 +755,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get dateTimeLabel => 'Ngày/giờ';
 
   @override
-  String get platformLabel => 'Nền tảng';
-
-  @override
-  String get deviceModelLabel => 'Kiểu thiết bị';
-
-  @override
   String get saveEvidenceButton => 'Lưu bằng chứng';
 
   @override
   String get enableCameraPermissionButton => 'Bật quyền máy ảnh';
-
-  @override
-  String get evidenceSavedSnackBar => 'Đã lưu bằng chứng vào thiết bị';
 
   @override
   String get deleteAlertButton => 'Xóa cảnh báo';
@@ -960,31 +883,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get sendMessageButton => 'Gửi tin nhắn';
 
   @override
-  String get messageSentSnackBar => 'Đã gửi tin nhắn tới đội ngũ hỗ trợ';
-
-  @override
   String get biometricNotSupportedError =>
       'Thiết bị không hỗ trợ hoặc chưa cài sinh trắc học';
-
-  @override
-  String get deleteOriginalsDialogTitle => 'Xóa các tệp gốc?';
-
-  @override
-  String get deleteOriginalsDialogDesc =>
-      'Sau khi nhập, Khóa Ứng Dụng có thể yêu cầu hệ điều hành xóa các tệp gốc khi được phép.';
-
-  @override
-  String get importAndDeleteOriginalsButton => 'Nhập và xóa tệp gốc';
-
-  @override
-  String get importOnlyButton => 'Chỉ nhập tệp';
-
-  @override
-  String get restoreToGalleryDialogTitle => 'Khôi phục về thư viện?';
-
-  @override
-  String get restoreToGalleryDialogDesc =>
-      'Một bản sao đã giải mã sẽ được lưu thông qua hệ điều hành. Các tệp tạm sẽ được dọn sạch sau khi khôi phục.';
 
   @override
   String get deleteFromVaultDialogTitle => 'Xóa khỏi Kho lưu trữ?';
@@ -1002,4 +902,244 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get deleteAlertDialogDesc =>
       'Thao tác này sẽ xóa ảnh chụp kẻ xâm nhập và nhật ký sự kiện khỏi thiết bị này.';
+
+  @override
+  String get purchaseFallbackMonthlyPrice => '\$2.99';
+
+  @override
+  String get purchaseFallbackYearlyPrice => '\$25.99';
+
+  @override
+  String get purchaseFallbackYearlyOriginalPrice => '\$35.99';
+
+  @override
+  String purchaseSaveBadge(int percent) {
+    return 'TIẾT KIỆM $percent%';
+  }
+
+  @override
+  String get purchaseBillingUnavailable =>
+      'Google Play Billing không khả dụng trên thiết bị này. Hãy kiểm tra tài khoản Play Store và thử lại.';
+
+  @override
+  String get purchaseProductsNotFound =>
+      'Các gói Premium hiện không khả dụng. Vui lòng thử lại sau.';
+
+  @override
+  String get purchaseProductsLoading =>
+      'Đang tải các gói, vui lòng thử lại sau giây lát.';
+
+  @override
+  String get purchaseFailed => 'Thanh toán thất bại. Vui lòng thử lại.';
+
+  @override
+  String get purchasePending =>
+      'Giao dịch của bạn đang chờ xử lý. Premium sẽ được mở khóa khi thanh toán hoàn tất.';
+
+  @override
+  String get purchaseRestoreSuccess =>
+      'Đã khôi phục giao dịch. Premium đã được kích hoạt.';
+
+  @override
+  String get purchaseRestoreNothing => 'Không tìm thấy giao dịch trước đó.';
+
+  @override
+  String get purchaseRestoreFailed =>
+      'Không thể khôi phục giao dịch. Vui lòng thử lại.';
+
+  @override
+  String get purchaseAlreadyPremium => 'Bạn đã là thành viên Premium';
+
+  @override
+  String get purchaseOpenLinkFailed => 'Không thể mở liên kết.';
+
+  @override
+  String intruderFailedAttemptsToday(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count lần mở khóa sai hôm nay',
+      zero: 'Không có lần mở khóa sai nào hôm nay',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String intruderAlertsSaved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Đã lưu $count cảnh báo',
+      zero: 'Chưa lưu cảnh báo nào',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String intruderAlertsShownOfTotal(int shown, int total) {
+    return 'Đang hiển thị $shown trên $total cảnh báo đã lưu';
+  }
+
+  @override
+  String get intruderMethodPin => 'Mã PIN';
+
+  @override
+  String get intruderMethodPattern => 'Hình vẽ';
+
+  @override
+  String get intruderMethodBiometric => 'Sinh trắc học';
+
+  @override
+  String get intruderMainUnlock => 'Mở khóa chính';
+
+  @override
+  String get intruderYesterday => 'Hôm qua';
+
+  @override
+  String intruderEvidenceSavedTo(String path) {
+    return 'Đã lưu bằng chứng vào $path';
+  }
+
+  @override
+  String get intruderEvidenceSaveFailed => 'Không thể lưu bằng chứng';
+
+  @override
+  String get intruderAlertDeleted => 'Đã xóa cảnh báo';
+
+  @override
+  String get intruderDeleteFailed => 'Không thể xóa cảnh báo';
+
+  @override
+  String get intruderNoAlertsTitle => 'Chưa có cảnh báo xâm nhập';
+
+  @override
+  String get intruderNoAlertsSubtitle =>
+      'Sau 3 lần mở khóa sai, App Lock sẽ âm thầm chụp ảnh kẻ xâm nhập và lưu tại đây.';
+
+  @override
+  String get lockBiometricReason => 'Xác thực danh tính để mở khoá';
+
+  @override
+  String get lockEnableBiometricReason =>
+      'Xác thực để bật mở khoá bằng sinh trắc học';
+
+  @override
+  String get lockDeviceAuthReason => 'Xác minh bằng khoá màn hình của thiết bị';
+
+  @override
+  String get lockDeviceNotSecureError =>
+      'Hãy thiết lập khoá màn hình cho thiết bị để khôi phục quyền truy cập.';
+
+  @override
+  String get lockAuthFailedError => 'Xác thực thất bại. Vui lòng thử lại.';
+
+  @override
+  String get lockUsageAccessNeeded =>
+      'Hãy cấp quyền Truy cập dữ liệu sử dụng để bắt đầu bảo vệ.';
+
+  @override
+  String get lockPasscodeUpdated => 'Đã cập nhật mã PIN';
+
+  @override
+  String get lockPatternUpdated => 'Đã cập nhật hình vẽ';
+
+  @override
+  String get lockSaveFailed => 'Không thể lưu. Vui lòng thử lại.';
+
+  @override
+  String get lockPremiumPlanTitle => 'Gói Premium';
+
+  @override
+  String get lockPremiumPlanDesc => 'Tất cả tính năng Premium đã được mở khoá.';
+
+  @override
+  String get lockContactFormIncomplete =>
+      'Vui lòng nhập email và nội dung tin nhắn.';
+
+  @override
+  String get lockContactInvalidEmail => 'Vui lòng nhập địa chỉ email hợp lệ.';
+
+  @override
+  String lockContactNoEmailApp(String email) {
+    return 'Không tìm thấy ứng dụng email. Vui lòng gửi tới $email';
+  }
+
+  @override
+  String get lockOpenLinkFailed => 'Không thể mở liên kết.';
+
+  @override
+  String get lockBatteryOptimizationTitle => 'Tối ưu hoá pin';
+
+  @override
+  String get lockBatteryOptimizationDesc =>
+      'Đặt App Lock là \"Không tối ưu hoá\" để bảo vệ luôn hoạt động.';
+
+  @override
+  String vaultItemsProtectedUnlimited(int count) {
+    return 'Đã bảo vệ $count mục';
+  }
+
+  @override
+  String get vaultLimitReachedTitle => 'Đã đạt giới hạn kho lưu trữ';
+
+  @override
+  String vaultLimitReachedDesc(int limit) {
+    return 'Gói miễn phí bảo vệ tối đa $limit mục. Nâng cấp lên Premium để lưu trữ không giới hạn.';
+  }
+
+  @override
+  String get vaultUpgradeButton => 'Nâng cấp';
+
+  @override
+  String get vaultOperationFailed => 'Đã xảy ra lỗi. Vui lòng thử lại.';
+
+  @override
+  String vaultSizeBytes(String size) {
+    return '$size B';
+  }
+
+  @override
+  String vaultSizeKb(String size) {
+    return '$size KB';
+  }
+
+  @override
+  String vaultSizeMb(String size) {
+    return '$size MB';
+  }
+
+  @override
+  String vaultSizeGb(String size) {
+    return '$size GB';
+  }
+
+  @override
+  String vaultItemSubtitle(String date, String size) {
+    return '$date • $size';
+  }
+
+  @override
+  String get vaultEncryptionAes256 => 'AES-256';
+
+  @override
+  String get vaultTypePhoto => 'Ảnh';
+
+  @override
+  String get vaultTypeVideo => 'Video';
+
+  @override
+  String get vaultPhotosEmptyTitle => 'Chưa có ảnh';
+
+  @override
+  String get vaultVideosEmptyTitle => 'Chưa có video';
+
+  @override
+  String get vaultDetailEmptySubtitle =>
+      'Nhấn + để chọn mục bằng trình chọn ảnh của hệ thống. Chúng được mã hoá trên thiết bị này.';
+
+  @override
+  String get vaultPreviewUnavailable => 'Không thể xem trước';
+
+  @override
+  String get appsCategoryOther => 'Khác';
 }

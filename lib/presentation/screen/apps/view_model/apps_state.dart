@@ -1,5 +1,6 @@
 import 'package:applock/domain/model/app_lock_item.dart';
 import 'package:applock/presentation/common/base/base_view_model.dart';
+import 'package:applock/utility/enumeration/app_category.dart';
 import 'package:applock/utility/enumeration/apps_filter_tab.dart';
 import 'package:applock/utility/enumeration/apps_tab_step.dart';
 import 'package:applock/utility/enumeration/view_status.dart';
@@ -12,7 +13,9 @@ class AppsState extends BaseState {
   final bool onlyLockedFilter;
   final AppsTabStep appsTabStep;
   final AppsFilterTab appsFilterTab;
-  final String? selectedCategory;
+  final AppCategory? selectedCategory;
+  final bool isOverlayGranted;
+  final bool isBatteryOptimizationIgnored;
 
   const AppsState({
     super.status = ViewStatus.initial,
@@ -21,9 +24,11 @@ class AppsState extends BaseState {
     this.filteredApps = const [],
     this.searchQuery = '',
     this.onlyLockedFilter = false,
-    this.appsTabStep = AppsTabStep.usageAccessRequired,
+    this.appsTabStep = AppsTabStep.appList,
     this.appsFilterTab = AppsFilterTab.all,
     this.selectedCategory,
+    this.isOverlayGranted = true,
+    this.isBatteryOptimizationIgnored = true,
   });
 
   int get lockedCount => apps.where((a) => a.isLocked).length;
@@ -38,7 +43,9 @@ class AppsState extends BaseState {
     bool? onlyLockedFilter,
     AppsTabStep? appsTabStep,
     AppsFilterTab? appsFilterTab,
-    Nullable<String>? selectedCategory,
+    Nullable<AppCategory>? selectedCategory,
+    bool? isOverlayGranted,
+    bool? isBatteryOptimizationIgnored,
   }) {
     return AppsState(
       status: status ?? this.status,
@@ -53,6 +60,9 @@ class AppsState extends BaseState {
       selectedCategory: selectedCategory != null
           ? selectedCategory.value
           : this.selectedCategory,
+      isOverlayGranted: isOverlayGranted ?? this.isOverlayGranted,
+      isBatteryOptimizationIgnored:
+          isBatteryOptimizationIgnored ?? this.isBatteryOptimizationIgnored,
     );
   }
 }

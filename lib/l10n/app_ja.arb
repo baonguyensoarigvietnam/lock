@@ -9,11 +9,8 @@
   "saveButton": "保存",
   "doneButton": "完了",
   "resetButton": "リセット",
-  "restoreAction": "復元",
   "deleteAction": "削除",
   "infoAction": "情報",
-  "selectAction": "選択",
-  "selectAllAction": "すべて選択",
   "seeAllAction": "すべて見る",
   "navHome": "ホーム",
   "navApps": "アプリ",
@@ -73,13 +70,10 @@
   "displayOverOtherAppsDesc": "保護されたアプリの上にロック画面を表示し、信頼性を高めます。",
   "notificationsTitle": "通知",
   "notificationsDesc": "保護ステータス、セキュリティ警告、権限の警告を表示します。",
-  "photosAndVideosTitle": "写真と動画",
-  "photosAndVideosDesc": "暗号化された金庫にインポートするメディアを選択します。",
   "cameraTitle": "カメラ",
   "cameraDesc": "ロック解除に3回失敗するとフロントカメラで写真を撮影します。",
   "badgeRequired": "必須",
   "badgeRecommended": "推奨",
-  "badgeVault": "金庫",
   "badgeIntruder": "侵入者",
   "upgradeToPremium": "プレミアムにアップグレード",
   "paywallSubtitle": "さらに多くのテーマを解放し、広告を非表示にします。",
@@ -224,14 +218,10 @@
   "quickActionsSmallTitle": "クイックアクション",
   "addPhotosAction": "写真を\n追加",
   "importVideosAction": "動画を\nインポート",
-  "createAlbumAction": "アルバム\n作成",
   "albumsHeader": "アルバム",
   "vaultEmptyTitle": "金庫は空です",
   "vaultEmptySubtitle": "写真や動画をインポートして\nこの端末内で暗号化して保管しましょう。",
-  "albumPrivatePhotos": "プライベート写真",
   "albumVideos": "動画",
-  "albumGalleries": "ギャラリー",
-  "albumScreenshots": "スクリーンショット",
   "albumPhotos": "写真",
   "vaultAlbumItemsCount": "{count} 件",
   "@vaultAlbumItemsCount": {
@@ -249,26 +239,6 @@
       }
     }
   },
-  "importToVaultTitle": "金庫にインポート",
-  "todaySection": "今日",
-  "september12Section": "9月12日",
-  "selectedCountLabel": "{count} 件選択中",
-  "@selectedCountLabel": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "totalSizeMbLabel": "合計 {size} MB",
-  "@totalSizeMbLabel": {
-    "placeholders": {
-      "size": {
-        "type": "String"
-      }
-    }
-  },
-  "moveToVaultButton": "金庫に移動",
   "encryptingItemsTitle": "選択したアイテムを暗号化しています...",
   "filesProcessedProgress": "{total} 件中 {processed} 件を処理済み",
   "@filesProcessedProgress": {
@@ -293,8 +263,6 @@
     }
   },
   "aes256Subtitle": "AES-256 軍事グレード",
-  "originalsDeletedTitle": "元のファイルを削除済み",
-  "spaceRecoveredSubtitle": "空き容量の回復: 124 MB",
   "originalsCouldNotBeDeletedTitle": "元のファイルを自動的に削除\nできませんでした",
   "nextStepRequiredTitle": "次のステップが必要です",
   "deleteOriginalsManuallyDesc": "写真またはギャラリーを開いて\n元のファイルを手動で削除してください。",
@@ -323,9 +291,6 @@
   "privacyFirstSubtitle": "明示的なカメラの許可なしに写真が撮影・保存\nされることはありません。",
   "openSettingsButton": "設定を開く",
   "statusSummaryTitle": "ステータス概要",
-  "failedUnlockAttemptsToday": "本日のロック解除失敗: 2件",
-  "alertsSavedPremium": "11件のアラートを保存済み",
-  "alertsSavedFree": "2/10件のアラートを保存済み",
   "failedMethodLabel": "失敗した方法: {method}",
   "@failedMethodLabel": {
     "placeholders": {
@@ -347,11 +312,8 @@
   "failedMethodRowLabel": "失敗した認証方法",
   "failedCountLabel": "失敗回数",
   "dateTimeLabel": "日時",
-  "platformLabel": "プラットフォーム",
-  "deviceModelLabel": "端末モデル",
   "saveEvidenceButton": "証拠を保存",
   "enableCameraPermissionButton": "カメラ権限を有効にする",
-  "evidenceSavedSnackBar": "証拠を端末に保存しました",
   "deleteAlertButton": "アラートを削除",
   "settingsTitle": "設定",
   "settingsSubtitle": "アプリの設定を管理します。",
@@ -391,17 +353,125 @@
   "messageHint": "問題の詳細をご記入ください...",
   "contactPrivacyDisclaimer": "このフォームを送信することで、プライバシーポリシーに同意したものとみなされます。\nメールアドレスはこのお問い合わせへの返信にのみ使用されます。",
   "sendMessageButton": "メッセージを送信",
-  "messageSentSnackBar": "サポートチームにメッセージを送信しました",
   "biometricNotSupportedError": "この端末は生体認証に対応していないか、未設定です",
-  "deleteOriginalsDialogTitle": "元のファイルを削除しますか？",
-  "deleteOriginalsDialogDesc": "インポート後、許可されている場合はOSを通じて元のファイルを削除できます。",
-  "importAndDeleteOriginalsButton": "インポートして元のファイルを削除",
-  "importOnlyButton": "インポートのみ",
-  "restoreToGalleryDialogTitle": "ギャラリーに復元しますか？",
-  "restoreToGalleryDialogDesc": "復号されたコピーがOS経由で保存されます。一時ファイルは復元後に消去されます。",
   "deleteFromVaultDialogTitle": "金庫から削除しますか？",
   "deleteFromVaultDialogDesc": "暗号化された金庫のコピーをこの端末から削除します。",
   "deletePermanentlyButton": "完全に削除",
   "deleteAlertDialogTitle": "アラートを削除しますか？",
-  "deleteAlertDialogDesc": "撮影された侵入者の写真とイベントログをこの端末から削除します。"
+  "deleteAlertDialogDesc": "撮影された侵入者の写真とイベントログをこの端末から削除します。",
+  "purchaseFallbackMonthlyPrice": "$2.99",
+  "purchaseFallbackYearlyPrice": "$25.99",
+  "purchaseFallbackYearlyOriginalPrice": "$35.99",
+  "purchaseSaveBadge": "{percent}%お得",
+  "purchaseBillingUnavailable": "この端末では Google Play 課金を利用できません。Play ストアのアカウントを確認して、もう一度お試しください。",
+  "purchaseProductsNotFound": "現在プレミアムプランをご利用いただけません。しばらくしてから再度お試しください。",
+  "purchaseProductsLoading": "プランを読み込み中です。少し待ってから再度お試しください。",
+  "purchaseFailed": "購入に失敗しました。もう一度お試しください。",
+  "purchasePending": "購入は保留中です。支払いが完了するとプレミアムが有効になります。",
+  "purchaseRestoreSuccess": "購入を復元しました。プレミアムが有効です。",
+  "purchaseRestoreNothing": "以前の購入が見つかりませんでした。",
+  "purchaseRestoreFailed": "購入を復元できませんでした。もう一度お試しください。",
+  "purchaseAlreadyPremium": "すでにプレミアム会員です",
+  "purchaseOpenLinkFailed": "リンクを開けませんでした。",
+  "intruderFailedAttemptsToday": "{count, plural, =0{今日のロック解除失敗はありません} other{今日のロック解除失敗: {count}回}}",
+  "intruderAlertsSaved": "{count, plural, =0{保存されたアラートはありません} other{{count}件のアラートを保存済み}}",
+  "intruderAlertsShownOfTotal": "保存済みアラート{total}件中{shown}件を表示",
+  "intruderMethodPin": "PIN",
+  "intruderMethodPattern": "パターン",
+  "intruderMethodBiometric": "生体認証",
+  "intruderMainUnlock": "メインのロック解除",
+  "intruderYesterday": "昨日",
+  "intruderEvidenceSavedTo": "証拠を{path}に保存しました",
+  "intruderEvidenceSaveFailed": "証拠を保存できませんでした",
+  "intruderAlertDeleted": "アラートを削除しました",
+  "intruderDeleteFailed": "アラートを削除できませんでした",
+  "intruderNoAlertsTitle": "侵入者アラートはまだありません",
+  "intruderNoAlertsSubtitle": "ロック解除に3回失敗すると、App Lockが侵入者の写真をこっそり撮影してここに保存します。",
+  "lockBiometricReason": "ロックを解除するには本人確認してください",
+  "lockEnableBiometricReason": "生体認証ロック解除を有効にするには認証してください",
+  "lockDeviceAuthReason": "端末の画面ロックで本人確認してください",
+  "lockDeviceNotSecureError": "アクセスを回復するには端末に画面ロックを設定してください。",
+  "lockAuthFailedError": "認証に失敗しました。もう一度お試しください。",
+  "lockUsageAccessNeeded": "保護を開始するには使用状況へのアクセスを許可してください。",
+  "lockPasscodeUpdated": "パスコードを更新しました",
+  "lockPatternUpdated": "パターンを更新しました",
+  "lockSaveFailed": "保存できませんでした。もう一度お試しください。",
+  "lockPremiumPlanTitle": "プレミアムプラン",
+  "lockPremiumPlanDesc": "すべてのプレミアム機能が利用可能です。",
+  "lockContactFormIncomplete": "メールアドレスとメッセージを入力してください。",
+  "lockContactInvalidEmail": "有効なメールアドレスを入力してください。",
+  "lockContactNoEmailApp": "メールアプリが見つかりません。{email} までご連絡ください",
+  "lockOpenLinkFailed": "リンクを開けませんでした。",
+  "lockBatteryOptimizationTitle": "バッテリーの最適化",
+  "lockBatteryOptimizationDesc": "保護を継続するため App Lock を「最適化しない」に設定してください。",
+  "vaultItemsProtectedUnlimited": "{count} 件のアイテムを保護中",
+  "@vaultItemsProtectedUnlimited": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultLimitReachedTitle": "金庫の上限に達しました",
+  "vaultLimitReachedDesc": "無料プランでは最大 {limit} 件まで保護できます。プレミアムにアップグレードすると無制限に保存できます。",
+  "@vaultLimitReachedDesc": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultUpgradeButton": "アップグレード",
+  "vaultOperationFailed": "問題が発生しました。もう一度お試しください。",
+  "vaultSizeBytes": "{size} B",
+  "@vaultSizeBytes": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeKb": "{size} KB",
+  "@vaultSizeKb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeMb": "{size} MB",
+  "@vaultSizeMb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeGb": "{size} GB",
+  "@vaultSizeGb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultItemSubtitle": "{date} • {size}",
+  "@vaultItemSubtitle": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultEncryptionAes256": "AES-256",
+  "vaultTypePhoto": "写真",
+  "vaultTypeVideo": "動画",
+  "vaultPhotosEmptyTitle": "写真はまだありません",
+  "vaultVideosEmptyTitle": "動画はまだありません",
+  "vaultDetailEmptySubtitle": "+ をタップして、システムの写真選択ツールから選んでください。この端末上で暗号化されます。",
+  "vaultPreviewUnavailable": "プレビューを表示できません",
+  "appsCategoryOther": "その他"
 }

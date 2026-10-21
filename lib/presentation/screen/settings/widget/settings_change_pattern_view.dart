@@ -30,27 +30,29 @@ class SettingsChangePatternView extends StatefulWidget {
 }
 
 class _SettingsChangePatternViewState extends State<SettingsChangePatternView> {
-  static const List<int> _initialChangePreviewDots = [0, 1, 5, 7];
-  static const List<int> _initialConfirmPreviewDots = [1, 3, 7, 8];
-
-  late List<int> _displayDots = widget.isConfirmStep
-      ? _initialConfirmPreviewDots
-      : _initialChangePreviewDots;
+  List<int> _displayDots = const [];
+  bool _hasError = false;
 
   @override
   void didUpdateWidget(covariant SettingsChangePatternView oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.isConfirmStep != widget.isConfirmStep) {
-      _displayDots = widget.isConfirmStep
-          ? _initialConfirmPreviewDots
-          : _initialChangePreviewDots;
+      _displayDots = const [];
+      _hasError = false;
     }
   }
 
   void _handlePatternComplete(List<int> pattern) {
-    if (pattern.length < 4) return;
+    if (pattern.length < 4) {
+      setState(() {
+        _displayDots = const [];
+        _hasError = !widget.isConfirmStep;
+      });
+      return;
+    }
     setState(() {
       _displayDots = pattern;
+      _hasError = false;
     });
 
     Future.delayed(const Duration(milliseconds: 220), () {
@@ -58,9 +60,13 @@ class _SettingsChangePatternViewState extends State<SettingsChangePatternView> {
       if (!widget.isConfirmStep) {
         widget.onFirstPatternEntered(pattern);
       } else {
-        if (widget.firstPattern.isEmpty ||
-            listEquals(pattern, widget.firstPattern)) {
+        if (listEquals(pattern, widget.firstPattern)) {
           widget.onPatternConfirmed();
+        } else {
+          setState(() {
+            _displayDots = const [];
+            _hasError = true;
+          });
         }
       }
     });
@@ -70,10 +76,12 @@ class _SettingsChangePatternViewState extends State<SettingsChangePatternView> {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final title = widget.isConfirmStep
-        ? l10n.confirmYourPasscodeTitle
+        ? l10n.confirmYourPatternTitle
         : l10n.changePasscodeTitle;
     final subtitle = widget.isConfirmStep
-        ? l10n.patternDoesNotMatchError
+        ? (_hasError
+            ? l10n.patternDoesNotMatchError
+            : l10n.drawPatternAgainConfirm)
         : l10n.connectAtLeast4Dots;
 
     return Column(
@@ -83,17 +91,8 @@ class _SettingsChangePatternViewState extends State<SettingsChangePatternView> {
         CommonAppBar.back(onBack: widget.onBack),
         const SizedBox(height: 24),
 
-        // Title & Subtitle (tapping header allows quick preview toggle between Change & Confirm)
-        GestureDetector(
-          onTap: () {
-            if (!widget.isConfirmStep) {
-              widget.onFirstPatternEntered(_initialChangePreviewDots);
-            } else {
-              widget.onPatternConfirmed();
-            }
-          },
-          behavior: HitTestBehavior.opaque,
-          child: Center(
+        // Title & Subtitle
+        Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
@@ -118,7 +117,6 @@ class _SettingsChangePatternViewState extends State<SettingsChangePatternView> {
                 ],
               ),
             ),
-          ),
         ),
 
         const Spacer(),
@@ -130,6 +128,10 @@ class _SettingsChangePatternViewState extends State<SettingsChangePatternView> {
             height: 280,
             child: PatternLockGrid(
               selectedDots: _displayDots,
+              isError: _hasError,
+              onPatternStart: () {
+                if (_hasError) setState(() => _hasError = false);
+              },
               onPatternComplete: _handlePatternComplete,
             ),
           ),

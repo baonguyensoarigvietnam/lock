@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:applock/application/view_model/global_view_model.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/screen/home/home_navigator.dart';
 import 'package:applock/presentation/screen/home/view_model/home_state.dart';
@@ -11,8 +12,13 @@ import 'package:applock/presentation/screen/home/widget/home_quick_actions_secti
 import 'package:applock/presentation/screen/home/widget/home_status_cards_section.dart';
 import 'package:applock/presentation/screen/home/widget/home_theme_applied_view.dart';
 import 'package:applock/presentation/screen/home/widget/home_theme_picker_view.dart';
+import 'package:applock/presentation/screen/main/view_model/main_state.dart';
+import 'package:applock/presentation/screen/main/view_model/main_view_model.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
+import 'package:applock/utility/enumeration/biometric_toggle_result.dart';
 import 'package:applock/utility/enumeration/home_theme_step.dart';
+import 'package:applock/utility/extension/build_context.dart';
+import 'package:applock/utility/snack_bar_utility.dart';
 
 class HomeViewContent extends StatefulWidget {
   final ValueChanged<int>? onSelectTab;
@@ -27,17 +33,40 @@ class HomeViewContent extends StatefulWidget {
 }
 
 class _HomeViewContentState extends State<HomeViewContent> {
+  late final AppLifecycleListener _lifecycleListener;
+
   @override
   void initState() {
     super.initState();
+    _lifecycleListener = AppLifecycleListener(
+      onResume: () => context.read<HomeViewModel>().init(),
+    );
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<HomeViewModel>().init();
     });
   }
 
   @override
+  void dispose() {
+    _lifecycleListener.dispose();
+    super.dispose();
+  }
+
+  Future<void> _onToggleBiometric(bool enabled) async {
+    final l10n = context.l10n;
+    final result = await context.read<HomeViewModel>().toggleBiometric(
+          enabled,
+          localizedReason: l10n.lockEnableBiometricReason,
+        );
+    if (!mounted) return;
+    if (result == BiometricToggleResult.notSupported) {
+      SnackBarUtility.show(context, l10n.biometricNotSupportedError);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    final body = Scaffold(
       backgroundColor: AppColorsPalette.white,
       body: SafeArea(
         child: BlocBuilder<HomeViewModel, HomeState>(
@@ -46,6 +75,16 @@ class _HomeViewContentState extends State<HomeViewContent> {
           },
         ),
       ),
+    );
+
+    // Refresh counters whenever the user comes back to the Home tab
+    // (Home always lives inside MainPage which provides MainViewModel).
+    return BlocListener<MainViewModel, MainState>(
+      listenWhen: (prev, curr) =>
+          prev.currentTabIndex != curr.currentTabIndex &&
+          curr.currentTabIndex == 0,
+      listener: (context, _) => context.read<HomeViewModel>().init(),
+      child: body,
     );
   }
 
@@ -58,7 +97,8 @@ class _HomeViewContentState extends State<HomeViewContent> {
         return _buildDashboardContent(context, state, vm, navigator);
       case HomeThemeStep.themePicker:
         return HomeThemePickerView(
-          onApplyTheme: () => vm.setThemeStep(HomeThemeStep.themeApplied),
+          currentTheme: state.lockScreenTheme,
+          onApplyTheme: vm.applyLockScreenTheme,
           onOpenPremiumPreview: () =>
               vm.setThemeStep(HomeThemeStep.premiumColorPreview),
           onBackToDashboard: () => vm.setThemeStep(HomeThemeStep.dashboard),
@@ -95,8 +135,8 @@ class _HomeViewContentState extends State<HomeViewContent> {
           HomeStatusCardsSection(
             lockedCount: state.lockedCount,
             isServiceActive: state.isServiceActive,
-            vaultItemsCount: 72,
-            intruderAlertsCount: 2,
+            vaultItemsCount: state.vaultItemsCount,
+            intruderAlertsCount: state.intruderAlertsCount,
             onAppsProtectedTap: () => widget.onSelectTab?.call(1),
             onVaultTap: () => widget.onSelectTab?.call(2),
             onAlertsTap: () => widget.onSelectTab?.call(3),
@@ -106,7 +146,7 @@ class _HomeViewContentState extends State<HomeViewContent> {
           // Biometric Fallback Toggle
           HomeBiometricCard(
             isEnabled: state.isBiometricEnabled,
-            onToggle: (enabled) => vm.toggleBiometric(enabled),
+            onToggle: _onToggleBiometric,
           ),
           const SizedBox(height: 24),
 
@@ -117,12 +157,15 @@ class _HomeViewContentState extends State<HomeViewContent> {
             onThemesTap: () => vm.setThemeStep(HomeThemeStep.themePicker),
             onAlertsTap: () => widget.onSelectTab?.call(3),
           ),
-          const SizedBox(height: 20),
-
-          // Promotional Banner
-          HomePromoBanner(
-            onTap: () => navigator.goToPaywall(),
-          ),
+          if (!context.select<GlobalViewModel, bool>(
+            (vm) => vm.state.isPremium,
+          )) ...[
+            const SizedBox(height: 20),
+            // Promotional Banner
+            HomePromoBanner(
+              onTap: () => navigator.goToPaywall(),
+            ),
+          ],
           const SizedBox(height: 24),
         ],
       ),

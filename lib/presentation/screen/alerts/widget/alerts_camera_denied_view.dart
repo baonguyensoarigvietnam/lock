@@ -9,8 +9,12 @@ import 'package:applock/utility/extension/build_context.dart';
 class AlertsCameraDeniedView extends StatelessWidget {
   final VoidCallback onOpenSettingsTap;
 
+  /// When `true` the permission can only be granted from the system settings.
+  final bool isPermanentlyDenied;
+
   const AlertsCameraDeniedView({
     required this.onOpenSettingsTap,
+    required this.isPermanentlyDenied,
     super.key,
   });
 
@@ -92,7 +96,9 @@ class AlertsCameraDeniedView extends StatelessWidget {
 
           // Open settings Button
           CommonButton.filled(
-            text: l10n.openSettingsButton,
+            text: isPermanentlyDenied
+                ? l10n.openSettingsButton
+                : l10n.enableCameraPermissionButton,
             height: 48,
             cornerRadius: 10,
             backgroundColor: AppColorsPalette.black,

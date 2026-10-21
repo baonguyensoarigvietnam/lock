@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Lock</string>
+    <string name="lock_service_channel_name">App Lock の保護</string>
+    <string name="lock_service_channel_description">ロックしたアプリの保護を有効に保ちます</string>
+    <string name="lock_service_notification_title">App Lock は有効です</string>
+    <string name="lock_service_notification_text">選択したアプリを保護しています</string>
+    <string name="lock_service_fgs_subtype">選択したアプリを保護するため App Lock を実行し続けます。</string>
+</resources>

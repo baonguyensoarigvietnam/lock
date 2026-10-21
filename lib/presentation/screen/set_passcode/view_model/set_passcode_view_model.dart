@@ -68,7 +68,7 @@ class SetPasscodeViewModel extends BaseCubit<SetPasscodeState> {
         await Future.delayed(const Duration(milliseconds: 150));
         emit(state.copyWith(
           currentInput: '',
-          validationError: const Nullable('PIN does not match.'),
+          validationError: const Nullable('mismatch'),
         ));
       }
     }

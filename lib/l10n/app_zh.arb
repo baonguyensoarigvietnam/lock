@@ -9,11 +9,8 @@
   "saveButton": "保存",
   "doneButton": "完成",
   "resetButton": "重置",
-  "restoreAction": "恢复",
   "deleteAction": "删除",
   "infoAction": "信息",
-  "selectAction": "选择",
-  "selectAllAction": "全选",
   "seeAllAction": "查看全部",
   "navHome": "首页",
   "navApps": "应用",
@@ -73,13 +70,10 @@
   "displayOverOtherAppsDesc": "在受保护的应用上方显示解锁屏幕，提高稳定性。",
   "notificationsTitle": "通知",
   "notificationsDesc": "显示保护状态、安全警报和权限警告。",
-  "photosAndVideosTitle": "照片和视频",
-  "photosAndVideosDesc": "选择要导入加密保险箱的媒体文件。",
   "cameraTitle": "相机",
   "cameraDesc": "在3次解锁失败后使用前置摄像头拍照。",
   "badgeRequired": "必需",
   "badgeRecommended": "推荐",
-  "badgeVault": "保险箱",
   "badgeIntruder": "入侵者",
   "upgradeToPremium": "升级到高级版",
   "paywallSubtitle": "解锁更多主题并移除广告。",
@@ -224,14 +218,10 @@
   "quickActionsSmallTitle": "快捷操作",
   "addPhotosAction": "添加\n照片",
   "importVideosAction": "导入\n视频",
-  "createAlbumAction": "创建\n相册",
   "albumsHeader": "相册",
   "vaultEmptyTitle": "您的保险箱为空",
   "vaultEmptySubtitle": "导入照片和视频以在此设备上\n加密保存。",
-  "albumPrivatePhotos": "私密照片",
   "albumVideos": "视频",
-  "albumGalleries": "图库",
-  "albumScreenshots": "屏幕截图",
   "albumPhotos": "照片",
   "vaultAlbumItemsCount": "{count} 项",
   "@vaultAlbumItemsCount": {
@@ -249,26 +239,6 @@
       }
     }
   },
-  "importToVaultTitle": "导入到保险箱",
-  "todaySection": "今天",
-  "september12Section": "9月12日",
-  "selectedCountLabel": "已选择 {count} 项",
-  "@selectedCountLabel": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "totalSizeMbLabel": "共 {size} MB",
-  "@totalSizeMbLabel": {
-    "placeholders": {
-      "size": {
-        "type": "String"
-      }
-    }
-  },
-  "moveToVaultButton": "移至保险箱",
   "encryptingItemsTitle": "正在加密所选项目...",
   "filesProcessedProgress": "已处理 {processed}/{total} 个文件",
   "@filesProcessedProgress": {
@@ -293,8 +263,6 @@
     }
   },
   "aes256Subtitle": "AES-256 军用级加密",
-  "originalsDeletedTitle": "原文件已删除",
-  "spaceRecoveredSubtitle": "已释放空间：124 MB",
   "originalsCouldNotBeDeletedTitle": "无法自动删除\n原始文件",
   "nextStepRequiredTitle": "需要执行下一步",
   "deleteOriginalsManuallyDesc": "打开照片或图库以手动删除\n原始文件。",
@@ -323,9 +291,6 @@
   "privacyFirstSubtitle": "未经您的明确相机许可，绝不会拍摄\n或存储任何照片。",
   "openSettingsButton": "打开设置",
   "statusSummaryTitle": "状态摘要",
-  "failedUnlockAttemptsToday": "今日有 2 次解锁失败尝试",
-  "alertsSavedPremium": "已保存 11 条警报",
-  "alertsSavedFree": "已保存 2/10 条警报",
   "failedMethodLabel": "失败方式：{method}",
   "@failedMethodLabel": {
     "placeholders": {
@@ -347,11 +312,8 @@
   "failedMethodRowLabel": "失败方式",
   "failedCountLabel": "失败次数",
   "dateTimeLabel": "日期/时间",
-  "platformLabel": "平台",
-  "deviceModelLabel": "设备型号",
   "saveEvidenceButton": "保存证据",
   "enableCameraPermissionButton": "启用相机权限",
-  "evidenceSavedSnackBar": "证据已保存到设备",
   "deleteAlertButton": "删除警报",
   "settingsTitle": "设置",
   "settingsSubtitle": "管理您的应用偏好设置。",
@@ -391,17 +353,125 @@
   "messageHint": "详细描述您遇到的问题...",
   "contactPrivacyDisclaimer": "提交此表单即表示您同意我们的隐私政策。我们\n仅会使用您的电子邮箱来回复此请求。",
   "sendMessageButton": "发送消息",
-  "messageSentSnackBar": "消息已发送至支持团队",
   "biometricNotSupportedError": "设备不支持或尚未设置生物识别",
-  "deleteOriginalsDialogTitle": "删除原始文件？",
-  "deleteOriginalsDialogDesc": "导入后，应用锁可以在允许的情况下请求操作系统删除原始文件。",
-  "importAndDeleteOriginalsButton": "导入并删除原文件",
-  "importOnlyButton": "仅导入",
-  "restoreToGalleryDialogTitle": "恢复到图库？",
-  "restoreToGalleryDialogDesc": "解密后的副本将通过操作系统保存。恢复后将清理临时文件。",
   "deleteFromVaultDialogTitle": "从保险箱中删除？",
   "deleteFromVaultDialogDesc": "这将从此设备中移除加密的保险箱副本。",
   "deletePermanentlyButton": "永久删除",
   "deleteAlertDialogTitle": "删除警报？",
-  "deleteAlertDialogDesc": "这将从此设备中移除抓拍的入侵者照片和事件日志。"
+  "deleteAlertDialogDesc": "这将从此设备中移除抓拍的入侵者照片和事件日志。",
+  "purchaseFallbackMonthlyPrice": "$2.99",
+  "purchaseFallbackYearlyPrice": "$25.99",
+  "purchaseFallbackYearlyOriginalPrice": "$35.99",
+  "purchaseSaveBadge": "节省 {percent}%",
+  "purchaseBillingUnavailable": "此设备无法使用 Google Play 结算服务。请检查您的 Play 商店账号后重试。",
+  "purchaseProductsNotFound": "高级版套餐暂时不可用，请稍后再试。",
+  "purchaseProductsLoading": "正在加载套餐，请稍后再试。",
+  "purchaseFailed": "购买失败，请重试。",
+  "purchasePending": "您的购买正在处理中。付款完成后将解锁高级版。",
+  "purchaseRestoreSuccess": "购买已恢复，高级版已激活。",
+  "purchaseRestoreNothing": "未找到以前的购买记录。",
+  "purchaseRestoreFailed": "无法恢复购买，请重试。",
+  "purchaseAlreadyPremium": "您已是高级版用户",
+  "purchaseOpenLinkFailed": "无法打开链接。",
+  "intruderFailedAttemptsToday": "{count, plural, =0{今天没有解锁失败记录} other{今天解锁失败 {count} 次}}",
+  "intruderAlertsSaved": "{count, plural, =0{尚未保存警报} other{已保存 {count} 条警报}}",
+  "intruderAlertsShownOfTotal": "显示 {total} 条已保存警报中的 {shown} 条",
+  "intruderMethodPin": "PIN 码",
+  "intruderMethodPattern": "图案",
+  "intruderMethodBiometric": "生物识别",
+  "intruderMainUnlock": "主解锁",
+  "intruderYesterday": "昨天",
+  "intruderEvidenceSavedTo": "证据已保存到 {path}",
+  "intruderEvidenceSaveFailed": "无法保存证据",
+  "intruderAlertDeleted": "警报已删除",
+  "intruderDeleteFailed": "无法删除警报",
+  "intruderNoAlertsTitle": "暂无入侵者警报",
+  "intruderNoAlertsSubtitle": "解锁失败 3 次后，App Lock 会悄悄拍下入侵者的照片并保存在这里。",
+  "lockBiometricReason": "请验证身份以解锁",
+  "lockEnableBiometricReason": "验证身份以启用生物识别解锁",
+  "lockDeviceAuthReason": "请使用设备锁屏验证身份",
+  "lockDeviceNotSecureError": "请先为设备设置锁屏以恢复访问。",
+  "lockAuthFailedError": "验证失败，请重试。",
+  "lockUsageAccessNeeded": "请授予使用情况访问权限以启动保护。",
+  "lockPasscodeUpdated": "密码已更新",
+  "lockPatternUpdated": "图案已更新",
+  "lockSaveFailed": "保存失败，请重试。",
+  "lockPremiumPlanTitle": "高级版",
+  "lockPremiumPlanDesc": "已解锁全部高级功能。",
+  "lockContactFormIncomplete": "请输入邮箱和留言内容。",
+  "lockContactInvalidEmail": "请输入有效的邮箱地址。",
+  "lockContactNoEmailApp": "未找到邮件应用，请发送至 {email}",
+  "lockOpenLinkFailed": "无法打开链接。",
+  "lockBatteryOptimizationTitle": "电池优化",
+  "lockBatteryOptimizationDesc": "将 App Lock 设为“不优化”以保持保护运行。",
+  "vaultItemsProtectedUnlimited": "已保护 {count} 项",
+  "@vaultItemsProtectedUnlimited": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultLimitReachedTitle": "已达到保险箱上限",
+  "vaultLimitReachedDesc": "免费版最多可保护 {limit} 项。升级到高级版即可无限存储。",
+  "@vaultLimitReachedDesc": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultUpgradeButton": "升级",
+  "vaultOperationFailed": "出现问题，请重试。",
+  "vaultSizeBytes": "{size} B",
+  "@vaultSizeBytes": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeKb": "{size} KB",
+  "@vaultSizeKb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeMb": "{size} MB",
+  "@vaultSizeMb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeGb": "{size} GB",
+  "@vaultSizeGb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultItemSubtitle": "{date} • {size}",
+  "@vaultItemSubtitle": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultEncryptionAes256": "AES-256",
+  "vaultTypePhoto": "照片",
+  "vaultTypeVideo": "视频",
+  "vaultPhotosEmptyTitle": "暂无照片",
+  "vaultVideosEmptyTitle": "暂无视频",
+  "vaultDetailEmptySubtitle": "点按 + 通过系统照片选择器选择项目。它们会在此设备上加密。",
+  "vaultPreviewUnavailable": "无法预览",
+  "appsCategoryOther": "其他"
 }

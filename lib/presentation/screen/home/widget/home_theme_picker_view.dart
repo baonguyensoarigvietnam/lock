@@ -3,14 +3,17 @@ import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/enumeration/lock_screen_theme.dart';
 import 'package:applock/utility/extension/build_context.dart';
 
 class HomeThemePickerView extends StatefulWidget {
-  final VoidCallback onApplyTheme;
+  final LockScreenTheme currentTheme;
+  final ValueChanged<LockScreenTheme> onApplyTheme;
   final VoidCallback onOpenPremiumPreview;
   final VoidCallback onBackToDashboard;
 
   const HomeThemePickerView({
+    required this.currentTheme,
     required this.onApplyTheme,
     required this.onOpenPremiumPreview,
     required this.onBackToDashboard,
@@ -22,7 +25,10 @@ class HomeThemePickerView extends StatefulWidget {
 }
 
 class _HomeThemePickerViewState extends State<HomeThemePickerView> {
-  int _selectedIndex = 0;
+  /// Grid order: the 5 [LockScreenTheme] values followed by Premium Colors.
+  static const int _premiumIndex = 5;
+
+  late int _selectedIndex = LockScreenTheme.values.indexOf(widget.currentTheme);
 
   List<String> _getThemeTitles(BuildContext context) {
     final l10n = context.l10n;
@@ -37,7 +43,7 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
   }
 
   void _onCardTap(int index) {
-    if (index == 5) {
+    if (index == _premiumIndex) {
       setState(() => _selectedIndex = index);
       widget.onOpenPremiumPreview();
       return;
@@ -88,10 +94,10 @@ class _HomeThemePickerViewState extends State<HomeThemePickerView> {
               color: AppColorsPalette.white,
             ),
             onPressed: () {
-              if (_selectedIndex == 5) {
+              if (_selectedIndex == _premiumIndex) {
                 widget.onOpenPremiumPreview();
               } else {
-                widget.onApplyTheme();
+                widget.onApplyTheme(LockScreenTheme.values[_selectedIndex]);
               }
             },
           ),

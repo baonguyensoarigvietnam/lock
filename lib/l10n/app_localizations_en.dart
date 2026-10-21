@@ -36,19 +36,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get resetButton => 'Reset';
 
   @override
-  String get restoreAction => 'Restore';
-
-  @override
   String get deleteAction => 'Delete';
 
   @override
   String get infoAction => 'Info';
-
-  @override
-  String get selectAction => 'Select';
-
-  @override
-  String get selectAllAction => 'Select All';
 
   @override
   String get seeAllAction => 'See all';
@@ -245,13 +236,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'Show protection status, security alerts, and permission warnings.';
 
   @override
-  String get photosAndVideosTitle => 'Photos and videos';
-
-  @override
-  String get photosAndVideosDesc =>
-      'Select media to import into your encrypted vault.';
-
-  @override
   String get cameraTitle => 'Camera';
 
   @override
@@ -263,9 +247,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get badgeRecommended => 'RECOMMENDED';
-
-  @override
-  String get badgeVault => 'VAULT';
 
   @override
   String get badgeIntruder => 'INTRUDER';
@@ -579,9 +560,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get importVideosAction => 'Import\nVideos';
 
   @override
-  String get createAlbumAction => 'Create\nAlbum';
-
-  @override
   String get albumsHeader => 'Albums';
 
   @override
@@ -592,16 +570,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Import photos and videos to keep them\nencrypted on this device.';
 
   @override
-  String get albumPrivatePhotos => 'Private Photos';
-
-  @override
   String get albumVideos => 'Videos';
-
-  @override
-  String get albumGalleries => 'Galleries';
-
-  @override
-  String get albumScreenshots => 'Screenshots';
 
   @override
   String get albumPhotos => 'Photos';
@@ -615,28 +584,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String vaultItemsProtectedSubtitle(int count) {
     return '$count items • Protected';
   }
-
-  @override
-  String get importToVaultTitle => 'Import to Vault';
-
-  @override
-  String get todaySection => 'Today';
-
-  @override
-  String get september12Section => 'September 12';
-
-  @override
-  String selectedCountLabel(int count) {
-    return '$count selected';
-  }
-
-  @override
-  String totalSizeMbLabel(String size) {
-    return '$size MB total';
-  }
-
-  @override
-  String get moveToVaultButton => 'Move to Vault';
 
   @override
   String get encryptingItemsTitle => 'Encrypting selected items...';
@@ -663,12 +610,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aes256Subtitle => 'AES-256 Military Grade';
-
-  @override
-  String get originalsDeletedTitle => 'Originals deleted';
-
-  @override
-  String get spaceRecoveredSubtitle => 'Space recovered: 124 MB';
 
   @override
   String get originalsCouldNotBeDeletedTitle =>
@@ -763,15 +704,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get statusSummaryTitle => 'Status Summary';
 
   @override
-  String get failedUnlockAttemptsToday => '2 failed unlock attempts today';
-
-  @override
-  String get alertsSavedPremium => '11 alerts saved';
-
-  @override
-  String get alertsSavedFree => '2 alerts saved on 10';
-
-  @override
   String failedMethodLabel(String method) {
     return 'Failed method: $method';
   }
@@ -818,19 +750,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dateTimeLabel => 'Date/time';
 
   @override
-  String get platformLabel => 'Platform';
-
-  @override
-  String get deviceModelLabel => 'Device model';
-
-  @override
   String get saveEvidenceButton => 'Save evidence';
 
   @override
   String get enableCameraPermissionButton => 'Enable camera permission';
-
-  @override
-  String get evidenceSavedSnackBar => 'Evidence saved to device';
 
   @override
   String get deleteAlertButton => 'Delete alert';
@@ -955,31 +878,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sendMessageButton => 'Send message';
 
   @override
-  String get messageSentSnackBar => 'Message sent to support team';
-
-  @override
   String get biometricNotSupportedError =>
       'Device does not support or has not set up biometrics';
-
-  @override
-  String get deleteOriginalsDialogTitle => 'Delete originals?';
-
-  @override
-  String get deleteOriginalsDialogDesc =>
-      'After import, App Lock can ask the operating system to delete the original files when allowed.';
-
-  @override
-  String get importAndDeleteOriginalsButton => 'Import and delete originals';
-
-  @override
-  String get importOnlyButton => 'Import only';
-
-  @override
-  String get restoreToGalleryDialogTitle => 'Restore to gallery?';
-
-  @override
-  String get restoreToGalleryDialogDesc =>
-      'A decrypted copy will be saved through the operating system. Temporary files are cleaned after restore.';
 
   @override
   String get deleteFromVaultDialogTitle => 'Delete from Vault?';
@@ -997,4 +897,245 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get deleteAlertDialogDesc =>
       'This removes the captured intruder photo and event log from this device.';
+
+  @override
+  String get purchaseFallbackMonthlyPrice => '\$2.99';
+
+  @override
+  String get purchaseFallbackYearlyPrice => '\$25.99';
+
+  @override
+  String get purchaseFallbackYearlyOriginalPrice => '\$35.99';
+
+  @override
+  String purchaseSaveBadge(int percent) {
+    return 'SAVE $percent%';
+  }
+
+  @override
+  String get purchaseBillingUnavailable =>
+      'Google Play Billing is unavailable on this device. Check your Play Store account and try again.';
+
+  @override
+  String get purchaseProductsNotFound =>
+      'Premium plans are not available right now. Please try again later.';
+
+  @override
+  String get purchaseProductsLoading =>
+      'Loading plans, please try again in a moment.';
+
+  @override
+  String get purchaseFailed => 'Purchase failed. Please try again.';
+
+  @override
+  String get purchasePending =>
+      'Your purchase is pending. Premium will unlock once the payment is completed.';
+
+  @override
+  String get purchaseRestoreSuccess => 'Purchases restored. Premium is active.';
+
+  @override
+  String get purchaseRestoreNothing => 'No previous purchases found.';
+
+  @override
+  String get purchaseRestoreFailed =>
+      'Could not restore purchases. Please try again.';
+
+  @override
+  String get purchaseAlreadyPremium => 'You\'re already Premium';
+
+  @override
+  String get purchaseOpenLinkFailed => 'Could not open the link.';
+
+  @override
+  String intruderFailedAttemptsToday(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count failed unlock attempts today',
+      one: '1 failed unlock attempt today',
+      zero: 'No failed unlock attempts today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String intruderAlertsSaved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count alerts saved',
+      one: '1 alert saved',
+      zero: 'No alerts saved',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String intruderAlertsShownOfTotal(int shown, int total) {
+    return 'Showing $shown of $total saved alerts';
+  }
+
+  @override
+  String get intruderMethodPin => 'PIN';
+
+  @override
+  String get intruderMethodPattern => 'Pattern';
+
+  @override
+  String get intruderMethodBiometric => 'Biometric';
+
+  @override
+  String get intruderMainUnlock => 'Main Unlock';
+
+  @override
+  String get intruderYesterday => 'Yesterday';
+
+  @override
+  String intruderEvidenceSavedTo(String path) {
+    return 'Evidence saved to $path';
+  }
+
+  @override
+  String get intruderEvidenceSaveFailed => 'Could not save evidence';
+
+  @override
+  String get intruderAlertDeleted => 'Alert deleted';
+
+  @override
+  String get intruderDeleteFailed => 'Could not delete alert';
+
+  @override
+  String get intruderNoAlertsTitle => 'No intruder alerts yet';
+
+  @override
+  String get intruderNoAlertsSubtitle =>
+      'After 3 failed unlock attempts, App Lock silently takes a photo of the intruder and saves it here.';
+
+  @override
+  String get lockBiometricReason => 'Confirm your identity to unlock';
+
+  @override
+  String get lockEnableBiometricReason =>
+      'Authenticate to enable biometric unlock';
+
+  @override
+  String get lockDeviceAuthReason =>
+      'Verify it\'s you with your device screen lock';
+
+  @override
+  String get lockDeviceNotSecureError =>
+      'Set up a screen lock on your device to recover access.';
+
+  @override
+  String get lockAuthFailedError => 'Authentication failed. Try again.';
+
+  @override
+  String get lockUsageAccessNeeded => 'Grant Usage Access to start protection.';
+
+  @override
+  String get lockPasscodeUpdated => 'Passcode updated';
+
+  @override
+  String get lockPatternUpdated => 'Pattern updated';
+
+  @override
+  String get lockSaveFailed => 'Couldn\'t save. Please try again.';
+
+  @override
+  String get lockPremiumPlanTitle => 'Premium Plan';
+
+  @override
+  String get lockPremiumPlanDesc => 'All premium features are unlocked.';
+
+  @override
+  String get lockContactFormIncomplete =>
+      'Please enter your email and a message.';
+
+  @override
+  String get lockContactInvalidEmail => 'Please enter a valid email address.';
+
+  @override
+  String lockContactNoEmailApp(String email) {
+    return 'No email app found. Please write to $email';
+  }
+
+  @override
+  String get lockOpenLinkFailed => 'Couldn\'t open the link.';
+
+  @override
+  String get lockBatteryOptimizationTitle => 'Battery optimization';
+
+  @override
+  String get lockBatteryOptimizationDesc =>
+      'Set App Lock to \"Not optimized\" so protection keeps running.';
+
+  @override
+  String vaultItemsProtectedUnlimited(int count) {
+    return '$count items protected';
+  }
+
+  @override
+  String get vaultLimitReachedTitle => 'Vault limit reached';
+
+  @override
+  String vaultLimitReachedDesc(int limit) {
+    return 'The free plan protects up to $limit items. Upgrade to Premium for unlimited vault storage.';
+  }
+
+  @override
+  String get vaultUpgradeButton => 'Upgrade';
+
+  @override
+  String get vaultOperationFailed => 'Something went wrong. Please try again.';
+
+  @override
+  String vaultSizeBytes(String size) {
+    return '$size B';
+  }
+
+  @override
+  String vaultSizeKb(String size) {
+    return '$size KB';
+  }
+
+  @override
+  String vaultSizeMb(String size) {
+    return '$size MB';
+  }
+
+  @override
+  String vaultSizeGb(String size) {
+    return '$size GB';
+  }
+
+  @override
+  String vaultItemSubtitle(String date, String size) {
+    return '$date • $size';
+  }
+
+  @override
+  String get vaultEncryptionAes256 => 'AES-256';
+
+  @override
+  String get vaultTypePhoto => 'Photo';
+
+  @override
+  String get vaultTypeVideo => 'Video';
+
+  @override
+  String get vaultPhotosEmptyTitle => 'No photos yet';
+
+  @override
+  String get vaultVideosEmptyTitle => 'No videos yet';
+
+  @override
+  String get vaultDetailEmptySubtitle =>
+      'Tap + to choose items with the system photo picker. They are encrypted on this device.';
+
+  @override
+  String get vaultPreviewUnavailable => 'Preview unavailable';
+
+  @override
+  String get appsCategoryOther => 'Other';
 }

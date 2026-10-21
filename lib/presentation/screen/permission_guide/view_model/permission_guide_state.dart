@@ -6,7 +6,7 @@ class PermissionGuideState extends BaseState {
   final bool isUsageAccessGranted;
   final bool isOverlayGranted;
   final bool isNotificationGranted;
-  final bool isPhotosGranted;
+  final bool isBatteryOptimizationIgnored;
   final bool isCameraGranted;
   final bool isCompleted;
 
@@ -16,12 +16,12 @@ class PermissionGuideState extends BaseState {
     this.isUsageAccessGranted = false,
     this.isOverlayGranted = false,
     this.isNotificationGranted = false,
-    this.isPhotosGranted = false,
+    this.isBatteryOptimizationIgnored = false,
     this.isCameraGranted = false,
     this.isCompleted = false,
   });
 
-  bool get areRequiredGranted => isUsageAccessGranted || isOverlayGranted;
+  bool get areRequiredGranted => isUsageAccessGranted;
 
   @override
   PermissionGuideState copyWith({
@@ -30,7 +30,7 @@ class PermissionGuideState extends BaseState {
     bool? isUsageAccessGranted,
     bool? isOverlayGranted,
     bool? isNotificationGranted,
-    bool? isPhotosGranted,
+    bool? isBatteryOptimizationIgnored,
     bool? isCameraGranted,
     bool? isCompleted,
   }) {
@@ -43,7 +43,7 @@ class PermissionGuideState extends BaseState {
       isOverlayGranted: isOverlayGranted ?? this.isOverlayGranted,
       isNotificationGranted:
           isNotificationGranted ?? this.isNotificationGranted,
-      isPhotosGranted: isPhotosGranted ?? this.isPhotosGranted,
+      isBatteryOptimizationIgnored: isBatteryOptimizationIgnored ?? this.isBatteryOptimizationIgnored,
       isCameraGranted: isCameraGranted ?? this.isCameraGranted,
       isCompleted: isCompleted ?? this.isCompleted,
     );

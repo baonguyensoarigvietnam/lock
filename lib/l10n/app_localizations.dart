@@ -162,12 +162,6 @@ abstract class AppLocalizations {
   /// **'Reset'**
   String get resetButton;
 
-  /// No description provided for @restoreAction.
-  ///
-  /// In en, this message translates to:
-  /// **'Restore'**
-  String get restoreAction;
-
   /// No description provided for @deleteAction.
   ///
   /// In en, this message translates to:
@@ -179,18 +173,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Info'**
   String get infoAction;
-
-  /// No description provided for @selectAction.
-  ///
-  /// In en, this message translates to:
-  /// **'Select'**
-  String get selectAction;
-
-  /// No description provided for @selectAllAction.
-  ///
-  /// In en, this message translates to:
-  /// **'Select All'**
-  String get selectAllAction;
 
   /// No description provided for @seeAllAction.
   ///
@@ -546,18 +528,6 @@ abstract class AppLocalizations {
   /// **'Show protection status, security alerts, and permission warnings.'**
   String get notificationsDesc;
 
-  /// No description provided for @photosAndVideosTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Photos and videos'**
-  String get photosAndVideosTitle;
-
-  /// No description provided for @photosAndVideosDesc.
-  ///
-  /// In en, this message translates to:
-  /// **'Select media to import into your encrypted vault.'**
-  String get photosAndVideosDesc;
-
   /// No description provided for @cameraTitle.
   ///
   /// In en, this message translates to:
@@ -581,12 +551,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'RECOMMENDED'**
   String get badgeRecommended;
-
-  /// No description provided for @badgeVault.
-  ///
-  /// In en, this message translates to:
-  /// **'VAULT'**
-  String get badgeVault;
 
   /// No description provided for @badgeIntruder.
   ///
@@ -1158,12 +1122,6 @@ abstract class AppLocalizations {
   /// **'Import\nVideos'**
   String get importVideosAction;
 
-  /// No description provided for @createAlbumAction.
-  ///
-  /// In en, this message translates to:
-  /// **'Create\nAlbum'**
-  String get createAlbumAction;
-
   /// No description provided for @albumsHeader.
   ///
   /// In en, this message translates to:
@@ -1182,29 +1140,11 @@ abstract class AppLocalizations {
   /// **'Import photos and videos to keep them\nencrypted on this device.'**
   String get vaultEmptySubtitle;
 
-  /// No description provided for @albumPrivatePhotos.
-  ///
-  /// In en, this message translates to:
-  /// **'Private Photos'**
-  String get albumPrivatePhotos;
-
   /// No description provided for @albumVideos.
   ///
   /// In en, this message translates to:
   /// **'Videos'**
   String get albumVideos;
-
-  /// No description provided for @albumGalleries.
-  ///
-  /// In en, this message translates to:
-  /// **'Galleries'**
-  String get albumGalleries;
-
-  /// No description provided for @albumScreenshots.
-  ///
-  /// In en, this message translates to:
-  /// **'Screenshots'**
-  String get albumScreenshots;
 
   /// No description provided for @albumPhotos.
   ///
@@ -1223,42 +1163,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count} items • Protected'**
   String vaultItemsProtectedSubtitle(int count);
-
-  /// No description provided for @importToVaultTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Import to Vault'**
-  String get importToVaultTitle;
-
-  /// No description provided for @todaySection.
-  ///
-  /// In en, this message translates to:
-  /// **'Today'**
-  String get todaySection;
-
-  /// No description provided for @september12Section.
-  ///
-  /// In en, this message translates to:
-  /// **'September 12'**
-  String get september12Section;
-
-  /// No description provided for @selectedCountLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'{count} selected'**
-  String selectedCountLabel(int count);
-
-  /// No description provided for @totalSizeMbLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'{size} MB total'**
-  String totalSizeMbLabel(String size);
-
-  /// No description provided for @moveToVaultButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Move to Vault'**
-  String get moveToVaultButton;
 
   /// No description provided for @encryptingItemsTitle.
   ///
@@ -1301,18 +1205,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'AES-256 Military Grade'**
   String get aes256Subtitle;
-
-  /// No description provided for @originalsDeletedTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Originals deleted'**
-  String get originalsDeletedTitle;
-
-  /// No description provided for @spaceRecoveredSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Space recovered: 124 MB'**
-  String get spaceRecoveredSubtitle;
 
   /// No description provided for @originalsCouldNotBeDeletedTitle.
   ///
@@ -1482,24 +1374,6 @@ abstract class AppLocalizations {
   /// **'Status Summary'**
   String get statusSummaryTitle;
 
-  /// No description provided for @failedUnlockAttemptsToday.
-  ///
-  /// In en, this message translates to:
-  /// **'2 failed unlock attempts today'**
-  String get failedUnlockAttemptsToday;
-
-  /// No description provided for @alertsSavedPremium.
-  ///
-  /// In en, this message translates to:
-  /// **'11 alerts saved'**
-  String get alertsSavedPremium;
-
-  /// No description provided for @alertsSavedFree.
-  ///
-  /// In en, this message translates to:
-  /// **'2 alerts saved on 10'**
-  String get alertsSavedFree;
-
   /// No description provided for @failedMethodLabel.
   ///
   /// In en, this message translates to:
@@ -1584,18 +1458,6 @@ abstract class AppLocalizations {
   /// **'Date/time'**
   String get dateTimeLabel;
 
-  /// No description provided for @platformLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Platform'**
-  String get platformLabel;
-
-  /// No description provided for @deviceModelLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Device model'**
-  String get deviceModelLabel;
-
   /// No description provided for @saveEvidenceButton.
   ///
   /// In en, this message translates to:
@@ -1607,12 +1469,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enable camera permission'**
   String get enableCameraPermissionButton;
-
-  /// No description provided for @evidenceSavedSnackBar.
-  ///
-  /// In en, this message translates to:
-  /// **'Evidence saved to device'**
-  String get evidenceSavedSnackBar;
 
   /// No description provided for @deleteAlertButton.
   ///
@@ -1848,53 +1704,11 @@ abstract class AppLocalizations {
   /// **'Send message'**
   String get sendMessageButton;
 
-  /// No description provided for @messageSentSnackBar.
-  ///
-  /// In en, this message translates to:
-  /// **'Message sent to support team'**
-  String get messageSentSnackBar;
-
   /// No description provided for @biometricNotSupportedError.
   ///
   /// In en, this message translates to:
   /// **'Device does not support or has not set up biometrics'**
   String get biometricNotSupportedError;
-
-  /// No description provided for @deleteOriginalsDialogTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Delete originals?'**
-  String get deleteOriginalsDialogTitle;
-
-  /// No description provided for @deleteOriginalsDialogDesc.
-  ///
-  /// In en, this message translates to:
-  /// **'After import, App Lock can ask the operating system to delete the original files when allowed.'**
-  String get deleteOriginalsDialogDesc;
-
-  /// No description provided for @importAndDeleteOriginalsButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Import and delete originals'**
-  String get importAndDeleteOriginalsButton;
-
-  /// No description provided for @importOnlyButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Import only'**
-  String get importOnlyButton;
-
-  /// No description provided for @restoreToGalleryDialogTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Restore to gallery?'**
-  String get restoreToGalleryDialogTitle;
-
-  /// No description provided for @restoreToGalleryDialogDesc.
-  ///
-  /// In en, this message translates to:
-  /// **'A decrypted copy will be saved through the operating system. Temporary files are cleaned after restore.'**
-  String get restoreToGalleryDialogDesc;
 
   /// No description provided for @deleteFromVaultDialogTitle.
   ///
@@ -1925,6 +1739,384 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This removes the captured intruder photo and event log from this device.'**
   String get deleteAlertDialogDesc;
+
+  /// No description provided for @purchaseFallbackMonthlyPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'\$2.99'**
+  String get purchaseFallbackMonthlyPrice;
+
+  /// No description provided for @purchaseFallbackYearlyPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'\$25.99'**
+  String get purchaseFallbackYearlyPrice;
+
+  /// No description provided for @purchaseFallbackYearlyOriginalPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'\$35.99'**
+  String get purchaseFallbackYearlyOriginalPrice;
+
+  /// No description provided for @purchaseSaveBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'SAVE {percent}%'**
+  String purchaseSaveBadge(int percent);
+
+  /// No description provided for @purchaseBillingUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Google Play Billing is unavailable on this device. Check your Play Store account and try again.'**
+  String get purchaseBillingUnavailable;
+
+  /// No description provided for @purchaseProductsNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium plans are not available right now. Please try again later.'**
+  String get purchaseProductsNotFound;
+
+  /// No description provided for @purchaseProductsLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading plans, please try again in a moment.'**
+  String get purchaseProductsLoading;
+
+  /// No description provided for @purchaseFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase failed. Please try again.'**
+  String get purchaseFailed;
+
+  /// No description provided for @purchasePending.
+  ///
+  /// In en, this message translates to:
+  /// **'Your purchase is pending. Premium will unlock once the payment is completed.'**
+  String get purchasePending;
+
+  /// No description provided for @purchaseRestoreSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases restored. Premium is active.'**
+  String get purchaseRestoreSuccess;
+
+  /// No description provided for @purchaseRestoreNothing.
+  ///
+  /// In en, this message translates to:
+  /// **'No previous purchases found.'**
+  String get purchaseRestoreNothing;
+
+  /// No description provided for @purchaseRestoreFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not restore purchases. Please try again.'**
+  String get purchaseRestoreFailed;
+
+  /// No description provided for @purchaseAlreadyPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re already Premium'**
+  String get purchaseAlreadyPremium;
+
+  /// No description provided for @purchaseOpenLinkFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open the link.'**
+  String get purchaseOpenLinkFailed;
+
+  /// No description provided for @intruderFailedAttemptsToday.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No failed unlock attempts today} =1{1 failed unlock attempt today} other{{count} failed unlock attempts today}}'**
+  String intruderFailedAttemptsToday(int count);
+
+  /// No description provided for @intruderAlertsSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No alerts saved} =1{1 alert saved} other{{count} alerts saved}}'**
+  String intruderAlertsSaved(int count);
+
+  /// No description provided for @intruderAlertsShownOfTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Showing {shown} of {total} saved alerts'**
+  String intruderAlertsShownOfTotal(int shown, int total);
+
+  /// No description provided for @intruderMethodPin.
+  ///
+  /// In en, this message translates to:
+  /// **'PIN'**
+  String get intruderMethodPin;
+
+  /// No description provided for @intruderMethodPattern.
+  ///
+  /// In en, this message translates to:
+  /// **'Pattern'**
+  String get intruderMethodPattern;
+
+  /// No description provided for @intruderMethodBiometric.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometric'**
+  String get intruderMethodBiometric;
+
+  /// No description provided for @intruderMainUnlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Main Unlock'**
+  String get intruderMainUnlock;
+
+  /// No description provided for @intruderYesterday.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get intruderYesterday;
+
+  /// No description provided for @intruderEvidenceSavedTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Evidence saved to {path}'**
+  String intruderEvidenceSavedTo(String path);
+
+  /// No description provided for @intruderEvidenceSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save evidence'**
+  String get intruderEvidenceSaveFailed;
+
+  /// No description provided for @intruderAlertDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Alert deleted'**
+  String get intruderAlertDeleted;
+
+  /// No description provided for @intruderDeleteFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not delete alert'**
+  String get intruderDeleteFailed;
+
+  /// No description provided for @intruderNoAlertsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No intruder alerts yet'**
+  String get intruderNoAlertsTitle;
+
+  /// No description provided for @intruderNoAlertsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'After 3 failed unlock attempts, App Lock silently takes a photo of the intruder and saves it here.'**
+  String get intruderNoAlertsSubtitle;
+
+  /// No description provided for @lockBiometricReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm your identity to unlock'**
+  String get lockBiometricReason;
+
+  /// No description provided for @lockEnableBiometricReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Authenticate to enable biometric unlock'**
+  String get lockEnableBiometricReason;
+
+  /// No description provided for @lockDeviceAuthReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify it\'s you with your device screen lock'**
+  String get lockDeviceAuthReason;
+
+  /// No description provided for @lockDeviceNotSecureError.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up a screen lock on your device to recover access.'**
+  String get lockDeviceNotSecureError;
+
+  /// No description provided for @lockAuthFailedError.
+  ///
+  /// In en, this message translates to:
+  /// **'Authentication failed. Try again.'**
+  String get lockAuthFailedError;
+
+  /// No description provided for @lockUsageAccessNeeded.
+  ///
+  /// In en, this message translates to:
+  /// **'Grant Usage Access to start protection.'**
+  String get lockUsageAccessNeeded;
+
+  /// No description provided for @lockPasscodeUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Passcode updated'**
+  String get lockPasscodeUpdated;
+
+  /// No description provided for @lockPatternUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Pattern updated'**
+  String get lockPatternUpdated;
+
+  /// No description provided for @lockSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t save. Please try again.'**
+  String get lockSaveFailed;
+
+  /// No description provided for @lockPremiumPlanTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium Plan'**
+  String get lockPremiumPlanTitle;
+
+  /// No description provided for @lockPremiumPlanDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'All premium features are unlocked.'**
+  String get lockPremiumPlanDesc;
+
+  /// No description provided for @lockContactFormIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your email and a message.'**
+  String get lockContactFormIncomplete;
+
+  /// No description provided for @lockContactInvalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email address.'**
+  String get lockContactInvalidEmail;
+
+  /// No description provided for @lockContactNoEmailApp.
+  ///
+  /// In en, this message translates to:
+  /// **'No email app found. Please write to {email}'**
+  String lockContactNoEmailApp(String email);
+
+  /// No description provided for @lockOpenLinkFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t open the link.'**
+  String get lockOpenLinkFailed;
+
+  /// No description provided for @lockBatteryOptimizationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery optimization'**
+  String get lockBatteryOptimizationTitle;
+
+  /// No description provided for @lockBatteryOptimizationDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Set App Lock to \"Not optimized\" so protection keeps running.'**
+  String get lockBatteryOptimizationDesc;
+
+  /// No description provided for @vaultItemsProtectedUnlimited.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} items protected'**
+  String vaultItemsProtectedUnlimited(int count);
+
+  /// No description provided for @vaultLimitReachedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Vault limit reached'**
+  String get vaultLimitReachedTitle;
+
+  /// No description provided for @vaultLimitReachedDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'The free plan protects up to {limit} items. Upgrade to Premium for unlimited vault storage.'**
+  String vaultLimitReachedDesc(int limit);
+
+  /// No description provided for @vaultUpgradeButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Upgrade'**
+  String get vaultUpgradeButton;
+
+  /// No description provided for @vaultOperationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get vaultOperationFailed;
+
+  /// No description provided for @vaultSizeBytes.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} B'**
+  String vaultSizeBytes(String size);
+
+  /// No description provided for @vaultSizeKb.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} KB'**
+  String vaultSizeKb(String size);
+
+  /// No description provided for @vaultSizeMb.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} MB'**
+  String vaultSizeMb(String size);
+
+  /// No description provided for @vaultSizeGb.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} GB'**
+  String vaultSizeGb(String size);
+
+  /// No description provided for @vaultItemSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{date} • {size}'**
+  String vaultItemSubtitle(String date, String size);
+
+  /// No description provided for @vaultEncryptionAes256.
+  ///
+  /// In en, this message translates to:
+  /// **'AES-256'**
+  String get vaultEncryptionAes256;
+
+  /// No description provided for @vaultTypePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo'**
+  String get vaultTypePhoto;
+
+  /// No description provided for @vaultTypeVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Video'**
+  String get vaultTypeVideo;
+
+  /// No description provided for @vaultPhotosEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No photos yet'**
+  String get vaultPhotosEmptyTitle;
+
+  /// No description provided for @vaultVideosEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No videos yet'**
+  String get vaultVideosEmptyTitle;
+
+  /// No description provided for @vaultDetailEmptySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap + to choose items with the system photo picker. They are encrypted on this device.'**
+  String get vaultDetailEmptySubtitle;
+
+  /// No description provided for @vaultPreviewUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview unavailable'**
+  String get vaultPreviewUnavailable;
+
+  /// No description provided for @appsCategoryOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get appsCategoryOther;
 }
 
 class _AppLocalizationsDelegate

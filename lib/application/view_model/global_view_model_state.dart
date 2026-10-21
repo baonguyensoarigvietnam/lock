@@ -9,12 +9,16 @@ class GlobalViewModelState extends BaseState {
   final LockConfig lockConfig;
   final bool isOverlayGranted;
 
+  /// Whether the user owns an active Premium entitlement.
+  final bool isPremium;
+
   const GlobalViewModelState({
     super.status = ViewStatus.initial,
     super.errorMessage,
     this.locale = const Locale('en'),
     this.lockConfig = const LockConfig(),
     this.isOverlayGranted = false,
+    this.isPremium = false,
   });
 
   @override
@@ -24,6 +28,7 @@ class GlobalViewModelState extends BaseState {
     Locale? locale,
     LockConfig? lockConfig,
     bool? isOverlayGranted,
+    bool? isPremium,
   }) {
     return GlobalViewModelState(
       status: status ?? this.status,
@@ -31,6 +36,7 @@ class GlobalViewModelState extends BaseState {
       locale: locale ?? this.locale,
       lockConfig: lockConfig ?? this.lockConfig,
       isOverlayGranted: isOverlayGranted ?? this.isOverlayGranted,
+      isPremium: isPremium ?? this.isPremium,
     );
   }
 }

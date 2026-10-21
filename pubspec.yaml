@@ -50,7 +50,15 @@ dependencies:
   # AppLock features
   installed_apps: ^1.4.0
   local_auth: ^3.0.0
-  flutter_foreground_task: ^9.2.0
+  image_picker: ^1.2.4
+  path_provider: ^2.1.6
+  encrypt: ^5.0.3
+  flutter_secure_storage: ^11.2.0
+  video_player: ^2.14.1
+  camera: ^0.12.1
+  in_app_purchase: ^3.3.1
+  image_picker_android: ^0.8.13+25
+  image_picker_platform_interface: ^2.11.2
 
 dev_dependencies:
   flutter_test:

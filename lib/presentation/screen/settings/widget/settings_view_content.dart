@@ -13,9 +13,12 @@ import 'package:applock/presentation/screen/settings/widget/settings_languages_v
 import 'package:applock/presentation/screen/settings/widget/settings_require_auth_view.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
-import 'package:applock/utility/enumeration/app_language.dart';
+import 'package:applock/utility/constant/link_constant.dart';
+import 'package:applock/utility/enumeration/biometric_toggle_result.dart';
 import 'package:applock/utility/enumeration/settings_tab_step.dart';
 import 'package:applock/utility/extension/build_context.dart';
+import 'package:applock/utility/snack_bar_utility.dart';
+import 'package:applock/utility/url_launcher_utility.dart';
 
 class SettingsViewContent extends StatefulWidget {
   const SettingsViewContent({super.key});
@@ -59,17 +62,17 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
           firstPin: state.firstPin,
           onBack: () => vm.setStep(SettingsTabStep.overview),
           onFirstPinEntered: (pin) => vm.submitFirstPin(pin),
-          onPinConfirmed: () => vm.setStep(SettingsTabStep.overview),
-          onUsePatternInstead: () => vm.setStep(SettingsTabStep.changePattern),
+          onPinConfirmed: _onPinConfirmed,
+          onUsePatternInstead: vm.startChangePattern,
         );
       case SettingsTabStep.confirmPin:
         return SettingsChangePinView(
           isConfirmStep: true,
           firstPin: state.firstPin,
-          onBack: () => vm.setStep(SettingsTabStep.changePin),
+          onBack: vm.startChangePin,
           onFirstPinEntered: (_) {},
-          onPinConfirmed: () => vm.setStep(SettingsTabStep.overview),
-          onUsePatternInstead: () => vm.setStep(SettingsTabStep.changePattern),
+          onPinConfirmed: _onPinConfirmed,
+          onUsePatternInstead: vm.startChangePattern,
         );
       case SettingsTabStep.changePattern:
         return SettingsChangePatternView(
@@ -77,17 +80,17 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
           firstPattern: state.firstPattern,
           onBack: () => vm.setStep(SettingsTabStep.overview),
           onFirstPatternEntered: (pattern) => vm.submitFirstPattern(pattern),
-          onPatternConfirmed: () => vm.setStep(SettingsTabStep.overview),
-          onUsePinInstead: () => vm.setStep(SettingsTabStep.changePin),
+          onPatternConfirmed: _onPatternConfirmed,
+          onUsePinInstead: vm.startChangePin,
         );
       case SettingsTabStep.confirmPattern:
         return SettingsChangePatternView(
           isConfirmStep: true,
           firstPattern: state.firstPattern,
-          onBack: () => vm.setStep(SettingsTabStep.changePattern),
+          onBack: vm.startChangePattern,
           onFirstPatternEntered: (_) {},
-          onPatternConfirmed: () => vm.setStep(SettingsTabStep.overview),
-          onUsePinInstead: () => vm.setStep(SettingsTabStep.changePin),
+          onPatternConfirmed: _onPatternConfirmed,
+          onUsePinInstead: vm.startChangePin,
         );
       case SettingsTabStep.requireAuthentication:
         return SettingsRequireAuthView(
@@ -100,11 +103,8 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
           currentLanguage: state.selectedLanguage,
           onBack: () => vm.setStep(SettingsTabStep.overview),
           onSave: (language) {
-            final appLang = AppLanguage.fromNameOrCode(language);
-            try {
-              context.read<GlobalViewModel>().setLanguage(appLang);
-            } catch (_) {}
-            vm.saveLanguage(appLang.englishName);
+            context.read<GlobalViewModel>().setLanguage(language);
+            vm.saveLanguage(language);
           },
         );
       case SettingsTabStep.contactUs:
@@ -115,21 +115,42 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
     }
   }
 
-  String _resolveDelayLabel(BuildContext context, String rawDelay) {
+  Future<void> _onPinConfirmed() async {
     final l10n = context.l10n;
-    switch (rawDelay) {
-      case 'Immediately':
-        return l10n.delayImmediately;
-      case 'After 15 seconds':
-        return l10n.delay15Seconds;
-      case 'After 30 seconds':
-        return l10n.delay30Seconds;
-      case 'After 1 minute':
-        return l10n.delay1Minute;
-      case 'When screen turns off':
-        return l10n.delayScreenOff;
-      default:
-        return rawDelay;
+    final saved = await context.read<SettingsViewModel>().confirmPin();
+    if (!mounted) return;
+    SnackBarUtility.show(
+      context,
+      saved ? l10n.lockPasscodeUpdated : l10n.lockSaveFailed,
+    );
+  }
+
+  Future<void> _onPatternConfirmed() async {
+    final l10n = context.l10n;
+    final saved = await context.read<SettingsViewModel>().confirmPattern();
+    if (!mounted) return;
+    SnackBarUtility.show(
+      context,
+      saved ? l10n.lockPatternUpdated : l10n.lockSaveFailed,
+    );
+  }
+
+  Future<void> _onToggleBiometric(bool enabled) async {
+    final l10n = context.l10n;
+    final result = await context.read<SettingsViewModel>().toggleBiometric(
+          enabled,
+          localizedReason: l10n.lockEnableBiometricReason,
+        );
+    if (!mounted) return;
+    if (result == BiometricToggleResult.notSupported) {
+      SnackBarUtility.show(context, l10n.biometricNotSupportedError);
+    }
+  }
+
+  Future<void> _openLink(String url) async {
+    final opened = await UrlLauncherUtility.openUrl(url);
+    if (!opened && mounted) {
+      SnackBarUtility.show(context, context.l10n.lockOpenLinkFailed);
     }
   }
 
@@ -137,6 +158,8 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
     final vm = context.read<SettingsViewModel>();
     final navigator = context.read<SettingsNavigator>();
     final l10n = context.l10n;
+    final isPremium =
+        context.select<GlobalViewModel, bool>((vm) => vm.state.isPremium);
 
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
@@ -167,7 +190,10 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
           const SizedBox(height: 20),
 
           // Free Plan Banner Card
-          _buildFreePlanCard(context, navigator),
+          if (isPremium)
+            _buildPremiumPlanCard(context)
+          else
+            _buildFreePlanCard(context, navigator),
           const SizedBox(height: 24),
 
           // Security Section Header
@@ -195,13 +221,13 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
                 _buildBiometricTile(
                   context: context,
                   isEnabled: state.isBiometricEnabled,
-                  onToggle: (val) => vm.toggleBiometric(val),
+                  onToggle: _onToggleBiometric,
                 ),
                 _buildGroupDivider(),
                 _buildGroupTile(
                   icon: Icons.timer_outlined,
                   title: l10n.autoLockDelayTitle,
-                  subtitle: _resolveDelayLabel(context, state.autoLockDelay),
+                  subtitle: state.autoLockDelay.label(l10n),
                   onTap: () =>
                       vm.setStep(SettingsTabStep.requireAuthentication),
                 ),
@@ -229,8 +255,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
                 _buildGroupTile(
                   icon: Icons.language_rounded,
                   title: l10n.languagesTitle,
-                  subtitle: AppLanguage.fromNameOrCode(state.selectedLanguage)
-                      .localizedName(l10n),
+                  subtitle: state.selectedLanguage.localizedName(l10n),
                   onTap: () => vm.setStep(SettingsTabStep.languages),
                 ),
                 _buildGroupDivider(),
@@ -243,18 +268,76 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
                 _buildGroupTile(
                   icon: Icons.description_outlined,
                   title: l10n.termsOfServiceTitle,
-                  onTap: () {},
+                  onTap: () => _openLink(LinkConstants.termOfUse),
                 ),
                 _buildGroupDivider(),
                 _buildGroupTile(
                   icon: Icons.policy_outlined,
                   title: l10n.privacyPolicyLink,
-                  onTap: () {},
+                  onTap: () => _openLink(LinkConstants.privacyPolicy),
                 ),
               ],
             ),
           ),
           const SizedBox(height: 24),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPremiumPlanCard(BuildContext context) {
+    final l10n = context.l10n;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppColorsPalette.black,
+        borderRadius: BorderRadius.circular(14),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Text(
+                  l10n.lockPremiumPlanTitle,
+                  style: AppTypography.bold.copyWith(
+                    fontSize: 15.5,
+                    color: AppColorsPalette.white,
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 3,
+                ),
+                decoration: BoxDecoration(
+                  color: AppColorsPalette.white,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  l10n.premiumBadge,
+                  style: AppTypography.medium.copyWith(
+                    fontSize: 10.5,
+                    letterSpacing: 0.4,
+                    color: AppColorsPalette.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Text(
+            l10n.lockPremiumPlanDesc,
+            style: AppTypography.regular.copyWith(
+              fontSize: 12.5,
+              color: AppColorsPalette.gray300,
+              height: 1.35,
+            ),
+          ),
         ],
       ),
     );

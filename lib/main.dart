@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
+import 'package:go_router/go_router.dart';
 import 'package:applock/application/app.dart';
 import 'package:applock/application/dependency_injection/dependency_injection.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
-import 'package:applock/service/app_lock/app_lock_service.dart';
+import 'package:applock/service/app_lock/app_lock_gate.dart';
 import 'package:applock/utility/enumeration/device_type.dart';
 
 Future<void> main() async {
@@ -17,8 +18,8 @@ Future<void> main() async {
     _configureDeviceSettings(),
   ]);
 
-  // Init foreground task service
-  GetIt.instance<AppLockService>().initService();
+  // Bridge to the native lock engine + lock screen routing.
+  GetIt.instance<AppLockGate>().start(GetIt.instance<GoRouter>());
 
   runApp(const MyApp());
 }

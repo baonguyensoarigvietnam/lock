@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
+import 'package:applock/domain/model/lock_screen_args.dart';
 import 'package:applock/presentation/screen/lock_screen/lock_screen_navigator.dart';
 import 'package:applock/presentation/screen/lock_screen/view_model/lock_screen_view_model.dart';
 import 'package:applock/presentation/screen/lock_screen/widget/lock_screen_view_content.dart';
 
 class LockScreenPage extends StatelessWidget {
-  final String? appName;
+  final LockScreenArgs args;
 
-  const LockScreenPage({super.key, this.appName});
+  const LockScreenPage({super.key, required this.args});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class LockScreenPage extends StatelessWidget {
           create: (_) => LockScreenNavigator(router: GoRouter.of(context)),
         ),
       ],
-      child: LockScreenViewContent(appName: appName),
+      child: LockScreenViewContent(args: args),
     );
   }
 }

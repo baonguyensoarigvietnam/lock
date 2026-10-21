@@ -9,6 +9,7 @@ import 'package:applock/presentation/screen/enable_biometric/view_model/enable_b
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/extension/build_context.dart';
+import 'package:applock/utility/snack_bar_utility.dart';
 
 class EnableBiometricViewContent extends StatefulWidget {
   const EnableBiometricViewContent({super.key});
@@ -151,8 +152,18 @@ class _EnableBiometricViewContentState
                   height: 52,
                   backgroundColor: AppColorsPalette.black,
                   textColor: AppColorsPalette.white,
-                  onPressed: () {
-                    context.read<EnableBiometricViewModel>().enableBiometric();
+                  onPressed: () async {
+                    final supported = await context
+                        .read<EnableBiometricViewModel>()
+                        .enableBiometric(
+                          localizedReason: l10n.lockEnableBiometricReason,
+                        );
+                    if (!supported && context.mounted) {
+                      SnackBarUtility.show(
+                        context,
+                        l10n.biometricNotSupportedError,
+                      );
+                    }
                   },
                 ),
                 const SizedBox(height: 10),

@@ -36,19 +36,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get resetButton => '重置';
 
   @override
-  String get restoreAction => '恢复';
-
-  @override
   String get deleteAction => '删除';
 
   @override
   String get infoAction => '信息';
-
-  @override
-  String get selectAction => '选择';
-
-  @override
-  String get selectAllAction => '全选';
 
   @override
   String get seeAllAction => '查看全部';
@@ -228,12 +219,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get notificationsDesc => '显示保护状态、安全警报和权限警告。';
 
   @override
-  String get photosAndVideosTitle => '照片和视频';
-
-  @override
-  String get photosAndVideosDesc => '选择要导入加密保险箱的媒体文件。';
-
-  @override
   String get cameraTitle => '相机';
 
   @override
@@ -244,9 +229,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get badgeRecommended => '推荐';
-
-  @override
-  String get badgeVault => '保险箱';
 
   @override
   String get badgeIntruder => '入侵者';
@@ -549,9 +531,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importVideosAction => '导入\n视频';
 
   @override
-  String get createAlbumAction => '创建\n相册';
-
-  @override
   String get albumsHeader => '相册';
 
   @override
@@ -561,16 +540,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get vaultEmptySubtitle => '导入照片和视频以在此设备上\n加密保存。';
 
   @override
-  String get albumPrivatePhotos => '私密照片';
-
-  @override
   String get albumVideos => '视频';
-
-  @override
-  String get albumGalleries => '图库';
-
-  @override
-  String get albumScreenshots => '屏幕截图';
 
   @override
   String get albumPhotos => '照片';
@@ -584,28 +554,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String vaultItemsProtectedSubtitle(int count) {
     return '$count 项 • 已受保护';
   }
-
-  @override
-  String get importToVaultTitle => '导入到保险箱';
-
-  @override
-  String get todaySection => '今天';
-
-  @override
-  String get september12Section => '9月12日';
-
-  @override
-  String selectedCountLabel(int count) {
-    return '已选择 $count 项';
-  }
-
-  @override
-  String totalSizeMbLabel(String size) {
-    return '共 $size MB';
-  }
-
-  @override
-  String get moveToVaultButton => '移至保险箱';
 
   @override
   String get encryptingItemsTitle => '正在加密所选项目...';
@@ -631,12 +579,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get aes256Subtitle => 'AES-256 军用级加密';
-
-  @override
-  String get originalsDeletedTitle => '原文件已删除';
-
-  @override
-  String get spaceRecoveredSubtitle => '已释放空间：124 MB';
 
   @override
   String get originalsCouldNotBeDeletedTitle => '无法自动删除\n原始文件';
@@ -723,15 +665,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get statusSummaryTitle => '状态摘要';
 
   @override
-  String get failedUnlockAttemptsToday => '今日有 2 次解锁失败尝试';
-
-  @override
-  String get alertsSavedPremium => '已保存 11 条警报';
-
-  @override
-  String get alertsSavedFree => '已保存 2/10 条警报';
-
-  @override
   String failedMethodLabel(String method) {
     return '失败方式：$method';
   }
@@ -776,19 +709,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get dateTimeLabel => '日期/时间';
 
   @override
-  String get platformLabel => '平台';
-
-  @override
-  String get deviceModelLabel => '设备型号';
-
-  @override
   String get saveEvidenceButton => '保存证据';
 
   @override
   String get enableCameraPermissionButton => '启用相机权限';
-
-  @override
-  String get evidenceSavedSnackBar => '证据已保存到设备';
 
   @override
   String get deleteAlertButton => '删除警报';
@@ -910,28 +834,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get sendMessageButton => '发送消息';
 
   @override
-  String get messageSentSnackBar => '消息已发送至支持团队';
-
-  @override
   String get biometricNotSupportedError => '设备不支持或尚未设置生物识别';
-
-  @override
-  String get deleteOriginalsDialogTitle => '删除原始文件？';
-
-  @override
-  String get deleteOriginalsDialogDesc => '导入后，应用锁可以在允许的情况下请求操作系统删除原始文件。';
-
-  @override
-  String get importAndDeleteOriginalsButton => '导入并删除原文件';
-
-  @override
-  String get importOnlyButton => '仅导入';
-
-  @override
-  String get restoreToGalleryDialogTitle => '恢复到图库？';
-
-  @override
-  String get restoreToGalleryDialogDesc => '解密后的副本将通过操作系统保存。恢复后将清理临时文件。';
 
   @override
   String get deleteFromVaultDialogTitle => '从保险箱中删除？';
@@ -947,4 +850,233 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get deleteAlertDialogDesc => '这将从此设备中移除抓拍的入侵者照片和事件日志。';
+
+  @override
+  String get purchaseFallbackMonthlyPrice => '\$2.99';
+
+  @override
+  String get purchaseFallbackYearlyPrice => '\$25.99';
+
+  @override
+  String get purchaseFallbackYearlyOriginalPrice => '\$35.99';
+
+  @override
+  String purchaseSaveBadge(int percent) {
+    return '节省 $percent%';
+  }
+
+  @override
+  String get purchaseBillingUnavailable =>
+      '此设备无法使用 Google Play 结算服务。请检查您的 Play 商店账号后重试。';
+
+  @override
+  String get purchaseProductsNotFound => '高级版套餐暂时不可用，请稍后再试。';
+
+  @override
+  String get purchaseProductsLoading => '正在加载套餐，请稍后再试。';
+
+  @override
+  String get purchaseFailed => '购买失败，请重试。';
+
+  @override
+  String get purchasePending => '您的购买正在处理中。付款完成后将解锁高级版。';
+
+  @override
+  String get purchaseRestoreSuccess => '购买已恢复，高级版已激活。';
+
+  @override
+  String get purchaseRestoreNothing => '未找到以前的购买记录。';
+
+  @override
+  String get purchaseRestoreFailed => '无法恢复购买，请重试。';
+
+  @override
+  String get purchaseAlreadyPremium => '您已是高级版用户';
+
+  @override
+  String get purchaseOpenLinkFailed => '无法打开链接。';
+
+  @override
+  String intruderFailedAttemptsToday(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '今天解锁失败 $count 次',
+      zero: '今天没有解锁失败记录',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String intruderAlertsSaved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已保存 $count 条警报',
+      zero: '尚未保存警报',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String intruderAlertsShownOfTotal(int shown, int total) {
+    return '显示 $total 条已保存警报中的 $shown 条';
+  }
+
+  @override
+  String get intruderMethodPin => 'PIN 码';
+
+  @override
+  String get intruderMethodPattern => '图案';
+
+  @override
+  String get intruderMethodBiometric => '生物识别';
+
+  @override
+  String get intruderMainUnlock => '主解锁';
+
+  @override
+  String get intruderYesterday => '昨天';
+
+  @override
+  String intruderEvidenceSavedTo(String path) {
+    return '证据已保存到 $path';
+  }
+
+  @override
+  String get intruderEvidenceSaveFailed => '无法保存证据';
+
+  @override
+  String get intruderAlertDeleted => '警报已删除';
+
+  @override
+  String get intruderDeleteFailed => '无法删除警报';
+
+  @override
+  String get intruderNoAlertsTitle => '暂无入侵者警报';
+
+  @override
+  String get intruderNoAlertsSubtitle =>
+      '解锁失败 3 次后，App Lock 会悄悄拍下入侵者的照片并保存在这里。';
+
+  @override
+  String get lockBiometricReason => '请验证身份以解锁';
+
+  @override
+  String get lockEnableBiometricReason => '验证身份以启用生物识别解锁';
+
+  @override
+  String get lockDeviceAuthReason => '请使用设备锁屏验证身份';
+
+  @override
+  String get lockDeviceNotSecureError => '请先为设备设置锁屏以恢复访问。';
+
+  @override
+  String get lockAuthFailedError => '验证失败，请重试。';
+
+  @override
+  String get lockUsageAccessNeeded => '请授予使用情况访问权限以启动保护。';
+
+  @override
+  String get lockPasscodeUpdated => '密码已更新';
+
+  @override
+  String get lockPatternUpdated => '图案已更新';
+
+  @override
+  String get lockSaveFailed => '保存失败，请重试。';
+
+  @override
+  String get lockPremiumPlanTitle => '高级版';
+
+  @override
+  String get lockPremiumPlanDesc => '已解锁全部高级功能。';
+
+  @override
+  String get lockContactFormIncomplete => '请输入邮箱和留言内容。';
+
+  @override
+  String get lockContactInvalidEmail => '请输入有效的邮箱地址。';
+
+  @override
+  String lockContactNoEmailApp(String email) {
+    return '未找到邮件应用，请发送至 $email';
+  }
+
+  @override
+  String get lockOpenLinkFailed => '无法打开链接。';
+
+  @override
+  String get lockBatteryOptimizationTitle => '电池优化';
+
+  @override
+  String get lockBatteryOptimizationDesc => '将 App Lock 设为“不优化”以保持保护运行。';
+
+  @override
+  String vaultItemsProtectedUnlimited(int count) {
+    return '已保护 $count 项';
+  }
+
+  @override
+  String get vaultLimitReachedTitle => '已达到保险箱上限';
+
+  @override
+  String vaultLimitReachedDesc(int limit) {
+    return '免费版最多可保护 $limit 项。升级到高级版即可无限存储。';
+  }
+
+  @override
+  String get vaultUpgradeButton => '升级';
+
+  @override
+  String get vaultOperationFailed => '出现问题，请重试。';
+
+  @override
+  String vaultSizeBytes(String size) {
+    return '$size B';
+  }
+
+  @override
+  String vaultSizeKb(String size) {
+    return '$size KB';
+  }
+
+  @override
+  String vaultSizeMb(String size) {
+    return '$size MB';
+  }
+
+  @override
+  String vaultSizeGb(String size) {
+    return '$size GB';
+  }
+
+  @override
+  String vaultItemSubtitle(String date, String size) {
+    return '$date • $size';
+  }
+
+  @override
+  String get vaultEncryptionAes256 => 'AES-256';
+
+  @override
+  String get vaultTypePhoto => '照片';
+
+  @override
+  String get vaultTypeVideo => '视频';
+
+  @override
+  String get vaultPhotosEmptyTitle => '暂无照片';
+
+  @override
+  String get vaultVideosEmptyTitle => '暂无视频';
+
+  @override
+  String get vaultDetailEmptySubtitle => '点按 + 通过系统照片选择器选择项目。它们会在此设备上加密。';
+
+  @override
+  String get vaultPreviewUnavailable => '无法预览';
+
+  @override
+  String get appsCategoryOther => '其他';
 }

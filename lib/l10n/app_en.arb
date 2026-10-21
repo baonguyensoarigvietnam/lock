@@ -9,11 +9,8 @@
   "saveButton": "Save",
   "doneButton": "Done",
   "resetButton": "Reset",
-  "restoreAction": "Restore",
   "deleteAction": "Delete",
   "infoAction": "Info",
-  "selectAction": "Select",
-  "selectAllAction": "Select All",
   "seeAllAction": "See all",
   "navHome": "Home",
   "navApps": "Apps",
@@ -73,13 +70,10 @@
   "displayOverOtherAppsDesc": "Show the unlock screen over protected apps for better reliability.",
   "notificationsTitle": "Notifications",
   "notificationsDesc": "Show protection status, security alerts, and permission warnings.",
-  "photosAndVideosTitle": "Photos and videos",
-  "photosAndVideosDesc": "Select media to import into your encrypted vault.",
   "cameraTitle": "Camera",
   "cameraDesc": "Capture a front-camera photo after 3 failed unlock attempts.",
   "badgeRequired": "REQUIRED",
   "badgeRecommended": "RECOMMENDED",
-  "badgeVault": "VAULT",
   "badgeIntruder": "INTRUDER",
   "upgradeToPremium": "Upgrade to Premium",
   "paywallSubtitle": "Unlock more themes and remove ads.",
@@ -224,14 +218,10 @@
   "quickActionsSmallTitle": "Quick actions",
   "addPhotosAction": "Add\nPhotos",
   "importVideosAction": "Import\nVideos",
-  "createAlbumAction": "Create\nAlbum",
   "albumsHeader": "Albums",
   "vaultEmptyTitle": "Your vault is empty",
   "vaultEmptySubtitle": "Import photos and videos to keep them\nencrypted on this device.",
-  "albumPrivatePhotos": "Private Photos",
   "albumVideos": "Videos",
-  "albumGalleries": "Galleries",
-  "albumScreenshots": "Screenshots",
   "albumPhotos": "Photos",
   "vaultAlbumItemsCount": "{count} items",
   "@vaultAlbumItemsCount": {
@@ -249,26 +239,6 @@
       }
     }
   },
-  "importToVaultTitle": "Import to Vault",
-  "todaySection": "Today",
-  "september12Section": "September 12",
-  "selectedCountLabel": "{count} selected",
-  "@selectedCountLabel": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "totalSizeMbLabel": "{size} MB total",
-  "@totalSizeMbLabel": {
-    "placeholders": {
-      "size": {
-        "type": "String"
-      }
-    }
-  },
-  "moveToVaultButton": "Move to Vault",
   "encryptingItemsTitle": "Encrypting selected items...",
   "filesProcessedProgress": "{processed} of {total} files processed",
   "@filesProcessedProgress": {
@@ -293,8 +263,6 @@
     }
   },
   "aes256Subtitle": "AES-256 Military Grade",
-  "originalsDeletedTitle": "Originals deleted",
-  "spaceRecoveredSubtitle": "Space recovered: 124 MB",
   "originalsCouldNotBeDeletedTitle": "Originals could not be deleted\nautomatically",
   "nextStepRequiredTitle": "Next Step Required",
   "deleteOriginalsManuallyDesc": "Open Photos or Gallery to delete\noriginals manually.",
@@ -323,9 +291,6 @@
   "privacyFirstSubtitle": "No photos are taken or stored without\nyour explicit camera permission.",
   "openSettingsButton": "Open settings",
   "statusSummaryTitle": "Status Summary",
-  "failedUnlockAttemptsToday": "2 failed unlock attempts today",
-  "alertsSavedPremium": "11 alerts saved",
-  "alertsSavedFree": "2 alerts saved on 10",
   "failedMethodLabel": "Failed method: {method}",
   "@failedMethodLabel": {
     "placeholders": {
@@ -347,11 +312,8 @@
   "failedMethodRowLabel": "Failed method",
   "failedCountLabel": "Failed count",
   "dateTimeLabel": "Date/time",
-  "platformLabel": "Platform",
-  "deviceModelLabel": "Device model",
   "saveEvidenceButton": "Save evidence",
   "enableCameraPermissionButton": "Enable camera permission",
-  "evidenceSavedSnackBar": "Evidence saved to device",
   "deleteAlertButton": "Delete alert",
   "settingsTitle": "Settings",
   "settingsSubtitle": "Manage your app preferences.",
@@ -391,17 +353,170 @@
   "messageHint": "Describe your issue in detail...",
   "contactPrivacyDisclaimer": "By submitting this form, you agree to our Privacy Policy. We\nwill only use your email to respond to this request.",
   "sendMessageButton": "Send message",
-  "messageSentSnackBar": "Message sent to support team",
   "biometricNotSupportedError": "Device does not support or has not set up biometrics",
-  "deleteOriginalsDialogTitle": "Delete originals?",
-  "deleteOriginalsDialogDesc": "After import, App Lock can ask the operating system to delete the original files when allowed.",
-  "importAndDeleteOriginalsButton": "Import and delete originals",
-  "importOnlyButton": "Import only",
-  "restoreToGalleryDialogTitle": "Restore to gallery?",
-  "restoreToGalleryDialogDesc": "A decrypted copy will be saved through the operating system. Temporary files are cleaned after restore.",
   "deleteFromVaultDialogTitle": "Delete from Vault?",
   "deleteFromVaultDialogDesc": "This removes the encrypted vault copy from this device.",
   "deletePermanentlyButton": "Delete permanently",
   "deleteAlertDialogTitle": "Delete alert?",
-  "deleteAlertDialogDesc": "This removes the captured intruder photo and event log from this device."
+  "deleteAlertDialogDesc": "This removes the captured intruder photo and event log from this device.",
+  "purchaseFallbackMonthlyPrice": "$2.99",
+  "purchaseFallbackYearlyPrice": "$25.99",
+  "purchaseFallbackYearlyOriginalPrice": "$35.99",
+  "purchaseSaveBadge": "SAVE {percent}%",
+  "@purchaseSaveBadge": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "purchaseBillingUnavailable": "Google Play Billing is unavailable on this device. Check your Play Store account and try again.",
+  "purchaseProductsNotFound": "Premium plans are not available right now. Please try again later.",
+  "purchaseProductsLoading": "Loading plans, please try again in a moment.",
+  "purchaseFailed": "Purchase failed. Please try again.",
+  "purchasePending": "Your purchase is pending. Premium will unlock once the payment is completed.",
+  "purchaseRestoreSuccess": "Purchases restored. Premium is active.",
+  "purchaseRestoreNothing": "No previous purchases found.",
+  "purchaseRestoreFailed": "Could not restore purchases. Please try again.",
+  "purchaseAlreadyPremium": "You're already Premium",
+  "purchaseOpenLinkFailed": "Could not open the link.",
+  "intruderFailedAttemptsToday": "{count, plural, =0{No failed unlock attempts today} =1{1 failed unlock attempt today} other{{count} failed unlock attempts today}}",
+  "@intruderFailedAttemptsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "intruderAlertsSaved": "{count, plural, =0{No alerts saved} =1{1 alert saved} other{{count} alerts saved}}",
+  "@intruderAlertsSaved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "intruderAlertsShownOfTotal": "Showing {shown} of {total} saved alerts",
+  "@intruderAlertsShownOfTotal": {
+    "placeholders": {
+      "shown": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "intruderMethodPin": "PIN",
+  "intruderMethodPattern": "Pattern",
+  "intruderMethodBiometric": "Biometric",
+  "intruderMainUnlock": "Main Unlock",
+  "intruderYesterday": "Yesterday",
+  "intruderEvidenceSavedTo": "Evidence saved to {path}",
+  "@intruderEvidenceSavedTo": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "intruderEvidenceSaveFailed": "Could not save evidence",
+  "intruderAlertDeleted": "Alert deleted",
+  "intruderDeleteFailed": "Could not delete alert",
+  "intruderNoAlertsTitle": "No intruder alerts yet",
+  "intruderNoAlertsSubtitle": "After 3 failed unlock attempts, App Lock silently takes a photo of the intruder and saves it here.",
+  "lockBiometricReason": "Confirm your identity to unlock",
+  "lockEnableBiometricReason": "Authenticate to enable biometric unlock",
+  "lockDeviceAuthReason": "Verify it's you with your device screen lock",
+  "lockDeviceNotSecureError": "Set up a screen lock on your device to recover access.",
+  "lockAuthFailedError": "Authentication failed. Try again.",
+  "lockUsageAccessNeeded": "Grant Usage Access to start protection.",
+  "lockPasscodeUpdated": "Passcode updated",
+  "lockPatternUpdated": "Pattern updated",
+  "lockSaveFailed": "Couldn't save. Please try again.",
+  "lockPremiumPlanTitle": "Premium Plan",
+  "lockPremiumPlanDesc": "All premium features are unlocked.",
+  "lockContactFormIncomplete": "Please enter your email and a message.",
+  "lockContactInvalidEmail": "Please enter a valid email address.",
+  "lockContactNoEmailApp": "No email app found. Please write to {email}",
+  "@lockContactNoEmailApp": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "lockOpenLinkFailed": "Couldn't open the link.",
+  "lockBatteryOptimizationTitle": "Battery optimization",
+  "lockBatteryOptimizationDesc": "Set App Lock to \"Not optimized\" so protection keeps running.",
+  "vaultItemsProtectedUnlimited": "{count} items protected",
+  "@vaultItemsProtectedUnlimited": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultLimitReachedTitle": "Vault limit reached",
+  "vaultLimitReachedDesc": "The free plan protects up to {limit} items. Upgrade to Premium for unlimited vault storage.",
+  "@vaultLimitReachedDesc": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultUpgradeButton": "Upgrade",
+  "vaultOperationFailed": "Something went wrong. Please try again.",
+  "vaultSizeBytes": "{size} B",
+  "@vaultSizeBytes": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeKb": "{size} KB",
+  "@vaultSizeKb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeMb": "{size} MB",
+  "@vaultSizeMb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeGb": "{size} GB",
+  "@vaultSizeGb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultItemSubtitle": "{date} • {size}",
+  "@vaultItemSubtitle": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultEncryptionAes256": "AES-256",
+  "vaultTypePhoto": "Photo",
+  "vaultTypeVideo": "Video",
+  "vaultPhotosEmptyTitle": "No photos yet",
+  "vaultVideosEmptyTitle": "No videos yet",
+  "vaultDetailEmptySubtitle": "Tap + to choose items with the system photo picker. They are encrypted on this device.",
+  "vaultPreviewUnavailable": "Preview unavailable",
+  "appsCategoryOther": "Other"
 }

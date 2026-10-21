@@ -5,23 +5,38 @@ import 'package:local_auth/local_auth.dart';
 class BiometricService {
   final LocalAuthentication _auth = LocalAuthentication();
 
+  /// Whether at least one biometric is enrolled and usable.
   Future<bool> canCheckBiometrics() async {
     try {
-      final canAuthenticateWithBiometrics = await _auth.canCheckBiometrics;
-      final canAuthenticate =
-          canAuthenticateWithBiometrics || await _auth.isDeviceSupported();
-      return canAuthenticate;
+      if (!await _auth.canCheckBiometrics) return false;
+      final available = await _auth.getAvailableBiometrics();
+      return available.isNotEmpty;
     } catch (_) {
       return false;
     }
   }
 
+  /// Whether the device has any secure lock (biometric or PIN/pattern/password).
+  Future<bool> isDeviceSecure() async {
+    try {
+      return await _auth.isDeviceSupported();
+    } catch (_) {
+      return false;
+    }
+  }
+
+  /// Shows the system biometric prompt. [localizedReason] must come from l10n.
+  ///
+  /// When [biometricOnly] is false the user may fall back to the device
+  /// PIN/pattern/password (used for account recovery).
   Future<bool> authenticate({
-    String localizedReason = 'Vui lòng xác thực sinh trắc học để mở khoá',
+    required String localizedReason,
+    bool biometricOnly = true,
   }) async {
     try {
       return await _auth.authenticate(
         localizedReason: localizedReason,
+        biometricOnly: biometricOnly,
       );
     } catch (_) {
       return false;

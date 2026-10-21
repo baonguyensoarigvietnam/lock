@@ -5,7 +5,6 @@ import 'package:applock/presentation/theme/app_text_palette.dart';
 enum PermissionBadgeType {
   required,
   recommended,
-  vault,
   intruder,
 }
 

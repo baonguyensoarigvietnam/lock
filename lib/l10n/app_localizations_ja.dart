@@ -36,19 +36,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get resetButton => 'リセット';
 
   @override
-  String get restoreAction => '復元';
-
-  @override
   String get deleteAction => '削除';
 
   @override
   String get infoAction => '情報';
-
-  @override
-  String get selectAction => '選択';
-
-  @override
-  String get selectAllAction => 'すべて選択';
 
   @override
   String get seeAllAction => 'すべて見る';
@@ -230,12 +221,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get notificationsDesc => '保護ステータス、セキュリティ警告、権限の警告を表示します。';
 
   @override
-  String get photosAndVideosTitle => '写真と動画';
-
-  @override
-  String get photosAndVideosDesc => '暗号化された金庫にインポートするメディアを選択します。';
-
-  @override
   String get cameraTitle => 'カメラ';
 
   @override
@@ -246,9 +231,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get badgeRecommended => '推奨';
-
-  @override
-  String get badgeVault => '金庫';
 
   @override
   String get badgeIntruder => '侵入者';
@@ -556,9 +538,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get importVideosAction => '動画を\nインポート';
 
   @override
-  String get createAlbumAction => 'アルバム\n作成';
-
-  @override
   String get albumsHeader => 'アルバム';
 
   @override
@@ -568,16 +547,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get vaultEmptySubtitle => '写真や動画をインポートして\nこの端末内で暗号化して保管しましょう。';
 
   @override
-  String get albumPrivatePhotos => 'プライベート写真';
-
-  @override
   String get albumVideos => '動画';
-
-  @override
-  String get albumGalleries => 'ギャラリー';
-
-  @override
-  String get albumScreenshots => 'スクリーンショット';
 
   @override
   String get albumPhotos => '写真';
@@ -591,28 +561,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String vaultItemsProtectedSubtitle(int count) {
     return '$count 件 • 保護済み';
   }
-
-  @override
-  String get importToVaultTitle => '金庫にインポート';
-
-  @override
-  String get todaySection => '今日';
-
-  @override
-  String get september12Section => '9月12日';
-
-  @override
-  String selectedCountLabel(int count) {
-    return '$count 件選択中';
-  }
-
-  @override
-  String totalSizeMbLabel(String size) {
-    return '合計 $size MB';
-  }
-
-  @override
-  String get moveToVaultButton => '金庫に移動';
 
   @override
   String get encryptingItemsTitle => '選択したアイテムを暗号化しています...';
@@ -638,12 +586,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get aes256Subtitle => 'AES-256 軍事グレード';
-
-  @override
-  String get originalsDeletedTitle => '元のファイルを削除済み';
-
-  @override
-  String get spaceRecoveredSubtitle => '空き容量の回復: 124 MB';
 
   @override
   String get originalsCouldNotBeDeletedTitle => '元のファイルを自動的に削除\nできませんでした';
@@ -731,15 +673,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get statusSummaryTitle => 'ステータス概要';
 
   @override
-  String get failedUnlockAttemptsToday => '本日のロック解除失敗: 2件';
-
-  @override
-  String get alertsSavedPremium => '11件のアラートを保存済み';
-
-  @override
-  String get alertsSavedFree => '2/10件のアラートを保存済み';
-
-  @override
   String failedMethodLabel(String method) {
     return '失敗した方法: $method';
   }
@@ -785,19 +718,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get dateTimeLabel => '日時';
 
   @override
-  String get platformLabel => 'プラットフォーム';
-
-  @override
-  String get deviceModelLabel => '端末モデル';
-
-  @override
   String get saveEvidenceButton => '証拠を保存';
 
   @override
   String get enableCameraPermissionButton => 'カメラ権限を有効にする';
-
-  @override
-  String get evidenceSavedSnackBar => '証拠を端末に保存しました';
 
   @override
   String get deleteAlertButton => 'アラートを削除';
@@ -921,30 +845,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get sendMessageButton => 'メッセージを送信';
 
   @override
-  String get messageSentSnackBar => 'サポートチームにメッセージを送信しました';
-
-  @override
   String get biometricNotSupportedError => 'この端末は生体認証に対応していないか、未設定です';
-
-  @override
-  String get deleteOriginalsDialogTitle => '元のファイルを削除しますか？';
-
-  @override
-  String get deleteOriginalsDialogDesc =>
-      'インポート後、許可されている場合はOSを通じて元のファイルを削除できます。';
-
-  @override
-  String get importAndDeleteOriginalsButton => 'インポートして元のファイルを削除';
-
-  @override
-  String get importOnlyButton => 'インポートのみ';
-
-  @override
-  String get restoreToGalleryDialogTitle => 'ギャラリーに復元しますか？';
-
-  @override
-  String get restoreToGalleryDialogDesc =>
-      '復号されたコピーがOS経由で保存されます。一時ファイルは復元後に消去されます。';
 
   @override
   String get deleteFromVaultDialogTitle => '金庫から削除しますか？';
@@ -960,4 +861,236 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get deleteAlertDialogDesc => '撮影された侵入者の写真とイベントログをこの端末から削除します。';
+
+  @override
+  String get purchaseFallbackMonthlyPrice => '\$2.99';
+
+  @override
+  String get purchaseFallbackYearlyPrice => '\$25.99';
+
+  @override
+  String get purchaseFallbackYearlyOriginalPrice => '\$35.99';
+
+  @override
+  String purchaseSaveBadge(int percent) {
+    return '$percent%お得';
+  }
+
+  @override
+  String get purchaseBillingUnavailable =>
+      'この端末では Google Play 課金を利用できません。Play ストアのアカウントを確認して、もう一度お試しください。';
+
+  @override
+  String get purchaseProductsNotFound =>
+      '現在プレミアムプランをご利用いただけません。しばらくしてから再度お試しください。';
+
+  @override
+  String get purchaseProductsLoading => 'プランを読み込み中です。少し待ってから再度お試しください。';
+
+  @override
+  String get purchaseFailed => '購入に失敗しました。もう一度お試しください。';
+
+  @override
+  String get purchasePending => '購入は保留中です。支払いが完了するとプレミアムが有効になります。';
+
+  @override
+  String get purchaseRestoreSuccess => '購入を復元しました。プレミアムが有効です。';
+
+  @override
+  String get purchaseRestoreNothing => '以前の購入が見つかりませんでした。';
+
+  @override
+  String get purchaseRestoreFailed => '購入を復元できませんでした。もう一度お試しください。';
+
+  @override
+  String get purchaseAlreadyPremium => 'すでにプレミアム会員です';
+
+  @override
+  String get purchaseOpenLinkFailed => 'リンクを開けませんでした。';
+
+  @override
+  String intruderFailedAttemptsToday(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '今日のロック解除失敗: $count回',
+      zero: '今日のロック解除失敗はありません',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String intruderAlertsSaved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count件のアラートを保存済み',
+      zero: '保存されたアラートはありません',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String intruderAlertsShownOfTotal(int shown, int total) {
+    return '保存済みアラート$total件中$shown件を表示';
+  }
+
+  @override
+  String get intruderMethodPin => 'PIN';
+
+  @override
+  String get intruderMethodPattern => 'パターン';
+
+  @override
+  String get intruderMethodBiometric => '生体認証';
+
+  @override
+  String get intruderMainUnlock => 'メインのロック解除';
+
+  @override
+  String get intruderYesterday => '昨日';
+
+  @override
+  String intruderEvidenceSavedTo(String path) {
+    return '証拠を$pathに保存しました';
+  }
+
+  @override
+  String get intruderEvidenceSaveFailed => '証拠を保存できませんでした';
+
+  @override
+  String get intruderAlertDeleted => 'アラートを削除しました';
+
+  @override
+  String get intruderDeleteFailed => 'アラートを削除できませんでした';
+
+  @override
+  String get intruderNoAlertsTitle => '侵入者アラートはまだありません';
+
+  @override
+  String get intruderNoAlertsSubtitle =>
+      'ロック解除に3回失敗すると、App Lockが侵入者の写真をこっそり撮影してここに保存します。';
+
+  @override
+  String get lockBiometricReason => 'ロックを解除するには本人確認してください';
+
+  @override
+  String get lockEnableBiometricReason => '生体認証ロック解除を有効にするには認証してください';
+
+  @override
+  String get lockDeviceAuthReason => '端末の画面ロックで本人確認してください';
+
+  @override
+  String get lockDeviceNotSecureError => 'アクセスを回復するには端末に画面ロックを設定してください。';
+
+  @override
+  String get lockAuthFailedError => '認証に失敗しました。もう一度お試しください。';
+
+  @override
+  String get lockUsageAccessNeeded => '保護を開始するには使用状況へのアクセスを許可してください。';
+
+  @override
+  String get lockPasscodeUpdated => 'パスコードを更新しました';
+
+  @override
+  String get lockPatternUpdated => 'パターンを更新しました';
+
+  @override
+  String get lockSaveFailed => '保存できませんでした。もう一度お試しください。';
+
+  @override
+  String get lockPremiumPlanTitle => 'プレミアムプラン';
+
+  @override
+  String get lockPremiumPlanDesc => 'すべてのプレミアム機能が利用可能です。';
+
+  @override
+  String get lockContactFormIncomplete => 'メールアドレスとメッセージを入力してください。';
+
+  @override
+  String get lockContactInvalidEmail => '有効なメールアドレスを入力してください。';
+
+  @override
+  String lockContactNoEmailApp(String email) {
+    return 'メールアプリが見つかりません。$email までご連絡ください';
+  }
+
+  @override
+  String get lockOpenLinkFailed => 'リンクを開けませんでした。';
+
+  @override
+  String get lockBatteryOptimizationTitle => 'バッテリーの最適化';
+
+  @override
+  String get lockBatteryOptimizationDesc =>
+      '保護を継続するため App Lock を「最適化しない」に設定してください。';
+
+  @override
+  String vaultItemsProtectedUnlimited(int count) {
+    return '$count 件のアイテムを保護中';
+  }
+
+  @override
+  String get vaultLimitReachedTitle => '金庫の上限に達しました';
+
+  @override
+  String vaultLimitReachedDesc(int limit) {
+    return '無料プランでは最大 $limit 件まで保護できます。プレミアムにアップグレードすると無制限に保存できます。';
+  }
+
+  @override
+  String get vaultUpgradeButton => 'アップグレード';
+
+  @override
+  String get vaultOperationFailed => '問題が発生しました。もう一度お試しください。';
+
+  @override
+  String vaultSizeBytes(String size) {
+    return '$size B';
+  }
+
+  @override
+  String vaultSizeKb(String size) {
+    return '$size KB';
+  }
+
+  @override
+  String vaultSizeMb(String size) {
+    return '$size MB';
+  }
+
+  @override
+  String vaultSizeGb(String size) {
+    return '$size GB';
+  }
+
+  @override
+  String vaultItemSubtitle(String date, String size) {
+    return '$date • $size';
+  }
+
+  @override
+  String get vaultEncryptionAes256 => 'AES-256';
+
+  @override
+  String get vaultTypePhoto => '写真';
+
+  @override
+  String get vaultTypeVideo => '動画';
+
+  @override
+  String get vaultPhotosEmptyTitle => '写真はまだありません';
+
+  @override
+  String get vaultVideosEmptyTitle => '動画はまだありません';
+
+  @override
+  String get vaultDetailEmptySubtitle =>
+      '+ をタップして、システムの写真選択ツールから選んでください。この端末上で暗号化されます。';
+
+  @override
+  String get vaultPreviewUnavailable => 'プレビューを表示できません';
+
+  @override
+  String get appsCategoryOther => 'その他';
 }

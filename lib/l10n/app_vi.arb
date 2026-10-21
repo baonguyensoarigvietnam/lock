@@ -9,11 +9,8 @@
   "saveButton": "Lưu",
   "doneButton": "Hoàn tất",
   "resetButton": "Đặt lại",
-  "restoreAction": "Khôi phục",
   "deleteAction": "Xóa",
   "infoAction": "Thông tin",
-  "selectAction": "Chọn",
-  "selectAllAction": "Chọn tất cả",
   "seeAllAction": "Xem tất cả",
   "navHome": "Trang chủ",
   "navApps": "Ứng dụng",
@@ -73,13 +70,10 @@
   "displayOverOtherAppsDesc": "Hiển thị màn hình mở khóa đè lên ứng dụng được bảo vệ để hoạt động ổn định hơn.",
   "notificationsTitle": "Thông báo",
   "notificationsDesc": "Hiển thị trạng thái bảo vệ, cảnh báo bảo mật và cảnh báo quyền truy cập.",
-  "photosAndVideosTitle": "Ảnh và video",
-  "photosAndVideosDesc": "Chọn phương tiện để nhập vào kho lưu trữ mã hóa của bạn.",
   "cameraTitle": "Máy ảnh",
   "cameraDesc": "Chụp ảnh bằng camera trước sau 3 lần mở khóa thất bại.",
   "badgeRequired": "BẮT BUỘC",
   "badgeRecommended": "KHUYẾN NGHỊ",
-  "badgeVault": "KHO LƯU TRỮ",
   "badgeIntruder": "XÂM NHẬP",
   "upgradeToPremium": "Nâng cấp lên Premium",
   "paywallSubtitle": "Mở khóa thêm nhiều giao diện và gỡ bỏ quảng cáo.",
@@ -224,14 +218,10 @@
   "quickActionsSmallTitle": "Thao tác nhanh",
   "addPhotosAction": "Thêm\nẢnh",
   "importVideosAction": "Nhập\nVideo",
-  "createAlbumAction": "Tạo\nAlbum",
   "albumsHeader": "Album",
   "vaultEmptyTitle": "Kho lưu trữ đang trống",
   "vaultEmptySubtitle": "Nhập ảnh và video để giữ chúng\nđược mã hóa trên thiết bị này.",
-  "albumPrivatePhotos": "Ảnh riêng tư",
   "albumVideos": "Video",
-  "albumGalleries": "Thư viện",
-  "albumScreenshots": "Ảnh chụp màn hình",
   "albumPhotos": "Ảnh",
   "vaultAlbumItemsCount": "{count} mục",
   "@vaultAlbumItemsCount": {
@@ -249,26 +239,6 @@
       }
     }
   },
-  "importToVaultTitle": "Nhập vào Kho lưu trữ",
-  "todaySection": "Hôm nay",
-  "september12Section": "12 Tháng 9",
-  "selectedCountLabel": "Đã chọn {count}",
-  "@selectedCountLabel": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "totalSizeMbLabel": "Tổng cộng {size} MB",
-  "@totalSizeMbLabel": {
-    "placeholders": {
-      "size": {
-        "type": "String"
-      }
-    }
-  },
-  "moveToVaultButton": "Chuyển vào Kho",
   "encryptingItemsTitle": "Đang mã hóa các mục đã chọn...",
   "filesProcessedProgress": "Đã xử lý {processed}/{total} tệp",
   "@filesProcessedProgress": {
@@ -293,8 +263,6 @@
     }
   },
   "aes256Subtitle": "Chuẩn quân đội AES-256",
-  "originalsDeletedTitle": "Đã xóa tệp gốc",
-  "spaceRecoveredSubtitle": "Dung lượng giải phóng: 124 MB",
   "originalsCouldNotBeDeletedTitle": "Không thể tự động xóa\ncác tệp gốc",
   "nextStepRequiredTitle": "Bước tiếp theo cần thực hiện",
   "deleteOriginalsManuallyDesc": "Mở Ảnh hoặc Bộ sưu tập để xóa\ncác tệp gốc theo cách thủ công.",
@@ -323,9 +291,6 @@
   "privacyFirstSubtitle": "Không có bức ảnh nào được chụp hoặc lưu trữ nếu\nbạn không cấp quyền máy ảnh.",
   "openSettingsButton": "Mở cài đặt",
   "statusSummaryTitle": "Tóm tắt trạng thái",
-  "failedUnlockAttemptsToday": "2 lần mở khóa thất bại hôm nay",
-  "alertsSavedPremium": "Đã lưu 11 cảnh báo",
-  "alertsSavedFree": "Đã lưu 2/10 cảnh báo",
   "failedMethodLabel": "Phương thức thất bại: {method}",
   "@failedMethodLabel": {
     "placeholders": {
@@ -347,11 +312,8 @@
   "failedMethodRowLabel": "Phương thức thất bại",
   "failedCountLabel": "Số lần thất bại",
   "dateTimeLabel": "Ngày/giờ",
-  "platformLabel": "Nền tảng",
-  "deviceModelLabel": "Kiểu thiết bị",
   "saveEvidenceButton": "Lưu bằng chứng",
   "enableCameraPermissionButton": "Bật quyền máy ảnh",
-  "evidenceSavedSnackBar": "Đã lưu bằng chứng vào thiết bị",
   "deleteAlertButton": "Xóa cảnh báo",
   "settingsTitle": "Cài đặt",
   "settingsSubtitle": "Quản lý tùy chọn ứng dụng của bạn.",
@@ -391,17 +353,125 @@
   "messageHint": "Mô tả chi tiết vấn đề của bạn...",
   "contactPrivacyDisclaimer": "Bằng việc gửi biểu mẫu này, bạn đồng ý với Chính sách bảo mật của chúng tôi.\nChúng tôi chỉ dùng email của bạn để phản hồi yêu cầu này.",
   "sendMessageButton": "Gửi tin nhắn",
-  "messageSentSnackBar": "Đã gửi tin nhắn tới đội ngũ hỗ trợ",
   "biometricNotSupportedError": "Thiết bị không hỗ trợ hoặc chưa cài sinh trắc học",
-  "deleteOriginalsDialogTitle": "Xóa các tệp gốc?",
-  "deleteOriginalsDialogDesc": "Sau khi nhập, Khóa Ứng Dụng có thể yêu cầu hệ điều hành xóa các tệp gốc khi được phép.",
-  "importAndDeleteOriginalsButton": "Nhập và xóa tệp gốc",
-  "importOnlyButton": "Chỉ nhập tệp",
-  "restoreToGalleryDialogTitle": "Khôi phục về thư viện?",
-  "restoreToGalleryDialogDesc": "Một bản sao đã giải mã sẽ được lưu thông qua hệ điều hành. Các tệp tạm sẽ được dọn sạch sau khi khôi phục.",
   "deleteFromVaultDialogTitle": "Xóa khỏi Kho lưu trữ?",
   "deleteFromVaultDialogDesc": "Thao tác này sẽ xóa bản sao mã hóa trong kho khỏi thiết bị này.",
   "deletePermanentlyButton": "Xóa vĩnh viễn",
   "deleteAlertDialogTitle": "Xóa cảnh báo?",
-  "deleteAlertDialogDesc": "Thao tác này sẽ xóa ảnh chụp kẻ xâm nhập và nhật ký sự kiện khỏi thiết bị này."
+  "deleteAlertDialogDesc": "Thao tác này sẽ xóa ảnh chụp kẻ xâm nhập và nhật ký sự kiện khỏi thiết bị này.",
+  "purchaseFallbackMonthlyPrice": "$2.99",
+  "purchaseFallbackYearlyPrice": "$25.99",
+  "purchaseFallbackYearlyOriginalPrice": "$35.99",
+  "purchaseSaveBadge": "TIẾT KIỆM {percent}%",
+  "purchaseBillingUnavailable": "Google Play Billing không khả dụng trên thiết bị này. Hãy kiểm tra tài khoản Play Store và thử lại.",
+  "purchaseProductsNotFound": "Các gói Premium hiện không khả dụng. Vui lòng thử lại sau.",
+  "purchaseProductsLoading": "Đang tải các gói, vui lòng thử lại sau giây lát.",
+  "purchaseFailed": "Thanh toán thất bại. Vui lòng thử lại.",
+  "purchasePending": "Giao dịch của bạn đang chờ xử lý. Premium sẽ được mở khóa khi thanh toán hoàn tất.",
+  "purchaseRestoreSuccess": "Đã khôi phục giao dịch. Premium đã được kích hoạt.",
+  "purchaseRestoreNothing": "Không tìm thấy giao dịch trước đó.",
+  "purchaseRestoreFailed": "Không thể khôi phục giao dịch. Vui lòng thử lại.",
+  "purchaseAlreadyPremium": "Bạn đã là thành viên Premium",
+  "purchaseOpenLinkFailed": "Không thể mở liên kết.",
+  "intruderFailedAttemptsToday": "{count, plural, =0{Không có lần mở khóa sai nào hôm nay} other{{count} lần mở khóa sai hôm nay}}",
+  "intruderAlertsSaved": "{count, plural, =0{Chưa lưu cảnh báo nào} other{Đã lưu {count} cảnh báo}}",
+  "intruderAlertsShownOfTotal": "Đang hiển thị {shown} trên {total} cảnh báo đã lưu",
+  "intruderMethodPin": "Mã PIN",
+  "intruderMethodPattern": "Hình vẽ",
+  "intruderMethodBiometric": "Sinh trắc học",
+  "intruderMainUnlock": "Mở khóa chính",
+  "intruderYesterday": "Hôm qua",
+  "intruderEvidenceSavedTo": "Đã lưu bằng chứng vào {path}",
+  "intruderEvidenceSaveFailed": "Không thể lưu bằng chứng",
+  "intruderAlertDeleted": "Đã xóa cảnh báo",
+  "intruderDeleteFailed": "Không thể xóa cảnh báo",
+  "intruderNoAlertsTitle": "Chưa có cảnh báo xâm nhập",
+  "intruderNoAlertsSubtitle": "Sau 3 lần mở khóa sai, App Lock sẽ âm thầm chụp ảnh kẻ xâm nhập và lưu tại đây.",
+  "lockBiometricReason": "Xác thực danh tính để mở khoá",
+  "lockEnableBiometricReason": "Xác thực để bật mở khoá bằng sinh trắc học",
+  "lockDeviceAuthReason": "Xác minh bằng khoá màn hình của thiết bị",
+  "lockDeviceNotSecureError": "Hãy thiết lập khoá màn hình cho thiết bị để khôi phục quyền truy cập.",
+  "lockAuthFailedError": "Xác thực thất bại. Vui lòng thử lại.",
+  "lockUsageAccessNeeded": "Hãy cấp quyền Truy cập dữ liệu sử dụng để bắt đầu bảo vệ.",
+  "lockPasscodeUpdated": "Đã cập nhật mã PIN",
+  "lockPatternUpdated": "Đã cập nhật hình vẽ",
+  "lockSaveFailed": "Không thể lưu. Vui lòng thử lại.",
+  "lockPremiumPlanTitle": "Gói Premium",
+  "lockPremiumPlanDesc": "Tất cả tính năng Premium đã được mở khoá.",
+  "lockContactFormIncomplete": "Vui lòng nhập email và nội dung tin nhắn.",
+  "lockContactInvalidEmail": "Vui lòng nhập địa chỉ email hợp lệ.",
+  "lockContactNoEmailApp": "Không tìm thấy ứng dụng email. Vui lòng gửi tới {email}",
+  "lockOpenLinkFailed": "Không thể mở liên kết.",
+  "lockBatteryOptimizationTitle": "Tối ưu hoá pin",
+  "lockBatteryOptimizationDesc": "Đặt App Lock là \"Không tối ưu hoá\" để bảo vệ luôn hoạt động.",
+  "vaultItemsProtectedUnlimited": "Đã bảo vệ {count} mục",
+  "@vaultItemsProtectedUnlimited": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultLimitReachedTitle": "Đã đạt giới hạn kho lưu trữ",
+  "vaultLimitReachedDesc": "Gói miễn phí bảo vệ tối đa {limit} mục. Nâng cấp lên Premium để lưu trữ không giới hạn.",
+  "@vaultLimitReachedDesc": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultUpgradeButton": "Nâng cấp",
+  "vaultOperationFailed": "Đã xảy ra lỗi. Vui lòng thử lại.",
+  "vaultSizeBytes": "{size} B",
+  "@vaultSizeBytes": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeKb": "{size} KB",
+  "@vaultSizeKb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeMb": "{size} MB",
+  "@vaultSizeMb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeGb": "{size} GB",
+  "@vaultSizeGb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultItemSubtitle": "{date} • {size}",
+  "@vaultItemSubtitle": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultEncryptionAes256": "AES-256",
+  "vaultTypePhoto": "Ảnh",
+  "vaultTypeVideo": "Video",
+  "vaultPhotosEmptyTitle": "Chưa có ảnh",
+  "vaultVideosEmptyTitle": "Chưa có video",
+  "vaultDetailEmptySubtitle": "Nhấn + để chọn mục bằng trình chọn ảnh của hệ thống. Chúng được mã hoá trên thiết bị này.",
+  "vaultPreviewUnavailable": "Không thể xem trước",
+  "appsCategoryOther": "Khác"
 }

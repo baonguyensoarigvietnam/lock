@@ -1,93 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:applock/domain/model/app_lock_item.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
+import 'package:applock/utility/enumeration/app_category.dart';
 import 'package:applock/utility/extension/build_context.dart';
 
 class AppCategoryItemData {
-  final String title;
-  final IconData icon;
+  final AppCategory category;
   final int totalApps;
   final int protectedApps;
 
   const AppCategoryItemData({
-    required this.title,
-    required this.icon,
+    required this.category,
     required this.totalApps,
     required this.protectedApps,
   });
 }
 
 class AppsCategoriesListView extends StatelessWidget {
-  final ValueChanged<String> onCategoryTap;
-
-  static const List<AppCategoryItemData> categories = [
-    AppCategoryItemData(
-      title: 'Social',
-      icon: Icons.people_outline_rounded,
-      totalApps: 12,
-      protectedApps: 3,
-    ),
-    AppCategoryItemData(
-      title: 'Messaging',
-      icon: Icons.chat_outlined,
-      totalApps: 8,
-      protectedApps: 2,
-    ),
-    AppCategoryItemData(
-      title: 'Photos & Video',
-      icon: Icons.photo_library_outlined,
-      totalApps: 15,
-      protectedApps: 0,
-    ),
-    AppCategoryItemData(
-      title: 'Finance',
-      icon: Icons.account_balance_wallet_outlined,
-      totalApps: 6,
-      protectedApps: 6,
-    ),
-    AppCategoryItemData(
-      title: 'Shopping',
-      icon: Icons.shopping_bag_outlined,
-      totalApps: 9,
-      protectedApps: 0,
-    ),
-    AppCategoryItemData(
-      title: 'System',
-      icon: Icons.settings_applications_outlined,
-      totalApps: 42,
-      protectedApps: 1,
-    ),
-  ];
+  final List<AppLockItem> apps;
+  final ValueChanged<AppCategory> onCategoryTap;
 
   const AppsCategoriesListView({
+    required this.apps,
     required this.onCategoryTap,
     super.key,
   });
 
-  static String resolveCategoryTitle(BuildContext context, String key) {
-    final l10n = context.l10n;
-    switch (key) {
-      case 'Social':
-        return l10n.categorySocial;
-      case 'Messaging':
-        return l10n.categoryMessaging;
-      case 'Photos & Video':
-        return l10n.categoryPhotosVideo;
-      case 'Finance':
-        return l10n.categoryFinance;
-      case 'Shopping':
-        return l10n.categoryShopping;
-      case 'System':
-      case 'System App':
-        return l10n.categorySystem;
-      default:
-        return key;
+  List<AppCategoryItemData> _buildCategories() {
+    final result = <AppCategoryItemData>[];
+    for (final category in AppCategory.values) {
+      final inCategory = apps.where((a) => a.category == category);
+      final total = inCategory.length;
+      if (total == 0) continue;
+      result.add(AppCategoryItemData(
+        category: category,
+        totalApps: total,
+        protectedApps: inCategory.where((a) => a.isLocked).length,
+      ));
     }
+    return result;
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final categories = _buildCategories();
     return ListView.separated(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.only(top: 6, bottom: 20),
@@ -96,10 +54,10 @@ class AppsCategoriesListView extends StatelessWidget {
       itemBuilder: (context, index) {
         final category = categories[index];
         final hasProtected = category.protectedApps > 0;
-        final localizedTitle = resolveCategoryTitle(context, category.title);
+        final localizedTitle = category.category.label(l10n);
 
         return InkWell(
-          onTap: () => onCategoryTap(category.title),
+          onTap: () => onCategoryTap(category.category),
           borderRadius: BorderRadius.circular(12),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
@@ -122,7 +80,7 @@ class AppsCategoriesListView extends StatelessWidget {
                   ),
                   child: Center(
                     child: Icon(
-                      category.icon,
+                      category.category.icon,
                       color: AppColorsPalette.black,
                       size: 22,
                     ),

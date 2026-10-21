@@ -30,14 +30,14 @@ class SettingsChangePinView extends StatefulWidget {
 
 class _SettingsChangePinViewState extends State<SettingsChangePinView> {
   String _enteredPin = '';
-  bool _hasMismatch = true;
+  bool _hasMismatch = false;
 
   @override
   void didUpdateWidget(covariant SettingsChangePinView oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.isConfirmStep != widget.isConfirmStep) {
       _enteredPin = '';
-      _hasMismatch = true;
+      _hasMismatch = false;
     }
   }
 
@@ -54,7 +54,7 @@ class _SettingsChangePinViewState extends State<SettingsChangePinView> {
         if (!widget.isConfirmStep) {
           widget.onFirstPinEntered(nextPin);
         } else {
-          if (widget.firstPin.isEmpty || nextPin == widget.firstPin) {
+          if (nextPin == widget.firstPin) {
             widget.onPinConfirmed();
           } else {
             setState(() {
@@ -91,17 +91,8 @@ class _SettingsChangePinViewState extends State<SettingsChangePinView> {
         CommonAppBar.back(onBack: widget.onBack),
         const SizedBox(height: 24),
 
-        // Title & Subtitle (tapping header allows quick preview toggle between Change & Confirm)
-        GestureDetector(
-          onTap: () {
-            if (!widget.isConfirmStep) {
-              widget.onFirstPinEntered('123456');
-            } else {
-              widget.onPinConfirmed();
-            }
-          },
-          behavior: HitTestBehavior.opaque,
-          child: Center(
+        // Title & Subtitle
+        Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
@@ -126,7 +117,6 @@ class _SettingsChangePinViewState extends State<SettingsChangePinView> {
                 ],
               ),
             ),
-          ),
         ),
         const SizedBox(height: 22),
 

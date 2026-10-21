@@ -1,51 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:applock/domain/model/intruder_alert.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
+import 'package:applock/presentation/screen/alerts/widget/alerts_formatting.dart';
 import 'package:applock/presentation/screen/alerts/widget/alerts_intruder_illustration.dart';
-import 'package:applock/presentation/screen/alerts/widget/alerts_list_view.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/dialog_utility.dart';
 import 'package:applock/utility/extension/build_context.dart';
 
-class AlertsDetailView extends StatefulWidget {
-  final AlertEventItem item;
+class AlertsDetailView extends StatelessWidget {
+  final IntruderAlert item;
+  final bool isCameraGranted;
   final VoidCallback onBack;
   final VoidCallback onDeleteConfirmed;
-  final VoidCallback? onEnableCameraPermission;
+  final VoidCallback onSaveEvidence;
+  final VoidCallback onEnableCameraPermission;
 
   const AlertsDetailView({
     required this.item,
+    required this.isCameraGranted,
     required this.onBack,
     required this.onDeleteConfirmed,
-    this.onEnableCameraPermission,
+    required this.onSaveEvidence,
+    required this.onEnableCameraPermission,
     super.key,
   });
 
   @override
-  State<AlertsDetailView> createState() => _AlertsDetailViewState();
-}
-
-class _AlertsDetailViewState extends State<AlertsDetailView> {
-  late bool _hasPhoto = widget.item.hasPhoto;
-
-  @override
-  void didUpdateWidget(covariant AlertsDetailView oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.item != widget.item) {
-      _hasPhoto = widget.item.hasPhoto;
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final hasPhoto = item.hasPhoto;
     return Column(
       children: [
         // Top Header Bar
         CommonAppBar.titledBack(
           title: l10n.alertDetailTitle,
-          onBack: widget.onBack,
+          onBack: onBack,
         ),
         const SizedBox(height: 8),
 
@@ -58,23 +49,14 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Large Intruder Photo Card / No Photo Captured Card
-                // (Tapping toggles between photo captured and no photo captured variants)
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _hasPhoto = !_hasPhoto;
-                    });
-                  },
-                  behavior: HitTestBehavior.opaque,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: 304,
-                      child: AlertsIntruderIllustration(
-                        hasPhoto: _hasPhoto,
-                        isLarge: true,
-                      ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 304,
+                    child: AlertsIntruderIllustration(
+                      photoPath: hasPhoto ? item.photoPath : null,
+                      isLarge: true,
                     ),
                   ),
                 ),
@@ -152,12 +134,12 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                       const SizedBox(height: 16),
                       _buildAnalysisRow(
                         label: l10n.attemptedContextLabel,
-                        value: widget.item.attemptedContext,
+                        value: item.displayTitle(context),
                       ),
                       _buildDivider(),
                       _buildAnalysisRow(
                         label: l10n.failedMethodRowLabel,
-                        value: widget.item.detailedMethod,
+                        value: item.methodLabel(context),
                       ),
                       _buildDivider(),
                       Row(
@@ -180,7 +162,7 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Text(
-                              '${widget.item.failedCount}',
+                              '${item.failedCount}',
                               style: AppTypography.semiBold.copyWith(
                                 fontSize: 12,
                                 color: AppColorsPalette.white,
@@ -192,17 +174,7 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                       _buildDivider(),
                       _buildAnalysisRow(
                         label: l10n.dateTimeLabel,
-                        value: widget.item.detailedDateTime,
-                      ),
-                      _buildDivider(),
-                      _buildAnalysisRow(
-                        label: l10n.platformLabel,
-                        value: 'Android 14',
-                      ),
-                      _buildDivider(),
-                      _buildAnalysisRow(
-                        label: l10n.deviceModelLabel,
-                        value: 'Pixel 8 Pro',
+                        value: item.fullDateTimeLabel(context),
                       ),
                     ],
                   ),
@@ -212,44 +184,31 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                 // Primary Action Button:
                 // - "Save evidence" when photo is captured
                 // - "Enable camera permission" when no photo was captured
-                CommonButton.filled(
-                  text: _hasPhoto
-                      ? l10n.saveEvidenceButton
-                      : l10n.enableCameraPermissionButton,
-                  height: 48,
-                  cornerRadius: 10,
-                  backgroundColor: AppColorsPalette.black,
-                  textColor: AppColorsPalette.white,
-                  textStyle: AppTypography.semiBold.copyWith(
-                    fontSize: 14,
-                    color: AppColorsPalette.white,
+                //   because the camera permission is missing
+                if (hasPhoto || !isCameraGranted) ...[
+                  CommonButton.filled(
+                    text: hasPhoto
+                        ? l10n.saveEvidenceButton
+                        : l10n.enableCameraPermissionButton,
+                    height: 48,
+                    cornerRadius: 10,
+                    backgroundColor: AppColorsPalette.black,
+                    textColor: AppColorsPalette.white,
+                    textStyle: AppTypography.semiBold.copyWith(
+                      fontSize: 14,
+                      color: AppColorsPalette.white,
+                    ),
+                    leadingIcon: Icon(
+                      hasPhoto ? Icons.save_rounded : Icons.videocam_outlined,
+                      size: 18,
+                      color: AppColorsPalette.white,
+                    ),
+                    iconSpacingFromText: 8,
+                    onPressed:
+                        hasPhoto ? onSaveEvidence : onEnableCameraPermission,
                   ),
-                  leadingIcon: Icon(
-                    _hasPhoto
-                        ? Icons.save_rounded
-                        : Icons.videocam_outlined,
-                    size: 18,
-                    color: AppColorsPalette.white,
-                  ),
-                  iconSpacingFromText: 8,
-                  onPressed: () {
-                    if (_hasPhoto) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(l10n.evidenceSavedSnackBar),
-                          duration: const Duration(seconds: 2),
-                        ),
-                      );
-                    } else if (widget.onEnableCameraPermission != null) {
-                      widget.onEnableCameraPermission!();
-                    } else {
-                      setState(() {
-                        _hasPhoto = true;
-                      });
-                    }
-                  },
-                ),
-                const SizedBox(height: 10),
+                  const SizedBox(height: 10),
+                ],
 
                 // Delete alert Button
                 CommonButton.outline(
@@ -273,7 +232,7 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
                   onPressed: () {
                     DialogUtility.showDeleteAlertBottomSheet(
                       context: context,
-                      onDelete: widget.onDeleteConfirmed,
+                      onDelete: onDeleteConfirmed,
                     );
                   },
                 ),
@@ -300,11 +259,17 @@ class _AlertsDetailViewState extends State<AlertsDetailView> {
             color: AppColorsPalette.gray500,
           ),
         ),
-        Text(
-          value,
-          style: AppTypography.bold.copyWith(
-            fontSize: 14,
-            color: AppColorsPalette.black,
+        const SizedBox(width: 12),
+        Flexible(
+          child: Text(
+            value,
+            textAlign: TextAlign.end,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: AppTypography.bold.copyWith(
+              fontSize: 14,
+              color: AppColorsPalette.black,
+            ),
           ),
         ),
       ],

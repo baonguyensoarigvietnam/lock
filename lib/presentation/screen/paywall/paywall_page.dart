@@ -14,7 +14,7 @@ class PaywallPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<PaywallViewModel>(
-          create: (_) => GetIt.instance<PaywallViewModel>(),
+          create: (_) => GetIt.instance<PaywallViewModel>()..init(),
         ),
         RepositoryProvider<PaywallNavigator>(
           create: (_) => PaywallNavigator(router: GoRouter.of(context)),

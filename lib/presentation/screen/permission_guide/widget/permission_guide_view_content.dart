@@ -42,6 +42,19 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
     }
   }
 
+  Future<void> _onContinue() async {
+    final l10n = context.l10n;
+    // Root messenger survives the navigation to Home.
+    final messenger = ScaffoldMessenger.of(context);
+    final started =
+        await context.read<PermissionGuideViewModel>().continueFlow();
+    if (!started) {
+      messenger
+        ..hideCurrentSnackBar()
+        ..showSnackBar(SnackBar(content: Text(l10n.lockUsageAccessNeeded)));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -137,15 +150,15 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
                               ),
                               const SizedBox(height: 12),
                               PermissionSetupItemCard(
-                                icon: Icons.photo_library_outlined,
-                                title: l10n.photosAndVideosTitle,
-                                badgeText: l10n.badgeVault,
-                                badgeType: PermissionBadgeType.vault,
-                                description: l10n.photosAndVideosDesc,
-                                isGranted: state.isPhotosGranted,
+                                icon: Icons.battery_saver_outlined,
+                                title: l10n.lockBatteryOptimizationTitle,
+                                badgeText: l10n.badgeRecommended,
+                                badgeType: PermissionBadgeType.recommended,
+                                description: l10n.lockBatteryOptimizationDesc,
+                                isGranted: state.isBatteryOptimizationIgnored,
                                 onTap: () => context
                                     .read<PermissionGuideViewModel>()
-                                    .requestPhotos(),
+                                    .requestBatteryOptimization(),
                               ),
                               const SizedBox(height: 12),
                               PermissionSetupItemCard(
@@ -178,9 +191,7 @@ class _PermissionGuideViewContentState extends State<PermissionGuideViewContent>
                   height: 52,
                   backgroundColor: AppColorsPalette.black,
                   textColor: AppColorsPalette.white,
-                  onPressed: () {
-                    context.read<PermissionGuideViewModel>().continueFlow();
-                  },
+                  onPressed: _onContinue,
                 ),
               ),
             ],

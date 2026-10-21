@@ -14,7 +14,7 @@ class VaultPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<VaultViewModel>(
-          create: (_) => GetIt.instance<VaultViewModel>(),
+          create: (_) => GetIt.instance<VaultViewModel>()..loadItems(),
         ),
         RepositoryProvider<VaultNavigator>(
           create: (_) => VaultNavigator(router: GoRouter.of(context)),

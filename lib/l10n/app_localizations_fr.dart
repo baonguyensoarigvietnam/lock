@@ -36,19 +36,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get resetButton => 'Réinitialiser';
 
   @override
-  String get restoreAction => 'Restaurer';
-
-  @override
   String get deleteAction => 'Supprimer';
 
   @override
   String get infoAction => 'Infos';
-
-  @override
-  String get selectAction => 'Sélectionner';
-
-  @override
-  String get selectAllAction => 'Tout sélectionner';
 
   @override
   String get seeAllAction => 'Tout voir';
@@ -248,13 +239,6 @@ class AppLocalizationsFr extends AppLocalizations {
       'Affiche l\'état de la protection, les alertes de sécurité et les avertissements.';
 
   @override
-  String get photosAndVideosTitle => 'Photos et vidéos';
-
-  @override
-  String get photosAndVideosDesc =>
-      'Sélectionnez des médias à importer dans votre coffre-fort chiffré.';
-
-  @override
   String get cameraTitle => 'Caméra';
 
   @override
@@ -266,9 +250,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get badgeRecommended => 'RECOMMANDÉ';
-
-  @override
-  String get badgeVault => 'COFFRE';
 
   @override
   String get badgeIntruder => 'INTRUS';
@@ -587,9 +568,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get importVideosAction => 'Importer\nVidéos';
 
   @override
-  String get createAlbumAction => 'Créer\nAlbum';
-
-  @override
   String get albumsHeader => 'Albums';
 
   @override
@@ -600,16 +578,7 @@ class AppLocalizationsFr extends AppLocalizations {
       'Importez des photos et vidéos pour les garder\nchiffrées sur cet appareil.';
 
   @override
-  String get albumPrivatePhotos => 'Photos privées';
-
-  @override
   String get albumVideos => 'Vidéos';
-
-  @override
-  String get albumGalleries => 'Galeries';
-
-  @override
-  String get albumScreenshots => 'Captures d\'écran';
 
   @override
   String get albumPhotos => 'Photos';
@@ -623,28 +592,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String vaultItemsProtectedSubtitle(int count) {
     return '$count éléments • Protégés';
   }
-
-  @override
-  String get importToVaultTitle => 'Importer dans le Coffre';
-
-  @override
-  String get todaySection => 'Aujourd\'hui';
-
-  @override
-  String get september12Section => '12 septembre';
-
-  @override
-  String selectedCountLabel(int count) {
-    return '$count sélectionnés';
-  }
-
-  @override
-  String totalSizeMbLabel(String size) {
-    return '$size Mo au total';
-  }
-
-  @override
-  String get moveToVaultButton => 'Déplacer vers le Coffre';
 
   @override
   String get encryptingItemsTitle => 'Chiffrement des éléments sélectionnés...';
@@ -672,12 +619,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aes256Subtitle => 'Qualité militaire AES-256';
-
-  @override
-  String get originalsDeletedTitle => 'Originaux supprimés';
-
-  @override
-  String get spaceRecoveredSubtitle => 'Espace récupéré : 124 Mo';
 
   @override
   String get originalsCouldNotBeDeletedTitle =>
@@ -772,15 +713,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get statusSummaryTitle => 'Résumé de l\'état';
 
   @override
-  String get failedUnlockAttemptsToday => '2 tentatives échouées aujourd\'hui';
-
-  @override
-  String get alertsSavedPremium => '11 alertes enregistrées';
-
-  @override
-  String get alertsSavedFree => '2 alertes enregistrées sur 10';
-
-  @override
   String failedMethodLabel(String method) {
     return 'Méthode échouée : $method';
   }
@@ -828,19 +760,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dateTimeLabel => 'Date/heure';
 
   @override
-  String get platformLabel => 'Plateforme';
-
-  @override
-  String get deviceModelLabel => 'Modèle d\'appareil';
-
-  @override
   String get saveEvidenceButton => 'Enregistrer la preuve';
 
   @override
   String get enableCameraPermissionButton => 'Activer l\'autorisation caméra';
-
-  @override
-  String get evidenceSavedSnackBar => 'Preuve enregistrée sur l\'appareil';
 
   @override
   String get deleteAlertButton => 'Supprimer l\'alerte';
@@ -965,32 +888,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get sendMessageButton => 'Envoyer le message';
 
   @override
-  String get messageSentSnackBar => 'Message envoyé à l\'équipe de support';
-
-  @override
   String get biometricNotSupportedError =>
       'L\'appareil ne prend pas en charge ou n\'a pas configuré la biométrie';
-
-  @override
-  String get deleteOriginalsDialogTitle => 'Supprimer les originaux ?';
-
-  @override
-  String get deleteOriginalsDialogDesc =>
-      'Après l\'importation, l\'application peut demander au système de supprimer les fichiers originaux.';
-
-  @override
-  String get importAndDeleteOriginalsButton =>
-      'Importer et supprimer les originaux';
-
-  @override
-  String get importOnlyButton => 'Importer uniquement';
-
-  @override
-  String get restoreToGalleryDialogTitle => 'Restaurer dans la galerie ?';
-
-  @override
-  String get restoreToGalleryDialogDesc =>
-      'Une copie déchiffrée sera enregistrée via le système. Les fichiers temporaires seront nettoyés.';
 
   @override
   String get deleteFromVaultDialogTitle => 'Supprimer du Coffre ?';
@@ -1008,4 +907,251 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get deleteAlertDialogDesc =>
       'Cela supprime la photo de l\'intrus et le journal d\'événements de cet appareil.';
+
+  @override
+  String get purchaseFallbackMonthlyPrice => '\$2.99';
+
+  @override
+  String get purchaseFallbackYearlyPrice => '\$25.99';
+
+  @override
+  String get purchaseFallbackYearlyOriginalPrice => '\$35.99';
+
+  @override
+  String purchaseSaveBadge(int percent) {
+    return 'ÉCONOMISEZ $percent %';
+  }
+
+  @override
+  String get purchaseBillingUnavailable =>
+      'Google Play Billing n\'est pas disponible sur cet appareil. Vérifiez votre compte Play Store et réessayez.';
+
+  @override
+  String get purchaseProductsNotFound =>
+      'Les offres Premium ne sont pas disponibles pour le moment. Veuillez réessayer plus tard.';
+
+  @override
+  String get purchaseProductsLoading =>
+      'Chargement des offres, veuillez réessayer dans un instant.';
+
+  @override
+  String get purchaseFailed => 'L\'achat a échoué. Veuillez réessayer.';
+
+  @override
+  String get purchasePending =>
+      'Votre achat est en attente. Premium sera débloqué une fois le paiement effectué.';
+
+  @override
+  String get purchaseRestoreSuccess => 'Achats restaurés. Premium est actif.';
+
+  @override
+  String get purchaseRestoreNothing => 'Aucun achat précédent trouvé.';
+
+  @override
+  String get purchaseRestoreFailed =>
+      'Impossible de restaurer les achats. Veuillez réessayer.';
+
+  @override
+  String get purchaseAlreadyPremium => 'Vous êtes déjà Premium';
+
+  @override
+  String get purchaseOpenLinkFailed => 'Impossible d\'ouvrir le lien.';
+
+  @override
+  String intruderFailedAttemptsToday(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tentatives de déverrouillage échouées aujourd\'hui',
+      one: '1 tentative de déverrouillage échouée aujourd\'hui',
+      zero: 'Aucune tentative de déverrouillage échouée aujourd\'hui',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String intruderAlertsSaved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count alertes enregistrées',
+      one: '1 alerte enregistrée',
+      zero: 'Aucune alerte enregistrée',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String intruderAlertsShownOfTotal(int shown, int total) {
+    return '$shown sur $total alertes enregistrées affichées';
+  }
+
+  @override
+  String get intruderMethodPin => 'Code PIN';
+
+  @override
+  String get intruderMethodPattern => 'Schéma';
+
+  @override
+  String get intruderMethodBiometric => 'Biométrie';
+
+  @override
+  String get intruderMainUnlock => 'Déverrouillage principal';
+
+  @override
+  String get intruderYesterday => 'Hier';
+
+  @override
+  String intruderEvidenceSavedTo(String path) {
+    return 'Preuve enregistrée dans $path';
+  }
+
+  @override
+  String get intruderEvidenceSaveFailed =>
+      'Impossible d\'enregistrer la preuve';
+
+  @override
+  String get intruderAlertDeleted => 'Alerte supprimée';
+
+  @override
+  String get intruderDeleteFailed => 'Impossible de supprimer l\'alerte';
+
+  @override
+  String get intruderNoAlertsTitle => 'Aucune alerte d\'intrus pour le moment';
+
+  @override
+  String get intruderNoAlertsSubtitle =>
+      'Après 3 tentatives de déverrouillage échouées, App Lock prend discrètement une photo de l\'intrus et l\'enregistre ici.';
+
+  @override
+  String get lockBiometricReason =>
+      'Confirmez votre identité pour déverrouiller';
+
+  @override
+  String get lockEnableBiometricReason =>
+      'Authentifiez-vous pour activer le déverrouillage biométrique';
+
+  @override
+  String get lockDeviceAuthReason =>
+      'Vérifiez votre identité avec le verrouillage de l\'appareil';
+
+  @override
+  String get lockDeviceNotSecureError =>
+      'Configurez un verrouillage d\'écran sur l\'appareil pour récupérer l\'accès.';
+
+  @override
+  String get lockAuthFailedError => 'Échec de l\'authentification. Réessayez.';
+
+  @override
+  String get lockUsageAccessNeeded =>
+      'Accordez l\'accès aux données d\'utilisation pour démarrer la protection.';
+
+  @override
+  String get lockPasscodeUpdated => 'Code mis à jour';
+
+  @override
+  String get lockPatternUpdated => 'Schéma mis à jour';
+
+  @override
+  String get lockSaveFailed => 'Échec de l\'enregistrement. Réessayez.';
+
+  @override
+  String get lockPremiumPlanTitle => 'Forfait Premium';
+
+  @override
+  String get lockPremiumPlanDesc =>
+      'Toutes les fonctionnalités Premium sont débloquées.';
+
+  @override
+  String get lockContactFormIncomplete =>
+      'Veuillez saisir votre e-mail et un message.';
+
+  @override
+  String get lockContactInvalidEmail =>
+      'Veuillez saisir une adresse e-mail valide.';
+
+  @override
+  String lockContactNoEmailApp(String email) {
+    return 'Aucune appli e-mail trouvée. Écrivez à $email';
+  }
+
+  @override
+  String get lockOpenLinkFailed => 'Impossible d\'ouvrir le lien.';
+
+  @override
+  String get lockBatteryOptimizationTitle => 'Optimisation de la batterie';
+
+  @override
+  String get lockBatteryOptimizationDesc =>
+      'Réglez App Lock sur « Non optimisée » pour garder la protection active.';
+
+  @override
+  String vaultItemsProtectedUnlimited(int count) {
+    return '$count éléments protégés';
+  }
+
+  @override
+  String get vaultLimitReachedTitle => 'Limite du coffre-fort atteinte';
+
+  @override
+  String vaultLimitReachedDesc(int limit) {
+    return 'L\'offre gratuite protège jusqu\'à $limit éléments. Passez à Premium pour un stockage illimité.';
+  }
+
+  @override
+  String get vaultUpgradeButton => 'Passer à Premium';
+
+  @override
+  String get vaultOperationFailed =>
+      'Une erreur s\'est produite. Veuillez réessayer.';
+
+  @override
+  String vaultSizeBytes(String size) {
+    return '$size o';
+  }
+
+  @override
+  String vaultSizeKb(String size) {
+    return '$size Ko';
+  }
+
+  @override
+  String vaultSizeMb(String size) {
+    return '$size Mo';
+  }
+
+  @override
+  String vaultSizeGb(String size) {
+    return '$size Go';
+  }
+
+  @override
+  String vaultItemSubtitle(String date, String size) {
+    return '$date • $size';
+  }
+
+  @override
+  String get vaultEncryptionAes256 => 'AES-256';
+
+  @override
+  String get vaultTypePhoto => 'Photo';
+
+  @override
+  String get vaultTypeVideo => 'Vidéo';
+
+  @override
+  String get vaultPhotosEmptyTitle => 'Aucune photo pour l\'instant';
+
+  @override
+  String get vaultVideosEmptyTitle => 'Aucune vidéo pour l\'instant';
+
+  @override
+  String get vaultDetailEmptySubtitle =>
+      'Appuyez sur + pour choisir des éléments avec le sélecteur de photos du système. Ils sont chiffrés sur cet appareil.';
+
+  @override
+  String get vaultPreviewUnavailable => 'Aperçu indisponible';
+
+  @override
+  String get appsCategoryOther => 'Autres';
 }

@@ -1,18 +1,22 @@
-import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:injectable/injectable.dart';
-import 'package:installed_apps/installed_apps.dart';
 import 'package:applock/domain/model/app_lock_item.dart';
 import 'package:applock/domain/model/lock_config.dart';
 import 'package:applock/domain/repository/app_lock_repository.dart';
 import 'package:applock/local/data_source/app_lock_local_data_source.dart';
+import 'package:applock/service/app_lock/app_lock_service.dart';
+import 'package:applock/utility/enumeration/app_category.dart';
+import 'package:applock/utility/enumeration/auto_lock_delay.dart';
+import 'package:applock/utility/enumeration/lock_screen_theme.dart';
 import 'package:applock/utility/helper/result.dart';
 
 @LazySingleton(as: AppLockRepository)
 class AppLockRepositoryImpl implements AppLockRepository {
   final AppLockLocalDataSource _localDataSource;
+  final AppLockService _appLockService;
 
-  AppLockRepositoryImpl(this._localDataSource);
+  AppLockRepositoryImpl(this._localDataSource, this._appLockService);
 
   @override
   Future<Result<List<AppLockItem>>> getInstalledApps({
@@ -20,102 +24,35 @@ class AppLockRepositoryImpl implements AppLockRepository {
   }) async {
     try {
       final lockedSet = _localDataSource.getLockedPackages();
+      // Only launchable apps are listed (system apps such as Gallery or
+      // Messages included); no QUERY_ALL_PACKAGES permission is required.
+      final rawApps = await _appLockService.getLaunchableApps();
 
-      if (!Platform.isAndroid) {
-        // Mock data for previewing UI on non-Android platforms (iOS/Simulator/macOS)
-        final mockApps = [
-          AppLockItem(
-            packageName: 'com.android.gallery3d',
-            appName: 'Gallery',
-            category: 'Media',
-            lockedSubtitle: 'System App',
-            isLocked: lockedSet.contains('com.android.gallery3d'),
-          ),
-          AppLockItem(
-            packageName: 'com.google.android.apps.messaging',
-            appName: 'Messages',
-            category: 'Communication',
-            lockedSubtitle: 'System App',
-            isLocked: lockedSet.contains('com.google.android.apps.messaging'),
-          ),
-          AppLockItem(
-            packageName: 'com.google.android.apps.photos',
-            appName: 'Photos',
-            category: 'Media',
-            lockedSubtitle: 'System App',
-            isLocked: lockedSet.contains('com.google.android.apps.photos'),
-          ),
-          AppLockItem(
-            packageName: 'com.google.android.gm',
-            appName: 'Gmail',
-            category: 'Communication',
-            lockedSubtitle: 'Third-party App',
-            isLocked: lockedSet.contains('com.google.android.gm'),
-          ),
-          AppLockItem(
-            packageName: 'com.instagram.android',
-            appName: 'Instagram',
-            category: 'Social',
-            lockedSubtitle: 'Third-party App',
-            isLocked: lockedSet.contains('com.instagram.android'),
-          ),
-          AppLockItem(
-            packageName: 'com.android.banking',
-            appName: 'Banking',
-            category: 'Finance',
-            lockedSubtitle: 'Finance',
-            isLocked: lockedSet.contains('com.android.banking'),
-          ),
-          AppLockItem(
-            packageName: 'com.google.android.documentsui',
-            appName: 'Files',
-            category: 'System',
-            lockedSubtitle: 'System App',
-            isLocked: lockedSet.contains('com.google.android.documentsui'),
-          ),
-          AppLockItem(
-            packageName: 'com.android.settings',
-            appName: 'Settings',
-            category: 'System',
-            lockedSubtitle: 'System App',
-            isLocked: lockedSet.contains('com.android.settings'),
-          ),
-          AppLockItem(
-            packageName: 'com.android.email',
-            appName: 'Email',
-            category: 'Communication',
-            lockedSubtitle: 'Third-party App',
-            isLocked: lockedSet.contains('com.android.email'),
-          ),
-          AppLockItem(
-            packageName: 'com.android.contacts',
-            appName: 'Contacts',
-            category: 'System',
-            lockedSubtitle: 'System App',
-            isLocked: lockedSet.contains('com.android.contacts'),
-          ),
-        ];
-        return Result.success(mockApps);
-      }
-
-      final excludeSystem = !includeSystemApps;
-      final rawApps = await InstalledApps.getInstalledApps(excludeSystem, true);
-
-      final items = rawApps.map((app) {
-        final category = _inferCategory(app.packageName, app.name);
+      final items = rawApps.map((raw) {
+        final packageName = raw['packageName'] as String? ?? '';
+        final name = raw['name'] as String? ?? packageName;
+        final isSystem = raw['isSystem'] as bool? ?? false;
         return AppLockItem(
-          packageName: app.packageName,
-          appName: app.name,
-          versionName: app.versionName,
-          icon: app.icon,
-          category: category,
-          lockedSubtitle: category == 'System' ? 'System App' : category,
-          isLocked: lockedSet.contains(app.packageName),
+          packageName: packageName,
+          appName: name,
+          versionName: raw['versionName'] as String?,
+          icon: raw['icon'] as Uint8List?,
+          isSystem: isSystem,
+          category: AppCategory.infer(
+            packageName: packageName,
+            appName: name,
+            isSystem: isSystem,
+          ),
+          isLocked: lockedSet.contains(packageName),
         );
+      }).where((item) {
+        return item.packageName.isNotEmpty &&
+            (includeSystemApps || !_hiddenPackages.contains(item.packageName));
       }).toList();
 
-      // Sort alphabetically by appName
-      items.sort((a, b) => a.appName.toLowerCase().compareTo(b.appName.toLowerCase()));
+      items.sort(
+        (a, b) => a.appName.toLowerCase().compareTo(b.appName.toLowerCase()),
+      );
 
       return Result.success(items);
     } catch (e) {
@@ -123,45 +60,10 @@ class AppLockRepositoryImpl implements AppLockRepository {
     }
   }
 
-  String _inferCategory(String packageName, String appName) {
-    final lower = '${packageName.toLowerCase()} ${appName.toLowerCase()}';
-    if (lower.contains('photo') ||
-        lower.contains('gallery') ||
-        lower.contains('video') ||
-        lower.contains('youtube') ||
-        lower.contains('music')) {
-      return 'Media';
-    }
-    if (lower.contains('message') ||
-        lower.contains('messaging') ||
-        lower.contains('mail') ||
-        lower.contains('zalo') ||
-        lower.contains('orca') ||
-        lower.contains('whatsapp') ||
-        lower.contains('telegram')) {
-      return 'Communication';
-    }
-    if (lower.contains('instagram') ||
-        lower.contains('facebook') ||
-        lower.contains('tiktok') ||
-        lower.contains('social') ||
-        lower.contains('twitter')) {
-      return 'Social';
-    }
-    if (lower.contains('bank') ||
-        lower.contains('wallet') ||
-        lower.contains('pay') ||
-        lower.contains('finance')) {
-      return 'Finance';
-    }
-    if (lower.contains('shop') ||
-        lower.contains('store') ||
-        lower.contains('amazon') ||
-        lower.contains('shopee')) {
-      return 'Shopping';
-    }
-    return 'System';
-  }
+  /// Launcher entries that make no sense to lock.
+  static const Set<String> _hiddenPackages = {
+    'com.android.stk',
+  };
 
   @override
   Future<Result<Set<String>>> getLockedPackageNames() async {
@@ -283,6 +185,48 @@ class AppLockRepositoryImpl implements AppLockRepository {
   Future<Result<void>> saveLanguageCode(String code) async {
     try {
       await _localDataSource.setLanguageCode(code);
+      return const Result.success(null);
+    } catch (e) {
+      return Result.error(e);
+    }
+  }
+
+  @override
+  Future<Result<AutoLockDelay>> getAutoLockDelay() async {
+    try {
+      return Result.success(
+        AutoLockDelay.fromStorageKey(_localDataSource.getAutoLockDelay()),
+      );
+    } catch (e) {
+      return Result.error(e);
+    }
+  }
+
+  @override
+  Future<Result<void>> saveAutoLockDelay(AutoLockDelay delay) async {
+    try {
+      await _localDataSource.setAutoLockDelay(delay.storageKey);
+      return const Result.success(null);
+    } catch (e) {
+      return Result.error(e);
+    }
+  }
+
+  @override
+  Future<Result<LockScreenTheme>> getLockScreenTheme() async {
+    try {
+      return Result.success(
+        LockScreenTheme.fromStorageKey(_localDataSource.getLockScreenTheme()),
+      );
+    } catch (e) {
+      return Result.error(e);
+    }
+  }
+
+  @override
+  Future<Result<void>> saveLockScreenTheme(LockScreenTheme theme) async {
+    try {
+      await _localDataSource.setLockScreenTheme(theme.storageKey);
       return const Result.success(null);
     } catch (e) {
       return Result.error(e);

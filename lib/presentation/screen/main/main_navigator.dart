@@ -1,4 +1,5 @@
 import 'package:applock/application/router/router_endpoint.dart';
+import 'package:applock/domain/model/lock_screen_args.dart';
 import 'package:applock/presentation/common/base/base_navigator.dart';
 
 class MainNavigator extends BaseNavigator {
@@ -10,8 +11,10 @@ class MainNavigator extends BaseNavigator {
 
   void goToSetPattern() => router.push(RouterEndpoint.setPattern.path);
 
-  void goToLockScreen({String? appName}) =>
-      router.push(RouterEndpoint.lockScreen.path, extra: appName);
+  void goToLockScreen({String? appName}) => router.push(
+        RouterEndpoint.lockScreen.path,
+        extra: LockScreenArgs(appName: appName),
+      );
 
   void goToPermissionGuide() => router.push(RouterEndpoint.permissionGuide.path);
 }

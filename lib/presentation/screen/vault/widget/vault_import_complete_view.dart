@@ -4,18 +4,17 @@ import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 import 'package:applock/utility/extension/build_context.dart';
 
+/// Shown after an import. Apps cannot silently delete gallery originals
+/// without extra permissions, so the user is always asked to delete them
+/// manually.
 class VaultImportCompleteView extends StatelessWidget {
   final int encryptedCount;
-  final bool originalsDeleted;
-  final VoidCallback onToggleVariant;
   final VoidCallback onViewVault;
   final VoidCallback onBackToVaultHome;
 
   const VaultImportCompleteView({
     super.key,
-    this.encryptedCount = 5,
-    required this.originalsDeleted,
-    required this.onToggleVariant,
+    required this.encryptedCount,
     required this.onViewVault,
     required this.onBackToVaultHome,
   });
@@ -29,10 +28,8 @@ class VaultImportCompleteView extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 16),
-          // Concentric Checkmark Circle (tapping toggles between deleted / manual delete variants)
-          GestureDetector(
-            onTap: onToggleVariant,
-            behavior: HitTestBehavior.opaque,
+          // Concentric Checkmark Circle
+          SizedBox(
             child: Container(
               width: 96,
               height: 96,
@@ -106,16 +103,8 @@ class VaultImportCompleteView extends StatelessWidget {
           ),
           const SizedBox(height: 12),
 
-          // Card 2: Originals deleted vs Originals could not be deleted automatically
-          if (originalsDeleted)
-            CommonFeatureCard(
-              icon: Icons.delete_sweep_outlined,
-              title: l10n.originalsDeletedTitle,
-              subtitle: l10n.spaceRecoveredSubtitle,
-              backgroundColor: AppColorsPalette.gray50,
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            )
-          else ...[
+          // Card 2: Originals could not be deleted automatically
+          ...[
             CommonFeatureCard(
               icon: Icons.delete_sweep_outlined,
               title: l10n.originalsCouldNotBeDeletedTitle,

@@ -17,17 +17,21 @@ class EnableBiometricViewModel extends BaseCubit<EnableBiometricState> {
     emit(state.copyWith(isBiometricSupported: supported));
   }
 
-  Future<void> enableBiometric() async {
+  /// Returns `false` when biometrics are unavailable on this device.
+  /// A cancelled prompt keeps the user on this screen.
+  Future<bool> enableBiometric({required String localizedReason}) async {
+    if (!await _biometricService.canCheckBiometrics()) return false;
     final authenticated = await _biometricService.authenticate(
-      localizedReason: 'Xác thực để kích hoạt mở khoá bằng sinh trắc học',
+      localizedReason: localizedReason,
     );
+    if (!authenticated) return true;
 
-    // If authenticated (or even if cancelled/unsupported on simulator, proceed with saving setting)
-    await _repository.setBiometricEnabled(authenticated);
+    await _repository.setBiometricEnabled(true);
     emit(state.copyWith(
-      isBiometricEnabled: authenticated,
+      isBiometricEnabled: true,
       isCompleted: true,
     ));
+    return true;
   }
 
   Future<void> skip() async {

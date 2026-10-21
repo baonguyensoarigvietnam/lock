@@ -9,11 +9,8 @@
   "saveButton": "Speichern",
   "doneButton": "Fertig",
   "resetButton": "Zurücksetzen",
-  "restoreAction": "Wiederherstellen",
   "deleteAction": "Löschen",
   "infoAction": "Info",
-  "selectAction": "Auswählen",
-  "selectAllAction": "Alle auswählen",
   "seeAllAction": "Alle ansehen",
   "navHome": "Start",
   "navApps": "Apps",
@@ -73,13 +70,10 @@
   "displayOverOtherAppsDesc": "Zeigt den Entsperrbildschirm zuverlässig über geschützten Apps an.",
   "notificationsTitle": "Benachrichtigungen",
   "notificationsDesc": "Zeigt Schutzstatus, Sicherheitswarnungen und Berechtigungshinweise an.",
-  "photosAndVideosTitle": "Fotos und Videos",
-  "photosAndVideosDesc": "Wählen Sie Medien zum Importieren in Ihren verschlüsselten Tresor aus.",
   "cameraTitle": "Kamera",
   "cameraDesc": "Macht nach 3 fehlgeschlagenen Entsperrversuchen ein Foto mit der Frontkamera.",
   "badgeRequired": "ERFORDERLICH",
   "badgeRecommended": "EMPFOHLEN",
-  "badgeVault": "TRESOR",
   "badgeIntruder": "EINDRINGLING",
   "upgradeToPremium": "Auf Premium upgraden",
   "paywallSubtitle": "Schalten Sie weitere Themen frei und entfernen Sie Werbung.",
@@ -224,14 +218,10 @@
   "quickActionsSmallTitle": "Schnellaktionen",
   "addPhotosAction": "Fotos\nhinzufügen",
   "importVideosAction": "Videos\nimportieren",
-  "createAlbumAction": "Album\nerstellen",
   "albumsHeader": "Alben",
   "vaultEmptyTitle": "Ihr Tresor ist leer",
   "vaultEmptySubtitle": "Importieren Sie Fotos und Videos, um sie\nauf diesem Gerät verschlüsselt aufzubewahren.",
-  "albumPrivatePhotos": "Private Fotos",
   "albumVideos": "Videos",
-  "albumGalleries": "Galerien",
-  "albumScreenshots": "Screenshots",
   "albumPhotos": "Fotos",
   "vaultAlbumItemsCount": "{count} Elemente",
   "@vaultAlbumItemsCount": {
@@ -249,26 +239,6 @@
       }
     }
   },
-  "importToVaultTitle": "In Tresor importieren",
-  "todaySection": "Heute",
-  "september12Section": "12. September",
-  "selectedCountLabel": "{count} ausgewählt",
-  "@selectedCountLabel": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "totalSizeMbLabel": "{size} MB insgesamt",
-  "@totalSizeMbLabel": {
-    "placeholders": {
-      "size": {
-        "type": "String"
-      }
-    }
-  },
-  "moveToVaultButton": "In Tresor verschieben",
   "encryptingItemsTitle": "Ausgewählte Elemente werden verschlüsselt...",
   "filesProcessedProgress": "{processed} von {total} Dateien verarbeitet",
   "@filesProcessedProgress": {
@@ -293,8 +263,6 @@
     }
   },
   "aes256Subtitle": "AES-256 Militärstandard",
-  "originalsDeletedTitle": "Originale gelöscht",
-  "spaceRecoveredSubtitle": "Freigegebener Speicher: 124 MB",
   "originalsCouldNotBeDeletedTitle": "Originale konnten nicht automatisch\ngelöscht werden",
   "nextStepRequiredTitle": "Nächster Schritt erforderlich",
   "deleteOriginalsManuallyDesc": "Öffnen Sie Fotos oder Galerie, um\nOriginale manuell zu löschen.",
@@ -323,9 +291,6 @@
   "privacyFirstSubtitle": "Ohne Ihre ausdrückliche Kameraberechtigung werden\nkeine Fotos aufgenommen oder gespeichert.",
   "openSettingsButton": "Einstellungen öffnen",
   "statusSummaryTitle": "Statusübersicht",
-  "failedUnlockAttemptsToday": "Heute 2 fehlgeschlagene Entsperrversuche",
-  "alertsSavedPremium": "11 Warnungen gespeichert",
-  "alertsSavedFree": "2 von 10 Warnungen gespeichert",
   "failedMethodLabel": "Fehlgeschlagene Methode: {method}",
   "@failedMethodLabel": {
     "placeholders": {
@@ -347,11 +312,8 @@
   "failedMethodRowLabel": "Fehlgeschlagene Methode",
   "failedCountLabel": "Fehlversuche",
   "dateTimeLabel": "Datum/Uhrzeit",
-  "platformLabel": "Plattform",
-  "deviceModelLabel": "Gerätemodell",
   "saveEvidenceButton": "Beweis sichern",
   "enableCameraPermissionButton": "Kameraberechtigung aktivieren",
-  "evidenceSavedSnackBar": "Beweis auf dem Gerät gespeichert",
   "deleteAlertButton": "Warnung löschen",
   "settingsTitle": "Einstellungen",
   "settingsSubtitle": "Verwalten Sie Ihre App-Einstellungen.",
@@ -391,17 +353,125 @@
   "messageHint": "Beschreiben Sie Ihr Problem im Detail...",
   "contactPrivacyDisclaimer": "Mit dem Absenden stimmen Sie unserer Datenschutzrichtlinie zu. Wir\nverwenden Ihre E-Mail nur zur Beantwortung dieser Anfrage.",
   "sendMessageButton": "Nachricht senden",
-  "messageSentSnackBar": "Nachricht an das Support-Team gesendet",
   "biometricNotSupportedError": "Gerät unterstützt keine Biometrie oder ist nicht eingerichtet",
-  "deleteOriginalsDialogTitle": "Originale löschen?",
-  "deleteOriginalsDialogDesc": "Nach dem Import kann die App das Betriebssystem bitten, die Originaldateien zu löschen.",
-  "importAndDeleteOriginalsButton": "Importieren und Originale löschen",
-  "importOnlyButton": "Nur importieren",
-  "restoreToGalleryDialogTitle": "In Galerie wiederherstellen?",
-  "restoreToGalleryDialogDesc": "Eine entschlüsselte Kopie wird über das Betriebssystem gespeichert. Temporäre Dateien werden danach bereinigt.",
   "deleteFromVaultDialogTitle": "Aus Tresor löschen?",
   "deleteFromVaultDialogDesc": "Dadurch wird die verschlüsselte Tresorkopie von diesem Gerät entfernt.",
   "deletePermanentlyButton": "Dauerhaft löschen",
   "deleteAlertDialogTitle": "Warnung löschen?",
-  "deleteAlertDialogDesc": "Dadurch werden das Eindringlingsfoto und das Ereignisprotokoll von diesem Gerät entfernt."
+  "deleteAlertDialogDesc": "Dadurch werden das Eindringlingsfoto und das Ereignisprotokoll von diesem Gerät entfernt.",
+  "purchaseFallbackMonthlyPrice": "$2.99",
+  "purchaseFallbackYearlyPrice": "$25.99",
+  "purchaseFallbackYearlyOriginalPrice": "$35.99",
+  "purchaseSaveBadge": "{percent} % SPAREN",
+  "purchaseBillingUnavailable": "Google Play Billing ist auf diesem Gerät nicht verfügbar. Prüfe dein Play Store-Konto und versuche es erneut.",
+  "purchaseProductsNotFound": "Premium-Tarife sind derzeit nicht verfügbar. Bitte versuche es später erneut.",
+  "purchaseProductsLoading": "Tarife werden geladen, bitte versuche es gleich noch einmal.",
+  "purchaseFailed": "Kauf fehlgeschlagen. Bitte versuche es erneut.",
+  "purchasePending": "Dein Kauf ist ausstehend. Premium wird freigeschaltet, sobald die Zahlung abgeschlossen ist.",
+  "purchaseRestoreSuccess": "Käufe wiederhergestellt. Premium ist aktiv.",
+  "purchaseRestoreNothing": "Keine früheren Käufe gefunden.",
+  "purchaseRestoreFailed": "Käufe konnten nicht wiederhergestellt werden. Bitte versuche es erneut.",
+  "purchaseAlreadyPremium": "Du bist bereits Premium",
+  "purchaseOpenLinkFailed": "Der Link konnte nicht geöffnet werden.",
+  "intruderFailedAttemptsToday": "{count, plural, =0{Heute keine fehlgeschlagenen Entsperrversuche} =1{1 fehlgeschlagener Entsperrversuch heute} other{{count} fehlgeschlagene Entsperrversuche heute}}",
+  "intruderAlertsSaved": "{count, plural, =0{Keine Warnungen gespeichert} =1{1 Warnung gespeichert} other{{count} Warnungen gespeichert}}",
+  "intruderAlertsShownOfTotal": "{shown} von {total} gespeicherten Warnungen angezeigt",
+  "intruderMethodPin": "PIN",
+  "intruderMethodPattern": "Muster",
+  "intruderMethodBiometric": "Biometrie",
+  "intruderMainUnlock": "Hauptentsperrung",
+  "intruderYesterday": "Gestern",
+  "intruderEvidenceSavedTo": "Beweis gespeichert unter {path}",
+  "intruderEvidenceSaveFailed": "Beweis konnte nicht gespeichert werden",
+  "intruderAlertDeleted": "Warnung gelöscht",
+  "intruderDeleteFailed": "Warnung konnte nicht gelöscht werden",
+  "intruderNoAlertsTitle": "Noch keine Eindringlingswarnungen",
+  "intruderNoAlertsSubtitle": "Nach 3 fehlgeschlagenen Entsperrversuchen macht App Lock unbemerkt ein Foto des Eindringlings und speichert es hier.",
+  "lockBiometricReason": "Bestätige deine Identität zum Entsperren",
+  "lockEnableBiometricReason": "Authentifiziere dich, um biometrisches Entsperren zu aktivieren",
+  "lockDeviceAuthReason": "Bestätige mit der Displaysperre deines Geräts, dass du es bist",
+  "lockDeviceNotSecureError": "Richte eine Displaysperre auf deinem Gerät ein, um den Zugriff wiederherzustellen.",
+  "lockAuthFailedError": "Authentifizierung fehlgeschlagen. Versuche es erneut.",
+  "lockUsageAccessNeeded": "Erteile den Nutzungszugriff, um den Schutz zu starten.",
+  "lockPasscodeUpdated": "Code aktualisiert",
+  "lockPatternUpdated": "Muster aktualisiert",
+  "lockSaveFailed": "Speichern fehlgeschlagen. Bitte erneut versuchen.",
+  "lockPremiumPlanTitle": "Premium-Tarif",
+  "lockPremiumPlanDesc": "Alle Premium-Funktionen sind freigeschaltet.",
+  "lockContactFormIncomplete": "Bitte gib deine E-Mail und eine Nachricht ein.",
+  "lockContactInvalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein.",
+  "lockContactNoEmailApp": "Keine E-Mail-App gefunden. Bitte schreibe an {email}",
+  "lockOpenLinkFailed": "Link konnte nicht geöffnet werden.",
+  "lockBatteryOptimizationTitle": "Akkuoptimierung",
+  "lockBatteryOptimizationDesc": "Stelle App Lock auf „Nicht optimiert“, damit der Schutz aktiv bleibt.",
+  "vaultItemsProtectedUnlimited": "{count} Elemente geschützt",
+  "@vaultItemsProtectedUnlimited": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultLimitReachedTitle": "Tresorlimit erreicht",
+  "vaultLimitReachedDesc": "Der kostenlose Plan schützt bis zu {limit} Elemente. Upgrade auf Premium für unbegrenzten Speicher.",
+  "@vaultLimitReachedDesc": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultUpgradeButton": "Upgraden",
+  "vaultOperationFailed": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+  "vaultSizeBytes": "{size} B",
+  "@vaultSizeBytes": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeKb": "{size} KB",
+  "@vaultSizeKb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeMb": "{size} MB",
+  "@vaultSizeMb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultSizeGb": "{size} GB",
+  "@vaultSizeGb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultItemSubtitle": "{date} • {size}",
+  "@vaultItemSubtitle": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultEncryptionAes256": "AES-256",
+  "vaultTypePhoto": "Foto",
+  "vaultTypeVideo": "Video",
+  "vaultPhotosEmptyTitle": "Noch keine Fotos",
+  "vaultVideosEmptyTitle": "Noch keine Videos",
+  "vaultDetailEmptySubtitle": "Tippe auf +, um Elemente mit der System-Fotoauswahl auszuwählen. Sie werden auf diesem Gerät verschlüsselt.",
+  "vaultPreviewUnavailable": "Vorschau nicht verfügbar",
+  "appsCategoryOther": "Sonstige"
 }

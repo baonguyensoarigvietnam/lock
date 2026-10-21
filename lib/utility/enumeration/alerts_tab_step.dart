@@ -1,7 +1,6 @@
 enum AlertsTabStep {
   intruderSelfieOff,
   cameraPermissionDenied,
-  alertsListFree,
-  alertsListPremium,
+  alertsList,
   alertDetail,
 }

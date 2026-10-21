@@ -12,6 +12,8 @@ class AppLockLocalDataSource {
   static const String _keyServiceActive = 'applock_service_active';
   static const String _keyOnboardingCompleted = 'applock_onboarding_completed';
   static const String _keyLanguageCode = 'applock_language_code';
+  static const String _keyAutoLockDelay = 'applock_auto_lock_delay';
+  static const String _keyLockScreenTheme = 'applock_lock_screen_theme';
 
   AppLockLocalDataSource(this._preferences);
 
@@ -31,20 +33,25 @@ class AppLockLocalDataSource {
     return _preferences.setBool(_keyOnboardingCompleted, completed);
   }
 
-  static const List<String> _defaultLockedPackages = [
-    'com.android.gallery3d',
-    'com.google.android.apps.messaging',
-    'com.google.android.apps.photos',
-    'com.android.banking',
-    'com.android.contacts',
-  ];
+  String? getAutoLockDelay() {
+    return _preferences.getString(_keyAutoLockDelay);
+  }
+
+  Future<bool> setAutoLockDelay(String key) {
+    return _preferences.setString(_keyAutoLockDelay, key);
+  }
+
+  String? getLockScreenTheme() {
+    return _preferences.getString(_keyLockScreenTheme);
+  }
+
+  Future<bool> setLockScreenTheme(String key) {
+    return _preferences.setString(_keyLockScreenTheme, key);
+  }
 
   Set<String> getLockedPackages() {
     final list = _preferences.getStringList(_keyLockedPackages);
-    if (list == null) {
-      return _defaultLockedPackages.toSet();
-    }
-    return list.toSet();
+    return list?.toSet() ?? <String>{};
   }
 
   Future<bool> setLockedPackages(Set<String> packages) {
