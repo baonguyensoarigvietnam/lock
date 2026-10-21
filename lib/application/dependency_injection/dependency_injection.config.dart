@@ -18,6 +18,10 @@ import 'package:applock/local/data_source/app_lock_local_data_source.dart'
     as _i178;
 import 'package:applock/local/repository_implementation/app_lock_repository_impl.dart'
     as _i876;
+import 'package:applock/presentation/screen/alerts/view_model/alerts_view_model.dart'
+    as _i201;
+import 'package:applock/presentation/screen/apps/view_model/apps_view_model.dart'
+    as _i202;
 import 'package:applock/presentation/screen/enable_biometric/view_model/enable_biometric_view_model.dart'
     as _i1045;
 import 'package:applock/presentation/screen/home/view_model/home_view_model.dart'
@@ -36,10 +40,14 @@ import 'package:applock/presentation/screen/set_passcode/view_model/set_passcode
     as _i930;
 import 'package:applock/presentation/screen/set_pattern/view_model/set_pattern_view_model.dart'
     as _i960;
+import 'package:applock/presentation/screen/settings/view_model/settings_view_model.dart'
+    as _i203;
 import 'package:applock/presentation/screen/splash/view_model/splash_view_model.dart'
     as _i989;
 import 'package:applock/presentation/screen/unlock_method/view_model/unlock_method_view_model.dart'
     as _i955;
+import 'package:applock/presentation/screen/vault/view_model/vault_view_model.dart'
+    as _i204;
 import 'package:applock/service/app_lock/app_lock_service.dart' as _i270;
 import 'package:applock/service/app_lock/biometric_service.dart' as _i189;
 import 'package:applock/service/permission/permission_service.dart' as _i897;
@@ -66,6 +74,8 @@ extension GetItInjectableX on _i174.GetIt {
       preResolve: true,
     );
     gh.factory<_i543.MainViewModel>(() => _i543.MainViewModel());
+    gh.factory<_i204.VaultViewModel>(() => _i204.VaultViewModel());
+    gh.factory<_i201.AlertsViewModel>(() => _i201.AlertsViewModel());
     gh.factory<_i131.PaywallViewModel>(() => _i131.PaywallViewModel());
     gh.factory<_i955.UnlockMethodViewModel>(
       () => _i955.UnlockMethodViewModel(),
@@ -82,8 +92,18 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i669.HomeViewModel>(
       () => _i669.HomeViewModel(
         gh<_i128.AppLockRepository>(),
+        gh<_i189.BiometricService>(),
+      ),
+    );
+    gh.factory<_i202.AppsViewModel>(
+      () => _i202.AppsViewModel(
+        gh<_i128.AppLockRepository>(),
         gh<_i897.PermissionService>(),
-        gh<_i270.AppLockService>(),
+      ),
+    );
+    gh.factory<_i203.SettingsViewModel>(
+      () => _i203.SettingsViewModel(
+        gh<_i128.AppLockRepository>(),
         gh<_i189.BiometricService>(),
       ),
     );

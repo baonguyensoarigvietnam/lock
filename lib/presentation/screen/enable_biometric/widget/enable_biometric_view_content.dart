@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:applock/presentation/common/widget/common_app_lock_header.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
+import 'package:applock/presentation/common/widget/common_feature_card.dart';
 import 'package:applock/presentation/screen/enable_biometric/enable_biometric_navigator.dart';
 import 'package:applock/presentation/screen/enable_biometric/view_model/enable_biometric_state.dart';
 import 'package:applock/presentation/screen/enable_biometric/view_model/enable_biometric_view_model.dart';
-import 'package:applock/presentation/screen/enable_biometric/widget/biometric_feature_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/presentation/theme/app_text_palette.dart';
 
@@ -43,15 +44,7 @@ class _EnableBiometricViewContentState
               children: [
                 const SizedBox(height: 12),
                 // Top Title
-                Center(
-                  child: Text(
-                    'App Lock',
-                    style: AppTypography.bold.copyWith(
-                      fontSize: 20,
-                      color: AppColorsPalette.black,
-                    ),
-                  ),
-                ),
+                const CommonAppLockHeader(),
                 const SizedBox(height: 24),
                 // Biometric Icon Circle
                 Center(
@@ -97,19 +90,19 @@ class _EnableBiometricViewContentState
                 ),
                 const SizedBox(height: 24),
                 // Feature Cards
-                const BiometricFeatureCard(
+                const CommonFeatureCard(
                   icon: Icons.bolt_rounded,
                   title: 'Faster unlock',
                   subtitle: 'Quickly access your vault without typing.',
                 ),
                 const SizedBox(height: 12),
-                const BiometricFeatureCard(
+                const CommonFeatureCard(
                   icon: Icons.shield_outlined,
                   title: 'Uses device security',
                   subtitle: 'Leverages built-in biometric hardware.',
                 ),
                 const SizedBox(height: 12),
-                const BiometricFeatureCard(
+                const CommonFeatureCard(
                   icon: Icons.lock_outline_rounded,
                   title: 'Helps if you forget your PIN',
                   subtitle: 'A secure alternative way to get back in.',
