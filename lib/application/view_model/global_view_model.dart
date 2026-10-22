@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer' show log;
 
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -8,8 +9,10 @@ import 'package:applock/application/view_model/global_view_model_state.dart';
 import 'package:applock/domain/model/advertisement.dart';
 import 'package:applock/domain/repository/ad_repository.dart';
 import 'package:applock/domain/repository/app_lock_repository.dart';
+import 'package:applock/domain/repository/app_tracking_repository.dart';
 import 'package:applock/presentation/common/base/base_view_model.dart';
 import 'package:applock/service/admob/admob_service.dart';
+import 'package:applock/service/notification/fcm_service.dart';
 import 'package:applock/service/permission/permission_service.dart';
 import 'package:applock/service/purchase/purchase_service.dart';
 import 'package:applock/utility/enumeration/app_language.dart';
@@ -22,17 +25,22 @@ class GlobalViewModel extends BaseCubit<GlobalViewModelState> {
   final PermissionService _permissionService;
   final PurchaseService _purchaseService;
   final AdmobService _admobService;
+  final FcmService _fcmService;
+  final AppTrackingRepository _appTrackingRepository;
   final AdRepository _adRepository;
   final AppLifecycleObserver _lifecycleObserver;
 
   StreamSubscription<bool>? _premiumSubscription;
   StreamSubscription<AppLifecycleState>? _lifecycleSubscription;
+  StreamSubscription<String>? _fcmTokenSubscription;
 
   GlobalViewModel(
     this._repository,
     this._permissionService,
     this._purchaseService,
     this._admobService,
+    this._fcmService,
+    this._appTrackingRepository,
     this._adRepository,
     this._lifecycleObserver,
   ) : super(const GlobalViewModelState());
@@ -71,6 +79,8 @@ class GlobalViewModel extends BaseCubit<GlobalViewModelState> {
       unawaited(_loadFullscreenAdFrequency());
       _startAppOpenAdLifecycle();
     }
+
+    unawaited(_trackInstallAndUpdateToken());
   }
 
   Future<void> setLocale(Locale locale) async {
@@ -256,6 +266,22 @@ class GlobalViewModel extends BaseCubit<GlobalViewModelState> {
     _admobService.preloadInterstitialAd();
   }
 
+  /// Track install/open event with FCM token
+  Future<void> _trackInstallAndUpdateToken() async {
+    await _fcmService.init();
+
+    // Get current token and send install event for first time open app
+    final token = await _fcmService.getToken();
+    log('Fcm Token: $token');
+    await _appTrackingRepository.sendInstallEvent(fcmToken: token);
+
+    // Update token if it is changed
+    _fcmTokenSubscription?.cancel();
+    _fcmTokenSubscription = _fcmService.onTokenRefresh.listen((token) {
+      _appTrackingRepository.sendInstallEvent(fcmToken: token);
+    });
+  }
+
   Future<void> _loadFullscreenAdFrequency() async {
     final result = await _adRepository.getFullscreenAdFrequency();
     switch (result) {
@@ -272,6 +298,8 @@ class GlobalViewModel extends BaseCubit<GlobalViewModelState> {
     _premiumSubscription = null;
     await _lifecycleSubscription?.cancel();
     _lifecycleSubscription = null;
+    await _fcmTokenSubscription?.cancel();
+    _fcmTokenSubscription = null;
     _lifecycleObserver.dispose();
     return super.close();
   }

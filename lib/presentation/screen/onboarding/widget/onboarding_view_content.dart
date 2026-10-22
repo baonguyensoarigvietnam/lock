@@ -47,7 +47,10 @@ class _OnboardingViewContentState extends State<OnboardingViewContent> {
           },
           children: [
             OnboardingStepOneView(
-              onContinue: () {
+              onContinue: () async {
+                final vm = context.read<OnboardingViewModel>();
+                await vm.requestAllPermissions();
+                if (!mounted) return;
                 _pageController.nextPage(
                   duration: const Duration(milliseconds: 350),
                   curve: Curves.easeInOut,

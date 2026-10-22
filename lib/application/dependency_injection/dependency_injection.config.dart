@@ -17,6 +17,7 @@ import 'package:applock/application/lifecycle/app_lifecycle_observer.dart'
 import 'package:applock/application/view_model/global_view_model.dart' as _i641;
 import 'package:applock/domain/repository/ad_repository.dart' as _i620;
 import 'package:applock/domain/repository/app_lock_repository.dart' as _i128;
+import 'package:applock/domain/repository/app_tracking_repository.dart' as _i701;
 import 'package:applock/domain/repository/intruder_repository.dart' as _i594;
 import 'package:applock/domain/repository/vault_repository.dart' as _i572;
 import 'package:applock/local/data_source/app_lock_local_data_source.dart'
@@ -32,8 +33,12 @@ import 'package:applock/local/repository_implementation/vault_repository_impl.da
 import 'package:applock/network/configuration/dio_configuration.dart' as _i283;
 import 'package:applock/network/data_source/ad_remote_data_source.dart'
     as _i613;
+import 'package:applock/network/data_source/app_tracking_data_source.dart'
+    as _i702;
 import 'package:applock/network/repository_implementation/ad_repository_impl.dart'
     as _i845;
+import 'package:applock/network/repository_implementation/app_tracking_repository_impl.dart'
+    as _i703;
 import 'package:applock/presentation/screen/alerts/view_model/alerts_view_model.dart'
     as _i616;
 import 'package:applock/presentation/screen/apps/view_model/apps_view_model.dart'
@@ -70,6 +75,7 @@ import 'package:applock/service/app_lock/app_lock_service.dart' as _i270;
 import 'package:applock/service/app_lock/biometric_service.dart' as _i189;
 import 'package:applock/service/app_lock/lock_engine_coordinator.dart' as _i568;
 import 'package:applock/service/intruder/intruder_service.dart' as _i650;
+import 'package:applock/service/notification/fcm_service.dart' as _i441;
 import 'package:applock/service/permission/permission_service.dart' as _i897;
 import 'package:applock/service/purchase/purchase_service.dart' as _i346;
 import 'package:applock/service/vault/vault_crypto_service.dart' as _i807;
@@ -98,6 +104,11 @@ extension GetItInjectableX on _i174.GetIt {
       () => globalDependencyInjectionModule.packageInfo,
       preResolve: true,
     );
+    await gh.factoryAsync<String>(
+      () => globalDependencyInjectionModule.deviceID,
+      instanceName: 'deviceID',
+      preResolve: true,
+    );
     gh.factory<_i543.MainViewModel>(() => _i543.MainViewModel());
     gh.factory<_i955.UnlockMethodViewModel>(
       () => _i955.UnlockMethodViewModel(),
@@ -112,6 +123,7 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i182.AdmobService(),
       dispose: (i) => i.dispose(),
     );
+    gh.lazySingleton<_i441.FcmService>(() => _i441.FcmService());
     gh.lazySingleton<_i270.AppLockService>(() => _i270.AppLockService());
     gh.lazySingleton<_i189.BiometricService>(() => _i189.BiometricService());
     gh.lazySingleton<_i897.PermissionService>(() => _i897.PermissionService());
@@ -145,7 +157,10 @@ extension GetItInjectableX on _i174.GetIt {
       ),
     );
     gh.singleton<_i283.DioConfiguration>(
-      () => _i283.DioConfiguration(gh<_i655.PackageInfo>()),
+      () => _i283.DioConfiguration(
+        gh<_i655.PackageInfo>(),
+        gh<String>(instanceName: 'deviceID'),
+      ),
     );
     gh.lazySingleton<_i568.LockEngineCoordinator>(
       () => _i568.LockEngineCoordinator(
@@ -224,7 +239,10 @@ extension GetItInjectableX on _i174.GetIt {
       ),
     );
     gh.factory<_i541.OnboardingViewModel>(
-      () => _i541.OnboardingViewModel(gh<_i128.AppLockRepository>()),
+      () => _i541.OnboardingViewModel(
+        gh<_i128.AppLockRepository>(),
+        gh<_i897.PermissionService>(),
+      ),
     );
     gh.factory<_i930.SetPasscodeViewModel>(
       () => _i930.SetPasscodeViewModel(gh<_i128.AppLockRepository>()),
@@ -257,12 +275,22 @@ extension GetItInjectableX on _i174.GetIt {
         remoteDataSource: gh<_i613.AdRemoteDataSource>(),
       ),
     );
+    gh.lazySingleton<_i702.AppTrackingDataSource>(
+      () => _i702.AppTrackingDataSource(gh<_i361.Dio>(instanceName: 'hubDio')),
+    );
+    gh.lazySingleton<_i701.AppTrackingRepository>(
+      () => _i703.AppTrackingRepositoryImpl(
+        remoteDataSource: gh<_i702.AppTrackingDataSource>(),
+      ),
+    );
     gh.lazySingleton<_i641.GlobalViewModel>(
       () => _i641.GlobalViewModel(
         gh<_i128.AppLockRepository>(),
         gh<_i897.PermissionService>(),
         gh<_i346.PurchaseService>(),
         gh<_i182.AdmobService>(),
+        gh<_i441.FcmService>(),
+        gh<_i701.AppTrackingRepository>(),
         gh<_i620.AdRepository>(),
         gh<_i340.AppLifecycleObserver>(),
       ),

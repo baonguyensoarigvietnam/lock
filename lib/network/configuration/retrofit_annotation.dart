@@ -28,3 +28,15 @@ const InjectHubBodyHostAppId = Extra(<String, Object>{
 const InjectHubBodyAppId = Extra(<String, Object>{
   NetworkConstant.injectHubBodyAppId: true,
 });
+
+/// Annotation to inject 'uuid' into query parameters.
+// ignore: constant_identifier_names
+const InjectDeviceUuidQuery = Extra(<String, Object>{
+  NetworkConstant.injectDeviceUuidQuery: true,
+});
+
+/// Annotation to inject 'uuid' into body.
+// ignore: constant_identifier_names
+const InjectDeviceUuidBody = Extra(<String, Object>{
+  NetworkConstant.injectDeviceUuidBody: true,
+});

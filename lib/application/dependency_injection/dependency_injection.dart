@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_udid/flutter_udid.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
@@ -28,4 +29,8 @@ abstract class GlobalDependencyInjectionModule {
 
   @preResolve
   Future<PackageInfo> get packageInfo => PackageInfo.fromPlatform();
+
+  @preResolve
+  @Named('deviceID')
+  Future<String> get deviceID => FlutterUdid.udid;
 }

@@ -9,9 +9,11 @@ import 'package:applock/network/utility/constant/network_constant.dart';
 class RequestInterceptor extends Interceptor {
   RequestInterceptor({
     required this.packageInfo,
+    required this.deviceId,
   });
 
   final PackageInfo packageInfo;
+  final String deviceId;
 
   @override
   Future<void> onRequest(
@@ -42,33 +44,66 @@ class RequestInterceptor extends Interceptor {
     final shouldInjectQuery =
         options.extra[NetworkConstant.injectHubQuery] == true;
     final bodyKey = _resolveBodyKey(options);
+    final shouldInjectDeviceUuidQuery =
+        options.extra[NetworkConstant.injectDeviceUuidQuery] == true;
+    final shouldInjectDeviceUuidBody =
+        options.extra[NetworkConstant.injectDeviceUuidBody] == true;
 
-    if (!shouldInjectQuery && bodyKey == null) {
+    if (!shouldInjectQuery &&
+        bodyKey == null &&
+        !shouldInjectDeviceUuidQuery &&
+        !shouldInjectDeviceUuidBody) {
       return;
     }
 
-    final appId = packageInfo.packageName;
-    final platform = Platform.isIOS
-        ? NetworkConstant.platformIOS
-        : NetworkConstant.platformAndroid;
-
-    final metadata = <String, dynamic>{NetworkConstant.platformKey: platform};
-
-    if (shouldInjectQuery) {
-      options.queryParameters.addAll({
-        NetworkConstant.appIdKey: appId,
-        ...metadata,
-      });
+    if (shouldInjectDeviceUuidQuery || shouldInjectDeviceUuidBody) {
+      if (shouldInjectDeviceUuidQuery) {
+        options.queryParameters[NetworkConstant.queryDeviceUuid] = deviceId;
+      }
+      if (shouldInjectDeviceUuidBody) {
+        final requestData = options.data;
+        final bodyData = {NetworkConstant.bodyDeviceUuid: deviceId};
+        if (requestData is Map<String, dynamic>) {
+          requestData.addAll(bodyData);
+        } else if (requestData is FormData) {
+          final hasDeviceUuid = requestData.fields.any(
+            (field) => field.key == NetworkConstant.bodyDeviceUuid,
+          );
+          if (!hasDeviceUuid) {
+            requestData.fields.add(
+              MapEntry(NetworkConstant.bodyDeviceUuid, deviceId),
+            );
+          }
+        } else if (requestData == null) {
+          options.data = bodyData;
+        }
+      }
     }
 
-    if (bodyKey != null) {
-      final bodyData = {bodyKey: appId, ...metadata};
-      final requestData = options.data;
+    if (shouldInjectQuery || bodyKey != null) {
+      final appId = packageInfo.packageName;
+      final platform = Platform.isIOS
+          ? NetworkConstant.platformIOS
+          : NetworkConstant.platformAndroid;
 
-      if (requestData is Map<String, dynamic>) {
-        requestData.addAll(bodyData);
-      } else if (requestData == null) {
-        options.data = bodyData;
+      final metadata = <String, dynamic>{NetworkConstant.platformKey: platform};
+
+      if (shouldInjectQuery) {
+        options.queryParameters.addAll({
+          NetworkConstant.appIdKey: appId,
+          ...metadata,
+        });
+      }
+
+      if (bodyKey != null) {
+        final bodyData = {bodyKey: appId, ...metadata};
+        final requestData = options.data;
+
+        if (requestData is Map<String, dynamic>) {
+          requestData.addAll(bodyData);
+        } else if (requestData == null) {
+          options.data = bodyData;
+        }
       }
     }
   }

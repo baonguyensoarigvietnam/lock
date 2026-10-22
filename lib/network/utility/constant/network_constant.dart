@@ -11,6 +11,8 @@ final class NetworkConstant {
   static const injectHubQuery = 'injectHubQueryKey';
   static const injectHubBodyHostAppId = 'injectHubBodyHostAppIdKey';
   static const injectHubBodyAppId = 'injectHubBodyAppIdKey';
+  static const injectDeviceUuidQuery = 'injectDeviceUuidQueryKey';
+  static const injectDeviceUuidBody = 'injectDeviceUuidBodyKey';
 
   // Headers
   static const apiKeyHeader = 'X-API-KEY';
@@ -20,6 +22,8 @@ final class NetworkConstant {
   static const appIdKey = 'app_id';
   static const hostAppIdKey = 'host_app_id';
   static const platformKey = 'platform';
+  static const queryDeviceUuid = 'uuid';
+  static const bodyDeviceUuid = 'uuid';
 
   // Platform values
   static const platformIOS = 'IOS';

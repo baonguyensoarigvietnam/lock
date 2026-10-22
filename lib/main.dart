@@ -1,3 +1,6 @@
+import 'dart:developer' show log;
+
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -7,6 +10,7 @@ import 'package:applock/application/app.dart';
 import 'package:applock/application/dependency_injection/dependency_injection.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
 import 'package:applock/service/app_lock/app_lock_gate.dart';
+import 'package:applock/service/firebase/firebase_options.dart';
 import 'package:applock/utility/enumeration/device_type.dart';
 
 Future<void> main() async {
@@ -16,6 +20,7 @@ Future<void> main() async {
     dotenv.load(fileName: '.env'),
     configureDependencies(),
     _configureDeviceSettings(),
+    _initializeFirebase(),
   ]);
 
   // Bridge to the native lock engine + lock screen routing.
@@ -34,5 +39,16 @@ Future<void> _configureDeviceSettings() async {
         statusBarIconBrightness: Brightness.light,
       ),
     );
+  }
+}
+
+/// Initialize Firebase
+Future<void> _initializeFirebase() async {
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } catch (e) {
+    log('Firebase initialization error: $e');
   }
 }

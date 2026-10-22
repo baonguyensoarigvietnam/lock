@@ -1,9 +1,13 @@
-import 'package:flutter/material.dart' show BuildContext, MediaQuery;
+import 'package:flutter/material.dart'
+    show BuildContext, Localizations, MediaQuery;
 import 'package:applock/l10n/app_localizations.dart';
+import 'package:applock/l10n/app_localizations_en.dart';
 import 'package:applock/utility/enumeration/device_type.dart' show DeviceType;
 
 extension LocalizationHelper on BuildContext {
-  AppLocalizations get l10n => AppLocalizations.of(this);
+  AppLocalizations get l10n =>
+      Localizations.of<AppLocalizations>(this, AppLocalizations) ??
+      AppLocalizationsEn();
 }
 
 extension ResponsiveHelper on BuildContext {

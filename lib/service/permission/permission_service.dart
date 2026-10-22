@@ -1,5 +1,8 @@
+import 'dart:developer';
 import 'dart:io';
 
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -24,6 +27,55 @@ class PermissionService {
     }
   }
 
+  /// Request ATT with lifecycle-aware delays
+  Future<void> requestATT() async {
+    final status = await _currentATTStatus;
+    if (status != TrackingStatus.notDetermined) return;
+
+    try {
+      await AppTrackingTransparency.requestTrackingAuthorization();
+    } catch (e) {
+      log('ATT Request Error: $e');
+    }
+  }
+
+  /// Retrieves the current ATT status
+  Future<TrackingStatus> get _currentATTStatus async {
+    try {
+      return await AppTrackingTransparency.trackingAuthorizationStatus;
+    } on PlatformException catch (e) {
+      log('ATT Error: $e');
+    }
+    return TrackingStatus.notSupported;
+  }
+
+  /// Request Firebase Notification permissions
+  Future<NotificationSettings?> requestNotification() async {
+    try {
+      final settings = await FirebaseMessaging.instance.requestPermission(
+        alert: true,
+        badge: true,
+        sound: true,
+      );
+      return settings;
+    } catch (e) {
+      log('Firebase Notification Permission Error: $e');
+      return null;
+    }
+  }
+
+  /// Orchestrate permissions sequentially (Notification + ATT on iOS)
+  Future<void> requestAllPermissions() async {
+    await requestNotification();
+
+    // Adding a slight buffer for the UI to settle
+    await Future.delayed(const Duration(milliseconds: 500));
+
+    if (Platform.isIOS) {
+      await requestATT();
+    }
+  }
+
   /// Whether "Display over other apps" is granted (needed to show the lock
   /// screen on top of a protected app).
   Future<bool> isOverlayPermissionGranted() async {
@@ -43,6 +95,7 @@ class PermissionService {
   }
 
   Future<bool> requestNotificationPermission() async {
+    await requestNotification();
     final status = await Permission.notification.request();
     return status.isGranted;
   }

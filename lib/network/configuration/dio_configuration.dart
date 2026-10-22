@@ -7,11 +7,15 @@ import 'package:applock/network/configuration/response_interceptor.dart';
 
 @singleton
 final class DioConfiguration {
-  DioConfiguration(this._packageInfo);
+  DioConfiguration(
+    this._packageInfo,
+    @Named('deviceID') this._deviceID,
+  );
 
   final PackageInfo _packageInfo;
+  final String _deviceID;
 
-  /// Dio for the central Hub services (Ads, Frequency, Cross-Promotion)
+  /// Dio for the central Hub services (Ads, Frequency, Cross-Promotion, Installs)
   Dio getHubDio() {
     final dio = Dio(
       BaseOptions(
@@ -24,7 +28,10 @@ final class DioConfiguration {
     );
 
     dio.interceptors.addAll([
-      RequestInterceptor(packageInfo: _packageInfo),
+      RequestInterceptor(
+        packageInfo: _packageInfo,
+        deviceId: _deviceID,
+      ),
       const ResponseInterceptor(),
       LogInterceptor(
         error: true,
