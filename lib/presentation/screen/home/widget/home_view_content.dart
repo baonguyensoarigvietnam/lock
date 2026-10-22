@@ -1,3 +1,4 @@
+import 'package:applock/presentation/common/widget/banner_ad_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -25,10 +26,7 @@ import 'package:applock/utility/snack_bar_utility.dart';
 class HomeViewContent extends StatefulWidget {
   final ValueChanged<int>? onSelectTab;
 
-  const HomeViewContent({
-    this.onSelectTab,
-    super.key,
-  });
+  const HomeViewContent({this.onSelectTab, super.key});
 
   @override
   State<HomeViewContent> createState() => _HomeViewContentState();
@@ -57,9 +55,9 @@ class _HomeViewContentState extends State<HomeViewContent> {
   Future<void> _onToggleBiometric(bool enabled) async {
     final l10n = context.l10n;
     final result = await context.read<HomeViewModel>().toggleBiometric(
-          enabled,
-          localizedReason: l10n.lockEnableBiometricReason,
-        );
+      enabled,
+      localizedReason: l10n.lockEnableBiometricReason,
+    );
     if (!mounted) return;
     if (result == BiometricToggleResult.notSupported) {
       SnackBarUtility.show(context, l10n.biometricNotSupportedError);
@@ -136,7 +134,8 @@ class _HomeViewContentState extends State<HomeViewContent> {
           const SizedBox(height: 12),
           const CommonAppBar.brand(),
           const SizedBox(height: 20),
-
+          const BannerAdWidget(adSize: .banner),
+          const SizedBox(height: 10),
           // Status Overview Cards
           HomeStatusCardsSection(
             lockedCount: state.lockedCount,
@@ -168,9 +167,7 @@ class _HomeViewContentState extends State<HomeViewContent> {
           )) ...[
             const SizedBox(height: 20),
             // Promotional Banner
-            HomePromoBanner(
-              onTap: () => navigator.goToPaywall(),
-            ),
+            HomePromoBanner(onTap: () => navigator.goToPaywall()),
             const NativeAdWidget(
               templateType: TemplateType.small,
               padding: EdgeInsets.only(top: 16),

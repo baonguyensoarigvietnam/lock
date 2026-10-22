@@ -143,9 +143,9 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
   Future<void> _onToggleBiometric(bool enabled) async {
     final l10n = context.l10n;
     final result = await context.read<SettingsViewModel>().toggleBiometric(
-          enabled,
-          localizedReason: l10n.lockEnableBiometricReason,
-        );
+      enabled,
+      localizedReason: l10n.lockEnableBiometricReason,
+    );
     if (!mounted) return;
     if (result == BiometricToggleResult.notSupported) {
       SnackBarUtility.show(context, l10n.biometricNotSupportedError);
@@ -163,8 +163,9 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
     final vm = context.read<SettingsViewModel>();
     final navigator = context.read<SettingsNavigator>();
     final l10n = context.l10n;
-    final isPremium =
-        context.select<GlobalViewModel, bool>((vm) => vm.state.isPremium);
+    final isPremium = context.select<GlobalViewModel, bool>(
+      (vm) => vm.state.isPremium,
+    );
 
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
@@ -210,10 +211,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
             decoration: BoxDecoration(
               color: AppColorsPalette.white,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(
-                color: AppColorsPalette.gray200,
-                width: 1,
-              ),
+              border: Border.all(color: AppColorsPalette.gray200, width: 1),
             ),
             child: Column(
               children: [
@@ -239,21 +237,21 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
               ],
             ),
           ),
+          const SizedBox(height: 14),
+          const NativeAdWidget(
+            templateType: TemplateType.medium,
+            padding: EdgeInsets.only(top: 20),
+          ),
           const SizedBox(height: 24),
-
           // Help & Support Section Header
           _buildSectionHeader(l10n.helpAndSupportHeader),
           const SizedBox(height: 12),
-
           // Help & Support Group Container
           Container(
             decoration: BoxDecoration(
               color: AppColorsPalette.white,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(
-                color: AppColorsPalette.gray200,
-                width: 1,
-              ),
+              border: Border.all(color: AppColorsPalette.gray200, width: 1),
             ),
             child: Column(
               children: [
@@ -284,11 +282,6 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
               ],
             ),
           ),
-          const NativeAdWidget(
-            templateType: TemplateType.medium,
-            padding: EdgeInsets.only(top: 20),
-          ),
-          const SizedBox(height: 24),
         ],
       ),
     );
@@ -360,10 +353,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
       decoration: BoxDecoration(
         color: AppColorsPalette.gray100,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(
-          color: AppColorsPalette.gray200,
-          width: 1,
-        ),
+        border: Border.all(color: AppColorsPalette.gray200, width: 1),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -386,10 +376,7 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
                 decoration: BoxDecoration(
                   color: AppColorsPalette.gray100,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: AppColorsPalette.gray300,
-                    width: 1,
-                  ),
+                  border: Border.all(color: AppColorsPalette.gray300, width: 1),
                 ),
                 child: Text(
                   l10n.freeBadge,
@@ -562,8 +549,9 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
                   width: 1,
                 ),
               ),
-              alignment:
-                  isEnabled ? Alignment.centerRight : Alignment.centerLeft,
+              alignment: isEnabled
+                  ? Alignment.centerRight
+                  : Alignment.centerLeft,
               child: Container(
                 width: 16,
                 height: 16,
@@ -588,17 +576,10 @@ class _SettingsViewContentState extends State<SettingsViewContent> {
       decoration: BoxDecoration(
         color: AppColorsPalette.gray50,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: AppColorsPalette.gray200,
-          width: 1,
-        ),
+        border: Border.all(color: AppColorsPalette.gray200, width: 1),
       ),
       child: Center(
-        child: Icon(
-          icon,
-          size: 19,
-          color: AppColorsPalette.gray600,
-        ),
+        child: Icon(icon, size: 19, color: AppColorsPalette.gray600),
       ),
     );
   }

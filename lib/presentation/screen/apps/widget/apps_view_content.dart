@@ -1,3 +1,4 @@
+import 'package:applock/presentation/common/widget/banner_ad_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
@@ -55,9 +56,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
                 const SizedBox(height: 12),
                 const CommonAppBar.brand(),
                 const SizedBox(height: 12),
-                Expanded(
-                  child: _buildStepBody(context, state),
-                ),
+                Expanded(child: _buildStepBody(context, state)),
               ],
             );
           },
@@ -96,6 +95,8 @@ class _AppsViewContentState extends State<AppsViewContent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 6),
+          const BannerAdWidget(adSize: .banner),
+          const SizedBox(height: 10),
           // Header Row: "Locked Apps" + "5 protected apps" badge
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -141,10 +142,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
             decoration: BoxDecoration(
               color: AppColorsPalette.gray50,
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: AppColorsPalette.gray200,
-                width: 1,
-              ),
+              border: Border.all(color: AppColorsPalette.gray200, width: 1),
             ),
             child: TextField(
               controller: _searchController,
@@ -178,10 +176,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
             decoration: BoxDecoration(
               color: AppColorsPalette.gray100,
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: AppColorsPalette.gray200,
-                width: 1,
-              ),
+              border: Border.all(color: AppColorsPalette.gray200, width: 1),
             ),
             child: Row(
               children: [
@@ -254,9 +249,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
             ),
 
           // Tab Content Area
-          Expanded(
-            child: _buildTabViewContent(context, state),
-          ),
+          Expanded(child: _buildTabViewContent(context, state)),
         ],
       ),
     );
@@ -276,8 +269,9 @@ class _AppsViewContentState extends State<AppsViewContent> {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 160),
           decoration: BoxDecoration(
-            color:
-                isSelected ? AppColorsPalette.black : AppColorsPalette.transparent,
+            color: isSelected
+                ? AppColorsPalette.black
+                : AppColorsPalette.transparent,
             borderRadius: BorderRadius.circular(7),
           ),
           alignment: Alignment.center,
@@ -301,9 +295,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
 
     if (state.isLoading) {
       return const Center(
-        child: CircularProgressIndicator(
-          color: AppColorsPalette.black,
-        ),
+        child: CircularProgressIndicator(color: AppColorsPalette.black),
       );
     }
 
@@ -333,10 +325,7 @@ class _AppsViewContentState extends State<AppsViewContent> {
             decoration: BoxDecoration(
               color: AppColorsPalette.white,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(
-                color: AppColorsPalette.gray200,
-                width: 1,
-              ),
+              border: Border.all(color: AppColorsPalette.gray200, width: 1),
             ),
             child: ListView.separated(
               shrinkWrap: true,
