@@ -95,8 +95,10 @@ class _AppsViewContentState extends State<AppsViewContent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 6),
-          const BannerAdWidget(adSize: .banner),
-          const SizedBox(height: 10),
+          const BannerAdWidget(
+            useAdaptiveSize: true,
+            padding: EdgeInsets.only(bottom: 16),
+          ),
           // Header Row: "Locked Apps" + "5 protected apps" badge
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

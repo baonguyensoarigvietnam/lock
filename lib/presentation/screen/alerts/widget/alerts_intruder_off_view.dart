@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:applock/presentation/common/widget/banner_ad_widget.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/common/widget/common_feature_card.dart';
@@ -25,7 +26,11 @@ class AlertsIntruderOffView extends StatelessWidget {
           const SizedBox(height: 12),
           // Top Title: App Lock
           const CommonAppBar.brand(),
-          const SizedBox(height: 36),
+          const SizedBox(height: 18),
+          const BannerAdWidget(
+            useAdaptiveSize: true,
+            padding: EdgeInsets.only(bottom: 18),
+          ),
 
           // Shutter Icon Circle with Red Close Badge
           SizedBox(

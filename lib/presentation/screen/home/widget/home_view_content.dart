@@ -134,8 +134,10 @@ class _HomeViewContentState extends State<HomeViewContent> {
           const SizedBox(height: 12),
           const CommonAppBar.brand(),
           const SizedBox(height: 20),
-          const BannerAdWidget(adSize: .banner),
-          const SizedBox(height: 10),
+          const BannerAdWidget(
+            useAdaptiveSize: true,
+            padding: EdgeInsets.only(bottom: 16),
+          ),
           // Status Overview Cards
           HomeStatusCardsSection(
             lockedCount: state.lockedCount,

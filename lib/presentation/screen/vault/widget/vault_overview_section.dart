@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:applock/domain/model/vault_item.dart';
+import 'package:applock/presentation/common/widget/banner_ad_widget.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/screen/vault/widget/vault_album_card.dart';
 import 'package:applock/presentation/theme/app_colors_palette.dart';
@@ -47,6 +48,10 @@ class VaultOverviewSection extends StatelessWidget {
           const SizedBox(height: 12),
           const CommonAppBar.brand(),
           const SizedBox(height: 18),
+          const BannerAdWidget(
+            useAdaptiveSize: true,
+            padding: EdgeInsets.only(bottom: 16),
+          ),
 
           // Summary Card
           Container(

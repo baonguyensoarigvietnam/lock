@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:applock/application/view_model/global_view_model.dart';
 import 'package:applock/domain/model/intruder_alert.dart';
+import 'package:applock/presentation/common/widget/banner_ad_widget.dart';
 import 'package:applock/presentation/common/widget/common_app_bar.dart';
 import 'package:applock/presentation/common/widget/common_button.dart';
 import 'package:applock/presentation/screen/alerts/widget/alerts_formatting.dart';
@@ -54,6 +55,10 @@ class AlertsListView extends StatelessWidget {
             // Top Title: App Lock
             const CommonAppBar.brand(),
             const SizedBox(height: 18),
+            const BannerAdWidget(
+              useAdaptiveSize: true,
+              padding: EdgeInsets.only(bottom: 16),
+            ),
 
             // Status Summary Card
             Container(
